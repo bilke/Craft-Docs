@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Block Types - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../templating/index.html">Templating</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basics/gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/templates.html">Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/resources.html">Front-end Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/querybuilder.html">The Query Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/records.html">Active Record Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/migrations.html">Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="widgets.html">Dashboard Widgets</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Block Types</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/variables.html">Template Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/account.html">AccountService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/blockTypes.html">BlockTypesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/email.html">EmailService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/entries.html">EntriesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/globals.html">GlobalsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/pages.html">PagesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/path.html">PathService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/request.html">HttpRequestService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/i18n.html">LocalizationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/plugins.html">PluginsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/templates.html">TemplatesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/users.html">UsersService</a></li>
+</ul>
+</li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../index.html">Plugin Development</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="block-types">
+<h1>Block Types<a class="headerlink" href="#block-types" title="Permalink to this headline">¶</a></h1>
+<p>Whenever someone creates a new content block in Blocks, they must specify what type of block it is. The system comes with a handful of block types baked in, and we’ve made it extremely easy for plugins to add new ones.</p>
+<p>First, create a new subfolder within your plugin’s folder, called blocktypes/. Create a new file in that folder, named with this format:</p>
+<div class="highlight-python"><pre>[PluginHandle]_[BlockTypeName]BlockType.php</pre>
+</div>
+<p>If your plugin name is “Cocktail Recipes”, and your block type name is “Ingredient List”, the file would be named CocktailRecipes_IngredientListBlockType.php.</p>
+<p>Create a new class in that file, with the same name as the filename:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CocktailRecipes_IngredientListBlockType</span> <span class="k">extends</span> <span class="nx">BaseBlockType</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getName</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">Blocks</span><span class="o">::</span><span class="na">t</span><span class="p">(</span><span class="s1">&#39;Ingredient List&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getInputHtml</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">blx</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">templates</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;cocktailrecipes/ingredientlist/input&#39;</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>That <tt class="docutils literal"><span class="pre">getName()</span></tt> method should look familiar –&nbsp;your primary plugin class has the same method. Difference is, this time it’s returning the name of your block type, rather than the name of your entire plugin.</p>
+<p><tt class="docutils literal"><span class="pre">getInputHtml()</span></tt> does just what it says: it returns your block type’s input HTML. We recommend that you store the actual HTML in a template, and load it via <tt class="docutils literal"><span class="pre">blx()-&gt;templates-&gt;render()</span></tt>.</p>
+<div class="section" id="giving-your-block-type-some-settings">
+<h2>Giving your Block Type Some Settings<a class="headerlink" href="#giving-your-block-type-some-settings" title="Permalink to this headline">¶</a></h2>
+<p>If your block type requires settings, you first must tell Blocks which settings it has. You do that with the aptly named <tt class="docutils literal"><span class="pre">defineSettings()</span></tt> method. This method returns an array whose keys define the setting names, and values define the parameters (the type of value, etc.).</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">protected function defineSettings()</span>
+<span class="x">{</span>
+<span class="x">    return array(</span>
+<span class="x">        &#39;initialSlots&#39; =&gt; array(AttributeType::Number, &#39;min&#39; =&gt; 0)</span>
+<span class="x">    );</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>With that in place, you can call <tt class="docutils literal"><span class="pre">$this-&gt;getSettings()</span></tt> from any method within your widget, and get a <a class="reference internal" href="../advanced/models.html"><em>model</em></a> class back, prepopulated with your widget’s settings.</p>
+<p>Next you need to add a <tt class="docutils literal"><span class="pre">getSettingsHtml()</span></tt> method which returns the HTML for displaying your settings. Like <tt class="docutils literal"><span class="pre">getInputHtml()</span></tt>, we recommend that you create a template for the actual settings HTML, and load it up with <tt class="docutils literal"><span class="pre">blx()-&gt;templates-&gt;render()</span></tt>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">public function getSettingsHtml()</span>
+<span class="x">{</span>
+<span class="x">    return blx()-&gt;templates-&gt;render(&#39;cocktailrecipes/ingredientlist/settings&#39;, array(</span>
+<span class="x">        &#39;settings&#39; =&gt; $this-&gt;getSettings()</span>
+<span class="x">    ))</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>If you need to do any processing on your settings’ post data before they’re saved to the database, you can do it with the <tt class="docutils literal"><span class="pre">prepSettings()</span></tt> method:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">public function prepSettings($settings)</span>
+<span class="x">{</span>
+<span class="x">    // Modify $settings here...</span>
+
+<span class="x">    return $settings;</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="customizing-the-database-column-type">
+<h2>Customizing the Database Column Type<a class="headerlink" href="#customizing-the-database-column-type" title="Permalink to this headline">¶</a></h2>
+<p>When someone creates a new content block using your block type, your block type can define what type of database column gets created within the content table. By default, BaseBlockType sets the column to VARCHAR(255), but you can override that with <tt class="docutils literal"><span class="pre">defineContentAttribute()</span></tt>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">public function defineContentAttribute()</span>
+<span class="x">{</span>
+<span class="x">    return AttributeType::Mixed;</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>You may also set <tt class="docutils literal"><span class="pre">defineContentAttribute()</span></tt> to return <tt class="docutils literal"><span class="pre">false</span></tt> if your block type doesn’t need its own column in the content table. This might be the case if your block type stores its content in its own database table, for instance.</p>
+</div>
+<div class="section" id="modifying-your-inputs-post-data">
+<h2>Modifying your Input’s Post Data<a class="headerlink" href="#modifying-your-inputs-post-data" title="Permalink to this headline">¶</a></h2>
+<p>If you need to do any processing on your input’s post data before it’s saved to the database, you can do it with the <tt class="docutils literal"><span class="pre">prepPostData()</span></tt> function:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">protected function prepPostData($value)</span>
+<span class="x">{</span>
+<span class="x">    // Modify $value here...</span>
+
+<span class="x">    return $value;</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="events">
+<h2>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h2>
+<p>BaseBlockType provides three events that you can latch code onto:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">onBeforeSave()</span></tt></dt>
+<dd>Called right before a block is saved.</dd>
+<dt><tt class="docutils literal"><span class="pre">onAfterSave()</span></tt></dt>
+<dd>Called right after a block is saved, and <tt class="docutils literal"><span class="pre">$this-&gt;model-&gt;id</span></tt> is set.</dd>
+<dt><tt class="docutils literal"><span class="pre">onAfterEntitySave()</span></tt></dt>
+<dd>Called right after an entity is saved, and <tt class="docutils literal"><span class="pre">$this-&gt;entity-&gt;id</span></tt> is set.</dd>
+</dl>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="../advanced/models.html">Models</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

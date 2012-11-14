@@ -1,0 +1,13 @@
+LocalizationService
+===================
+
+LocalizationService provides the following APIs for dealing with localization:
+
+``blx()->i18n->getLanguages()``
+	Returns an array of the locale IDs that Blocks is aware of.
+
+``blx()->i18n->getTranslatedLanguages()``
+	Returns an array of the locale IDs that Blocks is translated into.
+
+``blx()->i18n->getLanguageData($localeId)``
+	Returns the locale data for a given locale ID.

@@ -1,0 +1,64 @@
+Active Record Models
+====================
+
+Active record models (or “records”) are like :doc:`models <models>`, except with a database-facing layer built on top. On top of all the things that models can do, records can:
+
+- Define database table schemas
+- Represent rows in the database
+- Find, alter, and delete rows
+
+To define a record, create a new records/ subfolder within your plugin’s folder. Create a new file in that folder, named with this format::
+
+    [PluginHandle]_[RecordName]Record.php
+
+If your plugin name is “Cocktail Recipes”, and your record name is “Ingredient”, the file would be named “CocktailRecipes_IngredientRecord.php”.
+
+Create a new class in that file, with the same name as the filename:
+
+.. code-block:: php
+
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipes_IngredientRecord extends BaseModel
+   {
+       public function getTableName()
+       {
+           return 'cocktailrecipes_ingredients';
+       }
+
+       public function defineAttributes()
+       {
+           return array(
+               'name' => AttributeType::String,
+               'type' => array(AttributeType::Enum, 'values' => "alcohol,mixer,other"),
+           );
+       }
+   }
+
+``getTableName()`` returns the name of the database table the model is associated with (sans table prefix). By convention, tables created by plugins should be prefixed with the plugin name and an underscore.
+
+``defineAttributes()`` returns an array of attributse which map back to columns in the database table.
+
+If your record should have any relationships with other tables, you can specify them with the ``defineRelations()`` function:
+
+.. code-block:: php
+
+   public function defineRelations()
+   {
+       return array(
+           'drinks' => array(static::HAS_MANY, 'CocktailRecipes_DrinkRecord', 'ingredientId'),
+       );
+   }
+
+``defineRelations()`` works basically the same as `CActiveRecord <http://www.yiiframework.com/doc/api/1.1/CActiveRecord>`_’s `relations() <http://www.yiiframework.com/doc/api/1.1/CActiveRecord#relations-detail>`_ method (see `Relational Active Record <http://www.yiiframework.com/doc/guide/1.1/en/database.arr>`_ from the Yii docs), with two differences:
+
+- You don’t need to specify the namespace of the related record class in the second argument (defaults to the Blocks namespace)
+- You don’t need to specify the foreign key column name in BELONGS_TO relations (defaults to the relation name appended with “Id”)
+
+Creating the Tables
+-------------------
+
+When a plugin is installed, Blocks will look for any records provided by the plugin, and automatically create the database tables defined by those records’ ``getTableName()``, ``defineAttributes()``, and ``defineRelations()`` methods.
+
+

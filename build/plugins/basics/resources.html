@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Front-end Resources - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../templating/index.html">Templating</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">Templates</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Front-end Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/querybuilder.html">The Query Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/records.html">Active Record Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/migrations.html">Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../components/widgets.html">Dashboard Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../components/blocktypes.html">Block Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/variables.html">Template Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/account.html">AccountService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/blockTypes.html">BlockTypesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/email.html">EmailService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/entries.html">EntriesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/globals.html">GlobalsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/pages.html">PagesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/path.html">PathService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/request.html">HttpRequestService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/i18n.html">LocalizationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/plugins.html">PluginsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/templates.html">TemplatesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/users.html">UsersService</a></li>
+</ul>
+</li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../index.html">Plugin Development</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="front-end-resources">
+<h1>Front-end Resources<a class="headerlink" href="#front-end-resources" title="Permalink to this headline">¶</a></h1>
+<p>If your plugin has any CSS, Javascript, images, or other front-end resources, you can place them in a resources/ subfolder within your plugin’s folder.</p>
+<p>Blocks provides a helper function, <tt class="docutils literal"><span class="pre">UrlHelper::getResourceUrl('path/to/file.ext')</span></tt>, which returns the URL to a resource file. Templates have a similar function: <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">resourceUrl('path/to/file.ext')</span> <span class="pre">}}</span></tt>. The URL returned by these functions will work even if the blocks/ folder is placed above the web root.</p>
+<p>By default, Blocks will search for the resource file in its own blocks/app/resources/ folder. If it can’t find the file there, it will check if the first segment of the resource path is set to a plugin handle. If it is, Blocks will look for the resource file within that plugin’s resources/ folder.</p>
+<p>So if an image were located at blocks/plugins/cocktailrecipes/resources/images/gin.png, it would be acccessible via <tt class="docutils literal"><span class="pre">UrlHelper::getResourceUrl('cocktailrecipes/images/gin.png')</span></tt> and <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">resourceUrl('cocktailrecipes/images/gin.png')</span> <span class="pre">}}</span></tt>.</p>
+<p><a class="reference internal" href="../apis/templates.html"><em>TemplatesService</em></a> also provides the handy functions, <tt class="docutils literal"><span class="pre">includeCssResource('path/to/file.css')</span></tt> and <tt class="docutils literal"><span class="pre">includeJsResource('path/to/file.js')</span></tt>, which queue up CSS and JS files to be included in the template within <tt class="docutils literal"><span class="pre">&lt;link&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;script&gt;</span></tt> tags. These functions also have template tag counterparts, <tt class="docutils literal"><span class="pre">{%</span> <span class="pre">includeCssResource</span> <span class="pre">&quot;path/to/file.css&quot;</span> <span class="pre">%}</span></tt> and <tt class="docutils literal"><span class="pre">{%</span> <span class="pre">includeJsResource</span> <span class="pre">&quot;path/to/file.js&quot;</span> <span class="pre">%}</span></tt>.</p>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="i18n.html">Internationalization</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

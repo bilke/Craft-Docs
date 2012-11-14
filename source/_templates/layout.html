@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>{{ title }}{% if pagename != 'index' %} - Blocks Docs{% endif %}</title>
+	<link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+	<link rel="stylesheet" href="{{ pathto('_static/css/docs.css', 1) }}" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				{{ toctree() }}
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			{% if parents %}
+				<ul class="crumbs">
+					{%- for parent in parents %}
+					<li><a href="{{ parent.link|e }}">{{ parent.title }}</a></li>
+					{%- endfor %}
+				</ul>
+			{% endif %}
+
+			{% block body %}{% endblock %}
+
+			{% if next %}
+			<nav class="nav">
+				Next up: <a href="{{ next.link|e }}">{{ next.title|striptags|e }}</a></li>
+			</nav>
+			{% endif %}
+		</div>
+	</div>
+</body>
+</html>

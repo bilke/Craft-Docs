@@ -60,6 +60,16 @@ Next you need to add a ``getSettingsHtml()`` method which returns the HTML for d
        ))
    }
 
+For a plugin, the path that you pass into render should in in the format ``{lowercase plugin handle}/{relative path to your template from your plugin’s template folder}``.
+
+The above example will first try to resolve to:
+
+``plugins/cocktailrecipes/templates/ingredientlist/settings.html``
+
+If that does not exist, it will look for:
+
+``plugins/cocktailrecipes/templates/ingredientlist/settings/index.html``
+
 If you need to do any processing on your settings’ post data before they’re saved to the database, you can do it with the ``prepSettings()`` method:
 
 .. code-block:: php

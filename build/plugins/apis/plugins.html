@@ -73,8 +73,8 @@
 <dd>Returns a plugin by its class handle, or null if that plugin isn’t installed and enabled.</dd>
 <dt><tt class="docutils literal"><span class="pre">blx()-&gt;plugins-&gt;getPlugins()</span></tt></dt>
 <dd>Returns an array of all enabled plugins.</dd>
-<dt><tt class="docutils literal"><span class="pre">blx()-&gt;plugins-&gt;callHook($method,</span> <span class="pre">$args)</span></tt></dt>
-<dd>Calls a method by the name of <tt class="docutils literal"><span class="pre">$method</span></tt> on all enabled plugins, passing in <tt class="docutils literal"><span class="pre">$args</span></tt> (optional) as arguments. Returns an array of each plugins’ responses.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;plugins-&gt;callHook($hook,</span> <span class="pre">$args)</span></tt></dt>
+<dd>Calls a hook on all plugins, and returns an array of each plugins’ responses. <tt class="docutils literal"><span class="pre">$hook</span></tt> is the name of the method Blocks should look for on the plugin classes, without the “<tt class="docutils literal"><span class="pre">hook</span></tt>” prefix. So calling <tt class="docutils literal"><span class="pre">callHook('martinis')</span></tt> would map to plugin methods named <tt class="docutils literal"><span class="pre">hookMartinis()</span></tt>. Passing <tt class="docutils literal"><span class="pre">$args</span></tt> is optional, and it sets which arguments should be passed to the hook methods.</dd>
 </dl>
 </div>
 

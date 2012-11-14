@@ -115,11 +115,12 @@
 <span class="x">}</span>
 </pre></div>
 </div>
-<p>For a plugin, the path that you pass into render should in in the format <tt class="docutils literal"><span class="pre">{lowercase</span> <span class="pre">plugin</span> <span class="pre">handle}/{relative</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">template</span> <span class="pre">from</span> <span class="pre">your</span> <span class="pre">plugin’s</span> <span class="pre">template</span> <span class="pre">folder}</span></tt>.</p>
+<p>For a plugin, the first string that you pass into render should be in the format <tt class="docutils literal"><span class="pre">{lowercase</span> <span class="pre">plugin</span> <span class="pre">handle}/{relative</span> <span class="pre">path</span> <span class="pre">to</span> <span class="pre">your</span> <span class="pre">template</span> <span class="pre">from</span> <span class="pre">your</span> <span class="pre">plugin’s</span> <span class="pre">template</span> <span class="pre">folder}</span></tt>.</p>
 <p>The above example will first try to resolve to:</p>
 <p><tt class="docutils literal"><span class="pre">plugins/cocktailrecipes/templates/ingredientlist/settings.html</span></tt></p>
 <p>If that does not exist, it will look for:</p>
 <p><tt class="docutils literal"><span class="pre">plugins/cocktailrecipes/templates/ingredientlist/settings/index.html</span></tt></p>
+<p>Note that the <tt class="docutils literal"><span class="pre">templates</span></tt> folder segment is assumed as is not needed when calling render.</p>
 <p>If you need to do any processing on your settings’ post data before they’re saved to the database, you can do it with the <tt class="docutils literal"><span class="pre">prepSettings()</span></tt> method:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">public function prepSettings($settings)</span>
 <span class="x">{</span>

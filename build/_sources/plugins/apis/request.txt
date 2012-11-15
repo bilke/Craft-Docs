@@ -57,6 +57,9 @@ HttpRequestService provides the following APIs for getting information about the
 ``blx()->request->getRestParams()``
 	Returns the PUT or DELETE request parameters.
 
+``blx()->request->getCookie($name)``
+	Returns a `CHttpCookie <http://www.yiiframework.com/doc/api/1.1/CHttpCookie>`_ object representing a cookie by the given name, or null if it doesn’t exist.
+
 ``blx()->request->getUrl()``
 	Returns the entire URL for the current request.
 

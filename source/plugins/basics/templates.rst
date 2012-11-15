@@ -23,27 +23,40 @@ With that set, your plugin will show up in the CP nav. Clicking on it will take 
 
 Your plugin’s CP section can have as many pages as you’d like. To link to other pages, use the ``{{ url() }}`` template function just like you would in your site’s templates (ex: ``href="{{ url('cocktailrecipes/all') }}``).
 
-Most of the time you’ll want your plugin’s templates to extend the main CP layout, so they look like the rest of the CP. To do that, just place this at the beginning of your template:
+Extending the CP layout
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Most of the time you’ll want your plugin’s templates to look like the rest of the CP. To do that, they must extend the ``_layouts/cp`` layout.
+
+The ``_layouts/cp`` layout expects two variables to be set: ``title`` and ``content``. ``title`` is used to set the page’s ``<title>`` tag value, and ``content`` defines the HTML that should show up in the main #content div.
 
 .. code-block:: html
 
    {% extends "_layouts/cp" %}
 
-The CP layout expects a ``title`` variable to be set, which will be used in the ``<title>`` tag:
-
-.. code-block:: html
-
    {% set title = "Cocktail Recipes"|t %}
 
-You should also set a ``header`` variable, which defines what goes in the page’s ``<header>`` up top:
+   {% set content %}
+       <p>Hello!</p>
+   {% endset %}
+
+White it’s not required, you should also set a ``header`` variable, which defines what goes in the page’s ``<header>`` up top:
 
 .. code-block:: html
+
+   {% extends "_layouts/cp" %}
+
+   {% set title = "Cocktail Recipes"|t %}
 
    {% set header %}
        <h1>{{ title }}</h1>
    {% endset %}
 
-If you want to specify a “back” button, the ``header`` is the place to put that too:
+   {% set content %}
+       <p>Hello!</p>
+   {% endset %}
+
+If you want to specify a “back” button in the ``<header>``, the ``header`` variable is the place to put that too:
 
 .. code-block:: html
 
@@ -55,14 +68,6 @@ If you want to specify a “back” button, the ``header`` is the place to put t
               {{ "Cocktail Recipes"|t }}
           </a></li>
        </ul>
-   {% endset %}
-
-Place the rest of your page’s content in a ``content`` variable:
-
-.. code-block:: html
-
-   {% set content %}
-      <p>{{ "So many recipes to choose from!"|t }}</p>
    {% endset %}
 
 Dynamic URL Routing

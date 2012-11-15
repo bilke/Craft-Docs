@@ -83,21 +83,34 @@
 </div>
 <p>With that set, your plugin will show up in the CP nav. Clicking on it will take you to admin.php/PluginHandle, which will route to index.html within your plugin’s templates/ folder.</p>
 <p>Your plugin’s CP section can have as many pages as you’d like. To link to other pages, use the <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">url()</span> <span class="pre">}}</span></tt> template function just like you would in your site’s templates (ex: <tt class="docutils literal"><span class="pre">href=&quot;{{</span> <span class="pre">url('cocktailrecipes/all')</span> <span class="pre">}}</span></tt>).</p>
-<p>Most of the time you’ll want your plugin’s templates to extend the main CP layout, so they look like the rest of the CP. To do that, just place this at the beginning of your template:</p>
+<div class="section" id="extending-the-cp-layout">
+<h3>Extending the CP layout<a class="headerlink" href="#extending-the-cp-layout" title="Permalink to this headline">¶</a></h3>
+<p>Most of the time you’ll want your plugin’s templates to look like the rest of the CP. To do that, they must extend the <tt class="docutils literal"><span class="pre">_layouts/cp</span></tt> layout.</p>
+<p>The <tt class="docutils literal"><span class="pre">_layouts/cp</span></tt> layout expects two variables to be set: <tt class="docutils literal"><span class="pre">title</span></tt> and <tt class="docutils literal"><span class="pre">content</span></tt>. <tt class="docutils literal"><span class="pre">title</span></tt> is used to set the page’s <tt class="docutils literal"><span class="pre">&lt;title&gt;</span></tt> tag value, and <tt class="docutils literal"><span class="pre">content</span></tt> defines the HTML that should show up in the main #content div.</p>
 <div class="highlight-html"><div class="highlight"><pre>{% extends &quot;_layouts/cp&quot; %}
-</pre></div>
-</div>
-<p>The CP layout expects a <tt class="docutils literal"><span class="pre">title</span></tt> variable to be set, which will be used in the <tt class="docutils literal"><span class="pre">&lt;title&gt;</span></tt> tag:</p>
-<div class="highlight-html"><div class="highlight"><pre>{% set title = &quot;Cocktail Recipes&quot;|t %}
-</pre></div>
-</div>
-<p>You should also set a <tt class="docutils literal"><span class="pre">header</span></tt> variable, which defines what goes in the page’s <tt class="docutils literal"><span class="pre">&lt;header&gt;</span></tt> up top:</p>
-<div class="highlight-html"><div class="highlight"><pre>{% set header %}
-    <span class="nt">&lt;h1&gt;</span>{{ title }}<span class="nt">&lt;/h1&gt;</span>
+
+{% set title = &quot;Cocktail Recipes&quot;|t %}
+
+{% set content %}
+    <span class="nt">&lt;p&gt;</span>Hello!<span class="nt">&lt;/p&gt;</span>
 {% endset %}
 </pre></div>
 </div>
-<p>If you want to specify a “back” button, the <tt class="docutils literal"><span class="pre">header</span></tt> is the place to put that too:</p>
+<p>White it’s not required, you should also set a <tt class="docutils literal"><span class="pre">header</span></tt> variable, which defines what goes in the page’s <tt class="docutils literal"><span class="pre">&lt;header&gt;</span></tt> up top:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% extends &quot;_layouts/cp&quot; %}
+
+{% set title = &quot;Cocktail Recipes&quot;|t %}
+
+{% set header %}
+    <span class="nt">&lt;h1&gt;</span>{{ title }}<span class="nt">&lt;/h1&gt;</span>
+{% endset %}
+
+{% set content %}
+    <span class="nt">&lt;p&gt;</span>Hello!<span class="nt">&lt;/p&gt;</span>
+{% endset %}
+</pre></div>
+</div>
+<p>If you want to specify a “back” button in the <tt class="docutils literal"><span class="pre">&lt;header&gt;</span></tt>, the <tt class="docutils literal"><span class="pre">header</span></tt> variable is the place to put that too:</p>
 <div class="highlight-html"><div class="highlight"><pre>{% set header %}
     <span class="nt">&lt;h1&gt;</span>{{ title }}<span class="nt">&lt;/h1&gt;</span>
 
@@ -109,11 +122,6 @@
 {% endset %}
 </pre></div>
 </div>
-<p>Place the rest of your page’s content in a <tt class="docutils literal"><span class="pre">content</span></tt> variable:</p>
-<div class="highlight-html"><div class="highlight"><pre>{% set content %}
-   <span class="nt">&lt;p&gt;</span>{{ &quot;So many recipes to choose from!&quot;|t }}<span class="nt">&lt;/p&gt;</span>
-{% endset %}
-</pre></div>
 </div>
 </div>
 <div class="section" id="dynamic-url-routing">

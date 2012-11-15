@@ -69,16 +69,24 @@
 <h1>HttpRequestService<a class="headerlink" href="#httprequestservice" title="Permalink to this headline">¶</a></h1>
 <p>HttpRequestService provides the following APIs for getting information about the current HTTP request:</p>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;getUri()</span></tt></dt>
-<dd>Returns the URI for the request (sans ‘admin.php’).</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;getPath()</span></tt></dt>
+<dd>Returns the request&#8217;s path, without the CP trigger segment if there is one.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;getSegments()</span></tt></dt>
+<dd>Returns an array of the path segments, without the CP trigger segment if there is one.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;getSegment($num)</span></tt></dt>
+<dd>Returns a specific URI segment, or null if the segment doesn&#8217;t exist. Note that <tt class="docutils literal"><span class="pre">$num</span></tt> is 1-indexed, not 0-indexed, so the first segment can be reached by <tt class="docutils literal"><span class="pre">getSegment(1)</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;isCpRequest()</span></tt></dt>
+<dd>Returns whether the current request URL begins with the CP trigger segment. (Note: this is unrelated to whether the request ultimately gets routed to a resource, controller, or template.)</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;isSiteRequest()</span></tt></dt>
+<dd>Returns whether the current request URL does <em>not</em> begin with the CP trigger segment. (Note: this is unrelated to whether the request ultimately gets routed to a resource, controller, or template.)</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;isResourceRequest()</span></tt></dt>
+<dd>Returns whether the current request is getting routed to a resource file.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;isActionRequest()</span></tt></dt>
+<dd>Returns whether the current request is getting routed to a controller action.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;isTemplateRequest()</span></tt></dt>
+<dd>Returns whether the current request is getting routed to a template.</dd>
 <dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;getMimeType()</span></tt></dt>
 <dd>Returns a MIME type based on the extension at the end of the URI, if there is one.</dd>
-<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;getSegments()</span></tt></dt>
-<dd>Returns an array of the segments in the URI.</dd>
-<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;getSegment($num,</span> <span class="pre">$default)</span></tt></dt>
-<dd>Returns the URI segment at a specified offset (1-based, not 0-based), or the value passed in for $default if that segment doesn’t exist.</dd>
-<dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;getType()</span></tt></dt>
-<dd>Returns the type of request this is (‘cp’, ‘site’, ‘action’, or ‘resource’).</dd>
 <dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;getParam($name,</span> <span class="pre">$default)</span></tt></dt>
 <dd>Returns the named GET or POST parameter value, or the value specified by <tt class="docutils literal"><span class="pre">$default</span></tt> if it doesn’t exist.</dd>
 <dt><tt class="docutils literal"><span class="pre">blx()-&gt;request-&gt;getRequiredParam($name)</span></tt></dt>

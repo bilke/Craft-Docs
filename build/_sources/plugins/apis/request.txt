@@ -3,20 +3,32 @@ HttpRequestService
 
 HttpRequestService provides the following APIs for getting information about the current HTTP request:
 
-``blx()->request->getUri()``
-	Returns the URI for the request (sans ‘admin.php’).
+``blx()->request->getPath()``
+	Returns the request's path, without the CP trigger segment if there is one.
+
+``blx()->request->getSegments()``
+	Returns an array of the path segments, without the CP trigger segment if there is one.
+
+``blx()->request->getSegment($num)``
+	Returns a specific URI segment, or null if the segment doesn't exist. Note that ``$num`` is 1-indexed, not 0-indexed, so the first segment can be reached by ``getSegment(1)``.
+
+``blx()->request->isCpRequest()``
+	Returns whether the current request URL begins with the CP trigger segment. (Note: this is unrelated to whether the request ultimately gets routed to a resource, controller, or template.)
+
+``blx()->request->isSiteRequest()``
+	Returns whether the current request URL does *not* begin with the CP trigger segment. (Note: this is unrelated to whether the request ultimately gets routed to a resource, controller, or template.)
+
+``blx()->request->isResourceRequest()``
+	Returns whether the current request is getting routed to a resource file.
+
+``blx()->request->isActionRequest()``
+	Returns whether the current request is getting routed to a controller action.
+
+``blx()->request->isTemplateRequest()``
+	Returns whether the current request is getting routed to a template.
 
 ``blx()->request->getMimeType()``
 	Returns a MIME type based on the extension at the end of the URI, if there is one.
-
-``blx()->request->getSegments()``
-	Returns an array of the segments in the URI.
-
-``blx()->request->getSegment($num, $default)``
-	Returns the URI segment at a specified offset (1-based, not 0-based), or the value passed in for $default if that segment doesn’t exist.
-
-``blx()->request->getType()``
-	Returns the type of request this is (‘cp’, ‘site’, ‘action’, or ‘resource’).
 
 ``blx()->request->getParam($name, $default)``
 	Returns the named GET or POST parameter value, or the value specified by ``$default`` if it doesn’t exist.

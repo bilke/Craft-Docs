@@ -16,7 +16,7 @@ Create a new class in that file, with the same name as the filename:
    <?php
    namespace Blocks;
 
-   class “CocktailRecipes_IngredientsService extends BaseApplicationComponent
+   class CocktailRecipes_IngredientsService extends BaseApplicationComponent
    {
        public function saveIngredient(IngredientModel $ingredient)
        {

@@ -73,21 +73,22 @@
 </div>
 <p>If your plugin name is “Cocktail Recipes”, and you’re writing a service to handle ingredient actions, the file would be named “CocktailRecipes_IngredientsService.php”.</p>
 <p>Create a new class in that file, with the same name as the filename:</p>
-<div class="highlight-php"><pre>&lt;?php
-namespace Blocks;
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
 
-class “CocktailRecipes_IngredientsService extends BaseApplicationComponent
-{
-    public function saveIngredient(IngredientModel $ingredient)
-    {
-        ...
-    }
+<span class="k">class</span> <span class="nc">CocktailRecipes_IngredientsService</span> <span class="k">extends</span> <span class="nx">BaseApplicationComponent</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">saveIngredient</span><span class="p">(</span><span class="nx">IngredientModel</span> <span class="nv">$ingredient</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    public function deleteIngredientById($id)
-    {
-        ...
-    }
-}</pre>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">deleteIngredientById</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 <p>The specific functions that go in your services are entirely up to you.</p>
 <p>Instances of your services will be available to the entire system via <tt class="docutils literal"><span class="pre">blx()-&gt;pluginName_serviceName</span></tt>. For example:</p>

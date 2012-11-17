@@ -20,7 +20,7 @@ To install Blocks, follow these instructions:
 3. If you’re using Apache, rename the ‘htaccess’ file to ‘.htaccess’ and delete the ‘web.config’ file. If you’re using IIS, just delete the ‘htaccess’ file.
 4. Set the blocks/storage/ folders’ permissions to 777.
 5. Open up blocks/config/db.php and set the ``'server'``, ``'user'``, ``'password'``, and ``'database'`` config settings.
-6. Now that everything’s uploaded and configured, you should be able to point your browser at http://yourdomain.com/admin.php and see the Blocks installer.
+6. Now that everything’s uploaded and configured, you should be able to point your browser at http://yourdomain.com/admin and see the Blocks installer.
 
 
 Updating Blocks

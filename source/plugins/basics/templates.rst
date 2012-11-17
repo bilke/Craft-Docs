@@ -19,7 +19,7 @@ If you want to give your plugin its own Control Panel section, add this to your 
        return true;
    }
 
-With that set, your plugin will show up in the CP nav. Clicking on it will take you to admin.php/PluginHandle, which will route to index.html within your plugin’s templates/ folder.
+With that set, your plugin will show up in the CP nav. Clicking on it will take you to admin/PluginHandle, which will route to index.html within your plugin’s templates/ folder.
 
 Your plugin’s CP section can have as many pages as you’d like. To link to other pages, use the ``{{ url() }}`` template function just like you would in your site’s templates (ex: ``href="{{ url('cocktailrecipes/all') }}``).
 
@@ -73,7 +73,7 @@ If you want to specify a “back” button in the ``<header>``, the ``header`` v
 Dynamic URL Routing
 -------------------
 
-By default, incoming requests are routed to a template with the same path as the request URI (possibly with “.html” or “/index.html” appended to it). Most of the time this works well, but it falls short for dynamic URLs, such as URLs where one of the segments is an ID or a slug. For example, you might want to route URLs that look like “admin.php/cocktailrecipes/123” to templates/_edit.html.
+By default, incoming requests are routed to a template with the same path as the request URI (possibly with “.html” or “/index.html” appended to it). Most of the time this works well, but it falls short for dynamic URLs, such as URLs where one of the segments is an ID or a slug. For example, you might want to route URLs that look like “admin/cocktailrecipes/123” to templates/_edit.html.
 
 You can accomplish this by registering **routes**. Simply add a new method to your plugin, ``registerCpRoutes()``:
 
@@ -88,4 +88,4 @@ You can accomplish this by registering **routes**. Simply add a new method to yo
 
 As you can see, the method returns an array of routes. The keys are regular expressions that the request URI will be matched against, and the values are template paths to be loaded when a successful match occurs.
 
-If your regular expression includes any named subpatterns, e.g. ``(?P<recipeId>\d+)``, their match values will become available to the template as variables of the same name. So in this example, if the URI was “admin.php/cocktailrecipes/123”, the cocktailrecipes/_edit template would get loaded, and a ``{{ recipeId }}`` variable would be availade to it, with the value “123”.
+If your regular expression includes any named subpatterns, e.g. ``(?P<recipeId>\d+)``, their match values will become available to the template as variables of the same name. So in this example, if the URI was “admin/cocktailrecipes/123”, the cocktailrecipes/_edit template would get loaded, and a ``{{ recipeId }}`` variable would be availade to it, with the value “123”.

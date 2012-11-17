@@ -81,7 +81,7 @@
 <span class="x">}</span>
 </pre></div>
 </div>
-<p>With that set, your plugin will show up in the CP nav. Clicking on it will take you to admin.php/PluginHandle, which will route to index.html within your plugin’s templates/ folder.</p>
+<p>With that set, your plugin will show up in the CP nav. Clicking on it will take you to admin/PluginHandle, which will route to index.html within your plugin’s templates/ folder.</p>
 <p>Your plugin’s CP section can have as many pages as you’d like. To link to other pages, use the <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">url()</span> <span class="pre">}}</span></tt> template function just like you would in your site’s templates (ex: <tt class="docutils literal"><span class="pre">href=&quot;{{</span> <span class="pre">url('cocktailrecipes/all')</span> <span class="pre">}}</span></tt>).</p>
 <div class="section" id="extending-the-cp-layout">
 <h3>Extending the CP layout<a class="headerlink" href="#extending-the-cp-layout" title="Permalink to this headline">¶</a></h3>
@@ -126,7 +126,7 @@
 </div>
 <div class="section" id="dynamic-url-routing">
 <h2>Dynamic URL Routing<a class="headerlink" href="#dynamic-url-routing" title="Permalink to this headline">¶</a></h2>
-<p>By default, incoming requests are routed to a template with the same path as the request URI (possibly with “.html” or “/index.html” appended to it). Most of the time this works well, but it falls short for dynamic URLs, such as URLs where one of the segments is an ID or a slug. For example, you might want to route URLs that look like “admin.php/cocktailrecipes/123” to templates/_edit.html.</p>
+<p>By default, incoming requests are routed to a template with the same path as the request URI (possibly with “.html” or “/index.html” appended to it). Most of the time this works well, but it falls short for dynamic URLs, such as URLs where one of the segments is an ID or a slug. For example, you might want to route URLs that look like “admin/cocktailrecipes/123” to templates/_edit.html.</p>
 <p>You can accomplish this by registering <strong>routes</strong>. Simply add a new method to your plugin, <tt class="docutils literal"><span class="pre">registerCpRoutes()</span></tt>:</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="x">public function registerCpRoutes()</span>
 <span class="x">{</span>
@@ -137,7 +137,7 @@
 </pre></div>
 </div>
 <p>As you can see, the method returns an array of routes. The keys are regular expressions that the request URI will be matched against, and the values are template paths to be loaded when a successful match occurs.</p>
-<p>If your regular expression includes any named subpatterns, e.g. <tt class="docutils literal"><span class="pre">(?P&lt;recipeId&gt;\d+)</span></tt>, their match values will become available to the template as variables of the same name. So in this example, if the URI was “admin.php/cocktailrecipes/123”, the cocktailrecipes/_edit template would get loaded, and a <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">recipeId</span> <span class="pre">}}</span></tt> variable would be availade to it, with the value “123”.</p>
+<p>If your regular expression includes any named subpatterns, e.g. <tt class="docutils literal"><span class="pre">(?P&lt;recipeId&gt;\d+)</span></tt>, their match values will become available to the template as variables of the same name. So in this example, if the URI was “admin/cocktailrecipes/123”, the cocktailrecipes/_edit template would get loaded, and a <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">recipeId</span> <span class="pre">}}</span></tt> variable would be availade to it, with the value “123”.</p>
 </div>
 </div>
 

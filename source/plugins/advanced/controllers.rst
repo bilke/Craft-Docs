@@ -37,38 +37,18 @@ Create a new class in that file, with the same name as the filename:
 Accessing Controller Actions
 ----------------------------
 
-There are two ways to access controller actions: :ref:`action-urls` and :ref:`action-post-requests`.
+Blocks will route an incoming request to a controller action if one of the following is true:
 
-.. _action-urls:
+* The first segment of the URL is “actions/” (configurable via ``$blocksConfig['actionTrigger']``), followed by an action path
+* There is an “action” param in the URL query string or POST data, set to an action path
 
-Action URLs
-~~~~~~~~~~~
-Action URLs are URLs which begin with either “admin.php” or “index.php” (the entry point is not significant), followed by a URI that meets the following criteria:
+The “action path” tells Blocks which controller class and action method to call. In the context of plugins, they should look like this::
 
-1. The first segment matches the actionTrigger config setting (“actions” by default)
-2. The second segment matches a plugin name (e.g. “cocktailRecipes”)
-3. The third segment matches one of that plugin’s controller names (e.g. “ingredients”)
-4. The fourth segment matches one of that controller’s actions (e.g. “saveIngredient”)
+  [PluginHandle]/[ControllerName]/[ActionName]
 
-To pull it all together, an action URL might look like: admin.php/actions/cocktailRecipes/ingredients/saveIngredient
+If your plugin class is “CocktailRecipesPlugin”, your controller class name is “CocktailRecipes_IngredientsController”, and your action method name is “actionSaveIngredient”, the action path would be “cocktailRecipes/ingredients/saveIngredient”.
 
-In the off chance that a website actually has a section whose URIs should begin with “actions/”, we have made that first action URL segment configurable (via the actionTrigger config setting). But rather than require developers to check the actionTrigger value every time they need to output an action URL, we have provided a helper function, ``UrlHelper::getActionUrl('plugin/controller/action')``, which accepts everything but that first actionTrigger segment, and returns the full action URL. A corresponding template function has also been provided, ``{{ actionUrl('plugin/controller/action') }}``:
-
-.. code-block:: html
-
-	<a href="{{ actionUrl('cocktailRecipes/ingredients/saveIngredient') }}">Save</a>
-
-.. _action-post-requests:
-
-Action POST Requests
-~~~~~~~~~~~~~~~~~~~~
-Alternatively, you can reach a controller action regardless of URL by passing a POST parameter with the request by the name of “action”. Its value should be identical to what you would pass into ``UrlHelper::getActionUrl()`` – “plugin/controller/action”:
-
-.. code-block:: html
-
-	<input type="hidden" name="action" value="cocktailRecipes/ingredients/saveIngredient">
-
-This is handy for form submission, where you want the original form to reload itself in the event of a validation error. In that case, you can leave the ``<form>`` tag’s ``action=""``, which will leave the current URL in-tact for the response, unless of course your controller action redirects the browser to a different URL.
+To get the URL of an action, you can use ``UrlHelper::getActionUrl($actionPath)``. We also provide a ``Blocks.getActionPath(actionPath)`` function for Javascript.
 
 
 Allowing Anonymous Access to Actions

@@ -95,30 +95,17 @@ class “CocktailRecipes_IngredientsController extends BaseController
 </div>
 <div class="section" id="accessing-controller-actions">
 <h2>Accessing Controller Actions<a class="headerlink" href="#accessing-controller-actions" title="Permalink to this headline">¶</a></h2>
-<p>There are two ways to access controller actions: <a class="reference internal" href="#action-urls"><em>Action URLs</em></a> and <a class="reference internal" href="#action-post-requests"><em>Action POST Requests</em></a>.</p>
-<div class="section" id="action-urls">
-<span id="id1"></span><h3>Action URLs<a class="headerlink" href="#action-urls" title="Permalink to this headline">¶</a></h3>
-<p>Action URLs are URLs which begin with either “admin.php” or “index.php” (the entry point is not significant), followed by a URI that meets the following criteria:</p>
-<ol class="arabic simple">
-<li>The first segment matches the actionTrigger config setting (“actions” by default)</li>
-<li>The second segment matches a plugin name (e.g. “cocktailRecipes”)</li>
-<li>The third segment matches one of that plugin’s controller names (e.g. “ingredients”)</li>
-<li>The fourth segment matches one of that controller’s actions (e.g. “saveIngredient”)</li>
-</ol>
-<p>To pull it all together, an action URL might look like: admin.php/actions/cocktailRecipes/ingredients/saveIngredient</p>
-<p>In the off chance that a website actually has a section whose URIs should begin with “actions/”, we have made that first action URL segment configurable (via the actionTrigger config setting). But rather than require developers to check the actionTrigger value every time they need to output an action URL, we have provided a helper function, <tt class="docutils literal"><span class="pre">UrlHelper::getActionUrl('plugin/controller/action')</span></tt>, which accepts everything but that first actionTrigger segment, and returns the full action URL. A corresponding template function has also been provided, <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">actionUrl('plugin/controller/action')</span> <span class="pre">}}</span></tt>:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ actionUrl(&#39;cocktailRecipes/ingredients/saveIngredient&#39;) }}&quot;</span><span class="nt">&gt;</span>Save<span class="nt">&lt;/a&gt;</span>
+<p>Blocks will route an incoming request to a controller action if one of the following is true:</p>
+<ul class="simple">
+<li>The first segment of the URL is “actions/” (configurable via <tt class="docutils literal"><span class="pre">$blocksConfig['actionTrigger']</span></tt>), followed by an action path</li>
+<li>There is an “action” param in the URL query string or POST data, set to an action path</li>
+</ul>
+<p>The “action path” tells Blocks which controller class and action method to call. In the context of plugins, they should look like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">PluginHandle</span><span class="p">]</span><span class="o">/</span><span class="p">[</span><span class="n">ControllerName</span><span class="p">]</span><span class="o">/</span><span class="p">[</span><span class="n">ActionName</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="action-post-requests">
-<span id="id2"></span><h3>Action POST Requests<a class="headerlink" href="#action-post-requests" title="Permalink to this headline">¶</a></h3>
-<p>Alternatively, you can reach a controller action regardless of URL by passing a POST parameter with the request by the name of “action”. Its value should be identical to what you would pass into <tt class="docutils literal"><span class="pre">UrlHelper::getActionUrl()</span></tt> –&nbsp;“plugin/controller/action”:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;action&quot;</span> <span class="na">value=</span><span class="s">&quot;cocktailRecipes/ingredients/saveIngredient&quot;</span><span class="nt">&gt;</span>
-</pre></div>
-</div>
-<p>This is handy for form submission, where you want the original form to reload itself in the event of a validation error. In that case, you can leave the <tt class="docutils literal"><span class="pre">&lt;form&gt;</span></tt> tag’s <tt class="docutils literal"><span class="pre">action=&quot;&quot;</span></tt>, which will leave the current URL in-tact for the response, unless of course your controller action redirects the browser to a different URL.</p>
-</div>
+<p>If your plugin class is “CocktailRecipesPlugin”, your controller class name is “CocktailRecipes_IngredientsController”, and your action method name is “actionSaveIngredient”, the action path would be “cocktailRecipes/ingredients/saveIngredient”.</p>
+<p>To get the URL of an action, you can use <tt class="docutils literal"><span class="pre">UrlHelper::getActionUrl($actionPath)</span></tt>. We also provide a <tt class="docutils literal"><span class="pre">Blocks.getActionPath(actionPath)</span></tt> function for Javascript.</p>
 </div>
 <div class="section" id="allowing-anonymous-access-to-actions">
 <h2>Allowing Anonymous Access to Actions<a class="headerlink" href="#allowing-anonymous-access-to-actions" title="Permalink to this headline">¶</a></h2>

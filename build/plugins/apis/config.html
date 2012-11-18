@@ -67,13 +67,10 @@
 			
   <div class="section" id="configservice">
 <h1>ConfigService<a class="headerlink" href="#configservice" title="Permalink to this headline">¶</a></h1>
-<p>You can access the raw value of any system config item by calling:</p>
-<div class="highlight-python"><pre>blx()-&gt;config-&gt;ItemName</pre>
-</div>
-<p>ConfigService also provides the following APIs:</p>
+<p>ConfigService also provides the following APIs for grabbing config values:</p>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">blx()-&gt;config-&gt;getItem($item,</span> <span class="pre">$default)</span></tt></dt>
-<dd>Returns a raw config item value, or whatever was passed as <tt class="docutils literal"><span class="pre">$default</span></tt> if the value isn’t set.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;config-&gt;get($item)</span></tt></dt>
+<dd>Returns a raw config item value, as defined in blocks/config/blocks.php or blocks/app/config/defaults/blocks.php. If the config item wasn’t defined in either of those files, <tt class="docutils literal"><span class="pre">null</span></tt> will be ruturned instead.</dd>
 <dt><tt class="docutils literal"><span class="pre">blx()-&gt;config-&gt;getDbItem($item,</span> <span class="pre">default)</span></tt></dt>
 <dd>Returns a raw DB config item value, or whatever was passed as <tt class="docutils literal"><span class="pre">$default</span></tt> if the value isn’t set.</dd>
 <dt><tt class="docutils literal"><span class="pre">blx()-&gt;config-&gt;getCacheDuration()</span></tt></dt>

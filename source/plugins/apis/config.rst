@@ -1,7 +1,7 @@
 ConfigService
 =============
 
-ConfigService also provides the following APIs for grabbing config values:
+ConfigService provides the following APIs for grabbing config values:
 
 ``blx()->config->get($item)``
 	Returns a raw config item value, as defined in blocks/config/blocks.php or blocks/app/config/defaults/blocks.php. If the config item wasn’t defined in either of those files, ``null`` will be ruturned instead.

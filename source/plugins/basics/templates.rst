@@ -75,11 +75,11 @@ Dynamic URL Routing
 
 By default, incoming requests are routed to a template with the same path as the request URI (possibly with “.html” or “/index.html” appended to it). Most of the time this works well, but it falls short for dynamic URLs, such as URLs where one of the segments is an ID or a slug. For example, you might want to route URLs that look like “admin/cocktailrecipes/123” to templates/_edit.html.
 
-You can accomplish this by registering **routes**. Simply add a new method to your plugin, ``registerCpRoutes()``:
+You can accomplish this by registering **routes**. Blocks gives plugins a chance to register new CP routes via the registerCpRoutes hook. Simply add a new method to your plugin called ``hookRegisterCpRoutes()``:
 
 .. code-block:: php
 
-   public function registerCpRoutes()
+   public function hookRegisterCpRoutes()
    {
        return array(
            'cocktailrecipes\/(?P<recipeId>\d+)' => 'cocktailrecipes/_edit',

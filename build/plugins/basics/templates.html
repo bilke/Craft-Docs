@@ -127,8 +127,8 @@
 <div class="section" id="dynamic-url-routing">
 <h2>Dynamic URL Routing<a class="headerlink" href="#dynamic-url-routing" title="Permalink to this headline">¶</a></h2>
 <p>By default, incoming requests are routed to a template with the same path as the request URI (possibly with “.html” or “/index.html” appended to it). Most of the time this works well, but it falls short for dynamic URLs, such as URLs where one of the segments is an ID or a slug. For example, you might want to route URLs that look like “admin/cocktailrecipes/123” to templates/_edit.html.</p>
-<p>You can accomplish this by registering <strong>routes</strong>. Simply add a new method to your plugin, <tt class="docutils literal"><span class="pre">registerCpRoutes()</span></tt>:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">public function registerCpRoutes()</span>
+<p>You can accomplish this by registering <strong>routes</strong>. Blocks gives plugins a chance to register new CP routes via the registerCpRoutes hook. Simply add a new method to your plugin called <tt class="docutils literal"><span class="pre">hookRegisterCpRoutes()</span></tt>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">public function hookRegisterCpRoutes()</span>
 <span class="x">{</span>
 <span class="x">    return array(</span>
 <span class="x">        &#39;cocktailrecipes\/(?P&lt;recipeId&gt;\d+)&#39; =&gt; &#39;cocktailrecipes/_edit&#39;,</span>

@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>PluginsService - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../templating/index.html">Templating</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basics/gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/templates.html">Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/resources.html">Front-end Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/querybuilder.html">The Query Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/records.html">Active Record Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/migrations.html">Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../components/widgets.html">Dashboard Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../components/blocktypes.html">Block Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/variables.html">Template Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="account.html">AccountService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="blockTypes.html">BlockTypesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="email.html">EmailService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="entries.html">EntriesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="globals.html">GlobalsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pages.html">PagesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="path.html">PathService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="request.html">HttpRequestService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="i18n.html">LocalizationService</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">PluginsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">TemplatesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="users.html">UsersService</a></li>
+</ul>
+</li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../index.html">Plugin Development</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="pluginsservice">
+<h1>PluginsService<a class="headerlink" href="#pluginsservice" title="Permalink to this headline">¶</a></h1>
+<p>PluginsService provides the following APIs for dealing with plugins:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;plugins-&gt;getPlugin($handle)</span></tt></dt>
+<dd>Returns a plugin by its class handle, or null if that plugin isn’t installed and enabled.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;plugins-&gt;getPlugins()</span></tt></dt>
+<dd>Returns an array of all enabled plugins.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;plugins-&gt;callHook($hook,</span> <span class="pre">$args)</span></tt></dt>
+<dd>Calls a hook on all plugins, and returns an array of each plugins’ responses. <tt class="docutils literal"><span class="pre">$hook</span></tt> is the name of the method Blocks should look for on the plugin classes, without the “<tt class="docutils literal"><span class="pre">hook</span></tt>” prefix. So calling <tt class="docutils literal"><span class="pre">callHook('martinis')</span></tt> would map to plugin methods named <tt class="docutils literal"><span class="pre">hookMartinis()</span></tt>. Passing <tt class="docutils literal"><span class="pre">$args</span></tt> is optional, and it sets which arguments should be passed to the hook methods.</dd>
+</dl>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="templates.html">TemplatesService</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

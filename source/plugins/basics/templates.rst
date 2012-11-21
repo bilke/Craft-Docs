@@ -5,7 +5,25 @@ In Blocks, all HTML rendering is done via :doc:`templates </templating/index>` �
 
 If your plugin needs its own templates, you can place them in a templates/ folder within your plugin’s folder (ex: blocks/plugins/cocktailrecipes/templates/).
 
+.. _plugin-template-paths:
+
+Plugin Template Paths, Explained
+--------------------------------
+
 To manually render a template from your plugin’s PHP code, call ``blx()->templates->render('PluginHandle/path/to/template')`` (see :doc:`/plugins/apis/templates`).
+
+That path you pass to ``render()`` is your **plugin template path**. Plugin template paths are made up of two parts::
+
+  [Lowercase plugin handle]/[Template path, relative to your plugin’s templates/ folder]
+
+So, if you were to call ``blx()->templates->render('cocktailrecipes/settings')``, for example, Blocks would check the following locations, in this order:
+
+#. blocks/app/templates/cocktailrecipes/settings.html
+#. blocks/app/templates/cocktailrecipes/settings/index.html
+#. **blocks/plugins/cocktailrecipes/templates/settings.html**
+#. **blocks/plugins/cocktailrecipes/templates/settings/index.html**
+
+As you can see, the “templates/” folder segment is assumed, so there’s no need to include it when calling ``render()``.
 
 Giving your Plugin its own Control Panel Section
 ------------------------------------------------
@@ -14,9 +32,17 @@ If you want to give your plugin its own Control Panel section, add this to your 
 
 .. code-block:: php
 
-   public function hasCpSection()
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipesPlugin extends BasePlugin
    {
-       return true;
+       // ...
+
+       public function hasCpSection()
+       {
+           return true;
+       }
    }
 
 With that set, your plugin will show up in the CP nav. Clicking on it will take you to admin/PluginHandle, which will route to index.html within your plugin’s templates/ folder.
@@ -79,11 +105,19 @@ You can accomplish this by registering **routes**. Blocks gives plugins a chance
 
 .. code-block:: php
 
-   public function hookRegisterCpRoutes()
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipesPlugin extends BasePlugin
    {
-       return array(
-           'cocktailrecipes\/(?P<recipeId>\d+)' => 'cocktailrecipes/_edit',
-       );
+       // ...
+
+       public function hookRegisterCpRoutes()
+       {
+           return array(
+               'cocktailrecipes\/(?P<recipeId>\d+)' => 'cocktailrecipes/_edit',
+           );
+       }
    }
 
 As you can see, the method returns an array of routes. The keys are regular expressions that the request URI will be matched against, and the values are template paths to be loaded when a successful match occurs.

@@ -11,6 +11,7 @@ The Basics
    :titlesonly:
 
    basics/gettingstarted
+   basics/settings
    basics/templates
    basics/resources
    basics/i18n

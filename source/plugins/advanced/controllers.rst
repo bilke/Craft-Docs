@@ -20,7 +20,7 @@ Create a new class in that file, with the same name as the filename:
    <?php
    namespace Blocks;
 
-   class “CocktailRecipes_IngredientsController extends BaseController
+   class CocktailRecipes_IngredientsController extends BaseController
    {
        public function actionSaveIngredient()
        {
@@ -58,13 +58,29 @@ By default, controller actions are only accessible to logged-in users. You can o
 
 .. code-block:: php
 
-   protected $allowAnonymous = true;
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipes_IngredientsController extends BaseController
+   {
+       protected $allowAnonymous = true;
+
+       // ...
+   }
 
 Or if you only want to allow anonymous access to specific actions, you can set it to an array of those actions’ method names:
 
 .. code-block:: php
 
-   protected $allowAnonymous = array('actionSaveIngredient');
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipes_IngredientsController extends BaseController
+   {
+       protected $allowAnonymous = array('actionSaveIngredient');
+
+       // ...
+   }
 
 
 BaseController Methods

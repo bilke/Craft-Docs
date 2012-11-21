@@ -23,6 +23,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../templating/index.html">Templating</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Development</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basics/gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/settings.html">Plugin Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/templates.html">Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/resources.html">Front-end Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/i18n.html">Internationalization</a></li>
@@ -77,21 +78,22 @@
 </div>
 <p>If your plugin name is “Cocktail Recipes”, and you’re writing a controller to handle ingredient actions, the file would be named “CocktailRecipes_IngredientsController.php”.</p>
 <p>Create a new class in that file, with the same name as the filename:</p>
-<div class="highlight-php"><pre>&lt;?php
-namespace Blocks;
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
 
-class “CocktailRecipes_IngredientsController extends BaseController
-{
-    public function actionSaveIngredient()
-    {
-        ...
-    }
+<span class="k">class</span> <span class="nc">CocktailRecipes_IngredientsController</span> <span class="k">extends</span> <span class="nx">BaseController</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">actionSaveIngredient</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
 
-    public function actionDeleteIngredient()
-    {
-        ...
-    }
-}</pre>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">actionDeleteIngredient</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 <div class="section" id="accessing-controller-actions">
 <h2>Accessing Controller Actions<a class="headerlink" href="#accessing-controller-actions" title="Permalink to this headline">¶</a></h2>
@@ -110,11 +112,27 @@ class “CocktailRecipes_IngredientsController extends BaseController
 <div class="section" id="allowing-anonymous-access-to-actions">
 <h2>Allowing Anonymous Access to Actions<a class="headerlink" href="#allowing-anonymous-access-to-actions" title="Permalink to this headline">¶</a></h2>
 <p>By default, controller actions are only accessible to logged-in users. You can override that by changing the protected <tt class="docutils literal"><span class="pre">$allowAnonymous</span></tt> property on your controller class. To allow anonymous access to all of your controller’s actions, set it to <tt class="docutils literal"><span class="pre">true</span></tt>:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">protected $allowAnonymous = true;</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CocktailRecipes_IngredientsController</span> <span class="k">extends</span> <span class="nx">BaseController</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$allowAnonymous</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Or if you only want to allow anonymous access to specific actions, you can set it to an array of those actions’ method names:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">protected $allowAnonymous = array(&#39;actionSaveIngredient&#39;);</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CocktailRecipes_IngredientsController</span> <span class="k">extends</span> <span class="nx">BaseController</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$allowAnonymous</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;actionSaveIngredient&#39;</span><span class="p">);</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>

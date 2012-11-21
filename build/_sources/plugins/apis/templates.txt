@@ -30,6 +30,9 @@ TemplatesService provides the following APIs for dealing with templates:
 ``blx()->templates->includeCss($css)``
 	Prepares CSS to be included in the template.
 
+``blx()->templates->includeHiResCss($css)``
+	Prepares CSS targeted at hi-res displays to be included in the template.
+
 ``blx()->templates->includeJs($js)``
 	Prepares JS code to be included in the template.
 

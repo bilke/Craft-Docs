@@ -23,6 +23,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../templating/index.html">Templating</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Development</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basics/gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/settings.html">Plugin Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/templates.html">Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/resources.html">Front-end Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/i18n.html">Internationalization</a></li>
@@ -98,34 +99,55 @@
 </div>
 <p>That <tt class="docutils literal"><span class="pre">getName()</span></tt> method should look familiar –&nbsp;your primary plugin class has the same method. Difference is, this time it’s returning the name of your widget, rather than the name of your entire plugin.</p>
 <p><tt class="docutils literal"><span class="pre">getBodyHtml()</span></tt> does just what it says: it returns your widget’s body HTML. We recommend that you store the actual HTML in a template, and load it via <tt class="docutils literal"><span class="pre">blx()-&gt;templates-&gt;render()</span></tt>.</p>
+<p><strong>Note:</strong> To make sense of that template path, see <a class="reference internal" href="../basics/templates.html#plugin-template-paths"><em>Plugin Template Paths, Explained</em></a>.</p>
 <div class="section" id="giving-your-widget-some-settings">
 <h2>Giving your Widget Some Settings<a class="headerlink" href="#giving-your-widget-some-settings" title="Permalink to this headline">¶</a></h2>
 <p>If your widget requires settings, you first must tell Blocks which settings it has. You do that with the aptly named <tt class="docutils literal"><span class="pre">defineSettings()</span></tt> method. This method returns an array whose keys define the setting names, and values define the parameters (the type of value, etc.).</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">protected function defineSettings()</span>
-<span class="x">{</span>
-<span class="x">    return array(</span>
-<span class="x">        &#39;limit&#39; =&gt; array(AttributeType::Number, &#39;min&#39; =&gt; 0),</span>
-<span class="x">    );</span>
-<span class="x">}</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CocktailRecipes_RecentCocktailsWidget</span> <span class="k">extends</span> <span class="nx">BaseWidget</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">defineSettings</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;limit&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nx">AttributeType</span><span class="o">::</span><span class="na">Number</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span> <span class="o">=&gt;</span> <span class="mi">0</span><span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>With that in place, you can call <tt class="docutils literal"><span class="pre">$this-&gt;getSettings()</span></tt> from any method within your widget, and get a <a class="reference internal" href="../advanced/models.html"><em>model</em></a> class back, prepopulated with your widget’s settings.</p>
 <p>Next you need to add a <tt class="docutils literal"><span class="pre">getSettingsHtml()</span></tt> method which returns the HTML for displaying your settings. Like <tt class="docutils literal"><span class="pre">getBodyHtml()</span></tt>, we recommend that you create a template for the actual settings HTML, and load it up with <tt class="docutils literal"><span class="pre">blx()-&gt;templates-&gt;render()</span></tt>.</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">public function getSettingsHtml()</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">class CocktailRecipes_RecentCocktailsWidget extends BaseBlockType</span>
 <span class="x">{</span>
-<span class="x">    return blx()-&gt;templates-&gt;render(&#39;cocktailrecipes/_widgets/recentcocktails/settings&#39;, array(</span>
-<span class="x">        &#39;settings&#39; =&gt; $this-&gt;getSettings();</span>
-<span class="x">    ))</span>
+<span class="x">    // ...</span>
+
+<span class="x">    public function getSettingsHtml()</span>
+<span class="x">    {</span>
+<span class="x">        return blx()-&gt;templates-&gt;render(&#39;cocktailrecipes/_widgets/recentcocktails/settings&#39;, array(</span>
+<span class="x">            &#39;settings&#39; =&gt; $this-&gt;getSettings();</span>
+<span class="x">        ))</span>
+<span class="x">    }</span>
 <span class="x">}</span>
 </pre></div>
 </div>
+<p><strong>Note:</strong> To make sense of that template path, see <a class="reference internal" href="../basics/templates.html#plugin-template-paths"><em>Plugin Template Paths, Explained</em></a>.</p>
 <p>If you need to do any processing on your settings’ post data before they’re saved to the database, you can do it with the <tt class="docutils literal"><span class="pre">prepSettings()</span></tt> method:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">public function prepSettings($settings)</span>
-<span class="x">{</span>
-<span class="x">    // Modify $settings here...</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
 
-<span class="x">    return $settings;</span>
-<span class="x">}</span>
+<span class="k">class</span> <span class="nc">CocktailRecipes_RecentCocktailsWidget</span> <span class="k">extends</span> <span class="nx">BaseBlockType</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">prepSettings</span><span class="p">(</span><span class="nv">$settings</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Modify $settings here...</span>
+
+        <span class="k">return</span> <span class="nv">$settings</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>

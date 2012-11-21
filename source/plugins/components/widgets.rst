@@ -37,6 +37,8 @@ That ``getName()`` method should look familiar – your primary plugin class ha
 
 ``getBodyHtml()`` does just what it says: it returns your widget’s body HTML. We recommend that you store the actual HTML in a template, and load it via ``blx()->templates->render()``.
 
+**Note:** To make sense of that template path, see :ref:`plugin-template-paths`.
+
 Giving your Widget Some Settings
 --------------------------------
 
@@ -44,11 +46,17 @@ If your widget requires settings, you first must tell Blocks which settings it h
 
 .. code-block:: php
 
-   protected function defineSettings()
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipes_RecentCocktailsWidget extends BaseWidget
    {
-       return array(
-           'limit' => array(AttributeType::Number, 'min' => 0),
-       );
+       protected function defineSettings()
+       {
+           return array(
+               'limit' => array(AttributeType::Number, 'min' => 0),
+           );
+       }
    }
 
 With that in place, you can call ``$this->getSettings()`` from any method within your widget, and get a :doc:`model </plugins/advanced/models>` class back, prepopulated with your widget’s settings.
@@ -57,20 +65,35 @@ Next you need to add a ``getSettingsHtml()`` method which returns the HTML for d
 
 .. code-block:: php
 
-   public function getSettingsHtml()
+   class CocktailRecipes_RecentCocktailsWidget extends BaseBlockType
    {
-       return blx()->templates->render('cocktailrecipes/_widgets/recentcocktails/settings', array(
-           'settings' => $this->getSettings();
-       ))
+       // ...
+
+       public function getSettingsHtml()
+       {
+           return blx()->templates->render('cocktailrecipes/_widgets/recentcocktails/settings', array(
+               'settings' => $this->getSettings();
+           ))
+       }
    }
+
+**Note:** To make sense of that template path, see :ref:`plugin-template-paths`.
 
 If you need to do any processing on your settings’ post data before they’re saved to the database, you can do it with the ``prepSettings()`` method:
 
 .. code-block:: php
 
-   public function prepSettings($settings)
-   {
-       // Modify $settings here...
+   <?php
+   namespace Blocks;
 
-       return $settings;
+   class CocktailRecipes_RecentCocktailsWidget extends BaseBlockType
+   {
+       // ...
+
+       public function prepSettings($settings)
+       {
+           // Modify $settings here...
+
+           return $settings;
+       }
    }

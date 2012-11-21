@@ -52,11 +52,19 @@ If your record should have any relationships with other tables, you can specify 
 
 .. code-block:: php
 
-   public function defineRelations()
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipes_IngredientRecord extends BaseBlockType
    {
-       return array(
-           'drinks' => array(static::HAS_MANY, 'CocktailRecipes_DrinkRecord', 'ingredientId'),
-       );
+       // ...
+
+       public function defineRelations()
+       {
+           return array(
+               'drinks' => array(static::HAS_MANY, 'CocktailRecipes_DrinkRecord', 'ingredientId'),
+           );
+       }
    }
 
 ``defineRelations()`` works basically the same as `CActiveRecord <http://www.yiiframework.com/doc/api/1.1/CActiveRecord>`_’s `relations() <http://www.yiiframework.com/doc/api/1.1/CActiveRecord#relations-detail>`_ method (see `Relational Active Record <http://www.yiiframework.com/doc/guide/1.1/en/database.arr>`_ from the Yii docs), with two differences:
@@ -72,11 +80,19 @@ If you want to define any indexes on your table, you can do it with the ``define
 
 .. code-block:: php
 
-   public function defineIndexes()
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipes_IngredientRecord extends BaseBlockType
    {
-       return array(
-           array('columns' => array('name', 'type'), 'unique' => true),
-       );
+       // ...
+
+       public function defineIndexes()
+       {
+           return array(
+               array('columns' => array('name', 'type'), 'unique' => true),
+           );
+       }
    }
 
 

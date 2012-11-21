@@ -23,6 +23,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../templating/index.html">Templating</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Development</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basics/gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/settings.html">Plugin Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/templates.html">Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/resources.html">Front-end Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/i18n.html">Internationalization</a></li>
@@ -107,12 +108,20 @@
 <div class="section" id="defining-relations">
 <h2>Defining Relations<a class="headerlink" href="#defining-relations" title="Permalink to this headline">¶</a></h2>
 <p>If your record should have any relationships with other tables, you can specify them with the <tt class="docutils literal"><span class="pre">defineRelations()</span></tt> function:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">public function defineRelations()</span>
-<span class="x">{</span>
-<span class="x">    return array(</span>
-<span class="x">        &#39;drinks&#39; =&gt; array(static::HAS_MANY, &#39;CocktailRecipes_DrinkRecord&#39;, &#39;ingredientId&#39;),</span>
-<span class="x">    );</span>
-<span class="x">}</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CocktailRecipes_IngredientRecord</span> <span class="k">extends</span> <span class="nx">BaseBlockType</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">defineRelations</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;drinks&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="k">static</span><span class="o">::</span><span class="na">HAS_MANY</span><span class="p">,</span> <span class="s1">&#39;CocktailRecipes_DrinkRecord&#39;</span><span class="p">,</span> <span class="s1">&#39;ingredientId&#39;</span><span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p><tt class="docutils literal"><span class="pre">defineRelations()</span></tt> works basically the same as <a class="reference external" href="http://www.yiiframework.com/doc/api/1.1/CActiveRecord">CActiveRecord</a>’s <a class="reference external" href="http://www.yiiframework.com/doc/api/1.1/CActiveRecord#relations-detail">relations()</a> method (see <a class="reference external" href="http://www.yiiframework.com/doc/guide/1.1/en/database.arr">Relational Active Record</a> from the Yii docs), with two differences:</p>
@@ -124,12 +133,20 @@
 <div class="section" id="defining-indexes">
 <h2>Defining Indexes<a class="headerlink" href="#defining-indexes" title="Permalink to this headline">¶</a></h2>
 <p>If you want to define any indexes on your table, you can do it with the <tt class="docutils literal"><span class="pre">defineIndexes()</span></tt> function:</p>
-<div class="highlight-php"><div class="highlight"><pre><span class="x">public function defineIndexes()</span>
-<span class="x">{</span>
-<span class="x">    return array(</span>
-<span class="x">        array(&#39;columns&#39; =&gt; array(&#39;name&#39;, &#39;type&#39;), &#39;unique&#39; =&gt; true),</span>
-<span class="x">    );</span>
-<span class="x">}</span>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CocktailRecipes_IngredientRecord</span> <span class="k">extends</span> <span class="nx">BaseBlockType</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">defineIndexes</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="k">array</span><span class="p">(</span><span class="s1">&#39;columns&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">),</span> <span class="s1">&#39;unique&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">),</span>
+        <span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>

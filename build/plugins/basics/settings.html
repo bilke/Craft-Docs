@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
 	<meta charset="utf-8" />
-	<title>Getting Started - Blocks Docs</title>
+	<title>Plugin Settings - Blocks Docs</title>
 	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
 </head>
@@ -22,10 +22,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../templating/index.html">Templating</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Development</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="">Getting Started</a><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="settings.html">Plugin Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Plugin Settings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="templates.html">Templates</a></li>
 <li class="toctree-l2"><a class="reference internal" href="resources.html">Front-end Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="i18n.html">Internationalization</a></li>
@@ -68,53 +66,59 @@
 			
 
 			
-  <div class="section" id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>All of a plugin’s files are contained within a single folder, including its front-end resources. That folder lives in blocks/plugins/.</p>
-<p>The first step in creating a plugin is to pick a name. Create a new folder in blocks/plugins/ using that name, lowercased and without spaces (this will be referred to as your <strong>plugin handle</strong> throughout the docs). So if your plugin’s name is “Cocktail Recipes”, it would be located at blocks/plugins/cocktailrecipes/.</p>
-<div class="section" id="your-primary-plugin-class">
-<h2>Your Primary Plugin Class<a class="headerlink" href="#your-primary-plugin-class" title="Permalink to this headline">¶</a></h2>
-<p>Next up, you must create a new file where your plugin’s primary class will live. That file should be named after your plugin, with proper casing but without spaces, and appended with “Plugin.php” (ex: CocktailRecipesPlugin.php).</p>
-<p>Your primary plugin class defines all of the things that Blocks needs to know about your plugin, such as the plugin’s name, version number, developer’s name and URL, and global settings.</p>
-<p>Here’s a sample primary plugin file:</p>
+  <div class="section" id="plugin-settings">
+<h1>Plugin Settings<a class="headerlink" href="#plugin-settings" title="Permalink to this headline">¶</a></h1>
+<p>If your plugin requires settings, you first must tell Blocks which settings it has. You do that with the aptly named <tt class="docutils literal"><span class="pre">defineSettings()</span></tt> method. This method returns an array whose keys define the setting names, and values define the parameters (the type of value, etc.).</p>
 <div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
 <span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
 
 <span class="k">class</span> <span class="nc">CocktailRecipesPlugin</span> <span class="k">extends</span> <span class="nx">BasePlugin</span>
 <span class="p">{</span>
-    <span class="k">function</span> <span class="nf">getName</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="nx">Blocks</span><span class="o">::</span><span class="na">t</span><span class="p">(</span><span class="s1">&#39;Cocktail Recipes&#39;</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="c1">// ...</span>
 
-    <span class="k">function</span> <span class="nf">getVersion</span><span class="p">()</span>
+    <span class="k">protected</span> <span class="k">function</span> <span class="nf">defineSettings</span><span class="p">()</span>
     <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;1.0&#39;</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">function</span> <span class="nf">getDeveloper</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;Pixel &amp; Tonic&#39;</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">function</span> <span class="nf">getDeveloperUrl</span><span class="p">()</span>
-    <span class="p">{</span>
-        <span class="k">return</span> <span class="s1">&#39;http://pixelandtonic.com&#39;</span><span class="p">;</span>
+        <span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;cocktailCategories&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="nx">AttributeType</span><span class="o">::</span><span class="na">Mixed</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="s1">&#39;Sours&#39;</span><span class="p">,</span> <span class="s1">&#39;Fizzes&#39;</span><span class="p">,</span> <span class="s1">&#39;Juleps&#39;</span><span class="p">)),</span>
+        <span class="p">);</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Let’s go over each of these functions:</p>
-<dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">getName()</span></tt></dt>
-<dd>Returns the plugin’s name. If your plugin’s name should be translatable, wrap it in <tt class="docutils literal"><span class="pre">Blocks::t()</span></tt> (see <a class="reference internal" href="i18n.html"><em>Internationalization</em></a>). For example, “Cocktail Recipes” would be a good candidate for translation support, but a proper noun like “Akismet” might not.</dd>
-<dt><tt class="docutils literal"><span class="pre">getVersion()</span></tt></dt>
-<dd>Returns the plugin’s version number.</dd>
-<dt><tt class="docutils literal"><span class="pre">getDeveloper()</span></tt></dt>
-<dd>Returns the developer’s name.</dd>
-<dt><tt class="docutils literal"><span class="pre">getDeveloperUrl()</span></tt></dt>
-<dd>Returns the developer’s website URL.</dd>
-</dl>
+<p>Next you need to add a <tt class="docutils literal"><span class="pre">getSettingsHtml()</span></tt> method which returns the HTML for displaying your settings. We recommend that you create a template for the actual settings HTML, and load it up with <tt class="docutils literal"><span class="pre">blx()-&gt;templates-&gt;render()</span></tt>.</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CocktailRecipesPlugin</span> <span class="k">extends</span> <span class="nx">BasePlugin</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getSettingsHtml</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">blx</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">templates</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s1">&#39;cocktailrecipes/settings&#39;</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span>
+            <span class="s1">&#39;settings&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getSettings</span><span class="p">()</span>
+        <span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> To make sense of that template path, see <a class="reference internal" href="templates.html#plugin-template-paths"><em>Plugin Template Paths, Explained</em></a>.</p>
+<p>If you need to do any processing on your settings’ post data before they’re saved to the database, you can do it with the <tt class="docutils literal"><span class="pre">prepSettings()</span></tt> method:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CocktailRecipesPlugin</span> <span class="k">extends</span> <span class="nx">BasePlugin</span>
+<span class="p">{</span>
+    <span class="c1">// ...</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">prepSettings</span><span class="p">(</span><span class="nv">$settings</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">// Modify $settings here...</span>
+
+        <span class="k">return</span> <span class="nv">$settings</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
 </div>
 </div>
 
@@ -122,7 +126,7 @@
 
 			
 			<nav class="nav">
-				Next up: <a href="settings.html">Plugin Settings</a></li>
+				Next up: <a href="templates.html">Templates</a></li>
 			</nav>
 			
 		</div>

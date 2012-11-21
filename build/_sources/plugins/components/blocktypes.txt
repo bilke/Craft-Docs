@@ -33,6 +33,8 @@ That ``getName()`` method should look familiar – your primary plugin class ha
 
 ``getInputHtml()`` does just what it says: it returns your block type’s input HTML. We recommend that you store the actual HTML in a template, and load it via ``blx()->templates->render()``.
 
+**Note:** To make sense of that template path, see :ref:`plugin-template-paths`.
+
 Giving your Block Type Some Settings
 ------------------------------------
 
@@ -40,11 +42,19 @@ If your block type requires settings, you first must tell Blocks which settings 
 
 .. code-block:: php
 
-   protected function defineSettings()
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipes_IngredientListBlockType extends BaseBlockType
    {
-       return array(
-           'initialSlots' => array(AttributeType::Number, 'min' => 0)
-       );
+       // ...
+
+       protected function defineSettings()
+       {
+           return array(
+               'initialSlots' => array(AttributeType::Number, 'min' => 0)
+           );
+       }
    }
 
 With that in place, you can call ``$this->getSettings()`` from any method within your widget, and get a :doc:`model </plugins/advanced/models>` class back, prepopulated with your widget’s settings.
@@ -53,12 +63,22 @@ Next you need to add a ``getSettingsHtml()`` method which returns the HTML for d
 
 .. code-block:: php
 
-   public function getSettingsHtml()
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipes_IngredientListBlockType extends BaseBlockType
    {
-       return blx()->templates->render('cocktailrecipes/ingredientlist/settings', array(
-           'settings' => $this->getSettings()
-       ))
+       // ...
+
+       public function getSettingsHtml()
+       {
+           return blx()->templates->render('cocktailrecipes/ingredientlist/settings', array(
+               'settings' => $this->getSettings()
+           ))
+       }
    }
+
+**Note:** To make sense of that template path, see :ref:`plugin-template-paths`.
 
 For a plugin, the first string that you pass into render should be in the format ``{lowercase plugin handle}/{relative path to your template from your plugin’s template folder}``.
 
@@ -76,11 +96,19 @@ If you need to do any processing on your settings’ post data before they’re 
 
 .. code-block:: php
 
-   public function prepSettings($settings)
-   {
-       // Modify $settings here...
+   <?php
+   namespace Blocks;
 
-       return $settings;
+   class CocktailRecipes_IngredientListBlockType extends BaseBlockType
+   {
+       // ...
+
+       public function prepSettings($settings)
+       {
+           // Modify $settings here...
+
+           return $settings;
+       }
    }
 
 Customizing the Database Column Type
@@ -90,9 +118,17 @@ When someone creates a new content block using your block type, your block type 
 
 .. code-block:: php
 
-   public function defineContentAttribute()
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipes_IngredientListBlockType extends BaseBlockType
    {
-       return AttributeType::Mixed;
+       // ...
+
+       public function defineContentAttribute()
+       {
+           return AttributeType::Mixed;
+       }
    }
 
 You may also set ``defineContentAttribute()`` to return ``false`` if your block type doesn’t need its own column in the content table. This might be the case if your block type stores its content in its own database table, for instance.
@@ -104,12 +140,20 @@ If you need to do any processing on your input’s post data before it’s saved
 
 .. code-block:: php
 
-  protected function prepPostData($value)
-  {
-      // Modify $value here...
+   <?php
+   namespace Blocks;
 
-      return $value;
-  }
+   class CocktailRecipes_IngredientListBlockType extends BaseBlockType
+   {
+       // ...
+
+       protected function prepPostData($value)
+       {
+           // Modify $value here...
+
+           return $value;
+       }
+   }
 
 Events
 ------

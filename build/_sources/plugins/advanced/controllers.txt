@@ -34,21 +34,102 @@ Create a new class in that file, with the same name as the filename:
    }
 
 
-Accessing Controller Actions
-----------------------------
+Accessing your Controller Actions
+---------------------------------
 
-Blocks will route an incoming request to a controller action if one of the following is true:
-
-* The first segment of the URL is “actions/” (configurable via ``$blocksConfig['actionTrigger']``), followed by an action path
-* There is an “action” param in the URL query string or POST data, set to an action path
-
-The “action path” tells Blocks which controller class and action method to call. In the context of plugins, they should look like this::
+There are multiple ways to access your controller actions. Each of them requires that you identify which controller/action you want to access, via an **action path**. In the context of plugins, action paths look like this::
 
   [PluginHandle]/[ControllerName]/[ActionName]
 
 If your plugin class is “CocktailRecipesPlugin”, your controller class name is “CocktailRecipes_IngredientsController”, and your action method name is “actionSaveIngredient”, the action path would be “cocktailRecipes/ingredients/saveIngredient”.
 
-To get the URL of an action, you can use ``UrlHelper::getActionUrl($actionPath)``. We also provide a ``Blocks.getActionPath(actionPath)`` function for Javascript.
+Posting to Controller Actions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Most of the time, you’ll want to access controller actions via an HTML form over POST. To do this, we recommend that you leave your form’s ``action`` attribute blank, and specify your action via a hidden input named “action” instead:
+
+.. code-block:: html
+
+   <form method="post" action="" accept-charset="UTF-8">
+       <input type="hidden" name="action" value="cocktailRecipes/ingredients/saveIngredient">
+       <input type="hidden" name="redirect" value="cocktailRecipes/ingredients">
+
+       ...
+
+       <input class="btn submit" type="submit" value="{{ 'Submit'|t }}">
+   </form>
+
+When you leave the ``action`` attribute blank, browsers will default to the current request’s URL. Which is great because in the event that the controller encounters a problem performing its action, it can easily reload the same page, via ``$this->renderRequestedTemplate()``:
+
+.. code-block:: php
+
+   <?php
+   namespace Blocks;
+
+   class CocktailRecipes_IngredientsController extends BaseController
+   {
+       public function actionSaveIngredient()
+       {
+           $this->requirePostRequest();
+
+           $ingredient = new CocktailRecipes_IngredientModel();
+
+           // ...
+
+           if (blx()->cocktailRecipes_ingredients->saveIngredient($ingredient))
+           {
+               blx()->user->setNotice(Blocks::t('Ingredient saved.'));
+               $this->redirectToPostedUrl();
+           }
+           else
+           {
+               blx()->user->setError(Blocks::t('Couldn’t save ingredient.'));
+               $this->renderRequestedTemplate(array(
+                   'ingredient' => $ingredient
+               ));
+           }
+       }
+
+       // ...
+   }
+
+Posting to Controller Actions with JavaScript
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Blocks provides a JavaScript function that makes it very easy to post to your controller actions as well:
+
+.. code-block:: js
+
+   var data = {
+       // ...
+   };
+
+   Blocks.postActionRequest('cocktailRecipes/ingredients/saveIngredient', data, function(response) {
+       // ...
+   });
+
+Linking Directly to Controller Actions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you have a reason to link directly to a controller action, opposed to posting data to it, you can do that using the ``UrlHelper::getActionUrl()`` function:
+
+.. code-block:: php
+
+    $url = UrlHelper::getActionUrl('cocktailRecipes/ingredients/deleteIngredient', array('id' => 10));
+
+A similar ``actionUrl()`` function is available to your templates:
+
+.. code-block:: html
+
+    <a href="{{ actionUrl('cocktailRecipes/ingredients/saveIngredient', { id: 10}) }}">
+
+And then there’s ``Blocks.getActionUrl()`` for Javascript:
+
+.. code-block:: js
+
+    var url = Blocks.getActionUrl('cocktailRecipes/ingredients/saveIngredient', { id: 10 });
+
+**Note:** You’ll notice that action URLs begin with “actions/”. Don’t be tempted to skip these action URL functions and just type “actions/” yourself though, as that trigger segment is configurable.
 
 
 Allowing Anonymous Access to Actions

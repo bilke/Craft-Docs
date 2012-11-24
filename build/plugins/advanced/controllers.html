@@ -95,19 +95,88 @@
 <span class="p">}</span>
 </pre></div>
 </div>
-<div class="section" id="accessing-controller-actions">
-<h2>Accessing Controller Actions<a class="headerlink" href="#accessing-controller-actions" title="Permalink to this headline">¶</a></h2>
-<p>Blocks will route an incoming request to a controller action if one of the following is true:</p>
-<ul class="simple">
-<li>The first segment of the URL is “actions/” (configurable via <tt class="docutils literal"><span class="pre">$blocksConfig['actionTrigger']</span></tt>), followed by an action path</li>
-<li>There is an “action” param in the URL query string or POST data, set to an action path</li>
-</ul>
-<p>The “action path” tells Blocks which controller class and action method to call. In the context of plugins, they should look like this:</p>
+<div class="section" id="accessing-your-controller-actions">
+<h2>Accessing your Controller Actions<a class="headerlink" href="#accessing-your-controller-actions" title="Permalink to this headline">¶</a></h2>
+<p>There are multiple ways to access your controller actions. Each of them requires that you identify which controller/action you want to access, via an <strong>action path</strong>. In the context of plugins, action paths look like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">PluginHandle</span><span class="p">]</span><span class="o">/</span><span class="p">[</span><span class="n">ControllerName</span><span class="p">]</span><span class="o">/</span><span class="p">[</span><span class="n">ActionName</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>If your plugin class is “CocktailRecipesPlugin”, your controller class name is “CocktailRecipes_IngredientsController”, and your action method name is “actionSaveIngredient”, the action path would be “cocktailRecipes/ingredients/saveIngredient”.</p>
-<p>To get the URL of an action, you can use <tt class="docutils literal"><span class="pre">UrlHelper::getActionUrl($actionPath)</span></tt>. We also provide a <tt class="docutils literal"><span class="pre">Blocks.getActionPath(actionPath)</span></tt> function for Javascript.</p>
+<div class="section" id="posting-to-controller-actions">
+<h3>Posting to Controller Actions<a class="headerlink" href="#posting-to-controller-actions" title="Permalink to this headline">¶</a></h3>
+<p>Most of the time, you’ll want to access controller actions via an HTML form over POST. To do this, we recommend that you leave your form’s <tt class="docutils literal"><span class="pre">action</span></tt> attribute blank, and specify your action via a hidden input named “action” instead:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">accept-charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;action&quot;</span> <span class="na">value=</span><span class="s">&quot;cocktailRecipes/ingredients/saveIngredient&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;redirect&quot;</span> <span class="na">value=</span><span class="s">&quot;cocktailRecipes/ingredients&quot;</span><span class="nt">&gt;</span>
+
+    ...
+
+    <span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;btn submit&quot;</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;{{ &#39;Submit&#39;|t }}&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+<p>When you leave the <tt class="docutils literal"><span class="pre">action</span></tt> attribute blank, browsers will default to the current request’s URL. Which is great because in the event that the controller encounters a problem performing its action, it can easily reload the same page, via <tt class="docutils literal"><span class="pre">$this-&gt;renderRequestedTemplate()</span></tt>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CocktailRecipes_IngredientsController</span> <span class="k">extends</span> <span class="nx">BaseController</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">actionSaveIngredient</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">requirePostRequest</span><span class="p">();</span>
+
+        <span class="nv">$ingredient</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CocktailRecipes_IngredientModel</span><span class="p">();</span>
+
+        <span class="c1">// ...</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="nx">blx</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">cocktailRecipes_ingredients</span><span class="o">-&gt;</span><span class="na">saveIngredient</span><span class="p">(</span><span class="nv">$ingredient</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="nx">blx</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">setNotice</span><span class="p">(</span><span class="nx">Blocks</span><span class="o">::</span><span class="na">t</span><span class="p">(</span><span class="s1">&#39;Ingredient saved.&#39;</span><span class="p">));</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">redirectToPostedUrl</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="nx">blx</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">user</span><span class="o">-&gt;</span><span class="na">setError</span><span class="p">(</span><span class="nx">Blocks</span><span class="o">::</span><span class="na">t</span><span class="p">(</span><span class="s1">&#39;Couldn’t save ingredient.&#39;</span><span class="p">));</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">renderRequestedTemplate</span><span class="p">(</span><span class="k">array</span><span class="p">(</span>
+                <span class="s1">&#39;ingredient&#39;</span> <span class="o">=&gt;</span> <span class="nv">$ingredient</span>
+            <span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// ...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="posting-to-controller-actions-with-javascript">
+<h3>Posting to Controller Actions with JavaScript<a class="headerlink" href="#posting-to-controller-actions-with-javascript" title="Permalink to this headline">¶</a></h3>
+<p>Blocks provides a JavaScript function that makes it very easy to post to your controller actions as well:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">};</span>
+
+<span class="nx">Blocks</span><span class="p">.</span><span class="nx">postActionRequest</span><span class="p">(</span><span class="s1">&#39;cocktailRecipes/ingredients/saveIngredient&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="linking-directly-to-controller-actions">
+<h3>Linking Directly to Controller Actions<a class="headerlink" href="#linking-directly-to-controller-actions" title="Permalink to this headline">¶</a></h3>
+<p>If you have a reason to link directly to a controller action, opposed to posting data to it, you can do that using the <tt class="docutils literal"><span class="pre">UrlHelper::getActionUrl()</span></tt> function:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$url = UrlHelper::getActionUrl(&#39;cocktailRecipes/ingredients/deleteIngredient&#39;, array(&#39;id&#39; =&gt; 10));</span>
+</pre></div>
+</div>
+<p>A similar <tt class="docutils literal"><span class="pre">actionUrl()</span></tt> function is available to your templates:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ actionUrl(&#39;cocktailRecipes/ingredients/saveIngredient&#39;, { id: 10}) }}&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+<p>And then there’s <tt class="docutils literal"><span class="pre">Blocks.getActionUrl()</span></tt> for Javascript:</p>
+<div class="highlight-js"><div class="highlight"><pre><span class="kd">var</span> <span class="nx">url</span> <span class="o">=</span> <span class="nx">Blocks</span><span class="p">.</span><span class="nx">getActionUrl</span><span class="p">(</span><span class="s1">&#39;cocktailRecipes/ingredients/saveIngredient&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="nx">id</span><span class="o">:</span> <span class="mi">10</span> <span class="p">});</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> You’ll notice that action URLs begin with “actions/”. Don’t be tempted to skip these action URL functions and just type “actions/” yourself though, as that trigger segment is configurable.</p>
+</div>
 </div>
 <div class="section" id="allowing-anonymous-access-to-actions">
 <h2>Allowing Anonymous Access to Actions<a class="headerlink" href="#allowing-anonymous-access-to-actions" title="Permalink to this headline">¶</a></h2>

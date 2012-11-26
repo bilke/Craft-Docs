@@ -1,6 +1,0 @@
-Hook Reference
-==============
-
-.. toctree::
-   :titlesonly:
-

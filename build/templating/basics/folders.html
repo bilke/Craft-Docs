@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Template Folder Structure - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Templating</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Template Folder Structure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../index.html">Templating</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="template-folder-structure">
+<h1>Template Folder Structure<a class="headerlink" href="#template-folder-structure" title="Permalink to this headline">¶</a></h1>
+<p>In Blocks, all HTML rendering is done via templates – even for the Control Panel itself. There are no PHP-based view files.</p>
+<p>The templates for the front-end of your site are stored in <tt class="docutils literal"><span class="pre">'&lt;site_root&gt;/blocks/templates'</span></tt>.</p>
+<p>The &#8221;.html&#8221; template extensions are never required in Blocks template paths, although they won&#8217;t hurt if you prefer them.</p>
+<p>Blocks leave the folder structure for templates up to the designer.  The <tt class="docutils literal"><span class="pre">'templates'</span></tt> folder is considered the root reference when calling other templates.  For instance, if you wished to  <tt class="docutils literal"><span class="pre">include</span></tt> a template stored in <tt class="docutils literal"><span class="pre">'templates/inc'</span></tt> then you would use this code:</p>
+<div class="highlight-php"><div class="highlight"><pre>
+</pre></div>
+</div>
+<p>{% include &#8220;inc/_footer&#8221; %}</p>
+<p>You can reference template folders or files with an underscore so that they are not directly accessible.</p>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="../../plugins/index.html">Plugin Development</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

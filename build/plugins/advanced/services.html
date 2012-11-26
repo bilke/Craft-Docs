@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Services - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../templating/index.html">Templating</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basics/gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/templates.html">Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/resources.html">Front-end Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basics/i18n.html">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/querybuilder.html">The Query Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/records.html">Active Record Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/migrations.html">Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../components/widgets.html">Dashboard Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../components/blocktypes.html">Block Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variables.html">Template Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/account.html">AccountService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/blockTypes.html">BlockTypesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/email.html">EmailService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/entries.html">EntriesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/globals.html">GlobalsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/pages.html">PagesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/path.html">PathService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/request.html">HttpRequestService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/i18n.html">LocalizationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/plugins.html">PluginsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/templates.html">TemplatesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/users.html">UsersService</a></li>
+</ul>
+</li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../index.html">Plugin Development</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="services">
+<h1>Services<a class="headerlink" href="#services" title="Permalink to this headline">¶</a></h1>
+<p>All of your plugin’s business logic should go in <strong>services</strong>, including saving data, retrieving data, etc.. They provide APIs that your <a class="reference internal" href="controllers.html"><em>controllers</em></a>, <a class="reference internal" href="variables.html"><em>template variables</em></a>, and other plugins can interact with.</p>
+<p>To create a service, first create a new services/ subfolder within your plugin’s folder. Then create a new file in that folder, named with this format:</p>
+<div class="highlight-python"><pre>[PluginHandle]_[ServiceName]Service.php</pre>
+</div>
+<p>If your plugin name is “Cocktail Recipes”, and you’re writing a service to handle ingredient actions, the file would be named “CocktailRecipes_IngredientsService.php”.</p>
+<p>Create a new class in that file, with the same name as the filename:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Blocks</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">CocktailRecipes_IngredientsService</span> <span class="k">extends</span> <span class="nx">BaseApplicationComponent</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">saveIngredient</span><span class="p">(</span><span class="nx">IngredientModel</span> <span class="nv">$ingredient</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">deleteIngredientById</span><span class="p">(</span><span class="nv">$id</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="o">...</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The specific functions that go in your services are entirely up to you.</p>
+<p>Instances of your services will be available to the entire system via <tt class="docutils literal"><span class="pre">blx()-&gt;pluginName_serviceName</span></tt>. For example:</p>
+<div class="highlight-python"><pre>blx()-&gt;cocktailRecipes_ingredients-&gt;saveIngredient($ingredient);</pre>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="variables.html">Template Variables</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Internationalization - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../templating/index.html">Templating</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Plugin Development</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gettingstarted.html">Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="resources.html">Front-end Resources</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Internationalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/querybuilder.html">The Query Builder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/records.html">Active Record Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../db/migrations.html">Migrations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../components/widgets.html">Dashboard Widgets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../components/blocktypes.html">Block Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/models.html">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/controllers.html">Controllers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../advanced/variables.html">Template Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/account.html">AccountService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/blockTypes.html">BlockTypesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/email.html">EmailService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/entries.html">EntriesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/globals.html">GlobalsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/pages.html">PagesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/path.html">PathService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/request.html">HttpRequestService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/i18n.html">LocalizationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/plugins.html">PluginsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/templates.html">TemplatesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../apis/users.html">UsersService</a></li>
+</ul>
+</li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../index.html">Plugin Development</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="internationalization">
+<h1>Internationalization<a class="headerlink" href="#internationalization" title="Permalink to this headline">¶</a></h1>
+<p>Blocks makes it extremely easy to define translatable strings. From PHP, just wrap the string in <tt class="docutils literal"><span class="pre">Blocks::t()</span></tt>, and from the templates, just run the string through the <tt class="docutils literal"><span class="pre">|t</span></tt> filter. Blocks will take the string and check if it has been translated into the user’s preferred language.</p>
+<p>If your string has a dynamic portion to it, such as “Ingredients in a {cocktail}”, where “{cocktail}” should be replaced by the name of the cocktail you’re currently viewing, just pass a second parameter to <tt class="docutils literal"><span class="pre">Blocks::t</span></tt>:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="x">$str = Blocks::t(&#39;Ingredients in a {cocktail}&#39;, array(</span>
+<span class="x">    &#39;cocktail&#39; =&gt; $cocktail-&gt;name</span>
+<span class="x">));</span>
+</pre></div>
+</div>
+<p>You can do the same thing within your templates with the <tt class="docutils literal"><span class="pre">|t</span></tt> filter:</p>
+<div class="highlight-html"><div class="highlight"><pre>{{ &quot;Ingredients in a {cocktail}&quot;|t({
+    cocktail: cocktail.name
+}) }}
+</pre></div>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="../db/querybuilder.html">The Query Builder</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

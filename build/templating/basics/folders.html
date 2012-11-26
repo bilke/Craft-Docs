@@ -46,10 +46,9 @@
 <p>The templates for the front-end of your site are stored in <tt class="docutils literal"><span class="pre">'&lt;site_root&gt;/blocks/templates'</span></tt>.</p>
 <p>The &#8221;.html&#8221; template extensions are never required in Blocks template paths, although they won&#8217;t hurt if you prefer them.</p>
 <p>Blocks leave the folder structure for templates up to the designer.  The <tt class="docutils literal"><span class="pre">'templates'</span></tt> folder is considered the root reference when calling other templates.  For instance, if you wished to  <tt class="docutils literal"><span class="pre">include</span></tt> a template stored in <tt class="docutils literal"><span class="pre">'templates/inc'</span></tt> then you would use this code:</p>
-<div class="highlight-php"><div class="highlight"><pre>
+<div class="highlight-html"><div class="highlight"><pre>{% include &quot;inc/_footer&quot; %}
 </pre></div>
 </div>
-<p>{% include &#8220;inc/_footer&#8221; %}</p>
 <p>You can reference template folders or files with an underscore so that they are not directly accessible.</p>
 </div>
 

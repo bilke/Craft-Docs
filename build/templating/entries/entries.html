@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Entries - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Templating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+
+			
+  <div class="section" id="entries">
+<h1>Entries<a class="headerlink" href="#entries" title="Permalink to this headline">¶</a></h1>
+<p>Blocks Entries store article-type content for display on your site.  Entries can be displayed on your site using either for loops, or direct entry variables.</p>
+<div class="section" id="for-loops">
+<h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
+<p>For loops are used any time you wish to grab a selection of information from the database and loop through it, outputting it in a certain way for each row.  Direct entry variables can be used on a template where the Entry URI is being used to load the template.</p>
+<p>Here is an example of a simple entries for loop:</p>
+<p>When you see code such as the below:</p>
+<p>You are defining the variable (&#8220;article&#8221;) and telling Blocks in what area to look (&#8220;blx.entries.findEntries&#8221;)</p>
+<p>There is also an alternate syntax that you may see used as the opening for statement:</p>
+<p>Both syntaxes are equally correct.  The best practice is to use whichever one is easier for you, the designer, to read and remember.</p>
+<p>You can limit what data Blocks pulls by using filters:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">limit()</span></tt></dt>
+<dd>Tells Blocks how many entries to display.</dd>
+<dt><tt class="docutils literal"><span class="pre">order()</span></tt></dt>
+<dd><dl class="first docutils">
+<dt>How to order your entries.  Options are:</dt>
+<dd><ul class="first last simple">
+<li>title</li>
+<li>postDate</li>
+</ul>
+</dd>
+</dl>
+<p class="last">To change the sort order, you would add a space then specify ascending or descending:</p>
+</dd>
+</dl>
+<p>or</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">offset()</span></tt></dt>
+<dd><blockquote class="first">
+<div>Tells Blocks to start outputting data starting somewhere other than the first record.  For instance, if you wish to pull the last 5 entries, but starting from entry 2:</div></blockquote>
+<dl class="last docutils">
+<dt>..code-block:: php</dt>
+<dd>offset(&#8216;1&#8217;)</dd>
+</dl>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">section()</span></tt></dt>
+<dd>What sections to pull your entries from.  This uses your Section Handle as set in the Control Panel.</dd>
+</dl>
+</div>
+<div class="section" id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>To output the data that you want you use Variables.  Variables use double curly brackets and are prefixed with your for loop variable.  For instance in:</p>
+<p>You are setting &#8220;entry&#8221; as your short name, so you would use:</p>
+<dl class="docutils">
+<dt>..code-block:: php</dt>
+<dd>{{entry.title}}</dd>
+</dl>
+<p><tt class="docutils literal"><span class="pre">authorID</span></tt></p>
+<p>The ID for the entry&#8217;s author.</p>
+<p><tt class="docutils literal"><span class="pre">language</span></tt></p>
+<p>The language this entry is in.</p>
+<p><tt class="docutils literal"><span class="pre">slug</span></tt></p>
+<p>Your entry&#8217;s slug.</p>
+<p><tt class="docutils literal"><span class="pre">expiryDate</span></tt></p>
+<p>The expiration date for your entry.</p>
+<p><tt class="docutils literal"><span class="pre">enabled</span></tt></p>
+<p>Is this entry enabled in the entry settings?</p>
+<p><tt class="docutils literal"><span class="pre">tags</span></tt></p>
+<p>The entry tags.</p>
+<p><tt class="docutils literal"><span class="pre">SectionID</span></tt></p>
+<p>The ID for the section this entry is stored in.</p>
+<p><tt class="docutils literal"><span class="pre">uri</span></tt></p>
+<p>The entry&#8217;s URI
+<tt class="docutils literal"><span class="pre">id</span></tt></p>
+<p>The Entry ID.</p>
+<p>To output the title of the pulled entry.</p>
+<p><tt class="docutils literal"><span class="pre">title</span></tt></p>
+<p>The title of your entry.</p>
+<p><tt class="docutils literal"><span class="pre">block-handle</span></tt></p>
+<p>The block handle used in the control panel to store your content.  For instance, if you have a block called &#8220;Article&#8221;, you would call it like so in the template:</p>
+<p>In the above example, you see a filter denoted by the pipe then raw.  This tells Blocks to output your content without encoding your mark-up so that it is parsed by the browser.</p>
+<p><tt class="docutils literal"><span class="pre">postDate</span></tt></p>
+<p>The date the post was made.</p>
+</div>
+</div>
+
+
+
+			
+		</div>
+	</div>
+</body>
+</html>

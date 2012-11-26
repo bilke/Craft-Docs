@@ -56,7 +56,7 @@ or
 ``offset()``
 		Tells Blocks to start outputting data starting somewhere other than the first record.  For instance, if you wish to pull the last 5 entries, but starting from entry 2:
 
-	..code-block:: php
+..code-block:: php
 		offset('1')
 
 

@@ -22,9 +22,9 @@ DRY
 .. toctree::
    :titlesonly:
 
-   sharing/includes
-   sharing/extends
-   sharing/sets
+   dry/includes
+   dry/extends
+   dry/sets
 
 
 Outputting Content

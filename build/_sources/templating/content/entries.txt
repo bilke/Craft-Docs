@@ -26,7 +26,7 @@ When you see code such as the below:
 
     {% for product in blx.entries.section() %}
 
-You are defining the variable ("article") and telling Blocks in what area to look ("blx.entries.findEntries")
+You are defining the variable ("product") and telling Blocks in what area to look ("blx.entries.section")
 
 There is also an alternate syntax that you may see used as the opening for statement:
 

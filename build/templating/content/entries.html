@@ -22,6 +22,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Templating</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../basics/folders.html">Template Folder Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../dry/includes.html">Includes</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Entries</a><ul class="simple">
 </ul>
 </li>
@@ -61,7 +62,7 @@
 <div class="highlight-html"><div class="highlight"><pre>{% for product in blx.entries.section() %}
 </pre></div>
 </div>
-<p>You are defining the variable (&#8220;article&#8221;) and telling Blocks in what area to look (&#8220;blx.entries.findEntries&#8221;)</p>
+<p>You are defining the variable (&#8220;product&#8221;) and telling Blocks in what area to look (&#8220;blx.entries.section&#8221;)</p>
 <p>There is also an alternate syntax that you may see used as the opening for statement:</p>
 <div class="highlight-html"><div class="highlight"><pre>{% for entry in blx.entries.find({section: &#39;news&#39;, order: &#39;title&#39;}) %}
 </pre></div>

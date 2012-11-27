@@ -38,14 +38,3 @@ Outputting Content
    content/blocks
    content/assets
    content/links
-
-
-Advanced Topics
----------------
-
-.. toctree::
-   :titlesonly:
-
-   advanced/math
-   advanced/conditionals
-

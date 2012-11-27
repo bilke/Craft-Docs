@@ -49,21 +49,22 @@
 <div class="highlight-html"><div class="highlight"><pre>{% include &quot;inc/_footer&quot; %}
 </pre></div>
 </div>
-<p>You can add additional variables to your includes by utilizing the * with* keyword:</p>
-<div class="highlight-html"><div class="highlight"><pre>    {# the example template will have access to the variables from the current context and from the *stuff* context #}
+<p>You can add additional variables to your includes by utilizing the <em>with</em> keyword:</p>
+<div class="highlight-html"><div class="highlight"><pre>{# the example template will have access to the variables from the current context and from the stuff context #}
 {% include &#39;example&#39; with {&#39;example&#39;: &#39;stuff&#39;} %}
-
-    {% set vars = {&#39;example&#39;: &#39;site&#39;} %}
-    {% include &#39;example&#39; with vars %}
+</pre></div>
+</div>
+<div class="highlight-html"><div class="highlight"><pre>{% set vars = {&#39;example&#39;: &#39;site&#39;} %}
+{% include &#39;example&#39; with vars %}
 </pre></div>
 </div>
 <p>You can also disable access to that context by appending the <em>only</em> keyword:</p>
-<div class="highlight-html"><div class="highlight"><pre>    {# only the example variable will be accessible #}
+<div class="highlight-html"><div class="highlight"><pre>{# only the example variable will be accessible #}
 {% include &#39;example&#39; with {&#39;example&#39;: &#39;site&#39;} only %}
 </pre></div>
 </div>
 <div class="highlight-html"><div class="highlight"><pre>{# no variable will be accessible #}
-    {% include &#39;example&#39; only %}
+{% include &#39;example&#39; only %}
 </pre></div>
 </div>
 <p>Your templates can have any valid extension but you do not need to append the extension in your include call; Blocks handles the extensions automatically for you.</p>
@@ -72,9 +73,9 @@
 </pre></div>
 </div>
 <p>You can also check for the existence of templates before inclusion.  The first template listed will be included:</p>
-<p>..code-block:: html</p>
-<blockquote>
-<div>{% include [&#8220;inc/_footer&#8221;, &#8220;inc/footer-section&#8221;] %}</div></blockquote>
+<div class="highlight-html"><div class="highlight"><pre>{% include [&quot;inc/_footer&quot;, &quot;inc/footer-section&quot;] %}
+</pre></div>
+</div>
 </div>
 
 

@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Entries - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Templating</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../basics/folders.html">Template Folder Structure</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="">Entries</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../index.html">Templating</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="entries">
+<h1>Entries<a class="headerlink" href="#entries" title="Permalink to this headline">¶</a></h1>
+<p>Blocks Entries store article-type content for display on your site.  Entries can be displayed on your site using either for loops, or direct entry variables.</p>
+<div class="section" id="for-loops">
+<h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
+<p>For loops are used any time you wish to grab a selection of information from the database and loop through it, outputting it in a certain way for each row.  Direct entry variables can be used on a template where the Entry URI is being used to load the template.</p>
+<p>Here is an example of a simple entries for loop:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% for article in blx.entries.section(&#39;news&#39;).order(&#39;title&#39;).find %}
+    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{entry.url}}&quot;</span><span class="nt">&gt;</span>{{entry.title}}<span class="nt">&lt;/a&gt;&lt;/h1&gt;</span>
+    {{entry.body | raw}}
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;sig&quot;</span><span class="nt">&gt;</span>-<span class="nt">&lt;em&gt;</span>{{ entry.author }}<span class="nt">&lt;/em&gt;</span>, {{entry.postDate}}<span class="nt">&lt;/p&gt;</span>
+{% endfor %}
+</pre></div>
+</div>
+<p>When you see code such as the below:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% for product in blx.entries.section() %}
+</pre></div>
+</div>
+<p>You are defining the variable (&#8220;article&#8221;) and telling Blocks in what area to look (&#8220;blx.entries.findEntries&#8221;)</p>
+<p>There is also an alternate syntax that you may see used as the opening for statement:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% for entry in blx.entries.find({section: &#39;news&#39;, order: &#39;title&#39;}) %}
+</pre></div>
+</div>
+<p>Both syntaxes are equally correct.  The best practice is to use whichever one is easier for you, the designer, to read and remember.</p>
+<p>You can limit what data Blocks pulls by using filters:</p>
+<p><tt class="docutils literal"><span class="pre">limit()</span></tt></p>
+<blockquote>
+<div>Tells Blocks how many entries to display.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">order()</span></tt></p>
+<blockquote>
+<div><dl class="docutils">
+<dt>How to order your entries.  Options are:</dt>
+<dd><ul class="first last simple">
+<li>title</li>
+<li>postDate</li>
+</ul>
+</dd>
+</dl>
+<p>To change the sort order, you would add a space then specify ascending or descending:</p>
+</div></blockquote>
+<div class="highlight-html"><div class="highlight"><pre>order(&#39;postDate desc&#39;)
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-html"><div class="highlight"><pre>order(&#39;title asc&#39;)
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">offset()</span></tt></p>
+<blockquote>
+<div>Tells Blocks to start outputting data starting somewhere other than the first record.  For instance, if you wish to pull the last 5 entries, but starting from entry 2:</div></blockquote>
+<div class="highlight-html"><div class="highlight"><pre>offset(&#39;1&#39;)
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">section()</span></tt></p>
+<blockquote>
+<div>What sections to pull your entries from.  This uses your Section Handle as set in the Control Panel.</div></blockquote>
+</div>
+<div class="section" id="for-loop-variables">
+<h2>For Loop Variables<a class="headerlink" href="#for-loop-variables" title="Permalink to this headline">¶</a></h2>
+<p>To output the data that you want you use Variables.  Variables use double curly brackets and are prefixed with your <em>for</em> loop variable.  For instance in:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% for entry in blx.entries.find({section: &#39;news&#39;, order: &#39;title&#39;}) %}
+</pre></div>
+</div>
+<p>You are setting &#8220;entry&#8221; as your Variable, so you would use:</p>
+<div class="highlight-html"><div class="highlight"><pre>{{entry.title}}
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">authorID</span></tt></p>
+<p>The ID for the entry&#8217;s author.</p>
+<p><tt class="docutils literal"><span class="pre">language</span></tt></p>
+<p>The language this entry is in.</p>
+<p><tt class="docutils literal"><span class="pre">slug</span></tt></p>
+<p>Your entry&#8217;s slug.</p>
+<p><tt class="docutils literal"><span class="pre">expiryDate</span></tt></p>
+<p>The expiration date for your entry.</p>
+<p><tt class="docutils literal"><span class="pre">enabled</span></tt></p>
+<p>Is this entry enabled in the entry settings?</p>
+<p><tt class="docutils literal"><span class="pre">tags</span></tt></p>
+<p>The entry tags.</p>
+<p><tt class="docutils literal"><span class="pre">SectionID</span></tt></p>
+<p>The ID for the section this entry is stored in.</p>
+<p><tt class="docutils literal"><span class="pre">uri</span></tt></p>
+<p>The entry URI</p>
+<p><tt class="docutils literal"><span class="pre">id</span></tt></p>
+<p>The Entry ID.</p>
+<p><tt class="docutils literal"><span class="pre">title</span></tt></p>
+<p>The title of your entry.</p>
+<p><tt class="docutils literal"><span class="pre">block-handle</span></tt></p>
+<p>The block handle used in the control panel to store your content.  For instance, if you have a block called &#8220;Article&#8221;, you would call it like so in the template:</p>
+<div class="highlight-html"><div class="highlight"><pre>{{entry.Article | raw}}
+</pre></div>
+</div>
+<p>In the above example, you see a filter denoted by the pipe then raw.  This tells Blocks to output your content without encoding your mark-up so that it is parsed by the browser.</p>
+<p><tt class="docutils literal"><span class="pre">postDate</span></tt></p>
+<p>The date the post was made.  You format dates with filters:</p>
+<div class="highlight-html"><div class="highlight"><pre>{{entry.postDate | date(&quot;m/d/Y&quot;) }}
+</pre></div>
+</div>
+</div>
+<div class="section" id="direct-variables">
+<h2>Direct Variables<a class="headerlink" href="#direct-variables" title="Permalink to this headline">¶</a></h2>
+<p>When pulling in an entry directly using its slug, you do not need to use a <em>for</em> loop.  The entry variables will be made available directly on the page.  For instance, if you have an article with this full URL:</p>
+<div class="highlight-html"><div class="highlight"><pre>http://example.com/this-is-my-post
+</pre></div>
+</div>
+<p>Then you can use the <em>for</em> loop Variables directly in the template.  Such a template might, at its simplest, be coded like so:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>{{ entry.title }}<span class="nt">&lt;/h1&gt;</span>
+    {{ entry.body | raw }}
+</pre></div>
+</div>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="../../plugins/index.html">Plugin Development</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

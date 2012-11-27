@@ -39,9 +39,11 @@ Both syntaxes are equally correct.  The best practice is to use whichever one is
 You can limit what data Blocks pulls by using filters:
 
 ``limit()``
+
     Tells Blocks how many entries to display.
 
 ``order()``
+
     How to order your entries.  Options are:
         * title
         * postDate
@@ -59,29 +61,31 @@ or
     order('title asc')
 
 ``offset()``
+
         Tells Blocks to start outputting data starting somewhere other than the first record.  For instance, if you wish to pull the last 5 entries, but starting from entry 2:
 
-..code-block:: html
+.. code-block:: html
 
-        offset('1')
+    offset('1')
 
 
 ``section()``
+
     What sections to pull your entries from.  This uses your Section Handle as set in the Control Panel.
 
 =================
-Variables
+For Loop Variables
 =================
 
-To output the data that you want you use Variables.  Variables use double curly brackets and are prefixed with your for loop variable.  For instance in:
+To output the data that you want you use Variables.  Variables use double curly brackets and are prefixed with your *for* loop variable.  For instance in:
 
 .. code-block:: html
 
     {% for entry in blx.entries.find({section: 'news', order: 'title'}) %}
 
-You are setting "entry" as your short name, so you would use:
+You are setting "entry" as your Variable, so you would use:
 
-..code-block:: html
+.. code-block:: html
 
     {{entry.title}}
 
@@ -115,13 +119,12 @@ The ID for the section this entry is stored in.
 
 ``uri``
 
-The entry's URI
+The entry URI
+
 ``id``
 
 The Entry ID.
 
-
-To output the title of the pulled entry.
 
 ``title``
 
@@ -139,9 +142,25 @@ In the above example, you see a filter denoted by the pipe then raw.  This tells
 
 ``postDate``
 
-The date the post was made.
+The date the post was made.  You format dates with filters:
 
+.. code-block:: html
 
+     {{entry.postDate | date("m/d/Y") }}
 
+=================
+Direct Variables
+=================
 
+When pulling in an entry directly using its slug, you do not need to use a *for* loop.  The entry variables will be made available directly on the page.  For instance, if you have an article with this full URL:
 
+.. code-block:: html
+
+    http://example.com/this-is-my-post
+
+Then you can use the *for* loop Variables directly in the template.  Such a template might, at its simplest, be coded like so:
+
+.. code-block:: html
+
+    <h1>{{ entry.title }}</h1>
+	{{ entry.body | raw }}

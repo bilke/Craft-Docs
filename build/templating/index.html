@@ -21,10 +21,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing and Updating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../overview/index.html">System Overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Templating</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basics/folders.html">Template Folder Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="basics/blocks.html">Template Blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dry/includes.html">Includes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="content/entries.html">Entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/entries.html">Entry Templating</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Plugin Development</a></li>
@@ -41,15 +40,14 @@
 			
   <div class="section" id="templating">
 <h1>Templating<a class="headerlink" href="#templating" title="Permalink to this headline">¶</a></h1>
+<p>In Blocks, all HTML rendering is done via <strong>templates</strong> (even for the Control Panel itself). There are no PHP-based view files.</p>
+<p>Templates are files that live within your blocks/templates/ folder. The structure of your templates is completely up to you –&nbsp;you can put templates at the root of that folder, or you can nest them in subdirectories. It all depends on your site’s needs.</p>
+<p>Blocks uses <a class="reference external" href="http://twig.sensiolabs.org/">Twig</a> to parse your templates. For a primer on Twig’s templating syntax, see their <a class="reference external" href="http://twig.sensiolabs.org/doc/templates.html">Twig for Template Designers</a> documentation.</p>
 <p>You build the presentation and output for your site using templates.</p>
-<div class="section" id="the-basics">
-<h2>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="basics/folders.html">Template Folder Structure</a></li>
 <li class="toctree-l1"><a class="reference internal" href="basics/blocks.html">Template Blocks</a></li>
 </ul>
-</div>
 </div>
 <div class="section" id="dry">
 <h2>DRY<a class="headerlink" href="#dry" title="Permalink to this headline">¶</a></h2>
@@ -63,7 +61,7 @@
 <h2>Outputting Content<a class="headerlink" href="#outputting-content" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="content/entries.html">Entries</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="content/entries.html">Entry Templating</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -75,7 +73,7 @@
 
 			
 			<nav class="nav">
-				Next up: <a href="basics/folders.html">Template Folder Structure</a></li>
+				Next up: <a href="basics/blocks.html">Template Blocks</a></li>
 			</nav>
 			
 		</div>

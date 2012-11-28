@@ -12,8 +12,8 @@ textarea { resize: none; }
 select { margin: 0; }
 
 /* layout */
-html, body, .sidebar, .main { height: 100%; }
-.sidebar, .main { overflow: auto; }
+html, body, .sidebar { height: 100%; }
+.sidebar { overflow: auto; }
 .content { padding: 25px; }
 
 .sidebar { position: fixed; z-index: 1; left: 0; top: 0; width: 250px; font-size: 13px; background: #f5f5f5; border-right: 1px solid #dbdbdb; }
@@ -58,7 +58,7 @@ dl { margin: 1em 0; }
 dl dt { margin-top: 1em; font-weight: bold; }
 dl dd { margin-left: 25px; }
 
-p { margin: 1em 0; }
+p, pre, dt, dd { margin-top: 1em; margin-bottom: 1em; }
 
 ul.simple,
 .toctree-wrapper ul { padding-left: 40px; list-style-type: square; }

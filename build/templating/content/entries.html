@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
 	<meta charset="utf-8" />
-	<title>Entries - Blocks Docs</title>
+	<title>Entry Templating - Blocks Docs</title>
 	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
 </head>
@@ -21,10 +21,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Templating</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../basics/folders.html">Template Folder Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/blocks.html">Template Blocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../dry/includes.html">Includes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Entries</a><ul class="simple">
+<li class="toctree-l2 current"><a class="current reference internal" href="">Entry Templating</a><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -45,116 +44,176 @@
 			
 
 			
-  <div class="section" id="entries">
-<h1>Entries<a class="headerlink" href="#entries" title="Permalink to this headline">¶</a></h1>
-<p>Blocks Entries store article-type content for display on your site.  Entries can be displayed on your site using either for loops, or direct entry variables.</p>
-<div class="section" id="for-loops">
-<h2>For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h2>
-<p>For loops are used any time you wish to grab a selection of information from the database and loop through it, outputting it in a certain way for each row.  Direct entry variables can be used on a template where the Entry URI is being used to load the template.</p>
-<p>Here is an example of a simple entries for loop:</p>
-<div class="highlight-html"><div class="highlight"><pre>{% for article in blx.entries.section(&#39;news&#39;).order(&#39;title&#39;).find %}
-    <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{entry.url}}&quot;</span><span class="nt">&gt;</span>{{entry.title}}<span class="nt">&lt;/a&gt;&lt;/h1&gt;</span>
-    {{entry.body | raw}}
-    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;sig&quot;</span><span class="nt">&gt;</span>-<span class="nt">&lt;em&gt;</span>{{ entry.author }}<span class="nt">&lt;/em&gt;</span>, {{entry.postDate}}<span class="nt">&lt;/p&gt;</span>
+  <div class="section" id="entry-templating">
+<h1>Entry Templating<a class="headerlink" href="#entry-templating" title="Permalink to this headline">¶</a></h1>
+<p>You can access your site’s entries from your templates via <tt class="docutils literal"><span class="pre">blx.entries</span></tt>.</p>
+<div class="section" id="output-functions">
+<h2>Output Functions<a class="headerlink" href="#output-functions" title="Permalink to this headline">¶</a></h2>
+<p>There are three ways you can get <tt class="docutils literal"><span class="pre">blx.entries</span></tt> to output data: <tt class="docutils literal"><span class="pre">find()</span></tt>, <tt class="docutils literal"><span class="pre">first()</span></tt>, and <tt class="docutils literal"><span class="pre">total()</span></tt>.</p>
+<p>If you want to get an array of multiple entries that you can loop through, use <tt class="docutils literal"><span class="pre">find()</span></tt>:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% for entry in blx.entries.find() %}
+    <span class="nt">&lt;li&gt;</span>{{ entry.title }}<span class="nt">&lt;/li&gt;</span>
 {% endfor %}
 </pre></div>
 </div>
-<p>When you see code such as the below:</p>
-<div class="highlight-html"><div class="highlight"><pre>{% for product in blx.entries.section() %}
+<p>If you just want to get one entry, use <tt class="docutils literal"><span class="pre">first()</span></tt>:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% set entry = blx.entries.first() %}
+
+{{ entry.title}}
 </pre></div>
 </div>
-<p>You are defining the variable (&#8220;product&#8221;) and telling Blocks in what area to look (&#8220;blx.entries.section&#8221;)</p>
-<p>There is also an alternate syntax that you may see used as the opening for statement:</p>
-<div class="highlight-html"><div class="highlight"><pre>{% for entry in blx.entries.find({section: &#39;news&#39;, order: &#39;title&#39;}) %}
+<p>If you want to get the total number of entries, use <tt class="docutils literal"><span class="pre">total()</span></tt>:</p>
+<div class="highlight-html"><div class="highlight"><pre>Total entries: {{ blx.entries.total() }}
 </pre></div>
 </div>
-<p>Both syntaxes are equally correct.  The best practice is to use whichever one is easier for you, the designer, to read and remember.</p>
-<p>You can limit what data Blocks pulls by using filters:</p>
-<p><tt class="docutils literal"><span class="pre">limit()</span></tt></p>
-<blockquote>
-<div>Tells Blocks how many entries to display.</div></blockquote>
-<p><tt class="docutils literal"><span class="pre">order()</span></tt></p>
-<blockquote>
-<div><dl class="docutils">
-<dt>How to order your entries.  Options are:</dt>
-<dd><ul class="first last simple">
-<li>title</li>
-<li>postDate</li>
+</div>
+<div class="section" id="tailoring-the-results">
+<h2>Tailoring the Results<a class="headerlink" href="#tailoring-the-results" title="Permalink to this headline">¶</a></h2>
+<p>Calling <tt class="docutils literal"><span class="pre">blx.entries.find()</span></tt> by itself is going to return the last 100 live entires in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to custimize the results a bit.</p>
+<p>Blocks supports a number of parameters that should help you do just that.</p>
+<div class="section" id="parameter-syntax">
+<h3>Parameter Syntax<a class="headerlink" href="#parameter-syntax" title="Permalink to this headline">¶</a></h3>
+<p>There are two ways you can add parameters to your <tt class="docutils literal"><span class="pre">blx.entries</span></tt> tag:</p>
+<ol class="arabic">
+<li><p class="first">You can chain the parameters together as additional functions before reaching the output function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">section</span><span class="p">(</span><span class="s">&#39;blog&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">authorId</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">You can pass your parameters as an argument to the output functions:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="n">section</span><span class="p">:</span> <span class="s">&#39;blog&#39;</span><span class="p">,</span> <span class="n">authorId</span><span class="p">:</span> <span class="mi">10</span> <span class="p">})</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Both of these ways are perfectly valid, and each have their place. The former is more readable, but with the latter syntax, parameters can be defined once, and reused:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% set params = { section: &#39;blog&#39;, authorId: 10 } %}
+
+Total entries: {{ blx.entries.total(params) }}
+
+The last 5 entries:
+
+<span class="nt">&lt;ul&gt;</span>
+    {% for entry in blx.entries.limit(5).find(params) %}
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ entry.url }}&quot;</span><span class="nt">&gt;</span>{{ entry.title }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    {% endfor %}
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+</div>
+<p>Notice how in that example, we only had to define the <tt class="docutils literal"><span class="pre">section</span></tt> and <tt class="docutils literal"><span class="pre">authorId</span></tt> parameters once, but were able to use them twice –&nbsp;once to get the grand total number of entries that meet the criteria, and a second time to actually grab the 5 latest ones.</p>
+<p>That was also an example of how the two syntaxes can be mixed and matched. Notice how on that for-loop line, we are setting the limit using the chaining syntax, but applying the section and author parameters by passing <tt class="docutils literal"><span class="pre">params</span></tt> as an argument to <tt class="docutils literal"><span class="pre">find()</span></tt>.</p>
+</div>
+<div class="section" id="shared-parameters">
+<h3>Shared Parameters<a class="headerlink" href="#shared-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Each of the <tt class="docutils literal"><span class="pre">blx.entries</span></tt> output functions share several parameters that will help you find the entry(s) you’re looking for:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">id</span></tt></dt>
+<dd>Only fetch the entry with the given ID.</dd>
+<dt><tt class="docutils literal"><span class="pre">slug</span></tt></dt>
+<dd>Only fetch the entry with the given slug.</dd>
+<dt><tt class="docutils literal"><span class="pre">uri</span></tt></dt>
+<dd>Only fetch the entry with the given URI.
+The URI of the entry to fetch.</dd>
+<dt><tt class="docutils literal"><span class="pre">sectionId</span></tt></dt>
+<dd>Only fetch entries in the section with the given ID. (Publish Pro only)</dd>
+<dt><tt class="docutils literal"><span class="pre">section</span></tt></dt>
+<dd>Only fetch entries in the section with the given handle. (Publish Pro only)</dd>
+<dt><tt class="docutils literal"><span class="pre">language</span></tt></dt>
+<dd>The language the entries’ content should be returned in. (Languages only)</dd>
+<dt><tt class="docutils literal"><span class="pre">authorId</span></tt></dt>
+<dd>Only fetch entries that were authored by the user with the given ID. (Users only)</dd>
+<dt><tt class="docutils literal"><span class="pre">authorGroupId</span></tt></dt>
+<dd>Only fetch entries that were authored by users who belong to the group with the given ID. (Users only)</dd>
+<dt><tt class="docutils literal"><span class="pre">authorGroup</span></tt></dt>
+<dd>Only fetch entries that were authored by users who belong to the group with the given handle. (Users only)</dd>
+<dt><tt class="docutils literal"><span class="pre">after</span></tt></dt>
+<dd><p class="first">Only fetch entries with a Post Date that is on or after the given date. You can specify dates in the following formats:</p>
+<ul class="last simple">
+<li>YYYY</li>
+<li>YYYY-MM</li>
+<li>YYYY-MM-DD</li>
+<li>YYYY-MM-DD HH:MM</li>
+<li>YYYY-MM-DD HH:MM:SS</li>
+<li>Unix timestamp</li>
+<li>DateTime variable</li>
 </ul>
 </dd>
+<dt><tt class="docutils literal"><span class="pre">before</span></tt></dt>
+<dd>Only fetch entries with a Post Date that is before the given date. You can specify dates in the same formats as <tt class="docutils literal"><span class="pre">after</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">status</span></tt></dt>
+<dd>Only fetch entries with the given status. Possible values are <tt class="docutils literal"><span class="pre">'live'</span></tt>, <tt class="docutils literal"><span class="pre">'pending'</span></tt>, <tt class="docutils literal"><span class="pre">'expired'</span></tt>, and <tt class="docutils literal"><span class="pre">'disabled'</span></tt>. The default value is <tt class="docutils literal"><span class="pre">'live'</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">archived</span></tt></dt>
+<dd>Only fetch entries that have been archived by setting this to <tt class="docutils literal"><span class="pre">true</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">offset</span></tt></dt>
+<dd>Skips the first <em>X</em> entries. For example, if you set <tt class="docutils literal"><span class="pre">offset(1)</span></tt>, the would-be second entry returned becomes the first.</dd>
 </dl>
-<p>To change the sort order, you would add a space then specify ascending or descending:</p>
-</div></blockquote>
-<div class="highlight-html"><div class="highlight"><pre>order(&#39;postDate desc&#39;)
+</div>
+<div class="section" id="parameters-exclusive-to-find">
+<h3>Parameters Exclusive to <tt class="docutils literal"><span class="pre">find()</span></tt><a class="headerlink" href="#parameters-exclusive-to-find" title="Permalink to this headline">¶</a></h3>
+<p>The following parameters will only make a difference when calling the <tt class="docutils literal"><span class="pre">find()</span></tt> output function:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">order</span></tt></dt>
+<dd>The order the entries should be returned in. Possible values include <tt class="docutils literal"><span class="pre">'title'</span></tt>, <tt class="docutils literal"><span class="pre">'id'</span></tt>, <tt class="docutils literal"><span class="pre">'authorId'</span></tt>, <tt class="docutils literal"><span class="pre">'sectionId'</span></tt>, <tt class="docutils literal"><span class="pre">'slug'</span></tt>, <tt class="docutils literal"><span class="pre">'uri'</span></tt>, <tt class="docutils literal"><span class="pre">'postDate'</span></tt>, and <tt class="docutils literal"><span class="pre">'expiryDate'</span></tt>. If you want the entries to be in descending order, add “`` desc``” after the property name (ex: <tt class="docutils literal"><span class="pre">'postDate</span> <span class="pre">desc'</span></tt>). The default value is <tt class="docutils literal"><span class="pre">'postDate</span> <span class="pre">desc'</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">limit</span></tt></dt>
+<dd>Limits the results to <em>X</em> entries.</dd>
+<dt><tt class="docutils literal"><span class="pre">indexBy</span></tt></dt>
+<dd>Indexes the results by a given property. Possible values include <tt class="docutils literal"><span class="pre">'title'</span></tt>, <tt class="docutils literal"><span class="pre">'id'</span></tt>, <tt class="docutils literal"><span class="pre">'authorId'</span></tt>, <tt class="docutils literal"><span class="pre">'sectionId'</span></tt>, <tt class="docutils literal"><span class="pre">'slug'</span></tt>, <tt class="docutils literal"><span class="pre">'uri'</span></tt>, <tt class="docutils literal"><span class="pre">'postDate'</span></tt>, and <tt class="docutils literal"><span class="pre">'expiryDate'</span></tt>.</dd>
+</dl>
+</div>
+<div class="section" id="parameter-value-syntax">
+<h3>Parameter Value Syntax<a class="headerlink" href="#parameter-value-syntax" title="Permalink to this headline">¶</a></h3>
+<p>Each of these parameters can be set to a single value or multiple values, and can optionally be used to <em>exclude</em> which entries get returned.</p>
+<p>To pass in multiple values, you can either pass them as an array, comma-delimited string, or even as separate arguments if you’re using the chaining method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">id</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+<span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">id</span><span class="p">(</span><span class="s">&#39;1,2,3&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+<span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="nb">id</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">})</span>
+<span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="nb">id</span><span class="p">:</span> <span class="s">&#39;1,2,3&#39;</span> <span class="p">})</span>
 </pre></div>
 </div>
-<p>or</p>
-<div class="highlight-html"><div class="highlight"><pre>order(&#39;title asc&#39;)
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">offset()</span></tt></p>
-<blockquote>
-<div>Tells Blocks to start outputting data starting somewhere other than the first record.  For instance, if you wish to pull the last 5 entries, but starting from entry 2:</div></blockquote>
-<div class="highlight-html"><div class="highlight"><pre>offset(&#39;1&#39;)
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">section()</span></tt></p>
-<blockquote>
-<div>What sections to pull your entries from.  This uses your Section Handle as set in the Control Panel.</div></blockquote>
-</div>
-<div class="section" id="for-loop-variables">
-<h2>For Loop Variables<a class="headerlink" href="#for-loop-variables" title="Permalink to this headline">¶</a></h2>
-<p>To output the data that you want you use Variables.  Variables use double curly brackets and are prefixed with your <em>for</em> loop variable.  For instance in:</p>
-<div class="highlight-html"><div class="highlight"><pre>{% for entry in blx.entries.find({section: &#39;news&#39;, order: &#39;title&#39;}) %}
-</pre></div>
-</div>
-<p>You are setting &#8220;entry&#8221; as your Variable, so you would use:</p>
-<div class="highlight-html"><div class="highlight"><pre>{{entry.title}}
-</pre></div>
-</div>
-<p><tt class="docutils literal"><span class="pre">authorID</span></tt></p>
-<p>The ID for the entry&#8217;s author.</p>
-<p><tt class="docutils literal"><span class="pre">language</span></tt></p>
-<p>The language this entry is in.</p>
-<p><tt class="docutils literal"><span class="pre">slug</span></tt></p>
-<p>Your entry&#8217;s slug.</p>
-<p><tt class="docutils literal"><span class="pre">expiryDate</span></tt></p>
-<p>The expiration date for your entry.</p>
-<p><tt class="docutils literal"><span class="pre">enabled</span></tt></p>
-<p>Is this entry enabled in the entry settings?</p>
-<p><tt class="docutils literal"><span class="pre">tags</span></tt></p>
-<p>The entry tags.</p>
-<p><tt class="docutils literal"><span class="pre">SectionID</span></tt></p>
-<p>The ID for the section this entry is stored in.</p>
-<p><tt class="docutils literal"><span class="pre">uri</span></tt></p>
-<p>The entry URI</p>
-<p><tt class="docutils literal"><span class="pre">id</span></tt></p>
-<p>The Entry ID.</p>
-<p><tt class="docutils literal"><span class="pre">title</span></tt></p>
-<p>The title of your entry.</p>
-<p><tt class="docutils literal"><span class="pre">block-handle</span></tt></p>
-<p>The block handle used in the control panel to store your content.  For instance, if you have a block called &#8220;Article&#8221;, you would call it like so in the template:</p>
-<div class="highlight-html"><div class="highlight"><pre>{{entry.Article | raw}}
-</pre></div>
-</div>
-<p>In the above example, you see a filter denoted by the pipe then raw.  This tells Blocks to output your content without encoding your mark-up so that it is parsed by the browser.</p>
-<p><tt class="docutils literal"><span class="pre">postDate</span></tt></p>
-<p>The date the post was made.  You format dates with filters:</p>
-<div class="highlight-html"><div class="highlight"><pre>{{entry.postDate | date(&quot;m/d/Y&quot;) }}
+<p>To exclude entries with a given value, you must pass in a string, prefixed with “<a href="#id1"><span class="problematic" id="id2">``</span></a>not <a href="#id3"><span class="problematic" id="id4">``</span></a>”:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">id</span><span class="p">(</span><span class="s">&#39;not 1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+<span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="nb">id</span><span class="p">:</span> <span class="s">&#39;not 1&#39;</span> <span class="p">})</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="direct-variables">
-<h2>Direct Variables<a class="headerlink" href="#direct-variables" title="Permalink to this headline">¶</a></h2>
-<p>When pulling in an entry directly using its slug, you do not need to use a <em>for</em> loop.  The entry variables will be made available directly on the page.  For instance, if you have an article with this full URL:</p>
-<div class="highlight-html"><div class="highlight"><pre>http://example.com/this-is-my-post
-</pre></div>
 </div>
-<p>Then you can use the <em>for</em> loop Variables directly in the template.  Such a template might, at its simplest, be coded like so:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>{{ entry.title }}<span class="nt">&lt;/h1&gt;</span>
-    {{ entry.body | raw }}
-</pre></div>
-</div>
+<div class="section" id="entry-properties">
+<h2>Entry Properties<a class="headerlink" href="#entry-properties" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve got your entry, there are a number of properties and functions you can call from it.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">id</span></tt></dt>
+<dd>The entry’s ID.</dd>
+<dt><tt class="docutils literal"><span class="pre">sectionId</span></tt></dt>
+<dd>The entry’s section’s ID. (Publish Pro only)</dd>
+<dt><tt class="docutils literal"><span class="pre">section</span></tt></dt>
+<dd>The entry’s <tt class="xref doc docutils literal"><span class="pre">section</span> <span class="pre">object</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">authorId</span></tt></dt>
+<dd>The entry’s author’s ID.</dd>
+<dt><tt class="docutils literal"><span class="pre">author</span></tt></dt>
+<dd>The entry’s author’s <tt class="xref doc docutils literal"><span class="pre">user</span> <span class="pre">object</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">langugae</span></tt></dt>
+<dd>The language the entry’s content was returned in.</dd>
+<dt><tt class="docutils literal"><span class="pre">title</span></tt></dt>
+<dd>The entry’s title.</dd>
+<dt><tt class="docutils literal"><span class="pre">slug</span></tt></dt>
+<dd>The entry’s slug.</dd>
+<dt><tt class="docutils literal"><span class="pre">uri</span></tt></dt>
+<dd>The entry’s URI.</dd>
+<dt><tt class="docutils literal"><span class="pre">url</span></tt></dt>
+<dd>The entry’s full front-end URL.</dd>
+<dt><tt class="docutils literal"><span class="pre">cpEditUrl</span></tt></dt>
+<dd>The entry’s CP edit URL.</dd>
+<dt><tt class="docutils literal"><span class="pre">postDate</span></tt></dt>
+<dd>The entry’s post date.</dd>
+<dt><tt class="docutils literal"><span class="pre">expiryDate</span></tt></dt>
+<dd>The entry’s expiration date.</dd>
+<dt><tt class="docutils literal"><span class="pre">enabled</span></tt></dt>
+<dd>Whether the entry is enabled.</dd>
+<dt><tt class="docutils literal"><span class="pre">status</span></tt></dt>
+<dd>The entry’s status (‘live’, ‘pending’, ‘expired’, or ‘disabled’).</dd>
+<dt><tt class="docutils literal"><span class="pre">getTags()</span></tt></dt>
+<dd>An array of the entry’s tags.</dd>
+</dl>
 </div>
 </div>
 

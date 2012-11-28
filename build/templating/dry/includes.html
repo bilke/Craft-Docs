@@ -21,10 +21,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Templating</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../basics/folders.html">Template Folder Structure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../basics/blocks.html">Template Blocks</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Includes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../content/entries.html">Entries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/entries.html">Entry Templating</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin Development</a></li>
@@ -50,16 +49,18 @@
 <div class="highlight-html"><div class="highlight"><pre>{% include &quot;inc/_footer&quot; %}
 </pre></div>
 </div>
-<p>You can add additional variables to your includes by utilizing the <em>with</em> keyword:</p>
-<div class="highlight-html"><div class="highlight"><pre>{# the example template will have access to the variables from the current context and from the stuff context #}
-{% include &#39;example&#39; with {&#39;example&#39;: &#39;stuff&#39;} %}
+<p>You can add additional variables to your includes by utilizing the <tt class="docutils literal"><span class="pre">with</span></tt> parameter:</p>
+<div class="highlight-html"><div class="highlight"><pre>{# the example template will have access to the variables
+   from the current context and from the stuff context #}
+
+{% include &#39;example&#39; with { example: &#39;stuff&#39; } %}
 </pre></div>
 </div>
 <div class="highlight-html"><div class="highlight"><pre>{% set vars = {&#39;example&#39;: &#39;site&#39;} %}
 {% include &#39;example&#39; with vars %}
 </pre></div>
 </div>
-<p>You can also disable access to that context by appending the <em>only</em> keyword:</p>
+<p>You can also disable access to that context by appending the <tt class="docutils literal"><span class="pre">only</span></tt> parameter:</p>
 <div class="highlight-html"><div class="highlight"><pre>{# only the example variable will be accessible #}
 {% include &#39;example&#39; with {&#39;example&#39;: &#39;site&#39;} only %}
 </pre></div>
@@ -69,7 +70,7 @@
 </pre></div>
 </div>
 <p>Your templates can have any valid extension but you do not need to append the extension in your include call; Blocks handles the extensions automatically for you.</p>
-<p>You can use the <em>ignore missing</em> filter and Twig will ignore the statement if the ignored template does not exist.</p>
+<p>You can use the <tt class="docutils literal"><span class="pre">ignore</span> <span class="pre">missing</span></tt> parameter and Twig will ignore the statement if the ignored template does not exist.</p>
 <div class="highlight-html"><div class="highlight"><pre>{% include &quot;inc/_footer&quot; ignore missing %}
 </pre></div>
 </div>
@@ -83,7 +84,7 @@
 
 			
 			<nav class="nav">
-				Next up: <a href="../content/entries.html">Entries</a></li>
+				Next up: <a href="../content/entries.html">Entry Templating</a></li>
 			</nav>
 			
 		</div>

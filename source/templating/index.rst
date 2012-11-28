@@ -17,7 +17,6 @@ You build the presentation and output for your site using templates.
 .. toctree::
    :titlesonly:
 
-   basics/blocks
    basics/variables
 
 
@@ -29,7 +28,7 @@ DRY
    :titlesonly:
 
    dry/includes
-   dry/extends
+   dry/blocks
    dry/sets
 
 

@@ -9,19 +9,21 @@ To include a template stored in /blocks/templates/inc you would use this code in
 
     {% include "inc/_footer" %}
 
-You can add additional variables to your includes by utilizing the *with* keyword:
+You can add additional variables to your includes by utilizing the ``with`` parameter:
 
 .. code-block:: html
 
-    {# the example template will have access to the variables from the current context and from the stuff context #}
-    {% include 'example' with {'example': 'stuff'} %}
+    {# the example template will have access to the variables
+       from the current context and from the stuff context #}
+
+    {% include 'example' with { example: 'stuff' } %}
 
 .. code-block:: html
 
 	{% set vars = {'example': 'site'} %}
 	{% include 'example' with vars %}
-	
-You can also disable access to that context by appending the *only* keyword:
+
+You can also disable access to that context by appending the ``only`` parameter:
 
 .. code-block:: html
 
@@ -35,7 +37,7 @@ You can also disable access to that context by appending the *only* keyword:
 
 Your templates can have any valid extension but you do not need to append the extension in your include call; Blocks handles the extensions automatically for you.
 
-You can use the *ignore missing* filter and Twig will ignore the statement if the ignored template does not exist.
+You can use the ``ignore missing`` parameter and Twig will ignore the statement if the ignored template does not exist.
 
 .. code-block:: html
 

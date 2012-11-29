@@ -22,33 +22,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../overview/index.html">System Overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../templating/index.html">Templating</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Plugin Development</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="basics/gettingstarted.html">Getting Started</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basics/settings.html">Plugin Settings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basics/templates.html">Templates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basics/resources.html">Front-end Resources</a></li>
-<li class="toctree-l2"><a class="reference internal" href="basics/i18n.html">Internationalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="db/querybuilder.html">The Query Builder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="db/records.html">Active Record Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="db/migrations.html">Migrations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="components/widgets.html">Dashboard Widgets</a></li>
-<li class="toctree-l2"><a class="reference internal" href="components/blocktypes.html">Block Types</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced/models.html">Models</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced/controllers.html">Controllers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced/services.html">Services</a></li>
-<li class="toctree-l2"><a class="reference internal" href="advanced/variables.html">Template Variables</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/account.html">AccountService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/blockTypes.html">BlockTypesService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/config.html">ConfigService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/email.html">EmailService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/entries.html">EntriesService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/globals.html">GlobalsService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/pages.html">PagesService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/path.html">PathService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/request.html">HttpRequestService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/i18n.html">LocalizationService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/plugins.html">PluginsService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/templates.html">TemplatesService</a></li>
-<li class="toctree-l2"><a class="reference internal" href="apis/users.html">UsersService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics/index.html">The Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db/index.html">Working with the Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="components/index.html">Adding New Components</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/index.html">Advanced Topics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/index.html">API Reference</a></li>
 </ul>
 </li>
 </ul>
@@ -65,85 +43,68 @@
   <div class="section" id="plugin-development">
 <h1>Plugin Development<a class="headerlink" href="#plugin-development" title="Permalink to this headline">¶</a></h1>
 <p>You can extends Blocks’ built-in functionality by creating a plugin.</p>
-<div class="section" id="the-basics">
-<h2>The Basics<a class="headerlink" href="#the-basics" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="basics/gettingstarted.html">Getting Started</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="basics/index.html">The Basics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="basics/gettingstarted.html">Getting Started</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basics/settings.html">Plugin Settings</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basics/templates.html">Templates</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="basics/settings.html">Plugin Settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics/templates.html">Templates</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="basics/resources.html">Front-end Resources</a></li>
-<li class="toctree-l1"><a class="reference internal" href="basics/i18n.html">Internationalization</a></li>
-</ul>
-</div>
-</div>
-<div class="section" id="working-with-the-database">
-<h2>Working with the Database<a class="headerlink" href="#working-with-the-database" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="db/querybuilder.html">The Query Builder</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="basics/resources.html">Front-end Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basics/i18n.html">Internationalization</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="db/records.html">Active Record Models</a><ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="db/index.html">Working with the Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="db/querybuilder.html">The Query Builder</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="db/migrations.html">Migrations</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="db/records.html">Active Record Models</a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="db/migrations.html">Migrations</a><ul class="simple">
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="adding-new-system-components">
-<h2>Adding New System Components<a class="headerlink" href="#adding-new-system-components" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="components/widgets.html">Dashboard Widgets</a><ul class="simple">
+</li>
+<li class="toctree-l1"><a class="reference internal" href="components/index.html">Adding New Components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="components/widgets.html">Dashboard Widgets</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="components/blocktypes.html">Block Types</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="components/blocktypes.html">Block Types</a><ul class="simple">
 </ul>
 </li>
 </ul>
-</div>
-</div>
-<div class="section" id="advanced-topics">
-<h2>Advanced Topics<a class="headerlink" href="#advanced-topics" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="advanced/models.html">Models</a><ul class="simple">
+</li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/index.html">Advanced Topics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="advanced/models.html">Models</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="advanced/controllers.html">Controllers</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="advanced/controllers.html">Controllers</a><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="advanced/services.html">Services</a></li>
-<li class="toctree-l1"><a class="reference internal" href="advanced/variables.html">Template Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/services.html">Services</a></li>
+<li class="toctree-l2"><a class="reference internal" href="advanced/variables.html">Template Variables</a></li>
 </ul>
-</div>
-</div>
-<div class="section" id="api-reference">
-<h2>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h2>
-<p>Blocks has several APIs your plugin can use to interact with the system. The APIs are provided by the system services:</p>
-<div class="toctree-wrapper compound">
-</div>
-<ul class="simple">
-<li><a class="reference internal" href="apis/account.html"><em>AccountService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;account</span></tt>)</li>
-<li><a class="reference internal" href="apis/blockTypes.html"><em>BlockTypesService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;blockTypes</span></tt>)</li>
-<li><a class="reference internal" href="apis/config.html"><em>ConfigService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;config</span></tt>)</li>
-<li><a class="reference internal" href="apis/email.html"><em>EmailService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;email</span></tt>)</li>
-<li><a class="reference internal" href="apis/entries.html"><em>EntriesService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;entries</span></tt>)</li>
-<li><a class="reference internal" href="apis/globals.html"><em>GlobalsService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;globals</span></tt>)</li>
-<li><a class="reference internal" href="apis/pages.html"><em>PagesService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;pages</span></tt>)</li>
-<li><a class="reference internal" href="apis/path.html"><em>PathService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;path</span></tt>)</li>
-<li><a class="reference internal" href="apis/request.html"><em>HttpRequestService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;request</span></tt>)</li>
-<li><a class="reference internal" href="apis/i18n.html"><em>LocalizationService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;i18n</span></tt>)</li>
-<li><a class="reference internal" href="apis/plugins.html"><em>PluginsService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;plugins</span></tt>)</li>
-<li><a class="reference internal" href="apis/templates.html"><em>TemplatesService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;templates</span></tt>)</li>
-<li><a class="reference internal" href="apis/users.html"><em>UsersService</em></a> (<tt class="docutils literal"><span class="pre">blx()-&gt;users</span></tt>)</li>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="apis/index.html">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="apis/account.html">AccountService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/blockTypes.html">BlockTypesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/config.html">ConfigService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/email.html">EmailService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/entries.html">EntriesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/globals.html">GlobalsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/pages.html">PagesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/path.html">PathService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/request.html">HttpRequestService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/i18n.html">LocalizationService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/plugins.html">PluginsService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/templates.html">TemplatesService</a></li>
+<li class="toctree-l2"><a class="reference internal" href="apis/users.html">UsersService</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -152,7 +113,7 @@
 
 			
 			<nav class="nav">
-				Next up: <a href="basics/gettingstarted.html">Getting Started</a></li>
+				Next up: <a href="basics/index.html">The Basics</a></li>
 			</nav>
 			
 		</div>

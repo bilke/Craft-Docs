@@ -33,3 +33,9 @@ Admin users can update Blocks to the latest version from the Updates section of 
 3. Rename blocks/app/ to blocks/app-old/ on your web server
 4. Rename blocks/app-new/ to blocks/app/ on your web server
 5. Go to your Blocks CP in your browser. You will be prompted to proceed with a DB update. Click “Finish up”.
+
+For automatic updates to work, at least two criteria must be satisfied:
+
+1. File ownership: All of your Blocks files must be owned by the user under which your web server executes. In other words, the owner of your Blocks files must match the user under which your web server executes. The web server user (named "apache", "web", "www", "nobody", or some such) is not necessarily the owner of your Blocks files. Typically, Blocks files are owned by the ftp user which uploaded the original files.
+
+2. File permissions: All of your Blocks files must be either owner writable by, or group writable by, the user under which your web server executes.  On shared hosts, Blocks files should specifically NOT be owned by the web server. If more than one user owns different files in the install (because of edits made by deleting and re-uploading of files via different accounts, for example), the file permissions need to be group writable (for example, 775 and 664 rather then the default 755 and 644). File permissions (in general) should be adjusted as appropriate for the server environment.

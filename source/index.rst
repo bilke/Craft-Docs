@@ -8,8 +8,6 @@ State of the Docs
 
 The documentation is by no means thorough at this point. Fleshing them out will be one of the primary focuses throughout the duration of the beta. Expect them to get better and better as time goes on.
 
-Our initial goal for the docs is to give a brief overview of the system, and begin to explain templating and plugin development. Some amount of digging through code will probably be necessary.
-
 If you have any comments, suggestions, or find an error, please post on `Blocks Support <https://support.blockscms.com/index.php?pg=request&xCategory=1>`_, and we’ll look into it right away.
 
 Table of Contents

@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Edit Entry Form - Blocks Docs</title>
+	<link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Templating</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../entries/single.html">Outputting One Entry</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Edit Entry Form</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html">Templating Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../../index.html">Templating</a></li>
+					<li><a href="../index.html">Examples</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="edit-entry-form">
+<h1>Edit Entry Form<a class="headerlink" href="#edit-entry-form" title="Permalink to this headline">¶</a></h1>
+<p>You can create a form to edit existing entries on front-end of your site using the following code:</p>
+<div class="highlight-html"><pre>{% set entry = blx.entries.id(1).first %}
+&lt;form method="post" action="" accept-charset="UTF-8"&gt;
+&lt;input type="hidden" name="action" value="entries/saveEntry"&gt;
+&lt;input type="hidden" name="redirect" value="viewentry/{entryId}"&gt;
+&lt;input type="hidden" name="entryId" value="{{ entry.id }}"&gt;
+&lt;input type="hidden" name="sectionId" value="10"&gt;
+&lt;input type="hidden" name="enabled" value="1"&gt;
+
+&lt;label for="title"&gt;Title&lt;/label&gt;
+&lt;input id="title" type="text" name="title" value="{{ entry.title }}&gt;
+
+&lt;label for="body"&gt;Body&lt;/label&gt;
+&lt;textarea id="body" name="blocks[body]"&gt;{{ entry.body }}&lt;/textarea&gt;
+
+&lt;input type="submit" value="Publish"&gt;
+&lt;/form&gt;</pre>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="../../reference/index.html">Templating Reference</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

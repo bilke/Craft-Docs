@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
 	<meta charset="utf-8" />
-	<title>Entry Templating - Blocks Docs</title>
+	<title>blx.entries - Blocks Docs</title>
 	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
 </head>
@@ -21,8 +21,15 @@
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Templating</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../dry/includes.html">Includes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Entry Templating</a><ul class="simple">
+<li class="toctree-l2"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Templating Reference</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="globals.html">Global Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dates.html">Dates</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href=""><tt class="docutils literal"><span class="pre">blx.entries</span></tt></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="blx.request.html"><tt class="docutils literal"><span class="pre">blx.request</span></tt></a></li>
+<li class="toctree-l3"><a class="reference internal" href="blx.users.html"><tt class="docutils literal"><span class="pre">blx.users</span></tt></a></li>
 </ul>
 </li>
 </ul>
@@ -39,12 +46,13 @@
 			
 				<ul class="crumbs">
 					<li><a href="../index.html">Templating</a></li>
+					<li><a href="index.html">Templating Reference</a></li>
 				</ul>
 			
 
 			
-  <div class="section" id="entry-templating">
-<h1>Entry Templating<a class="headerlink" href="#entry-templating" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="blx-entries">
+<h1><tt class="docutils literal"><span class="pre">blx.entries</span></tt><a class="headerlink" href="#blx-entries" title="Permalink to this headline">¶</a></h1>
 <p>You can access your site’s entries from your templates via <tt class="docutils literal"><span class="pre">blx.entries</span></tt>.</p>
 <div class="section" id="output-functions">
 <h2>Output Functions<a class="headerlink" href="#output-functions" title="Permalink to this headline">¶</a></h2>
@@ -68,7 +76,7 @@
 </div>
 <div class="section" id="tailoring-the-results">
 <h2>Tailoring the Results<a class="headerlink" href="#tailoring-the-results" title="Permalink to this headline">¶</a></h2>
-<p>Calling <tt class="docutils literal"><span class="pre">blx.entries.find()</span></tt> by itself is going to return the last 100 live entires in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to custimize the results a bit.</p>
+<p>Calling <tt class="docutils literal"><span class="pre">blx.entries.find()</span></tt> by itself is going to return the last 100 live entries in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to custimize the results a bit.</p>
 <p>Blocks supports a number of parameters that should help you do just that.</p>
 <div class="section" id="parameter-syntax">
 <h3>Parameter Syntax<a class="headerlink" href="#parameter-syntax" title="Permalink to this headline">¶</a></h3>
@@ -140,7 +148,7 @@ The URI of the entry to fetch.</dd>
 <dt><tt class="docutils literal"><span class="pre">before</span></tt></dt>
 <dd>Only fetch entries with a Post Date that is before the given date. You can specify dates in the same formats as <tt class="docutils literal"><span class="pre">after</span></tt>.</dd>
 <dt><tt class="docutils literal"><span class="pre">status</span></tt></dt>
-<dd>Only fetch entries with the given status. Possible values are <tt class="docutils literal"><span class="pre">'live'</span></tt>, <tt class="docutils literal"><span class="pre">'pending'</span></tt>, <tt class="docutils literal"><span class="pre">'expired'</span></tt>, and <tt class="docutils literal"><span class="pre">'disabled'</span></tt>. The default value is <tt class="docutils literal"><span class="pre">'live'</span></tt>.</dd>
+<dd>Only fetch entries with the given status. Possible values are <tt class="docutils literal"><span class="pre">'live'</span></tt>, <tt class="docutils literal"><span class="pre">'pending'</span></tt>, <tt class="docutils literal"><span class="pre">'expired'</span></tt>, <tt class="docutils literal"><span class="pre">'disabled'</span></tt>, and <tt class="docutils literal"><span class="pre">'*'</span></tt>. The default value is <tt class="docutils literal"><span class="pre">'live'</span></tt>.</dd>
 <dt><tt class="docutils literal"><span class="pre">archived</span></tt></dt>
 <dd>Only fetch entries that have been archived by setting this to <tt class="docutils literal"><span class="pre">true</span></tt>.</dd>
 <dt><tt class="docutils literal"><span class="pre">offset</span></tt></dt>
@@ -152,7 +160,7 @@ The URI of the entry to fetch.</dd>
 <p>The following parameters will only make a difference when calling the <tt class="docutils literal"><span class="pre">find()</span></tt> output function:</p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">order</span></tt></dt>
-<dd>The order the entries should be returned in. Possible values include <tt class="docutils literal"><span class="pre">'title'</span></tt>, <tt class="docutils literal"><span class="pre">'id'</span></tt>, <tt class="docutils literal"><span class="pre">'authorId'</span></tt>, <tt class="docutils literal"><span class="pre">'sectionId'</span></tt>, <tt class="docutils literal"><span class="pre">'slug'</span></tt>, <tt class="docutils literal"><span class="pre">'uri'</span></tt>, <tt class="docutils literal"><span class="pre">'postDate'</span></tt>, and <tt class="docutils literal"><span class="pre">'expiryDate'</span></tt>. If you want the entries to be in descending order, add “`` desc``” after the property name (ex: <tt class="docutils literal"><span class="pre">'postDate</span> <span class="pre">desc'</span></tt>). The default value is <tt class="docutils literal"><span class="pre">'postDate</span> <span class="pre">desc'</span></tt>.</dd>
+<dd>The order the entries should be returned in. Possible values include <tt class="docutils literal"><span class="pre">'title'</span></tt>, <tt class="docutils literal"><span class="pre">'id'</span></tt>, <tt class="docutils literal"><span class="pre">'authorId'</span></tt>, <tt class="docutils literal"><span class="pre">'sectionId'</span></tt>, <tt class="docutils literal"><span class="pre">'slug'</span></tt>, <tt class="docutils literal"><span class="pre">'uri'</span></tt>, <tt class="docutils literal"><span class="pre">'postDate'</span></tt>, and <tt class="docutils literal"><span class="pre">'expiryDate'</span></tt>. If you want the entries to be sorted in descending order, add “`` desc``” after the property name (ex: <tt class="docutils literal"><span class="pre">'postDate</span> <span class="pre">desc'</span></tt>). The default value is <tt class="docutils literal"><span class="pre">'postDate</span> <span class="pre">desc'</span></tt>.</dd>
 <dt><tt class="docutils literal"><span class="pre">limit</span></tt></dt>
 <dd>Limits the results to <em>X</em> entries.</dd>
 <dt><tt class="docutils literal"><span class="pre">indexBy</span></tt></dt>
@@ -210,7 +218,7 @@ The URI of the entry to fetch.</dd>
 <dd>Whether the entry is enabled.</dd>
 <dt><tt class="docutils literal"><span class="pre">status</span></tt></dt>
 <dd>The entry’s status (‘live’, ‘pending’, ‘expired’, or ‘disabled’).</dd>
-<dt><tt class="docutils literal"><span class="pre">getTags()</span></tt></dt>
+<dt><tt class="docutils literal"><span class="pre">tags</span></tt></dt>
 <dd>An array of the entry’s tags.</dd>
 </dl>
 </div>
@@ -220,7 +228,7 @@ The URI of the entry to fetch.</dd>
 
 			
 			<nav class="nav">
-				Next up: <a href="../../plugins/index.html">Plugin Development</a></li>
+				Next up: <a href="blx.request.html">blx.request</a></li>
 			</nav>
 			
 		</div>

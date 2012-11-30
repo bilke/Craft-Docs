@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Outputting One Entry - Blocks Docs</title>
+	<link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Templating</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Examples</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="">Outputting One Entry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forms/edit_entry.html">Edit Entry Form</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html">Templating Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../../index.html">Templating</a></li>
+					<li><a href="../index.html">Examples</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="outputting-one-entry">
+<h1>Outputting One Entry<a class="headerlink" href="#outputting-one-entry" title="Permalink to this headline">¶</a></h1>
+<p>When a request comes in that matches an entry’s URL, that entry’s section’s template gets loaded up, and an <tt class="docutils literal"><span class="pre">entry</span></tt> variable is made available to it. That variable will give you access to all of the entry’s info, succh as <tt class="docutils literal"><span class="pre">entry.title</span></tt>, <tt class="docutils literal"><span class="pre">entry.someBlockHandle</span></tt>, etc.. (See <a class="reference internal" href="../../reference/blx.entries.html"><em>blx.entries</em></a>)</p>
+<div class="highlight-html"><div class="highlight"><pre>{% for entry in blx.entries.find({section: &#39;Blog&#39;}) %}
+<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{entry.url}}&quot;</span><span class="nt">&gt;</span>{{entry.title}}<span class="nt">&lt;/a&gt;&lt;/h1&gt;</span>
+{{entry.body | raw}}
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;sig&quot;</span><span class="nt">&gt;</span>-<span class="nt">&lt;em&gt;</span>{{ entry.author }}<span class="nt">&lt;/em&gt;</span>, {{entry.postDate}}<span class="nt">&lt;/p&gt;</span>
+{% endfor %}
+</pre></div>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="../forms/edit_entry.html">Edit Entry Form</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

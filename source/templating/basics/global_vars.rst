@@ -6,7 +6,7 @@ Blocks makes a few global variables available via the  ``HttpRequestVariable``.
 You can use these on any template.
 
 blx -- instance of blocks/app/components/core/variables/BlxVariable.php
-date -- a PHP DateTime instance for getting info about the current date/time
+now -- a PHP DateTime instance for getting info about the current date/time
 siteName -- your site's name
 siteUrl -- your site's URL
 globals -- container for any Global's you've created (e.g. globals.site_description, etc.)
@@ -16,7 +16,7 @@ user -- the current user's UserModel instance, if someone's logged in.
 ``blx``
     instance of blocks/app/components/core/variables/BlxVariable.php
 
-``date``
+``now``
     a PHP DateTime instance for getting info about the current date/time
 
 ``siteName``
@@ -54,7 +54,7 @@ And you can output an individual segment like so:
 
 .. code-block:: html
 
-    {{ blx.request.getSegment(x) }} 
+    {{ blx.request.getSegment(x) }}
 
 Where (x) is the segment number.  For instance, in:
 
@@ -62,6 +62,6 @@ Where (x) is the segment number.  For instance, in:
 
 .. code-block:: html
 
-    {{ blx.request.getSegment(2) }}     
+    {{ blx.request.getSegment(2) }}
 
 

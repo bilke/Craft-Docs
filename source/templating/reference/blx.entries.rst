@@ -1,5 +1,5 @@
-Entry Templating
-================
+``blx.entries``
+===============
 
 You can access your site’s entries from your templates via ``blx.entries``.
 
@@ -35,7 +35,7 @@ If you want to get the total number of entries, use ``total()``:
 Tailoring the Results
 ---------------------
 
-Calling ``blx.entries.find()`` by itself is going to return the last 100 live entires in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to custimize the results a bit.
+Calling ``blx.entries.find()`` by itself is going to return the last 100 live entries in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to custimize the results a bit.
 
 Blocks supports a number of parameters that should help you do just that.
 
@@ -122,7 +122,7 @@ Each of the ``blx.entries`` output functions share several parameters that will 
     Only fetch entries with a Post Date that is before the given date. You can specify dates in the same formats as ``after``.
 
 ``status``
-    Only fetch entries with the given status. Possible values are ``'live'``, ``'pending'``, ``'expired'``, and ``'disabled'``. The default value is ``'live'``.
+    Only fetch entries with the given status. Possible values are ``'live'``, ``'pending'``, ``'expired'``, ``'disabled'``, and ``'*'``. The default value is ``'live'``.
 
 ``archived``
     Only fetch entries that have been archived by setting this to ``true``.
@@ -137,7 +137,7 @@ Parameters Exclusive to ``find()``
 The following parameters will only make a difference when calling the ``find()`` output function:
 
 ``order``
-    The order the entries should be returned in. Possible values include ``'title'``, ``'id'``, ``'authorId'``, ``'sectionId'``, ``'slug'``, ``'uri'``, ``'postDate'``, and ``'expiryDate'``. If you want the entries to be in descending order, add “`` desc``” after the property name (ex: ``'postDate desc'``). The default value is ``'postDate desc'``.
+    The order the entries should be returned in. Possible values include ``'title'``, ``'id'``, ``'authorId'``, ``'sectionId'``, ``'slug'``, ``'uri'``, ``'postDate'``, and ``'expiryDate'``. If you want the entries to be sorted in descending order, add “`` desc``” after the property name (ex: ``'postDate desc'``). The default value is ``'postDate desc'``.
 
 ``limit``
     Limits the results to *X* entries.
@@ -214,5 +214,5 @@ Once you’ve got your entry, there are a number of properties and functions you
 ``status``
     The entry’s status (‘live’, ‘pending’, ‘expired’, or ‘disabled’).
 
-``getTags()``
+``tags``
     An array of the entry’s tags.

@@ -6,8 +6,5 @@ When a request comes in that matches an entry’s URL, that entry’s section’
 
 .. code-block:: html
 
-    {% for entry in blx.entries.find({section: 'Blog'}) %}
-    <h1 class="title"><a href="{{entry.url}}">{{entry.title}}</a></h1>
-    {{entry.body | raw}}
-    <p class="sig">-<em>{{ entry.author }}</em>, {{entry.postDate}}</p>
-    {% endfor %}
+    <h1>{{ entry.title }}</h1>
+    {{ entry.body|raw }}

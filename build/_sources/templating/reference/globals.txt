@@ -33,7 +33,7 @@ Blocks makes the following variables available to all templates:
       <link rel="home" href="{{ siteUrl }}">
 
 ``user``
-   A :doc:`user variable </templating/reference/users>` set to the currently logged-in user (if there is one).
+   A :doc:`user variable </templating/reference/blx.users>` set to the currently logged-in user (if there is one).
 
    .. code-block:: html
 

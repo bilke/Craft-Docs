@@ -19,4 +19,4 @@ You can create a new entry form for the front-end of your site using the followi
         <textarea id="body" name="blocks[body]"></textarea>
 
         <input type="submit" value="Publish">
-        </form>
+    </form>

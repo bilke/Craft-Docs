@@ -61,7 +61,7 @@
 <p>If the URI matches a <a class="reference internal" href="pages.html"><em>page</em></a>’s URI, that page’s template will get loaded, with a <tt class="docutils literal"><span class="pre">page</span></tt> variable available to it, set to the matched page.</p>
 </li>
 <li><p class="first"><strong>Is it an entry request?</strong></p>
-<p>If the URI matches an <a class="reference internal" href="entries.html"><em>entry</em></a>’ URI, that entry’s section’s template will get loaded, with an <tt class="docutils literal"><span class="pre">entry</span></tt> variable available to it, set to the matched entry.</p>
+<p>If the URI matches an <a class="reference internal" href="entries.html"><em>entry</em></a>’s URI, that entry’s section’s template will get loaded, with an <tt class="docutils literal"><span class="pre">entry</span></tt> variable available to it, set to the matched entry.</p>
 </li>
 <li><p class="first"><strong>Does the URI match any dynamic template routes?</strong></p>
 <p>If the URI matches any <a class="reference internal" href="#dynamic-template-routes"><em>dynamic template routes</em></a>, the template specified by that route will get loaded. If the route contains any tokens, they will be available as variables to that template.</p>
@@ -70,7 +70,7 @@
 <p>Finally, Blocks will see if the URI is a valid template path. If it is, it will return the matched template. Note that if any of the URI segments begin with an underscore (‘_’), Blocks will return a 404, since template path segments that begin with an underscore are considered “hidden” from direct access.</p>
 </li>
 <li><p class="first"><strong>404</strong></p>
-<p>If none of those checks are successful, Blocks will return a 404. You can customize your site’s 404 page by placing a “error404.html” template at the root of your blocks/templates/ folder.</p>
+<p>If none of those checks are successful, Blocks will return a 404. You can customize your site’s 404 page by placing an “error404.html” template at the root of your blocks/templates/ folder.</p>
 </li>
 </ol>
 <div class="section" id="dynamic-template-routes">

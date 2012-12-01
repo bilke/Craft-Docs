@@ -11,7 +11,7 @@ Entries
 
    entries/single
    entries/list
-   
+
 
 
 Pages
@@ -28,5 +28,5 @@ Forms
 .. toctree::
    :titlesonly:
 
-   forms/add_entry
+   forms/new_entry
    forms/edit_entry

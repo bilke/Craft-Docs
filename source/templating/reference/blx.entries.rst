@@ -164,6 +164,8 @@ To exclude entries with a given value, you must pass in a string, prefixed with 
     blx.entries.find({ id: 'not 1' })
 
 
+.. _entry-properties:
+
 Entry Properties
 ----------------
 

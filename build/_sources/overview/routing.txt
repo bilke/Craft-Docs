@@ -17,7 +17,7 @@ When a request comes in, Blocks analyzes it to determine how to handle it. Here 
 
 #. **Is it an entry request?**
 
-   If the URI matches an :doc:`entry <entries>`’ URI, that entry’s section’s template will get loaded, with an ``entry`` variable available to it, set to the matched entry.
+   If the URI matches an :doc:`entry <entries>`’s URI, that entry’s section’s template will get loaded, with an ``entry`` variable available to it, set to the matched entry.
 
 #. **Does the URI match any dynamic template routes?**
 
@@ -29,7 +29,7 @@ When a request comes in, Blocks analyzes it to determine how to handle it. Here 
 
 #. **404**
 
-   If none of those checks are successful, Blocks will return a 404. You can customize your site’s 404 page by placing a “error404.html” template at the root of your blocks/templates/ folder.
+   If none of those checks are successful, Blocks will return a 404. You can customize your site’s 404 page by placing an “error404.html” template at the root of your blocks/templates/ folder.
 
 
 .. _dynamic-template-routes:

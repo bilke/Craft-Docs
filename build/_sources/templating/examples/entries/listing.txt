@@ -2,7 +2,7 @@ Outputting a List of Entries
 ===============
 
 You can easily output a list of entries on any template using the following code:
-	
+
 
 .. code-block:: html
 

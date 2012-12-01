@@ -37,7 +37,7 @@ If you want to get the total number of users, use ``total()``:
 Tailoring the Results
 ---------------------
 
-Calling ``blx.users.find()`` by itself is going to return 100 users, ordered by username. If that happens to be exactly what you needed, great! But most likely you’ll want to custimize the results a bit.
+Calling ``blx.users.find()`` by itself is going to return 100 users, ordered by username. If that happens to be exactly what you needed, great! But most likely you’ll want to customize the results a bit.
 
 Blocks supports a number of parameters that should help you do just that.
 
@@ -118,7 +118,7 @@ Parameters Exclusive to ``find()``
 The following parameters will only make a difference when calling the ``find()`` output function:
 
 ``order``
-    The order the users should be returned in. Possible values include ``'username'``, ``'firstName'``, ``'lastName'``, ``'email'``, ``'language'``, ``'status'``, and ``'lastLoginDate'``. If you want the users to be sorted in descending order, add “`` desc``” after the property name (ex: ``'lastLoginDate desc'``). The default value is ``'username'``.
+    The order the users should be returned in. Possible values include ``'username'``, ``'firstName'``, ``'lastName'``, ``'email'``, ``'language'``, ``'status'``, and ``'lastLoginDate'``. If you want the users to be sorted in descending order, add “``desc``” after the property name (ex: ``'lastLoginDate desc'``). The default value is ``'username'``.
 
 ``limit``
     Limits the results to *X* users.
@@ -139,7 +139,7 @@ To pass in multiple values, you can either pass them as an array, comma-delimite
     blx.users.find({ id: [1, 2, 3] })
     blx.users.find({ id: '1,2,3' })
 
-To exclude users with a given value, you must pass in a string, prefixed with “``not ``”::
+To exclude users with a given value, you must pass in a string, prefixed with “``not``”::
 
     blx.users.id('not 1').find()
     blx.users.find({ id: 'not 1' })

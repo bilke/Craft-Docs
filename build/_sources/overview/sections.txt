@@ -1,7 +1,7 @@
 Sections
 ========
 
-:doc:`Entries <entries>` in Blocks belong to **sections**. The feature set surrounding sections differes greatly depending on whether you have the Publish Pro package installed or not.
+:doc:`Entries <entries>` in Blocks belong to **sections**. The feature set surrounding sections differs greatly depending on whether you have the Publish Pro package installed or not.
 
 
 Without Publish Pro

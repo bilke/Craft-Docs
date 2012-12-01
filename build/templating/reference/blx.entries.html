@@ -76,7 +76,7 @@
 </div>
 <div class="section" id="tailoring-the-results">
 <h2>Tailoring the Results<a class="headerlink" href="#tailoring-the-results" title="Permalink to this headline">¶</a></h2>
-<p>Calling <tt class="docutils literal"><span class="pre">blx.entries.find()</span></tt> by itself is going to return the last 100 live entries in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to custimize the results a bit.</p>
+<p>Calling <tt class="docutils literal"><span class="pre">blx.entries.find()</span></tt> by itself is going to return the last 100 live entries in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to customize the results a bit.</p>
 <p>Blocks supports a number of parameters that should help you do just that.</p>
 <div class="section" id="parameter-syntax">
 <h3>Parameter Syntax<a class="headerlink" href="#parameter-syntax" title="Permalink to this headline">¶</a></h3>
@@ -160,7 +160,7 @@ The URI of the entry to fetch.</dd>
 <p>The following parameters will only make a difference when calling the <tt class="docutils literal"><span class="pre">find()</span></tt> output function:</p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">order</span></tt></dt>
-<dd>The order the entries should be returned in. Possible values include <tt class="docutils literal"><span class="pre">'title'</span></tt>, <tt class="docutils literal"><span class="pre">'id'</span></tt>, <tt class="docutils literal"><span class="pre">'authorId'</span></tt>, <tt class="docutils literal"><span class="pre">'sectionId'</span></tt>, <tt class="docutils literal"><span class="pre">'slug'</span></tt>, <tt class="docutils literal"><span class="pre">'uri'</span></tt>, <tt class="docutils literal"><span class="pre">'postDate'</span></tt>, and <tt class="docutils literal"><span class="pre">'expiryDate'</span></tt>. If you want the entries to be sorted in descending order, add “`` desc``” after the property name (ex: <tt class="docutils literal"><span class="pre">'postDate</span> <span class="pre">desc'</span></tt>). The default value is <tt class="docutils literal"><span class="pre">'postDate</span> <span class="pre">desc'</span></tt>.</dd>
+<dd>The order the entries should be returned in. Possible values include <tt class="docutils literal"><span class="pre">'title'</span></tt>, <tt class="docutils literal"><span class="pre">'id'</span></tt>, <tt class="docutils literal"><span class="pre">'authorId'</span></tt>, <tt class="docutils literal"><span class="pre">'sectionId'</span></tt>, <tt class="docutils literal"><span class="pre">'slug'</span></tt>, <tt class="docutils literal"><span class="pre">'uri'</span></tt>, <tt class="docutils literal"><span class="pre">'postDate'</span></tt>, and <tt class="docutils literal"><span class="pre">'expiryDate'</span></tt>. If you want the entries to be sorted in descending order, add “<tt class="docutils literal"><span class="pre">desc</span></tt>” after the property name (ex: <tt class="docutils literal"><span class="pre">'postDate</span> <span class="pre">desc'</span></tt>). The default value is <tt class="docutils literal"><span class="pre">'postDate</span> <span class="pre">desc'</span></tt>.</dd>
 <dt><tt class="docutils literal"><span class="pre">limit</span></tt></dt>
 <dd>Limits the results to <em>X</em> entries.</dd>
 <dt><tt class="docutils literal"><span class="pre">indexBy</span></tt></dt>
@@ -177,7 +177,7 @@ The URI of the entry to fetch.</dd>
 <span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="nb">id</span><span class="p">:</span> <span class="s">&#39;1,2,3&#39;</span> <span class="p">})</span>
 </pre></div>
 </div>
-<p>To exclude entries with a given value, you must pass in a string, prefixed with “<a href="#id1"><span class="problematic" id="id2">``</span></a>not <a href="#id3"><span class="problematic" id="id4">``</span></a>”:</p>
+<p>To exclude entries with a given value, you must pass in a string, prefixed with “<tt class="docutils literal"><span class="pre">not</span></tt>”:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">id</span><span class="p">(</span><span class="s">&#39;not 1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
 <span class="n">blx</span><span class="o">.</span><span class="n">entries</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="nb">id</span><span class="p">:</span> <span class="s">&#39;not 1&#39;</span> <span class="p">})</span>
 </pre></div>
@@ -185,7 +185,7 @@ The URI of the entry to fetch.</dd>
 </div>
 </div>
 <div class="section" id="entry-properties">
-<span id="id5"></span><h2>Entry Properties<a class="headerlink" href="#entry-properties" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Entry Properties<a class="headerlink" href="#entry-properties" title="Permalink to this headline">¶</a></h2>
 <p>Once you’ve got your entry, there are a number of properties and functions you can call from it.</p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">id</span></tt></dt>

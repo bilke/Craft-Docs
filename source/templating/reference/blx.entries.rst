@@ -35,7 +35,7 @@ If you want to get the total number of entries, use ``total()``:
 Tailoring the Results
 ---------------------
 
-Calling ``blx.entries.find()`` by itself is going to return the last 100 live entries in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to custimize the results a bit.
+Calling ``blx.entries.find()`` by itself is going to return the last 100 live entries in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to customize the results a bit.
 
 Blocks supports a number of parameters that should help you do just that.
 
@@ -137,7 +137,7 @@ Parameters Exclusive to ``find()``
 The following parameters will only make a difference when calling the ``find()`` output function:
 
 ``order``
-    The order the entries should be returned in. Possible values include ``'title'``, ``'id'``, ``'authorId'``, ``'sectionId'``, ``'slug'``, ``'uri'``, ``'postDate'``, and ``'expiryDate'``. If you want the entries to be sorted in descending order, add “`` desc``” after the property name (ex: ``'postDate desc'``). The default value is ``'postDate desc'``.
+    The order the entries should be returned in. Possible values include ``'title'``, ``'id'``, ``'authorId'``, ``'sectionId'``, ``'slug'``, ``'uri'``, ``'postDate'``, and ``'expiryDate'``. If you want the entries to be sorted in descending order, add “``desc``” after the property name (ex: ``'postDate desc'``). The default value is ``'postDate desc'``.
 
 ``limit``
     Limits the results to *X* entries.
@@ -158,7 +158,7 @@ To pass in multiple values, you can either pass them as an array, comma-delimite
     blx.entries.find({ id: [1, 2, 3] })
     blx.entries.find({ id: '1,2,3' })
 
-To exclude entries with a given value, you must pass in a string, prefixed with “``not ``”::
+To exclude entries with a given value, you must pass in a string, prefixed with “``not``”::
 
     blx.entries.id('not 1').find()
     blx.entries.find({ id: 'not 1' })

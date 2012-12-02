@@ -186,7 +186,7 @@ Once you’ve got your entry, there are a number of properties and functions you
 ``author``
     The entry’s author’s :doc:`user object <users>`.
 
-``langugae``
+``language``
     The language the entry’s content was returned in.
 
 ``title``

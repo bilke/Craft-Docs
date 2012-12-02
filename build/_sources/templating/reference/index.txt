@@ -4,8 +4,7 @@ Templating Reference
 .. toctree::
    :titlesonly:
 
-   globals
-   dates
-   blx.entries
-   blx.request
-   blx.users
+   variables/index
+   filters
+   functions
+   tags

@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Template Tags - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Templating</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Templating Reference</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="variables/index.html">Template Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="filters.html">Template Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="functions.html">Template Functions</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Template Tags</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../index.html">Templating</a></li>
+					<li><a href="index.html">Templating Reference</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="template-tags">
+<h1>Template Tags<a class="headerlink" href="#template-tags" title="Permalink to this headline">¶</a></h1>
+<p>On top of the template tags that <a class="reference external" href="http://twig.sensiolabs.org/doc/tags/index.html">Twig comes with</a>, Blocks provides a few of its own.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">redirect</span> <span class="pre">&quot;some/path&quot;</span> <span class="pre">}</span></tt></dt>
+<dd>Redirects the browser to the passed-in URL or site path.</dd>
+<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">exit</span> <span class="pre">404</span> <span class="pre">%}</span></tt></dt>
+<dd>Cancels the output of the current template, and responds with a 404 (or any other HTTP error code you pass in).</dd>
+</dl>
+<dl class="docutils" id="includecssfile">
+<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">includeCssFile</span> <span class="pre">&quot;/url/to/css/file&quot;</span>&nbsp; <span class="pre">%}</span></tt></dt>
+<dd>Queues up a <tt class="docutils literal"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;stylesheet&quot;&gt;</span></tt> tag with the passed-in CSS file URL, for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</dd>
+</dl>
+<dl class="docutils" id="includecss">
+<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">includeCss</span> <span class="pre">myCss</span>&nbsp; <span class="pre">%}</span></tt></dt>
+<dd>Queues up a <tt class="docutils literal"><span class="pre">&lt;style</span> <span class="pre">type=&quot;text/css&quot;&gt;</span></tt> tag with the passed-in CSS, for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</dd>
+</dl>
+<dl class="docutils" id="includejsfile">
+<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">includeJsFile</span> <span class="pre">&quot;/url/to/js/file&quot;</span>&nbsp; <span class="pre">%}</span></tt></dt>
+<dd>Queues up a <tt class="docutils literal"><span class="pre">&lt;script</span> <span class="pre">type=&quot;javascript&quot;&gt;</span></tt> tag with the passed-in JS file URL, for inclusion via the <a class="reference internal" href="functions.html#getfootnodes"><em>getFootNodes()</em></a> function.</dd>
+</dl>
+<dl class="docutils" id="includejs">
+<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">includeJs</span> <span class="pre">myJs</span> <span class="pre">%}</span></tt></dt>
+<dd>Queues up a <tt class="docutils literal"><span class="pre">&lt;script</span> <span class="pre">type=&quot;javascript&quot;&gt;</span></tt> tag with the passed-in JS, for inclusion via the <a class="reference internal" href="functions.html#getfootnodes"><em>getFootNodes()</em></a> function.</dd>
+</dl>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="../../plugins/index.html">Plugin Development</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

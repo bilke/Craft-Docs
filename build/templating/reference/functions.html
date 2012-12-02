@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Template Functions - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Templating</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../examples/index.html">Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Templating Reference</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="variables/index.html">Template Variables</a></li>
+<li class="toctree-l3"><a class="reference internal" href="filters.html">Template Filters</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Template Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tags.html">Template Tags</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../index.html">Templating</a></li>
+					<li><a href="index.html">Templating Reference</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="template-functions">
+<h1>Template Functions<a class="headerlink" href="#template-functions" title="Permalink to this headline">¶</a></h1>
+<p>On top of the template functions that <a class="reference external" href="http://twig.sensiolabs.org/doc/functions/index.html">Twig comes with</a>, Blocks provides a few of its own:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">url('some/path')</span></tt></dt>
+<dd>Returns a URL relative to your Site URL.</dd>
+<dt><tt class="docutils literal"><span class="pre">round(212/5)</span></tt></dt>
+<dd>Rounds off a number to the closest integer. For example, <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">round(42.1)</span> <span class="pre">}}</span></tt> would output ‘42’, while <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">round(42.9)</span> <span class="pre">}}</span></tt> would output ‘43’.</dd>
+<dt><tt class="docutils literal"><span class="pre">ceil(212/5)</span></tt></dt>
+<dd>Rounds of a number up. For example, <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">ceil(42.1)</span> <span class="pre">}}</span></tt> would output ‘43’.</dd>
+<dt><tt class="docutils literal"><span class="pre">floor(212/5)</span></tt></dt>
+<dd>Rounds a number down. For example, <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">floor(42.9)</span> <span class="pre">}}</span></tt> would output ‘42’.</dd>
+<dt><tt class="docutils literal"><span class="pre">min(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></tt> or <tt class="docutils literal"><span class="pre">min([</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3])</span></tt></dt>
+<dd>Returns the smallest number of a given set.</dd>
+<dt><tt class="docutils literal"><span class="pre">max(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></tt> or <tt class="docutils literal"><span class="pre">max([</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3])</span></tt></dt>
+<dd>Returns the largest number of a given set.</dd>
+</dl>
+<dl class="docutils" id="getheadnodes">
+<dt><tt class="docutils literal"><span class="pre">getHeadNodes()</span></tt></dt>
+<dd>Outputs all of the HTML nodes that have been queued up by the <a class="reference internal" href="tags.html#includecssfile"><em>includeCssFile</em></a> and <a class="reference internal" href="tags.html#includecss"><em>includeCss</em></a> tags.</dd>
+</dl>
+<dl class="docutils" id="getfootnodes">
+<dt><tt class="docutils literal"><span class="pre">getFootNodes()</span></tt></dt>
+<dd>Outputs all of the HTML nodes that have been queued up by the <a class="reference internal" href="tags.html#includejsfile"><em>includeJsFile</em></a> and <a class="reference internal" href="tags.html#includejs"><em>includeJs</em></a> tags.</dd>
+</dl>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="tags.html">Template Tags</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

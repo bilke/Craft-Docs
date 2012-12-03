@@ -52,26 +52,67 @@
 <h1>Template Functions<a class="headerlink" href="#template-functions" title="Permalink to this headline">¶</a></h1>
 <p>On top of the template functions that <a class="reference external" href="http://twig.sensiolabs.org/doc/functions/index.html">Twig comes with</a>, Blocks provides a few of its own:</p>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">url('some/path')</span></tt></dt>
-<dd>Returns a URL relative to your Site URL.</dd>
-<dt><tt class="docutils literal"><span class="pre">round(212/5)</span></tt></dt>
-<dd>Rounds off a number to the closest integer. For example, <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">round(42.1)</span> <span class="pre">}}</span></tt> would output ‘42’, while <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">round(42.9)</span> <span class="pre">}}</span></tt> would output ‘43’.</dd>
-<dt><tt class="docutils literal"><span class="pre">ceil(212/5)</span></tt></dt>
-<dd>Rounds of a number up. For example, <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">ceil(42.1)</span> <span class="pre">}}</span></tt> would output ‘43’.</dd>
-<dt><tt class="docutils literal"><span class="pre">floor(212/5)</span></tt></dt>
-<dd>Rounds a number down. For example, <tt class="docutils literal"><span class="pre">{{</span> <span class="pre">floor(42.9)</span> <span class="pre">}}</span></tt> would output ‘42’.</dd>
-<dt><tt class="docutils literal"><span class="pre">min(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></tt> or <tt class="docutils literal"><span class="pre">min([</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3])</span></tt></dt>
-<dd>Returns the smallest number of a given set.</dd>
-<dt><tt class="docutils literal"><span class="pre">max(1,</span> <span class="pre">2,</span> <span class="pre">3)</span></tt> or <tt class="docutils literal"><span class="pre">max([</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3])</span></tt></dt>
-<dd>Returns the largest number of a given set.</dd>
+<dt><tt class="docutils literal"><span class="pre">url</span></tt></dt>
+<dd><p class="first">Returns a URL relative to your Site URL.</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ url(&#39;company/contact&#39;) }}&quot;</span><span class="nt">&gt;</span>Contact Us<span class="nt">&lt;/a&gt;</span>
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">round</span></tt></dt>
+<dd><p class="first">Rounds off a number to the closest integer.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{{ round(42.1) }} =&gt; 42
+{{ round(42.9) }} =&gt; 43
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">ceil</span></tt></dt>
+<dd><p class="first">Rounds of a number up.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{{ ceil(42.1) }} =&gt; 43
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">floor</span></tt></dt>
+<dd><p class="first">Rounds a number down.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{{ floor(42.9) }} =&gt; 42
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">min</span></tt></dt>
+<dd><p class="first">Returns the smallest number of a given set.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{{ min(1, 2, 3) }} =&gt; 1
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">max</span></tt></dt>
+<dd><p class="first">Returns the largest number of a given set.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{{ max(1, 2, 3) }} =&gt; 3
+</pre></div>
+</div>
+</dd>
 </dl>
 <dl class="docutils" id="getheadnodes">
-<dt><tt class="docutils literal"><span class="pre">getHeadNodes()</span></tt></dt>
-<dd>Outputs all of the HTML nodes that have been queued up by the <a class="reference internal" href="tags.html#includecssfile"><em>includeCssFile</em></a>, <a class="reference internal" href="tags.html#includecss"><em>includeCss</em></a>, and <a class="reference internal" href="tags.html#includehirescss"><em>includeHiResCss</em></a> tags.</dd>
+<dt><tt class="docutils literal"><span class="pre">getHeadNodes</span></tt></dt>
+<dd><p class="first">Outputs all of the HTML nodes that have been queued up by the <a class="reference internal" href="tags.html#includecssfile"><em>includeCssFile</em></a>, <a class="reference internal" href="tags.html#includecss"><em>includeCss</em></a>, and <a class="reference internal" href="tags.html#includehirescss"><em>includeHiResCss</em></a> tags.</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;title&gt;</span>{{ siteName }}<span class="nt">&lt;/title&gt;</span>
+    {{ getHeadNodes() }}
+<span class="nt">&lt;/head&gt;</span>
+</pre></div>
+</div>
+</dd>
 </dl>
 <dl class="docutils" id="getfootnodes">
-<dt><tt class="docutils literal"><span class="pre">getFootNodes()</span></tt></dt>
-<dd>Outputs all of the HTML nodes that have been queued up by the <a class="reference internal" href="tags.html#includejsfile"><em>includeJsFile</em></a> and <a class="reference internal" href="tags.html#includejs"><em>includeJs</em></a> tags.</dd>
+<dt><tt class="docutils literal"><span class="pre">getFootNodes</span></tt></dt>
+<dd><p class="first">Outputs all of the HTML nodes that have been queued up by the <a class="reference internal" href="tags.html#includejsfile"><em>includeJsFile</em></a> and <a class="reference internal" href="tags.html#includejs"><em>includeJs</em></a> tags. It should be placed right before your <tt class="docutils literal"><span class="pre">&lt;/body&gt;</span></tt> tag.</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>{{ page.name }}<span class="nt">&lt;/h1&gt;</span>
+    {{ page.body }}
+
+    {{ getFootNodes() }}
+<span class="nt">&lt;/body&gt;</span>
+</pre></div>
+</div>
+</dd>
 </dl>
 </div>
 

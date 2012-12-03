@@ -83,12 +83,12 @@
         <span class="nt">&lt;/article&gt;</span>
     {% endfor %}
 
-    {% if prevUrl %}
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ prevUrl }}&quot;</span><span class="nt">&gt;</span>Previous Page<span class="nt">&lt;/a&gt;</span>
+    {% if paginate.prevUrl %}
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ paginate.prevUrl }}&quot;</span><span class="nt">&gt;</span>Previous Page<span class="nt">&lt;/a&gt;</span>
     {% endif %}
 
-    {% if nextUrl %}
-        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ nextUrl }}&quot;</span><span class="nt">&gt;</span>Next Page<span class="nt">&lt;/a&gt;</span>
+    {% if paginate.nextUrl %}
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ paginate.nextUrl }}&quot;</span><span class="nt">&gt;</span>Next Page<span class="nt">&lt;/a&gt;</span>
     {% endif %}
 
 {% endpaginate %}

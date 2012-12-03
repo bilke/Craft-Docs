@@ -41,12 +41,12 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
                 </article>
             {% endfor %}
 
-            {% if prevUrl %}
-                <a href="{{ prevUrl }}">Previous Page</a>
+            {% if paginate.prevUrl %}
+                <a href="{{ paginate.prevUrl }}">Previous Page</a>
             {% endif %}
 
-            {% if nextUrl %}
-                <a href="{{ nextUrl }}">Next Page</a>
+            {% if paginate.nextUrl %}
+                <a href="{{ paginate.nextUrl }}">Next Page</a>
             {% endif %}
 
         {% endpaginate %}

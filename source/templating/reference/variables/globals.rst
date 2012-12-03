@@ -7,12 +7,12 @@ Blocks makes the following variables available to all templates:
    Most of Blocks’ template variables are tucked away in ``blx``:
 
 
-   * :doc:`/templating/reference/blx.entries` – used to access your site’s entries
-   * :doc:`/templating/reference/blx.request` – used to access information about the current request
-   * :doc:`/templating/reference/blx.users` – used to access your site’s users
+   * :doc:`/templating/reference/variables/blx.entries` – used to access your site’s entries
+   * :doc:`/templating/reference/variables/blx.request` – used to access information about the current request
+   * :doc:`/templating/reference/variables/blx.users` – used to access your site’s users
 
 ``now``
-   A :doc:`date variable </templating/reference/dates>` set to the current date and time.
+   A :doc:`date variable <dates>` set to the current date and time.
 
    .. code-block:: html
 
@@ -33,7 +33,7 @@ Blocks makes the following variables available to all templates:
       <link rel="home" href="{{ siteUrl }}">
 
 ``user``
-   A :doc:`user variable </templating/reference/blx.users>` set to the currently logged-in user (if there is one).
+   A :doc:`user variable </templating/reference/variables/blx.users>` set to the currently logged-in user (if there is one).
 
    .. code-block:: html
 

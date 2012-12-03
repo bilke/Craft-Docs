@@ -53,7 +53,7 @@ There’s also a corresponding ``populateModels()`` static method if you have an
 
    $ingredients = CocktailRecipes_IngredientModel::populateModels($data);
 
-These functions also accept instances of BaseModel and :doc:`BaseRecord <records>` rather than arrays.
+These functions also accept instances of BaseModel and :doc:`BaseRecord </plugins/db/records>` rather than arrays.
 
 
 Validation

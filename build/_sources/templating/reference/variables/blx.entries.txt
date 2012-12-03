@@ -184,7 +184,7 @@ Once you’ve got your entry, there are a number of properties and functions you
     The entry’s author’s ID.
 
 ``author``
-    The entry’s author’s :doc:`user object <users>`.
+    The entry’s author’s :doc:`user object <blx.users>`.
 
 ``language``
     The language the entry’s content was returned in.

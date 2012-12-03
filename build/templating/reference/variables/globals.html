@@ -63,13 +63,13 @@
 <dt><tt class="docutils literal"><span class="pre">blx</span></tt></dt>
 <dd><p class="first">Most of Blocks’ template variables are tucked away in <tt class="docutils literal"><span class="pre">blx</span></tt>:</p>
 <ul class="last simple">
-<li><tt class="xref doc docutils literal"><span class="pre">/templating/reference/blx.entries</span></tt> –&nbsp;used to access your site’s entries</li>
-<li><tt class="xref doc docutils literal"><span class="pre">/templating/reference/blx.request</span></tt> –&nbsp;used to access information about the current request</li>
-<li><tt class="xref doc docutils literal"><span class="pre">/templating/reference/blx.users</span></tt> – used to access your site’s users</li>
+<li><a class="reference internal" href="blx.entries.html"><em>blx.entries</em></a> –&nbsp;used to access your site’s entries</li>
+<li><a class="reference internal" href="blx.request.html"><em>blx.request</em></a> –&nbsp;used to access information about the current request</li>
+<li><a class="reference internal" href="blx.users.html"><em>blx.users</em></a> – used to access your site’s users</li>
 </ul>
 </dd>
 <dt><tt class="docutils literal"><span class="pre">now</span></tt></dt>
-<dd><p class="first">A <tt class="xref doc docutils literal"><span class="pre">date</span> <span class="pre">variable</span></tt> set to the current date and time.</p>
+<dd><p class="first">A <a class="reference internal" href="dates.html"><em>date variable</em></a> set to the current date and time.</p>
 <div class="last highlight-html"><div class="highlight"><pre>Today is {{ now.format(&#39;M j, Y&#39;) }}.
 </pre></div>
 </div>
@@ -87,7 +87,7 @@
 </div>
 </dd>
 <dt><tt class="docutils literal"><span class="pre">user</span></tt></dt>
-<dd><p class="first">A <tt class="xref doc docutils literal"><span class="pre">user</span> <span class="pre">variable</span></tt> set to the currently logged-in user (if there is one).</p>
+<dd><p class="first">A <a class="reference internal" href="blx.users.html"><em>user variable</em></a> set to the currently logged-in user (if there is one).</p>
 <div class="last highlight-html"><div class="highlight"><pre>{% if user %}
    Welcome, {{ user.friendlyName }}!
 {% endif %}

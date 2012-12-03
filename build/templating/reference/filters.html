@@ -51,9 +51,14 @@
   <div class="section" id="template-filters">
 <h1>Template Filters<a class="headerlink" href="#template-filters" title="Permalink to this headline">¶</a></h1>
 <p>On top of the template filters that <a class="reference external" href="http://twig.sensiolabs.org/doc/filters/index.html">Twig comes with</a>, Blocks provides a few of its own.</p>
-<dl class="docutils">
+<dl class="docutils" id="t">
 <dt><tt class="docutils literal"><span class="pre">translate</span></tt> or <tt class="docutils literal"><span class="pre">t</span></tt></dt>
-<dd>If the user’s preferred language doesn’t match your site’s language, Blocks will look for a translation file for the user’s preferred language, and see if it contains a translation for the preceding string.</dd>
+<dd><p class="first">If the user’s preferred language doesn’t match your site’s language, Blocks will look for a translation file for the user’s preferred language, and see if it contains a translation for the preceding string. (See <a class="reference internal" href="../examples/translations.html"><em>Template Translations</em></a>)</p>
+<p>If your text contains dynamic variables, add tokens to the string where they should go, and pass an object to the <tt class="docutils literal"><span class="pre">t</span></tt> filter that contains their values:</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>{{ &quot;Welcome, {name}&quot; | t({ name: user.friendlyName }) }}<span class="nt">&lt;p&gt;</span>
+</pre></div>
+</div>
+</dd>
 <dt><tt class="docutils literal"><span class="pre">number</span></tt></dt>
 <dd>Formats a number according to the user’s preferred language.</dd>
 <dt><tt class="docutils literal"><span class="pre">currency</span></tt></dt>
@@ -62,8 +67,14 @@
 <dd>Formats a percentage according to the user’s preferred language.</dd>
 <dt><tt class="docutils literal"><span class="pre">datetime</span></tt></dt>
 <dd>Formats a date according to the user’s preferred language.</dd>
-<dt><tt class="docutils literal"><span class="pre">without(element)</span></tt> or <tt class="docutils literal"><span class="pre">without([element1,</span> <span class="pre">element2])</span></tt></dt>
-<dd>Returns an array without the specified element(s).</dd>
+<dt><tt class="docutils literal"><span class="pre">without</span></tt></dt>
+<dd><p class="first">Returns an array without the specified element(s).</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% set entries = blx.entries.section(&#39;articles&#39;).limit(3).find %}
+{% set firstEntry = entries[0] %}
+{% set remainingEntries = entries|without(firstEntry) %}
+</pre></div>
+</div>
+</dd>
 <dt><tt class="docutils literal"><span class="pre">filter</span></tt></dt>
 <dd>Removes any empty elements from an array and returns the modified array.</dd>
 <dt><tt class="docutils literal"><span class="pre">ucfirst</span></tt></dt>

@@ -162,6 +162,9 @@ Once you’ve got your user, there are a number of properties and functions you 
 ``lastName``
     The user’s last name.
 
+``friendlyName``
+    The user’s first name if they’ve entered it, otherwise their username.
+
 ``email``
     The user’s email address.
 

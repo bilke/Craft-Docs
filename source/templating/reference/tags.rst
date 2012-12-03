@@ -56,7 +56,7 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 		    .bg { background-image: url(/resources/images/bg.png) }
 		{% endset %}
 
-		{% includeCs myCss %}
+		{% includeCss myCss %}
 
 
 .. _includehirescss:
@@ -70,7 +70,7 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 		    .bg { background-image: url(/resources/images/bg_2x.png); }
 		{% endset %}
 
-		{% includeHiResCs myHiResCss %}
+		{% includeHiResCss myHiResCss %}
 
 
 .. _includejs:

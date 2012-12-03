@@ -71,6 +71,41 @@
 </div>
 </dd>
 </dl>
+<dl class="docutils" id="paginate">
+<dt><tt class="docutils literal"><span class="pre">paginate</span></tt></dt>
+<dd><p class="first">Paginates entries, users, and sections with a given criteria. The syntax is <tt class="docutils literal"><span class="pre">{%</span> <span class="pre">paginate</span> <span class="pre">MyCriteria</span> <span class="pre">as</span> <span class="pre">PageSubset</span> <span class="pre">%}</span></tt>, where <tt class="docutils literal"><span class="pre">PageSubset</span></tt> becomes an array of items for the current page, which can be looped through.</p>
+<div class="highlight-html"><div class="highlight"><pre>{% paginate blx.entries.section(&#39;blog&#39;).limit(10) as entries %}
+
+    {% for entry in entries %}
+        <span class="nt">&lt;article&gt;</span>
+            <span class="nt">&lt;h1&gt;</span>{{ entry.title }}<span class="nt">&lt;/h1&gt;</span>
+            {{ entry.body }}
+        <span class="nt">&lt;/article&gt;</span>
+    {% endfor %}
+
+    {% if prevUrl %}
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ prevUrl }}&quot;</span><span class="nt">&gt;</span>Previous Page<span class="nt">&lt;/a&gt;</span>
+    {% endif %}
+
+    {% if nextUrl %}
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ nextUrl }}&quot;</span><span class="nt">&gt;</span>Next Page<span class="nt">&lt;/a&gt;</span>
+    {% endif %}
+
+{% endpaginate %}
+</pre></div>
+</div>
+<p>The following variables are available within the <tt class="docutils literal"><span class="pre">paginate</span></tt> tag pair:</p>
+<ul class="last simple">
+<li><tt class="docutils literal"><span class="pre">paginate.first</span></tt> –&nbsp;The number of the first item being shown</li>
+<li><tt class="docutils literal"><span class="pre">paginate.last</span></tt> –&nbsp;The number of the last item being shown</li>
+<li><tt class="docutils literal"><span class="pre">paginate.total</span></tt> – The total number of items across all pages</li>
+<li><tt class="docutils literal"><span class="pre">paginate.currentPage</span></tt> –&nbsp;The current page number</li>
+<li><tt class="docutils literal"><span class="pre">paginate.totalPages</span></tt> –&nbsp;The total number of pages</li>
+<li><tt class="docutils literal"><span class="pre">paginate.prevUrl</span></tt> – A URL to the previous page (if this isn’t the first page)</li>
+<li><tt class="docutils literal"><span class="pre">paginate.nextUrl</span></tt> –&nbsp;A URL to the next page (if this isn’t the last page)</li>
+</ul>
+</dd>
+</dl>
 <dl class="docutils" id="includecssfile">
 <dt><tt class="docutils literal"><span class="pre">includeCssFile</span></tt></dt>
 <dd><p class="first">Queues up a <tt class="docutils literal"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;stylesheet&quot;&gt;</span></tt> tag with the passed-in CSS file URL, for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</p>
@@ -94,7 +129,7 @@
     .bg { background-image: url(/resources/images/bg.png) }
 {% endset %}
 
-{% includeCs myCss %}
+{% includeCss myCss %}
 </pre></div>
 </div>
 </dd>
@@ -106,7 +141,7 @@
     .bg { background-image: url(/resources/images/bg_2x.png); }
 {% endset %}
 
-{% includeHiResCs myHiResCss %}
+{% includeHiResCss myHiResCss %}
 </pre></div>
 </div>
 </dd>

@@ -52,26 +52,64 @@
 <h1>Template Tags<a class="headerlink" href="#template-tags" title="Permalink to this headline">¶</a></h1>
 <p>On top of the template tags that <a class="reference external" href="http://twig.sensiolabs.org/doc/tags/index.html">Twig comes with</a>, Blocks provides a few of its own.</p>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">redirect</span> <span class="pre">&quot;some/path&quot;</span> <span class="pre">}</span></tt></dt>
-<dd>Redirects the browser to the passed-in URL or site path.</dd>
-<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">exit</span> <span class="pre">404</span> <span class="pre">%}</span></tt></dt>
-<dd>Cancels the output of the current template, and responds with a 404 (or any other HTTP error code you pass in).</dd>
+<dt><tt class="docutils literal"><span class="pre">redirect</span></tt></dt>
+<dd><p class="first">Redirects the browser to the passed-in URL or site path.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% if not user %}
+        {% redirect &#39;login&#39; %}
+{% endif %}
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">exit</span></tt></dt>
+<dd><p class="first">Cancels the output of the current template, and throws an HttpException, optionally with the status code you pass in.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% set entry = blx.entries.id(entryId) %}
+
+{% if not entry %}
+        {% exit 404 %}
+{% endif %}
+</pre></div>
+</div>
+</dd>
 </dl>
 <dl class="docutils" id="includecssfile">
-<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">includeCssFile</span> <span class="pre">&quot;/url/to/css/file&quot;</span>&nbsp; <span class="pre">%}</span></tt></dt>
-<dd>Queues up a <tt class="docutils literal"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;stylesheet&quot;&gt;</span></tt> tag with the passed-in CSS file URL, for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</dd>
-</dl>
-<dl class="docutils" id="includecss">
-<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">includeCss</span> <span class="pre">myCss</span>&nbsp; <span class="pre">%}</span></tt></dt>
-<dd>Queues up a <tt class="docutils literal"><span class="pre">&lt;style</span> <span class="pre">type=&quot;text/css&quot;&gt;</span></tt> tag with the passed-in CSS, for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</dd>
+<dt><tt class="docutils literal"><span class="pre">includeCssFile</span></tt></dt>
+<dd><p class="first">Queues up a <tt class="docutils literal"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;stylesheet&quot;&gt;</span></tt> tag with the passed-in CSS file URL, for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% includeCssFile &quot;/resources/css/global.css&quot; %}
+</pre></div>
+</div>
+</dd>
 </dl>
 <dl class="docutils" id="includejsfile">
-<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">includeJsFile</span> <span class="pre">&quot;/url/to/js/file&quot;</span>&nbsp; <span class="pre">%}</span></tt></dt>
-<dd>Queues up a <tt class="docutils literal"><span class="pre">&lt;script</span> <span class="pre">type=&quot;javascript&quot;&gt;</span></tt> tag with the passed-in JS file URL, for inclusion via the <a class="reference internal" href="functions.html#getfootnodes"><em>getFootNodes()</em></a> function.</dd>
+<dt><tt class="docutils literal"><span class="pre">includeJsFile</span></tt></dt>
+<dd><p class="first">Queues up a <tt class="docutils literal"><span class="pre">&lt;script</span> <span class="pre">type=&quot;javascript&quot;&gt;</span></tt> tag with the passed-in JS file URL, for inclusion via the <a class="reference internal" href="functions.html#getfootnodes"><em>getFootNodes()</em></a> function.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% includeJsFile &quot;/resources/js/global.js&quot; %}
+</pre></div>
+</div>
+</dd>
+</dl>
+<dl class="docutils" id="includecss">
+<dt><tt class="docutils literal"><span class="pre">includeCss</span></tt></dt>
+<dd><p class="first">Queues up a <tt class="docutils literal"><span class="pre">&lt;style</span> <span class="pre">type=&quot;text/css&quot;&gt;</span></tt> tag with the passed-in CSS, for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% set myCss %}
+        .error { color: #f00; }
+{% endset %}
+
+{% includeCs myCss %}
+</pre></div>
+</div>
+</dd>
 </dl>
 <dl class="docutils" id="includejs">
-<dt><tt class="docutils literal"><span class="pre">{%</span> <span class="pre">includeJs</span> <span class="pre">myJs</span> <span class="pre">%}</span></tt></dt>
-<dd>Queues up a <tt class="docutils literal"><span class="pre">&lt;script</span> <span class="pre">type=&quot;javascript&quot;&gt;</span></tt> tag with the passed-in JS, for inclusion via the <a class="reference internal" href="functions.html#getfootnodes"><em>getFootNodes()</em></a> function.</dd>
+<dt><tt class="docutils literal"><span class="pre">includeJs</span></tt></dt>
+<dd><p class="first">Queues up a <tt class="docutils literal"><span class="pre">&lt;script</span> <span class="pre">type=&quot;javascript&quot;&gt;</span></tt> tag with the passed-in JS, for inclusion via the <a class="reference internal" href="functions.html#getfootnodes"><em>getFootNodes()</em></a> function.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% set myJs %}
+        $(&#39;.date&#39;).datepicker();
+{% endset %}
+
+{% includeJs myJs %}
+</pre></div>
+</div>
+</dd>
 </dl>
 </div>
 

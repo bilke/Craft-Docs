@@ -24,7 +24,7 @@ On top of the template functions that `Twig comes with <http://twig.sensiolabs.o
 .. _getheadnodes:
 
 ``getHeadNodes()``
-	Outputs all of the HTML nodes that have been queued up by the :ref:`includeCssFile <includecssfile>` and :ref:`includeCss <includecss>` tags.
+	Outputs all of the HTML nodes that have been queued up by the :ref:`includeCssFile <includecssfile>`, :ref:`includeCss <includecss>`, and :ref:`includeHiResCss <includehirescss>` tags.
 
 .. _getfootnodes:
 

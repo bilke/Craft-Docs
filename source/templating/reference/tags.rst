@@ -9,7 +9,7 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 	.. code-block:: html
 
 		{% if not user %}
-			{% redirect 'login' %}
+		    {% redirect 'login' %}
 		{% endif %}
 
 
@@ -21,7 +21,7 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 		{% set entry = blx.entries.id(entryId) %}
 
 		{% if not entry %}
-			{% exit 404 %}
+		    {% exit 404 %}
 		{% endif %}
 
 
@@ -48,26 +48,40 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 .. _includecss:
 
 ``includeCss``
-	Queues up a ``<style type="text/css">`` tag with the passed-in CSS, for inclusion via the :ref:`getHeadNodes() <getheadnodes>` function.
+	Queues up CSS for inclusion via the :ref:`getHeadNodes() <getheadnodes>` function.
 
 	.. code-block:: html
 
 		{% set myCss %}
-			.error { color: #f00; }
+		    .bg { background-image: url(/resources/images/bg.png) }
 		{% endset %}
 
 		{% includeCs myCss %}
 
 
+.. _includehirescss:
+
+``includeHiResCss``
+	Queues up CSS targetted at hi-res displays for inclusion via the :ref:`getHeadNodes() <getheadnodes>` function.
+
+	.. code-block:: html
+
+		{% set myHiResCss %}
+		    .bg { background-image: url(/resources/images/bg_2x.png); }
+		{% endset %}
+
+		{% includeHiResCs myHiResCss %}
+
+
 .. _includejs:
 
 ``includeJs``
-	Queues up a ``<script type="javascript">`` tag with the passed-in JS, for inclusion via the :ref:`getFootNodes() <getfootnodes>` function.
+	Queues up Javascript code for inclusion via the :ref:`getFootNodes() <getfootnodes>` function.
 
 	.. code-block:: html
 
 		{% set myJs %}
-			$('.date').datepicker();
+		    $('.date').datepicker();
 		{% endset %}
 
 		{% includeJs myJs %}

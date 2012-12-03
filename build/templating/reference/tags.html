@@ -55,7 +55,7 @@
 <dt><tt class="docutils literal"><span class="pre">redirect</span></tt></dt>
 <dd><p class="first">Redirects the browser to the passed-in URL or site path.</p>
 <div class="last highlight-html"><div class="highlight"><pre>{% if not user %}
-        {% redirect &#39;login&#39; %}
+    {% redirect &#39;login&#39; %}
 {% endif %}
 </pre></div>
 </div>
@@ -65,7 +65,7 @@
 <div class="last highlight-html"><div class="highlight"><pre>{% set entry = blx.entries.id(entryId) %}
 
 {% if not entry %}
-        {% exit 404 %}
+    {% exit 404 %}
 {% endif %}
 </pre></div>
 </div>
@@ -89,9 +89,9 @@
 </dl>
 <dl class="docutils" id="includecss">
 <dt><tt class="docutils literal"><span class="pre">includeCss</span></tt></dt>
-<dd><p class="first">Queues up a <tt class="docutils literal"><span class="pre">&lt;style</span> <span class="pre">type=&quot;text/css&quot;&gt;</span></tt> tag with the passed-in CSS, for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</p>
+<dd><p class="first">Queues up CSS for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</p>
 <div class="last highlight-html"><div class="highlight"><pre>{% set myCss %}
-        .error { color: #f00; }
+    .bg { background-image: url(/resources/images/bg.png) }
 {% endset %}
 
 {% includeCs myCss %}
@@ -99,11 +99,23 @@
 </div>
 </dd>
 </dl>
+<dl class="docutils" id="includehirescss">
+<dt><tt class="docutils literal"><span class="pre">includeHiResCss</span></tt></dt>
+<dd><p class="first">Queues up CSS targetted at hi-res displays for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% set myHiResCss %}
+    .bg { background-image: url(/resources/images/bg_2x.png); }
+{% endset %}
+
+{% includeHiResCs myHiResCss %}
+</pre></div>
+</div>
+</dd>
+</dl>
 <dl class="docutils" id="includejs">
 <dt><tt class="docutils literal"><span class="pre">includeJs</span></tt></dt>
-<dd><p class="first">Queues up a <tt class="docutils literal"><span class="pre">&lt;script</span> <span class="pre">type=&quot;javascript&quot;&gt;</span></tt> tag with the passed-in JS, for inclusion via the <a class="reference internal" href="functions.html#getfootnodes"><em>getFootNodes()</em></a> function.</p>
+<dd><p class="first">Queues up Javascript code for inclusion via the <a class="reference internal" href="functions.html#getfootnodes"><em>getFootNodes()</em></a> function.</p>
 <div class="last highlight-html"><div class="highlight"><pre>{% set myJs %}
-        $(&#39;.date&#39;).datepicker();
+    $(&#39;.date&#39;).datepicker();
 {% endset %}
 
 {% includeJs myJs %}

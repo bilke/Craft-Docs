@@ -1,7 +1,7 @@
 Template Translations
 =====================
 
-While the Languages package will enable all of your site’s *content* to be translated, it won’t help you translate any text that’ hard-coded into your template files. Not to worry though, because Blocks templates are inherently translatable already.
+While the Languages package will enable all of your site’s *content* to be translated, it won’t help you translate any text that’s hard-coded into your template files. Not to worry though, because Blocks templates are inherently translatable already.
 
 To make some text in your template translatable, all you need to do is run it through the :ref:`translate <t>` filter.
 

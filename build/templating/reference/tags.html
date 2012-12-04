@@ -62,7 +62,7 @@
 </dd>
 <dt><tt class="docutils literal"><span class="pre">exit</span></tt></dt>
 <dd><p class="first">Cancels the output of the current template, and throws an HttpException, optionally with the status code you pass in.</p>
-<div class="last highlight-html"><div class="highlight"><pre>{% set entry = blx.entries.id(entryId) %}
+<div class="last highlight-html"><div class="highlight"><pre>{% set entry = blx.entries.id(entryId).find() %}
 
 {% if not entry %}
     {% exit 404 %}

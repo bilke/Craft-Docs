@@ -18,7 +18,7 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 
     .. code-block:: html
 
-        {% set entry = blx.entries.id(entryId) %}
+        {% set entry = blx.entries.id(entryId).find() %}
 
         {% if not entry %}
             {% exit 404 %}

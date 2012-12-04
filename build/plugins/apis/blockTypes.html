@@ -62,13 +62,13 @@
 			
   <div class="section" id="blocktypesservice">
 <h1>BlockTypesService<a class="headerlink" href="#blocktypesservice" title="Permalink to this headline">¶</a></h1>
-<p>AccountService provides the following APIs for dealing with block types:</p>
+<p>BlockTypesService provides the following APIs for dealing with block types:</p>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">getAllBlockTypes()</span></tt></dt>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;blockTypes-&gt;getAllBlockTypes()</span></tt></dt>
 <dd>Returns all installed block types.</dd>
-<dt><tt class="docutils literal"><span class="pre">getBlockType($class)</span></tt></dt>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;blockTypes-&gt;getBlockType($class)</span></tt></dt>
 <dd>Returns a block type by its class handle, or null if no such block type exists.</dd>
-<dt><tt class="docutils literal"><span class="pre">populateBlockType(BaseBlockModel</span> <span class="pre">$block,</span> <span class="pre">$entity)</span></tt></dt>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;blockTypes-&gt;populateBlockType(BaseBlockModel</span> <span class="pre">$block,</span> <span class="pre">$entity)</span></tt></dt>
 <dd>Instantiates a new block type based on the passed-in <tt class="docutils literal"><span class="pre">$block</span></tt> block model, determining which block type to use based on <tt class="docutils literal"><span class="pre">$block-&gt;type</span></tt>, and setting the block type’s settings based on <tt class="docutils literal"><span class="pre">$block-&gt;settings</span></tt>.</dd>
 </dl>
 </div>

@@ -109,7 +109,11 @@
 <dl class="docutils" id="includecssfile">
 <dt><tt class="docutils literal"><span class="pre">includeCssFile</span></tt></dt>
 <dd><p class="first">Queues up a <tt class="docutils literal"><span class="pre">&lt;link</span> <span class="pre">rel=&quot;stylesheet&quot;&gt;</span></tt> tag with the passed-in CSS file URL, for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</p>
-<div class="last highlight-html"><div class="highlight"><pre>{% includeCssFile &quot;/resources/css/global.css&quot; %}
+<div class="highlight-html"><div class="highlight"><pre>{% includeCssFile &quot;/resources/css/global.css&quot; %}
+</pre></div>
+</div>
+<p>Add “<tt class="docutils literal"><span class="pre">first</span></tt>” after the file URL if you want it to get included before other CSS files:</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% includeCssFile &quot;/resources/css/global.css&quot; first %}
 </pre></div>
 </div>
 </dd>
@@ -117,7 +121,11 @@
 <dl class="docutils" id="includejsfile">
 <dt><tt class="docutils literal"><span class="pre">includeJsFile</span></tt></dt>
 <dd><p class="first">Queues up a <tt class="docutils literal"><span class="pre">&lt;script</span> <span class="pre">type=&quot;javascript&quot;&gt;</span></tt> tag with the passed-in JS file URL, for inclusion via the <a class="reference internal" href="functions.html#getfootnodes"><em>getFootNodes()</em></a> function.</p>
-<div class="last highlight-html"><div class="highlight"><pre>{% includeJsFile &quot;/resources/js/global.js&quot; %}
+<div class="highlight-html"><div class="highlight"><pre>{% includeJsFile &quot;/resources/js/global.js&quot; %}
+</pre></div>
+</div>
+<p>Add “<tt class="docutils literal"><span class="pre">first</span></tt>” after the file URL if you want it to get included before other JS files:</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% includeJsFile &quot;/resources/js/global.js&quot; first %}
 </pre></div>
 </div>
 </dd>
@@ -125,11 +133,15 @@
 <dl class="docutils" id="includecss">
 <dt><tt class="docutils literal"><span class="pre">includeCss</span></tt></dt>
 <dd><p class="first">Queues up CSS for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</p>
-<div class="last highlight-html"><div class="highlight"><pre>{% set myCss %}
+<div class="highlight-html"><div class="highlight"><pre>{% set myCss %}
     .bg { background-image: url(/resources/images/bg.png) }
 {% endset %}
 
 {% includeCss myCss %}
+</pre></div>
+</div>
+<p>Add “<tt class="docutils literal"><span class="pre">first</span></tt>” after the CSS if you want it to get included before other CSS:</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% includeCss myCss first %}
 </pre></div>
 </div>
 </dd>
@@ -137,11 +149,15 @@
 <dl class="docutils" id="includehirescss">
 <dt><tt class="docutils literal"><span class="pre">includeHiResCss</span></tt></dt>
 <dd><p class="first">Queues up CSS targetted at hi-res displays for inclusion via the <a class="reference internal" href="functions.html#getheadnodes"><em>getHeadNodes()</em></a> function.</p>
-<div class="last highlight-html"><div class="highlight"><pre>{% set myHiResCss %}
+<div class="highlight-html"><div class="highlight"><pre>{% set myHiResCss %}
     .bg { background-image: url(/resources/images/bg_2x.png); }
 {% endset %}
 
 {% includeHiResCss myHiResCss %}
+</pre></div>
+</div>
+<p>Add “<tt class="docutils literal"><span class="pre">first</span></tt>” after the CSS if you want it to get included before other CSS:</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% includeHiResCss myHiResCss first %}
 </pre></div>
 </div>
 </dd>
@@ -149,11 +165,15 @@
 <dl class="docutils" id="includejs">
 <dt><tt class="docutils literal"><span class="pre">includeJs</span></tt></dt>
 <dd><p class="first">Queues up Javascript code for inclusion via the <a class="reference internal" href="functions.html#getfootnodes"><em>getFootNodes()</em></a> function.</p>
-<div class="last highlight-html"><div class="highlight"><pre>{% set myJs %}
+<div class="highlight-html"><div class="highlight"><pre>{% set myJs %}
     $(&#39;.date&#39;).datepicker();
 {% endset %}
 
 {% includeJs myJs %}
+</pre></div>
+</div>
+<p>Add “<tt class="docutils literal"><span class="pre">first</span></tt>” after the JS if you want it to get included before other JS:</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% includeCss myJs first %}
 </pre></div>
 </div>
 </dd>

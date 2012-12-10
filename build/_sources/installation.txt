@@ -32,7 +32,8 @@ Admin users can update Blocks to the latest version from the Updates section of 
 2. Upload blocks/app-new/ to your web server’s blocks/ folder
 3. Rename blocks/app/ to blocks/app-old/ on your web server
 4. Rename blocks/app-new/ to blocks/app/ on your web server
-5. Go to your Blocks CP in your browser. You will be prompted to proceed with a DB update. Click “Finish up”.
+5. Delete the blocks/storage/runtime/cache and blocks/storage/runtime/compiled_templates folders, if they exist.
+6. Go to your Blocks CP in your browser. You will be prompted to proceed with a DB update. Click “Finish up”.
 
 For automatic updates to work, at least two criteria must be satisfied:
 

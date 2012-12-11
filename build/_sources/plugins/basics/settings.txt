@@ -35,7 +35,7 @@ Next you need to add a ``getSettingsHtml()`` method which returns the HTML for d
        {
            return blx()->templates->render('cocktailrecipes/settings', array(
                'settings' => $this->getSettings()
-           ))
+           ));
        }
    }
 

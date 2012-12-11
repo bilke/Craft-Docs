@@ -25,6 +25,7 @@
 <li class="toctree-l3 current"><a class="current reference internal" href="">Single Entry Pages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../forms/new_entry.html">New Entry Form</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../forms/edit_entry.html">Edit Entry Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../translations.html">Template Translations</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference/index.html">Templating Reference</a></li>
@@ -50,7 +51,7 @@
   <div class="section" id="single-entry-pages">
 <h1>Single Entry Pages<a class="headerlink" href="#single-entry-pages" title="Permalink to this headline">¶</a></h1>
 <p>When a request comes in that matches an entry’s URL, that entry’s section’s template gets loaded up, and an <tt class="docutils literal"><span class="pre">entry</span></tt> variable is made available to it.</p>
-<p>That variable will give you access to all of that entry’s info, such as <tt class="docutils literal"><span class="pre">entry.title</span></tt>, <tt class="docutils literal"><span class="pre">entry.someBlockHandle</span></tt>, etc. (See <em class="xref std std-ref">entry-properties</em> for a full reference on what’s available).</p>
+<p>That variable will give you access to all of that entry’s info, such as <tt class="docutils literal"><span class="pre">entry.title</span></tt>, <tt class="docutils literal"><span class="pre">entry.someBlockHandle</span></tt>, etc. (See <a class="reference internal" href="../../reference/variables/blx.entries.html#entry-properties"><em>Entry Properties</em></a> for a full reference on what’s available).</p>
 <div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
 <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;title&gt;</span>{{ entry.title }}<span class="nt">&lt;/title&gt;</span>

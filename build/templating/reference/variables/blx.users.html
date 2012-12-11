@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>blx.users - Blocks Docs</title>
+	<link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Templating</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Templating Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Template Variables</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="globals.html">Global Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dates.html">Dates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="blx.entries.html"><tt class="docutils literal"><span class="pre">blx.entries</span></tt></a></li>
+<li class="toctree-l4"><a class="reference internal" href="blx.request.html"><tt class="docutils literal"><span class="pre">blx.request</span></tt></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><tt class="docutils literal"><span class="pre">blx.users</span></tt></a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../filters.html">Template Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functions.html">Template Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tags.html">Template Tags</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../../index.html">Templating</a></li>
+					<li><a href="../index.html">Templating Reference</a></li>
+					<li><a href="index.html">Template Variables</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="blx-users">
+<h1><tt class="docutils literal"><span class="pre">blx.users</span></tt><a class="headerlink" href="#blx-users" title="Permalink to this headline">¶</a></h1>
+<p>If you have the Users package installed, you can access your site’s users from your templates via <tt class="docutils literal"><span class="pre">blx.users</span></tt>.</p>
+<div class="section" id="output-functions">
+<h2>Output Functions<a class="headerlink" href="#output-functions" title="Permalink to this headline">¶</a></h2>
+<p>There are three ways you can get <tt class="docutils literal"><span class="pre">blx.users</span></tt> to output data: <tt class="docutils literal"><span class="pre">find()</span></tt>, <tt class="docutils literal"><span class="pre">first()</span></tt>, and <tt class="docutils literal"><span class="pre">total()</span></tt>.</p>
+<p>If you want to get an array of multiple users that you can loop through, use <tt class="docutils literal"><span class="pre">find()</span></tt>:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% for accounts in blx.users.find() %}
+    <span class="nt">&lt;li&gt;</span>{{ account.username }}<span class="nt">&lt;/li&gt;</span>
+{% endfor %}
+</pre></div>
+</div>
+<p>If you just want to get one user, use <tt class="docutils literal"><span class="pre">first()</span></tt>:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% set account = blx.users.first() %}
+
+{{ account.title}}
+</pre></div>
+</div>
+<p>If you want to get the total number of users, use <tt class="docutils literal"><span class="pre">total()</span></tt>:</p>
+<div class="highlight-html"><div class="highlight"><pre>Total users: {{ blx.users.total() }}
+</pre></div>
+</div>
+<p><strong>Note:</strong> You might have noticed that we’re setting the actual user variables to “<tt class="docutils literal"><span class="pre">account</span></tt>” rather than “<tt class="docutils literal"><span class="pre">user</span></tt>”. That’s because <tt class="docutils literal"><span class="pre">user</span></tt> is already a <a class="reference internal" href="globals.html"><em>global variable</em></a>, and assigning <tt class="docutils literal"><span class="pre">user</span></tt> to a new variable would overwrite that.</p>
+</div>
+<div class="section" id="tailoring-the-results">
+<h2>Tailoring the Results<a class="headerlink" href="#tailoring-the-results" title="Permalink to this headline">¶</a></h2>
+<p>Calling <tt class="docutils literal"><span class="pre">blx.users.find()</span></tt> by itself is going to return 100 users, ordered by username. If that happens to be exactly what you needed, great! But most likely you’ll want to customize the results a bit.</p>
+<p>Blocks supports a number of parameters that should help you do just that.</p>
+<div class="section" id="parameter-syntax">
+<h3>Parameter Syntax<a class="headerlink" href="#parameter-syntax" title="Permalink to this headline">¶</a></h3>
+<p>There are two ways you can add parameters to your <tt class="docutils literal"><span class="pre">blx.users</span></tt> tag:</p>
+<ol class="arabic">
+<li><p class="first">You can chain the parameters together as additional functions before reaching the output function:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">blx</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">&#39;authors&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">You can pass your parameters as an argument to the output functions:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">blx</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="n">group</span><span class="p">:</span> <span class="s">&#39;authors&#39;</span> <span class="p">})</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Both of these ways are perfectly valid, and each have their place. The former is more readable, but with the latter syntax, parameters can be defined once, and reused:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% set params = { group: &#39;authors&#39; } %}
+
+Total authors: {{ blx.users.total(params) }}
+
+The last 5 authors:
+
+<span class="nt">&lt;ul&gt;</span>
+    {% for author in blx.users.order(&#39;dateCreated desc&#39;).limit(5).find(params) %}
+        <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;{{ url(&#39;authors/&#39;~author.username) }}&quot;</span><span class="nt">&gt;</span>{{ author }}<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+    {% endfor %}
+<span class="nt">&lt;/ul&gt;</span>
+</pre></div>
+</div>
+<p>Notice how in that example, we only had to define the <tt class="docutils literal"><span class="pre">group</span></tt> parameter once, but were able to use it twice –&nbsp;once to get the grand total number of users that meet the criteria, and a second time to actually grab the 5 latest ones.</p>
+<p>That was also an example of how the two syntaxes can be mixed and matched. Notice how on that for-loop line, we are setting the order and limit using the chaining syntax, but applying the group parameter by passing <tt class="docutils literal"><span class="pre">params</span></tt> as an argument to <tt class="docutils literal"><span class="pre">find()</span></tt>.</p>
+</div>
+<div class="section" id="shared-parameters">
+<h3>Shared Parameters<a class="headerlink" href="#shared-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Each of the <tt class="docutils literal"><span class="pre">blx.users</span></tt> output functions share several parameters that will help you find the user(s) you’re looking for:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">id</span></tt></dt>
+<dd>Only fetch the user with the given ID.</dd>
+<dt><tt class="docutils literal"><span class="pre">groupId</span></tt></dt>
+<dd>Only fetch users in the group with the given ID.</dd>
+<dt><tt class="docutils literal"><span class="pre">group</span></tt></dt>
+<dd>Only fetch users in the group with the given handle.</dd>
+<dt><tt class="docutils literal"><span class="pre">username</span></tt></dt>
+<dd>Only fetch the user with the given username.</dd>
+<dt><tt class="docutils literal"><span class="pre">firstName</span></tt></dt>
+<dd>Only fetch users with the givin first name.</dd>
+<dt><tt class="docutils literal"><span class="pre">lastName</span></tt></dt>
+<dd>Only fetch users with the given last name.</dd>
+<dt><tt class="docutils literal"><span class="pre">email</span></tt></dt>
+<dd>Only fetch users with the given email.</dd>
+<dt><tt class="docutils literal"><span class="pre">admin</span></tt></dt>
+<dd>Only fetch admin users.</dd>
+<dt><tt class="docutils literal"><span class="pre">status</span></tt></dt>
+<dd>Only fetch users with the given status. Possible values are <tt class="docutils literal"><span class="pre">'active'</span></tt>, <tt class="docutils literal"><span class="pre">'locked'</span></tt>, <tt class="docutils literal"><span class="pre">'suspended'</span></tt>, <tt class="docutils literal"><span class="pre">'pending'</span></tt>, <tt class="docutils literal"><span class="pre">archived'</span></tt>, and <tt class="docutils literal"><span class="pre">'*'</span></tt>. The default value is <tt class="docutils literal"><span class="pre">'active'</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">offset</span></tt></dt>
+<dd>Skips the first <em>X</em> users. For example, if you set <tt class="docutils literal"><span class="pre">offset(1)</span></tt>, the would-be second user returned becomes the first.</dd>
+</dl>
+</div>
+<div class="section" id="parameters-exclusive-to-find">
+<h3>Parameters Exclusive to <tt class="docutils literal"><span class="pre">find()</span></tt><a class="headerlink" href="#parameters-exclusive-to-find" title="Permalink to this headline">¶</a></h3>
+<p>The following parameters will only make a difference when calling the <tt class="docutils literal"><span class="pre">find()</span></tt> output function:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">order</span></tt></dt>
+<dd>The order the users should be returned in. Possible values include <tt class="docutils literal"><span class="pre">'username'</span></tt>, <tt class="docutils literal"><span class="pre">'firstName'</span></tt>, <tt class="docutils literal"><span class="pre">'lastName'</span></tt>, <tt class="docutils literal"><span class="pre">'email'</span></tt>, <tt class="docutils literal"><span class="pre">'language'</span></tt>, <tt class="docutils literal"><span class="pre">'status'</span></tt>, and <tt class="docutils literal"><span class="pre">'lastLoginDate'</span></tt>. If you want the users to be sorted in descending order, add “<tt class="docutils literal"><span class="pre">desc</span></tt>” after the property name (ex: <tt class="docutils literal"><span class="pre">'lastLoginDate</span> <span class="pre">desc'</span></tt>). The default value is <tt class="docutils literal"><span class="pre">'username'</span></tt>.</dd>
+<dt><tt class="docutils literal"><span class="pre">limit</span></tt></dt>
+<dd>Limits the results to <em>X</em> users.</dd>
+<dt><tt class="docutils literal"><span class="pre">indexBy</span></tt></dt>
+<dd>Indexes the results by a given property. Possible values include <tt class="docutils literal"><span class="pre">'username'</span></tt>, <tt class="docutils literal"><span class="pre">'firstName'</span></tt>, <tt class="docutils literal"><span class="pre">'lastName'</span></tt>, <tt class="docutils literal"><span class="pre">'email'</span></tt>, <tt class="docutils literal"><span class="pre">'language'</span></tt>, <tt class="docutils literal"><span class="pre">'status'</span></tt>, and <tt class="docutils literal"><span class="pre">'lastLoginDate'</span></tt>.</dd>
+</dl>
+</div>
+<div class="section" id="parameter-value-syntax">
+<h3>Parameter Value Syntax<a class="headerlink" href="#parameter-value-syntax" title="Permalink to this headline">¶</a></h3>
+<p>Each of these parameters can be set to a single value or multiple values, and can optionally be used to <em>exclude</em> which users get returned.</p>
+<p>To pass in multiple values, you can either pass them as an array, comma-delimited string, or even as separate arguments if you’re using the chaining method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">blx</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">id</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+<span class="n">blx</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">id</span><span class="p">(</span><span class="s">&#39;1,2,3&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+<span class="n">blx</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="nb">id</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="p">})</span>
+<span class="n">blx</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="nb">id</span><span class="p">:</span> <span class="s">&#39;1,2,3&#39;</span> <span class="p">})</span>
+</pre></div>
+</div>
+<p>To exclude users with a given value, you must pass in a string, prefixed with “<tt class="docutils literal"><span class="pre">not</span></tt>”:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">blx</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">id</span><span class="p">(</span><span class="s">&#39;not 1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+<span class="n">blx</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">find</span><span class="p">({</span> <span class="nb">id</span><span class="p">:</span> <span class="s">&#39;not 1&#39;</span> <span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="user-properties">
+<h2>User Properties<a class="headerlink" href="#user-properties" title="Permalink to this headline">¶</a></h2>
+<p>Once you’ve got your user, there are a number of properties and functions you can call from it.</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">id</span></tt></dt>
+<dd>The user’s ID.</dd>
+<dt><tt class="docutils literal"><span class="pre">username</span></tt></dt>
+<dd>The user’s username.</dd>
+<dt><tt class="docutils literal"><span class="pre">firstName</span></tt></dt>
+<dd>The user’s first name.</dd>
+<dt><tt class="docutils literal"><span class="pre">lastName</span></tt></dt>
+<dd>The user’s last name.</dd>
+<dt><tt class="docutils literal"><span class="pre">friendlyName</span></tt></dt>
+<dd>The user’s first name if they’ve entered it, otherwise their username.</dd>
+<dt><tt class="docutils literal"><span class="pre">email</span></tt></dt>
+<dd>The user’s email address.</dd>
+<dt><tt class="docutils literal"><span class="pre">language</span></tt></dt>
+<dd>The user’s preferred language.</dd>
+<dt><tt class="docutils literal"><span class="pre">admin</span></tt></dt>
+<dd>Whether the user is an admin.</dd>
+<dt><tt class="docutils literal"><span class="pre">status</span></tt></dt>
+<dd>The user’s status (&#8216;active&#8217;, &#8216;locked&#8217;, &#8216;suspended&#8217;, &#8216;pending&#8217;, &#8216;archived&#8217;).</dd>
+<dt><tt class="docutils literal"><span class="pre">lastLoginDate</span></tt></dt>
+<dd>A <a class="reference internal" href="dates.html"><em>date variable</em></a> of the last time the user logged in.</dd>
+<dt><tt class="docutils literal"><span class="pre">dateCreated</span></tt></dt>
+<dd>A <a class="reference internal" href="dates.html"><em>date variable</em></a> of the date the user was created.</dd>
+</dl>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="../filters.html">Template Filters</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

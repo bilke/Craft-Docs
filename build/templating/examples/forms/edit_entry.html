@@ -25,6 +25,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../entries/single.html">Single Entry Pages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="new_entry.html">New Entry Form</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">Edit Entry Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="login.html">Login Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="register.html">User Registration Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forgotpassword.html">Forgot Password Form</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../translations.html">Template Translations</a></li>
 </ul>
 </li>
@@ -51,23 +54,24 @@
   <div class="section" id="edit-entry-form">
 <h1>Edit Entry Form<a class="headerlink" href="#edit-entry-form" title="Permalink to this headline">¶</a></h1>
 <p>You can create a form to edit existing entries on front-end of your site using the following code:</p>
-<div class="highlight-html"><pre>{% set entry = blx.entries.id(1).first %}
+<div class="highlight-html"><div class="highlight"><pre>{% set entry = blx.entries.id(1).first %}
 
-&lt;form method="post" action="" accept-charset="UTF-8"&gt;
-    &lt;input type="hidden" name="action" value="entries/saveEntry"&gt;
-    &lt;input type="hidden" name="redirect" value="viewentry/{entryId}"&gt;
-    &lt;input type="hidden" name="entryId" value="{{ entry.id }}"&gt;
-    &lt;input type="hidden" name="sectionId" value="10"&gt;
-    &lt;input type="hidden" name="enabled" value="1"&gt;
+<span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">accept-charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;action&quot;</span> <span class="na">value=</span><span class="s">&quot;entries/saveEntry&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;redirect&quot;</span> <span class="na">value=</span><span class="s">&quot;viewentry/{entryId}&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;entryId&quot;</span> <span class="na">value=</span><span class="s">&quot;{{ entry.id }}&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;sectionId&quot;</span> <span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;enabled&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
 
-    &lt;label for="title"&gt;Title&lt;/label&gt;
-    &lt;input id="title" type="text" name="title" value="{{ entry.title }}&gt;
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;title&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span> <span class="na">value=</span><span class="s">&quot;{{ entry.title }}&quot;</span><span class="nt">&gt;</span>
 
-    &lt;label for="body"&gt;Body&lt;/label&gt;
-    &lt;textarea id="body" name="blocks[body]"&gt;{{ entry.body }}&lt;/textarea&gt;
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;body&quot;</span><span class="nt">&gt;</span>Body<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;body&quot;</span> <span class="na">name=</span><span class="s">&quot;blocks[body]&quot;</span><span class="nt">&gt;</span>{{ entry.body }}<span class="nt">&lt;/textarea&gt;</span>
 
-    &lt;input type="submit" value="Publish"&gt;
-&lt;/form&gt;</pre>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Publish&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
 </div>
 </div>
 
@@ -75,7 +79,7 @@
 
 			
 			<nav class="nav">
-				Next up: <a href="../translations.html">Template Translations</a></li>
+				Next up: <a href="login.html">Login Form</a></li>
 			</nav>
 			
 		</div>

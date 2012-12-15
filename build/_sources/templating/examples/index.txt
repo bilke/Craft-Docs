@@ -31,6 +31,9 @@ Forms
 
    forms/new_entry
    forms/edit_entry
+   forms/login
+   forms/register
+   forms/forgotpassword
 
 
 Miscellaneous

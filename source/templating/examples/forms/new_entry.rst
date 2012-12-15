@@ -3,7 +3,6 @@ New Entry Form
 
 You can create a new entry form for the front-end of your site using the following code:
 
-
 .. code-block:: html
 
     <form method="post" action="" accept-charset="UTF-8">

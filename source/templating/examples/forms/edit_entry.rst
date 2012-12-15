@@ -3,7 +3,6 @@ Edit Entry Form
 
 You can create a form to edit existing entries on front-end of your site using the following code:
 
-
 .. code-block:: html
 
     {% set entry = blx.entries.id(1).first %}
@@ -16,7 +15,7 @@ You can create a form to edit existing entries on front-end of your site using t
         <input type="hidden" name="enabled" value="1">
 
         <label for="title">Title</label>
-        <input id="title" type="text" name="title" value="{{ entry.title }}>
+        <input id="title" type="text" name="title" value="{{ entry.title }}">
 
         <label for="body">Body</label>
         <textarea id="body" name="blocks[body]">{{ entry.body }}</textarea>

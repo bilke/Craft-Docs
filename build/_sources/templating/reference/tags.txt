@@ -25,6 +25,28 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
         {% endif %}
 
 
+.. _requireLogin:
+
+``requireLogin``
+    Requires the user to be logged in. If they’re not, they’ll be redirected to your site’s :doc:`login page <templating/examples/forms/login>`, determined by the ``'loginPath'`` config setting (defaults to “login”).
+
+    .. code-block:: html
+
+        {% requireLogin %}
+
+        <h1>Private Lounge</h1>
+
+
+``requirePermission``
+    Requires the user has permission to perform a given action. If they don’t, they’ll get a 503 (Unauthorized) error.
+
+    .. code-block:: html
+
+        {% requirePermission "spendTheNight" %}
+
+        <h1>Slumber Party</h1>
+
+
 .. _paginate:
 
 ``paginate``

@@ -71,6 +71,24 @@
 </div>
 </dd>
 </dl>
+<dl class="docutils" id="requirelogin">
+<dt><tt class="docutils literal"><span class="pre">requireLogin</span></tt></dt>
+<dd><p class="first">Requires the user to be logged in. If they’re not, they’ll be redirected to your site’s <tt class="xref doc docutils literal"><span class="pre">login</span> <span class="pre">page</span></tt>, determined by the <tt class="docutils literal"><span class="pre">'loginPath'</span></tt> config setting (defaults to “login”).</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% requireLogin %}
+
+<span class="nt">&lt;h1&gt;</span>Private Lounge<span class="nt">&lt;/h1&gt;</span>
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">requirePermission</span></tt></dt>
+<dd><p class="first">Requires the user has permission to perform a given action. If they don’t, they’ll get a 503 (Unauthorized) error.</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% requirePermission &quot;spendTheNight&quot; %}
+
+<span class="nt">&lt;h1&gt;</span>Slumber Party<span class="nt">&lt;/h1&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
 <dl class="docutils" id="paginate">
 <dt><tt class="docutils literal"><span class="pre">paginate</span></tt></dt>
 <dd><p class="first">Paginates entries, users, and sections with a given criteria. The syntax is <tt class="docutils literal"><span class="pre">{%</span> <span class="pre">paginate</span> <span class="pre">MyCriteria</span> <span class="pre">as</span> <span class="pre">PageSubset</span> <span class="pre">%}</span></tt>, where <tt class="docutils literal"><span class="pre">PageSubset</span></tt> becomes an array of items for the current page, which can be looped through.</p>

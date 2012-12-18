@@ -31,9 +31,10 @@ Forms
 
    forms/new_entry
    forms/edit_entry
-   forms/login
    forms/register
+   forms/login
    forms/forgotpassword
+   forms/resetpassword
 
 
 Miscellaneous

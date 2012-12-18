@@ -1,5 +1,5 @@
-User Registration Form
-======================
+Registration Form
+=================
 
 You can create a user registration form using the following code:
 

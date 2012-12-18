@@ -39,6 +39,7 @@
 <li class="toctree-l3"><a class="reference internal" href="i18n.html">LocalizationService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plugins.html">PluginsService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="templates.html">TemplatesService</a></li>
+<li class="toctree-l3"><a class="reference internal" href="user.html">UserSessionService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="users.html">UsersService</a></li>
 </ul>
 </li>
@@ -70,10 +71,6 @@
 <dd>Returns a UserModel instance for a user whose username or email matches the passed-in string, or null if such a user cannot be found.</dd>
 <dt><tt class="docutils literal"><span class="pre">blx()-&gt;accounts-&gt;getUserByVerificationCode($code)</span></tt></dt>
 <dd>Returns a UserModel instance for a user with an active verification code, or null if such a user cannot be found.</dd>
-<dt><tt class="docutils literal"><span class="pre">blx()-&gt;accounts-&gt;getCurrentUser()</span></tt></dt>
-<dd>Returns a UserModel instance for the currently logged-in user, if there is one.</dd>
-<dt><tt class="docutils literal"><span class="pre">blx()-&gt;accounts-&gt;isAdmin()</span></tt></dt>
-<dd>Returns whether the currently logged-in user is a system admin.</dd>
 <dt><tt class="docutils literal"><span class="pre">blx()-&gt;accounts-&gt;saveUser(UserModel</span> <span class="pre">$user)</span></tt></dt>
 <dd>Saves a user based on a passed-in UserModel instance.</dd>
 <dt><tt class="docutils literal"><span class="pre">blx()-&gt;accounts-&gt;sendVerificationEmail(UserModel</span> <span class="pre">$user)</span></tt></dt>

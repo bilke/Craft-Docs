@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
 	<meta charset="utf-8" />
-	<title>API Reference - Blocks Docs</title>
+	<title>UserSessionService - Blocks Docs</title>
 	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
 	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
 </head>
@@ -26,7 +26,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../db/index.html">Working with the Database</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../components/index.html">Adding New Components</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced/index.html">Advanced Topics</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">API Reference</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="accounts.html">AccountsService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="blockTypes.html">BlockTypesService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="config.html">ConfigService</a></li>
@@ -39,7 +39,7 @@
 <li class="toctree-l3"><a class="reference internal" href="i18n.html">LocalizationService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="plugins.html">PluginsService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="templates.html">TemplatesService</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user.html">UserSessionService</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">UserSessionService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="users.html">UsersService</a></li>
 </ul>
 </li>
@@ -56,38 +56,43 @@
 			
 				<ul class="crumbs">
 					<li><a href="../index.html">Plugin Development</a></li>
+					<li><a href="index.html">API Reference</a></li>
 				</ul>
 			
 
 			
-  <div class="section" id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this headline">¶</a></h1>
-<p>Blocks has several APIs your plugin can use to interact with the system. The APIs are provided by the system services:</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="accounts.html">AccountsService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="blockTypes.html">BlockTypesService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="config.html">ConfigService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="email.html">EmailService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="entries.html">EntriesService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="globals.html">GlobalsService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="pages.html">PagesService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="path.html">PathService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="request.html">HttpRequestService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="i18n.html">LocalizationService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="plugins.html">PluginsService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="templates.html">TemplatesService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="user.html">UserSessionService</a></li>
-<li class="toctree-l1"><a class="reference internal" href="users.html">UsersService</a></li>
-</ul>
-</div>
+  <div class="section" id="usersessionservice">
+<h1>UserSessionService<a class="headerlink" href="#usersessionservice" title="Permalink to this headline">¶</a></h1>
+<p>UserSessionService provides the following APIs for dealing with the user session:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;user-&gt;getUser()</span></tt></dt>
+<dd>Returns a UserModel instance for the currently logged-in user, if there is one.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;user-&gt;setFlash($category,</span> <span class="pre">$message)</span></tt></dt>
+<dd>Sets a flash message for a given category.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;user-&gt;setNotice($message)</span></tt></dt>
+<dd>Sets a flash message with the category “notice”.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;user-&gt;setError($message)</span></tt></dt>
+<dd>Sets a flash message with the category “error”.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;user-&gt;isGuest()</span></tt></dt>
+<dd>Returns whether the current user is not logged in.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;user-&gt;isLoggedIn()</span></tt></dt>
+<dd>Returns whether the current user is logged in.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;user-&gt;isAdmin()</span></tt></dt>
+<dd>Returns whether the currently logged-in user is a system admin.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;user-&gt;can($permission)</span></tt></dt>
+<dd>Returns whether the currently logged-in user can perform a given action.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;user-&gt;requirePermission($permission)</span></tt></dt>
+<dd>Requires that the currently logged-in user can perform a given action, or else a 503 (Unauthorized) exception is thrown.</dd>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;user-&gt;requireLogin()</span></tt></dt>
+<dd>Requires that the user is logged-in. Otherwise they are redirected to the login page, as defined by your <tt class="docutils literal"><span class="pre">'loginPath'</span></tt> config setting (set to “login” by default).</dd>
+</dl>
 </div>
 
 
 
 			
 			<nav class="nav">
-				Next up: <a href="accounts.html">AccountsService</a></li>
+				Next up: <a href="users.html">UsersService</a></li>
 			</nav>
 			
 		</div>

@@ -18,4 +18,5 @@ Blocks has several APIs your plugin can use to interact with the system. The API
    i18n
    plugins
    templates
+   user
    users

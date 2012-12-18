@@ -12,12 +12,6 @@ AccountsService provides the following APIs for dealing with user accounts:
 ``blx()->accounts->getUserByVerificationCode($code)``
 	Returns a UserModel instance for a user with an active verification code, or null if such a user cannot be found.
 
-``blx()->accounts->getCurrentUser()``
-	Returns a UserModel instance for the currently logged-in user, if there is one.
-
-``blx()->accounts->isAdmin()``
-	Returns whether the currently logged-in user is a system admin.
-
 ``blx()->accounts->saveUser(UserModel $user)``
 	Saves a user based on a passed-in UserModel instance.
 

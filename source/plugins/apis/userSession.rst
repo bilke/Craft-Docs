@@ -3,32 +3,32 @@ UserSessionService
 
 UserSessionService provides the following APIs for dealing with the user session:
 
-``blx()->user->getUser()``
+``blx()->userSession->getUser()``
 	Returns a UserModel instance for the currently logged-in user, if there is one.
 
-``blx()->user->setFlash($category, $message)``
+``blx()->userSession->setFlash($category, $message)``
 	Sets a flash message for a given category.
 
-``blx()->user->setNotice($message)``
+``blx()->userSession->setNotice($message)``
 	Sets a flash message with the category “notice”.
 
-``blx()->user->setError($message)``
+``blx()->userSession->setError($message)``
 	Sets a flash message with the category “error”.
 
-``blx()->user->isGuest()``
+``blx()->userSession->isGuest()``
 	Returns whether the current user is not logged in.
 
-``blx()->user->isLoggedIn()``
+``blx()->userSession->isLoggedIn()``
 	Returns whether the current user is logged in.
 
-``blx()->user->isAdmin()``
+``blx()->userSession->isAdmin()``
 	Returns whether the currently logged-in user is a system admin.
 
-``blx()->user->can($permission)``
+``blx()->userSession->checkPermission($permission)``
 	Returns whether the currently logged-in user can perform a given action.
 
-``blx()->user->requirePermission($permission)``
+``blx()->userSession->requirePermission($permission)``
 	Requires that the currently logged-in user can perform a given action, or else a 503 (Unauthorized) exception is thrown.
 
-``blx()->user->requireLogin()``
+``blx()->userSession->requireLogin()``
 	Requires that the user is logged-in. Otherwise they are redirected to the login page, as defined by your ``'loginPath'`` config setting (set to “login” by default).

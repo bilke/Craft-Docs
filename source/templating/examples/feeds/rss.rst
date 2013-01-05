@@ -1,7 +1,7 @@
 RSS 2.0 Feed
 ============
 
-The following template can be used to provide a RSS 2.0 feed on your site. It assumes that you have one :ref:`Global <overview/globals>` set up: ‘siteDescription’.
+The following template can be used to provide a RSS 2.0 feed on your site. It assumes that you have one :doc:`Global Block </overview/globals>` set up: ‘siteDescription’.
 
 **Tip:** If you save this in a template that ends with a ‘.rss’ file extension, Blocks will even serve it with an ``application/rss+xml`` MIME type.
 

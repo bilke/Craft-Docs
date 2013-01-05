@@ -1,7 +1,7 @@
 Atom 1.0 Feed
 =============
 
-The following template can be used to provide an Atom 1.0 feed on your site. It assumes that you have two :ref:`overview/globals` set up: ‘feedAuthorName’ and ‘feedAuthorEmail’.
+The following template can be used to provide an Atom 1.0 feed on your site. It assumes that you have two :doc:`/overview/globals` set up: ‘feedAuthorName’ and ‘feedAuthorEmail’.
 
 **Tip:** If you save this in a template that ends with a ‘.atom’ file extension, Blocks will even serve it with an ``application/atom+xml`` MIME type.
 

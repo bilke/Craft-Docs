@@ -11,6 +11,10 @@ You can use the following properties:
 ``year``
 	The 4-digit year
 
+	.. code-block:: html
+
+	    <p>Copyright {{ now.year }} Pixel &amp; Tonic, Inc.</p>
+
 ``month``
 	The 1- or 2-digit month
 
@@ -18,10 +22,18 @@ You can use the following properties:
 	The 1- or 2-digit day of the month
 
 ``rss``
-	The date/time formatted for an RSS feed (D, d M Y H:i:s O)
+	The date/time formatted for an RSS feed (D, d M Y H:i:s O). (See :doc:`/templating/examples/feeds/rss`)
+
+	.. code-block:: html
+
+	    <pubDate>{{ entry.postDate.rss }}</pubDate>
 
 ``atom``
-	The date/time formatted for an Atom feed (Y-m-d\TH:i:sP)
+	The date/time formatted for an Atom feed (Y-m-d\TH:i:sP). (See :doc:`/templating/examples/feeds/atom`)
+
+	.. code-block:: html
+
+	    <published>{{ entry.postDate.atom }}</published>
 
 ``w3c``
 	The date/time formatted in the W3C’s spec (Y-m-d\TH:i:sP)
@@ -57,5 +69,9 @@ You can use the following properties:
 Methods
 -------
 
-``format('Y-m-d')``
+``format``
 	Formats the date according to the format string provided. The format string can be composed of the characters accepted by PHP’s `date() <http://www.php.net/manual/en/function.date.php>`_ function.
+
+	.. code-block:: html
+
+		<p>Published on {{ entry.postDate.format('F j, Y') }}.</p>

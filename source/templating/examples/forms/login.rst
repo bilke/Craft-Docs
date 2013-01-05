@@ -6,7 +6,7 @@ You can create a login form using the following code:
 .. code-block:: html
 
     <form method="post" action="" accept-charset="UTF-8">
-        <input type="hidden" name="action" value="accounts/login">
+        <input type="hidden" name="action" value="users/login">
         <input type="hidden" name="redirect" value="{{ blx.session.returnUrl }}">
 
         <h3><label for="loginName">Username or email</label></h3>

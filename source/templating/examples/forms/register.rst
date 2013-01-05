@@ -6,7 +6,7 @@ You can create a user registration form using the following code:
 .. code-block:: html
 
     <form method="post" action="" accept-charset="UTF-8">
-        <input type="hidden" name="action" value="accounts/saveUser">
+        <input type="hidden" name="action" value="users/saveUser">
         <input type="hidden" name="redirect" value="">
 
         {% macro errorList(errors) %}

@@ -66,15 +66,27 @@
 <p>You can use the following properties:</p>
 <dl class="docutils">
 <dt><tt class="docutils literal"><span class="pre">year</span></tt></dt>
-<dd>The 4-digit year</dd>
+<dd><p class="first">The 4-digit year</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Copyright {{ now.year }} Pixel <span class="ni">&amp;amp;</span> Tonic, Inc.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+</dd>
 <dt><tt class="docutils literal"><span class="pre">month</span></tt></dt>
 <dd>The 1- or 2-digit month</dd>
 <dt><tt class="docutils literal"><span class="pre">day</span></tt></dt>
 <dd>The 1- or 2-digit day of the month</dd>
 <dt><tt class="docutils literal"><span class="pre">rss</span></tt></dt>
-<dd>The date/time formatted for an RSS feed (D, d M Y H:i:s O)</dd>
+<dd><p class="first">The date/time formatted for an RSS feed (D, d M Y H:i:s O). (See <a class="reference internal" href="../../examples/feeds/rss.html"><em>RSS 2.0 Feed</em></a>)</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;pubDate&gt;</span>{{ entry.postDate.rss }}<span class="nt">&lt;/pubDate&gt;</span>
+</pre></div>
+</div>
+</dd>
 <dt><tt class="docutils literal"><span class="pre">atom</span></tt></dt>
-<dd>The date/time formatted for an Atom feed (Y-m-dTH:i:sP)</dd>
+<dd><p class="first">The date/time formatted for an Atom feed (Y-m-dTH:i:sP). (See <a class="reference internal" href="../../examples/feeds/atom.html"><em>Atom 1.0 Feed</em></a>)</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;published&gt;</span>{{ entry.postDate.atom }}<span class="nt">&lt;/published&gt;</span>
+</pre></div>
+</div>
+</dd>
 <dt><tt class="docutils literal"><span class="pre">w3c</span></tt></dt>
 <dd>The date/time formatted in the W3C’s spec (Y-m-dTH:i:sP)</dd>
 <dt><tt class="docutils literal"><span class="pre">w3cDate</span></tt></dt>
@@ -100,8 +112,12 @@
 <div class="section" id="methods">
 <h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">format('Y-m-d')</span></tt></dt>
-<dd>Formats the date according to the format string provided. The format string can be composed of the characters accepted by PHP’s <a class="reference external" href="http://www.php.net/manual/en/function.date.php">date()</a> function.</dd>
+<dt><tt class="docutils literal"><span class="pre">format</span></tt></dt>
+<dd><p class="first">Formats the date according to the format string provided. The format string can be composed of the characters accepted by PHP’s <a class="reference external" href="http://www.php.net/manual/en/function.date.php">date()</a> function.</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;p&gt;</span>Published on {{ entry.postDate.format(&#39;F j, Y&#39;) }}.<span class="nt">&lt;/p&gt;</span>
+</pre></div>
+</div>
+</dd>
 </dl>
 </div>
 </div>

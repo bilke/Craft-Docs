@@ -210,6 +210,12 @@ Once you’ve got your entry, there are a number of properties and functions you
 ``expiryDate``
     The entry’s expiration date.
 
+``dateCreated``
+    The date that the entry was first created.
+
+``dateUpdated``
+    The date that the entry was last updated.
+
 ``enabled``
     Whether the entry is enabled.
 

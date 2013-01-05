@@ -23,6 +23,16 @@ Entries
    pages/entry
 
 
+Feeds
+-----
+
+.. toctree::
+   :titlesonly:
+
+   feeds/rss
+   feeds/atom
+
+
 Forms
 -----
 

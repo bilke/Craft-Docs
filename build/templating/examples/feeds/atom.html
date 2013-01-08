@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Atom 1.0 Feed - Blocks Docs</title>
+	<link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Templating</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../entries/single.html">Single Entry Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="rss.html">RSS 2.0 Feed</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Atom 1.0 Feed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forms/new_entry.html">New Entry Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forms/edit_entry.html">Edit Entry Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forms/register.html">Registration Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forms/login.html">Login Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forms/forgotpassword.html">Forgot Password Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../forms/resetpassword.html">Reset Password Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../translations.html">Template Translations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html">Templating Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../../index.html">Templating</a></li>
+					<li><a href="../index.html">Examples</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="atom-1-0-feed">
+<h1>Atom 1.0 Feed<a class="headerlink" href="#atom-1-0-feed" title="Permalink to this headline">¶</a></h1>
+<p>The following template can be used to provide an Atom 1.0 feed on your site. It assumes that you have two <a class="reference internal" href="../../../overview/globals.html"><em>Global Blocks</em></a> set up: ‘feedAuthorName’ and ‘feedAuthorEmail’.</p>
+<p><strong>Tip:</strong> If you save this in a template that ends with a ‘.atom’ file extension, Blocks will even serve it with an <tt class="docutils literal"><span class="pre">application/atom+xml</span></tt> MIME type.</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;feed</span> <span class="na">xmlns=</span><span class="s">&quot;http://www.w3.org/2005/Atom&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;title&gt;</span>{{ siteName }}<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">&quot;{{ siteUrl }}&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">&quot;application/atom+xml&quot;</span> <span class="na">rel=</span><span class="s">&quot;self&quot;</span> <span class="na">href=</span><span class="s">&quot;{{ blx.request.url }}&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;updated&gt;</span>{{ now.atom }}<span class="nt">&lt;/updated&gt;</span>
+    <span class="nt">&lt;id&gt;</span>{{ blx.request.url }}<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;author&gt;</span>
+        <span class="nt">&lt;name&gt;</span>{{ globals.feedAuthorName }}<span class="nt">&lt;/name&gt;</span>
+        <span class="nt">&lt;email&gt;</span>{{ globals.feedAuthorEmail }}<span class="nt">&lt;/email&gt;</span>
+    <span class="nt">&lt;/author&gt;</span>
+
+    {% for entry in blx.entries.find() %}
+        <span class="nt">&lt;entry&gt;</span>
+            <span class="nt">&lt;id&gt;</span>{{ entry.url }}<span class="nt">&lt;/id&gt;</span>
+            <span class="nt">&lt;link</span> <span class="na">type=</span><span class="s">&quot;text/html&quot;</span> <span class="na">rel=</span><span class="s">&quot;alternate&quot;</span> <span class="na">href=</span><span class="s">&quot;{{ entry.url }}&quot;</span> <span class="nt">/&gt;</span>
+            <span class="nt">&lt;title&gt;</span>{{ entry.title }}<span class="nt">&lt;/title&gt;</span>
+            <span class="nt">&lt;published&gt;</span>{{ entry.postDate.atom }}<span class="nt">&lt;/published&gt;</span>
+            <span class="nt">&lt;updated&gt;</span>{{ entry.dateUpdated.atom }}<span class="nt">&lt;/updated&gt;</span>
+            <span class="nt">&lt;author&gt;</span>
+                <span class="nt">&lt;name&gt;</span>{{ entry.author.fullName }}<span class="nt">&lt;/name&gt;</span>
+                <span class="nt">&lt;uri&gt;</span>{{ siteUrl }}<span class="nt">&lt;/uri&gt;</span>
+            <span class="nt">&lt;/author&gt;</span>
+            <span class="nt">&lt;content</span> <span class="na">type=</span><span class="s">&quot;html&quot;</span><span class="nt">&gt;</span><span class="cp">&lt;![CDATA[</span>
+<span class="cp">                {{ entry.body }}</span>
+<span class="cp">            ]]&gt;</span><span class="nt">&lt;/content&gt;</span>
+        <span class="nt">&lt;/entry&gt;</span>
+    {% endfor %}
+<span class="nt">&lt;/feed&gt;</span>
+</pre></div>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="../forms/new_entry.html">New Entry Form</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

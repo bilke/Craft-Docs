@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Template Translations - Blocks Docs</title>
+	<link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Templating</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="entries/single.html">Single Entry Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="feeds/rss.html">RSS 2.0 Feed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="feeds/atom.html">Atom 1.0 Feed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms/new_entry.html">New Entry Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms/edit_entry.html">Edit Entry Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms/register.html">Registration Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms/login.html">Login Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms/forgotpassword.html">Forgot Password Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forms/resetpassword.html">Reset Password Form</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">Template Translations</a><ul class="simple">
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/index.html">Templating Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../index.html">Templating</a></li>
+					<li><a href="index.html">Examples</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="template-translations">
+<h1>Template Translations<a class="headerlink" href="#template-translations" title="Permalink to this headline">¶</a></h1>
+<p>While the Languages package will enable all of your site’s <em>content</em> to be translated, it won’t help you translate any text that’s hard-coded into your template files. Not to worry though, because Blocks templates are inherently translatable already.</p>
+<p>To make some text in your template translatable, all you need to do is run it through the <a class="reference internal" href="../reference/filters.html#t"><em>translate</em></a> filter.</p>
+<p>For example, let’s say you had this in your homepage template (blocks/templates/index.html):</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>Tales from the Cocktail<span class="nt">&lt;/h1&gt;</span>
+</pre></div>
+</div>
+<p>To make that translatable, you would convert it to this:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>{{ &quot;Tales from the Cocktail&quot; | translate }}<span class="nt">&lt;/h1&gt;</span>
+</pre></div>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">translate</span></tt> filter also has an alias, <tt class="docutils literal"><span class="pre">t</span></tt>, so this would also be valid:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>{{ &quot;Tales from the Cocktail&quot; | t }}<span class="nt">&lt;/h1&gt;</span>
+</pre></div>
+</div>
+<p>Just like that, your heading is now ready to be translated.</p>
+<div class="section" id="defining-translations">
+<h2>Defining Translations<a class="headerlink" href="#defining-translations" title="Permalink to this headline">¶</a></h2>
+<p>To define your translations, first create a new folder in your blocks/ folder called ‘translations’. Within that, create a new PHP file named with the target language’s code. For instance, if you’re targeting Spanish-speaking visitors, your file would be ‘blocks/translations/es.php’.</p>
+<p>That file should simply return an array whose keys are the messages in your site’s source language, and values are the translated messages. For example:</p>
+<div class="highlight-php"><div class="highlight"><pre><span class="cp">&lt;?php</span>
+
+<span class="k">return</span> <span class="k">array</span><span class="p">(</span>
+
+        <span class="s2">&quot;Tales from the Cocktail&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;Cuentos del Cóctel&quot;</span><span class="p">,</span>
+
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>Set your browser’s preferred language to Spanish and reload your homepage, and presto! Your translated heading is showing up instead.</p>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="../reference/index.html">Templating Reference</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

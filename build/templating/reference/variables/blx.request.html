@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>blx.request - Blocks Docs</title>
+	<link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Templating</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Templating Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Template Variables</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="globals.html">Global Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dates.html">Dates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="blx.entries.html"><tt class="docutils literal"><span class="pre">blx.entries</span></tt></a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href=""><tt class="docutils literal"><span class="pre">blx.request</span></tt></a><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="blx.users.html"><tt class="docutils literal"><span class="pre">blx.users</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../filters.html">Template Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functions.html">Template Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tags.html">Template Tags</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../../index.html">Templating</a></li>
+					<li><a href="../index.html">Templating Reference</a></li>
+					<li><a href="index.html">Template Variables</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="blx-request">
+<h1><tt class="docutils literal"><span class="pre">blx.request</span></tt><a class="headerlink" href="#blx-request" title="Permalink to this headline">¶</a></h1>
+<p>You can access information about the current HTTP request via <tt class="docutils literal"><span class="pre">blx.request</span></tt>.</p>
+<div class="section" id="properties">
+<h2>Properties<a class="headerlink" href="#properties" title="Permalink to this headline">¶</a></h2>
+<p>The following properties are available:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">isSecure</span></tt></dt>
+<dd>Whether the current request is over SSL.</dd>
+<dt><tt class="docutils literal"><span class="pre">path</span></tt></dt>
+<dd>The path in the URI.</dd>
+<dt><tt class="docutils literal"><span class="pre">url</span></tt></dt>
+<dd>The full URL for the current request.</dd>
+<dt><tt class="docutils literal"><span class="pre">segments</span></tt></dt>
+<dd>An array of the path segments.</dd>
+<dt><tt class="docutils literal"><span class="pre">firstSegment</span></tt></dt>
+<dd>The first path segment.</dd>
+<dt><tt class="docutils literal"><span class="pre">lastSegment</span></tt></dt>
+<dd>The last path segment.</dd>
+<dt><tt class="docutils literal"><span class="pre">serverName</span></tt></dt>
+<dd>The server/domain name.</dd>
+</dl>
+</div>
+<div class="section" id="methods">
+<h2>Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<p>The following methods are available:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">getSegment(n)</span></tt></dt>
+<dd>Returns the <a href="#id1"><span class="problematic" id="id2">*</span></a>n*th path segment.</dd>
+<dt><tt class="docutils literal"><span class="pre">getParam(name)</span></tt></dt>
+<dd>Returns a parameter from either the query string or POST data.</dd>
+<dt><tt class="docutils literal"><span class="pre">getQuery(name)</span></tt></dt>
+<dd>Returns a parameter from the query string.</dd>
+<dt><tt class="docutils literal"><span class="pre">getPost(name)</span></tt></dt>
+<dd>Returns a parameter from the POST data.</dd>
+</dl>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="blx.users.html">blx.users</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

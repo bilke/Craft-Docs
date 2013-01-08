@@ -27,7 +27,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../components/index.html">Adding New Components</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../advanced/index.html">Advanced Topics</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">API Reference</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="account.html">AccountService</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="">BlockTypesService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="config.html">ConfigService</a></li>
 <li class="toctree-l3"><a class="reference internal" href="email.html">EmailService</a></li>
@@ -62,13 +61,13 @@
 			
   <div class="section" id="blocktypesservice">
 <h1>BlockTypesService<a class="headerlink" href="#blocktypesservice" title="Permalink to this headline">¶</a></h1>
-<p>AccountService provides the following APIs for dealing with block types:</p>
+<p>BlockTypesService provides the following APIs for dealing with block types:</p>
 <dl class="docutils">
-<dt><tt class="docutils literal"><span class="pre">getAllBlockTypes()</span></tt></dt>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;blockTypes-&gt;getAllBlockTypes()</span></tt></dt>
 <dd>Returns all installed block types.</dd>
-<dt><tt class="docutils literal"><span class="pre">getBlockType($class)</span></tt></dt>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;blockTypes-&gt;getBlockType($class)</span></tt></dt>
 <dd>Returns a block type by its class handle, or null if no such block type exists.</dd>
-<dt><tt class="docutils literal"><span class="pre">populateBlockType(BaseBlockModel</span> <span class="pre">$block,</span> <span class="pre">$entity)</span></tt></dt>
+<dt><tt class="docutils literal"><span class="pre">blx()-&gt;blockTypes-&gt;populateBlockType(BaseBlockModel</span> <span class="pre">$block,</span> <span class="pre">$entity)</span></tt></dt>
 <dd>Instantiates a new block type based on the passed-in <tt class="docutils literal"><span class="pre">$block</span></tt> block model, determining which block type to use based on <tt class="docutils literal"><span class="pre">$block-&gt;type</span></tt>, and setting the block type’s settings based on <tt class="docutils literal"><span class="pre">$block-&gt;settings</span></tt>.</dd>
 </dl>
 </div>

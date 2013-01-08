@@ -24,32 +24,7 @@ Table of Contents
    :titlesonly:
 
    installation
-
    overview/index
    templating/index
+   diving-in/index
    plugins/index
-
-..
-   plugins/basics
-   plugins/components/services
-   plugins/components/controllers
-   plugins/components/packages
-   plugins/components/records
-   plugins/components/models
-   plugins/components/validators
-   plugins/components/enums
-   plugins/components/variables
-   plugins/components/blocks
-   plugins/components/widgets
-   plugins/components/helpers
-   plugins/apis
-   plugins/apis/blocks
-   plugins/apis/config
-   plugins/apis/content
-   plugins/apis/path
-   plugins/apis/request
-   plugins/apis/i18n
-   plugins/apis/templates
-   plugins/queries
-   plugins/resources
-   plugins/templates

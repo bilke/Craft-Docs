@@ -11,7 +11,7 @@ Each content block comes with the following settings:
 * Handle
 * Instructions
 * Whether the block should be required
-* Whether the block should be translatable (if the Languages packgae is installed)
+* Whether the block should be translatable (if the Languages package is installed)
 * What type of block it is
 * Additional settings provided by the selected blocktype
 
@@ -19,7 +19,7 @@ Each content block comes with the following settings:
 Accessing Block Values in Templates
 -----------------------------------
 
-Your content block values become accessible just like any other property on the entities you’ve atteched them to.
+Your content block values become accessible just like any other property on the entities you’ve attached them to.
 
 For example, if you have created a page block with the handle “description”, you can output it like this from your page’s template:
 

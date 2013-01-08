@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>New Entry Form - Blocks Docs</title>
+	<link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Templating</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Examples</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../entries/single.html">Single Entry Pages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../feeds/rss.html">RSS 2.0 Feed</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../feeds/atom.html">Atom 1.0 Feed</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="">New Entry Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="edit_entry.html">Edit Entry Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="register.html">Registration Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="login.html">Login Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="forgotpassword.html">Forgot Password Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="resetpassword.html">Reset Password Form</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../translations.html">Template Translations</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference/index.html">Templating Reference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../../index.html">Templating</a></li>
+					<li><a href="../index.html">Examples</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="new-entry-form">
+<h1>New Entry Form<a class="headerlink" href="#new-entry-form" title="Permalink to this headline">¶</a></h1>
+<p>You can create a new entry form for the front-end of your site using the following code:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;form</span> <span class="na">method=</span><span class="s">&quot;post&quot;</span> <span class="na">action=</span><span class="s">&quot;&quot;</span> <span class="na">accept-charset=</span><span class="s">&quot;UTF-8&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;action&quot;</span> <span class="na">value=</span><span class="s">&quot;entries/saveEntry&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;redirect&quot;</span> <span class="na">value=</span><span class="s">&quot;viewentry/{entryId}&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;sectionId&quot;</span> <span class="na">value=</span><span class="s">&quot;10&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name=</span><span class="s">&quot;enabled&quot;</span> <span class="na">value=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>Title<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;title&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">name=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;label</span> <span class="na">for=</span><span class="s">&quot;body&quot;</span><span class="nt">&gt;</span>Body<span class="nt">&lt;/label&gt;</span>
+    <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;body&quot;</span> <span class="na">name=</span><span class="s">&quot;blocks[body]&quot;</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Publish&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/form&gt;</span>
+</pre></div>
+</div>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="edit_entry.html">Edit Entry Form</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

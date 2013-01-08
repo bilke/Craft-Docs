@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Global Variables - Blocks Docs</title>
+	<link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">Templating</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../examples/index.html">Examples</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">Templating Reference</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Template Variables</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="">Global Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dates.html">Dates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="blx.entries.html"><tt class="docutils literal"><span class="pre">blx.entries</span></tt></a></li>
+<li class="toctree-l4"><a class="reference internal" href="blx.request.html"><tt class="docutils literal"><span class="pre">blx.request</span></tt></a></li>
+<li class="toctree-l4"><a class="reference internal" href="blx.users.html"><tt class="docutils literal"><span class="pre">blx.users</span></tt></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../filters.html">Template Filters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../functions.html">Template Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tags.html">Template Tags</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+				<ul class="crumbs">
+					<li><a href="../../index.html">Templating</a></li>
+					<li><a href="../index.html">Templating Reference</a></li>
+					<li><a href="index.html">Template Variables</a></li>
+				</ul>
+			
+
+			
+  <div class="section" id="global-variables">
+<h1>Global Variables<a class="headerlink" href="#global-variables" title="Permalink to this headline">¶</a></h1>
+<p>Blocks makes the following variables available to all templates:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">blx</span></tt></dt>
+<dd><p class="first">Most of Blocks’ template variables are tucked away in <tt class="docutils literal"><span class="pre">blx</span></tt>:</p>
+<ul class="last simple">
+<li><a class="reference internal" href="blx.entries.html"><em>blx.entries</em></a> –&nbsp;used to access your site’s entries</li>
+<li><a class="reference internal" href="blx.request.html"><em>blx.request</em></a> –&nbsp;used to access information about the current request</li>
+<li><a class="reference internal" href="blx.users.html"><em>blx.users</em></a> – used to access your site’s users</li>
+</ul>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">now</span></tt></dt>
+<dd><p class="first">A <a class="reference internal" href="dates.html"><em>date variable</em></a> set to the current date and time.</p>
+<div class="last highlight-html"><div class="highlight"><pre>Today is {{ now.format(&#39;M j, Y&#39;) }}.
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">siteName</span></tt></dt>
+<dd><p class="first">The name of your site, as defined in Settings &gt; General.</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;h1&gt;</span>{{ siteName }}<span class="nt">&lt;/h1&gt;</span>
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">siteUrl</span></tt></dt>
+<dd><p class="first">The URL of your site, as defined in Settings &gt; General.</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;home&quot;</span> <span class="na">href=</span><span class="s">&quot;{{ siteUrl }}&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">user</span></tt></dt>
+<dd><p class="first">A <a class="reference internal" href="blx.users.html"><em>user variable</em></a> set to the currently logged-in user (if there is one).</p>
+<div class="last highlight-html"><div class="highlight"><pre>{% if user %}
+   Welcome, {{ user.friendlyName }}!
+{% endif %}
+</pre></div>
+</div>
+</dd>
+<dt><tt class="docutils literal"><span class="pre">globals</span></tt></dt>
+<dd><p class="first">The location of any <a class="reference internal" href="../../../overview/globals.html"><em>Global Blocks</em></a> in the system.</p>
+<div class="last highlight-html"><div class="highlight"><pre><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;author&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ globals.author }}&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;description&quot;</span> <span class="na">content=</span><span class="s">&quot;{{ globals.description }}&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</div>
+
+
+
+			
+			<nav class="nav">
+				Next up: <a href="dates.html">Dates</a></li>
+			</nav>
+			
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Including Assets with your Entries - Blocks Docs</title>
+	<link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Templating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+
+			
+  <div class="section" id="including-assets-with-your-entries">
+<h1>Including Assets with your Entries<a class="headerlink" href="#including-assets-with-your-entries" title="Permalink to this headline">¶</a></h1>
+<p>Including media assets with your entries is as simple as setting up an Assets location and a Link Block for your section.</p>
+<p>We&#8217;ll use the simple example of including images from an local folder with an article in an existing Section.</p>
+<div class="section" id="setting-up-an-asset">
+<h2>Setting up an Asset<a class="headerlink" href="#setting-up-an-asset" title="Permalink to this headline">¶</a></h2>
+<p>Go to <tt class="docutils literal"><span class="pre">Settings</span></tt> &gt; <tt class="docutils literal"><span class="pre">Assets</span></tt> &gt; and Click <tt class="docutils literal"><span class="pre">New</span> <span class="pre">Source</span></tt>.   Enter the name of your Asset - for this example, we&#8217;ll use &#8220;articles&#8221;.  Choose &#8220;Local Folder&#8221; for &#8220;Type&#8221;, then enter the File System Path and related URL and Save.</p>
+</div>
+<div class="section" id="setting-up-an-assets-block">
+<h2>Setting up an Assets Block<a class="headerlink" href="#setting-up-an-assets-block" title="Permalink to this headline">¶</a></h2>
+<p>Now head to <tt class="docutils literal"><span class="pre">Settings</span></tt> &gt; <tt class="docutils literal"><span class="pre">Sections</span></tt> &gt; and click on the Section for which you wish to include your images.  For this example, we&#8217;ll work with a section called &#8220;Articles&#8221;.  Click on the Articles Section, then click on <tt class="docutils literal"><span class="pre">Blocks</span></tt>.</p>
+<p>Now we want to click New Block and set up a new Link Block.  Choose the Name of your Block and a handle.</p>
+<p>The Name should be an easy indicator to your content editors of what data to put in that form.  The handle is how your template designers will refer to this Block in the templates.  In this example, the handle for this Block is <tt class="docutils literal"><span class="pre">articleImages</span></tt>.</p>
+<p>Add any instructions you have, then choose <tt class="docutils literal"><span class="pre">Links</span></tt> under <tt class="docutils literal"><span class="pre">Type</span></tt>.  In the drop-down that appears, choose <tt class="docutils literal"><span class="pre">Assets</span></tt> as your Link Type.  Fill in the rest of the form with your site&#8217;s personalized style and requirements and save the form.</p>
+</div>
+<div class="section" id="publishing-content-with-assets">
+<h2>Publishing Content with Assets<a class="headerlink" href="#publishing-content-with-assets" title="Permalink to this headline">¶</a></h2>
+<p>Now, you can head over to <tt class="docutils literal"><span class="pre">Content</span></tt> and create a <tt class="docutils literal"><span class="pre">New</span> <span class="pre">Entry</span></tt> in that Section. You will see the New Entry form, including your Links block for your images.  Click the Add Image button and upload some images, and fill out any other Blocks on that page.</p>
+<p>You now have an entry with some Assets included!</p>
+</div>
+<div class="section" id="outputting-assets-with-your-entry">
+<h2>Outputting Assets with your Entry<a class="headerlink" href="#outputting-assets-with-your-entry" title="Permalink to this headline">¶</a></h2>
+<p>All of this setup is intended to make it easy for you to output that content for your site visitors.  FTP in and locate the template that you use for your entries, upon which you wish to show your new Assets.  You can then include this code to output those Assets:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% for image in entry.articleImages %}
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">&quot;{{ image.url }}&quot;</span> <span class="na">alt=</span><span class="s">&quot;{{ entry.title }}&quot;</span> <span class="na">height=</span><span class="s">&quot;{{ image.height }}&quot;</span> <span class="na">width=</span><span class="s">&quot; {{ image.width }}&quot;</span> <span class="na">alt=</span><span class="s">&quot;{{ entry.title }}&quot;</span> <span class="nt">/&gt;</span>
+{% endfor %}
+</pre></div>
+</div>
+<p>Here is a list of Properties that you can use to style your output:</p>
+<dl class="docutils">
+<dt><tt class="docutils literal"><span class="pre">filename</span></tt></dt>
+<dd>The system name of your file</dd>
+<dt><tt class="docutils literal"><span class="pre">originalName</span></tt></dt>
+<dd>The original name of your file</dd>
+<dt><tt class="docutils literal"><span class="pre">kind</span></tt></dt>
+<dd>The MIME type</dd>
+<dt><tt class="docutils literal"><span class="pre">width</span></tt></dt>
+<dd>For images, the width of your image</dd>
+<dt><tt class="docutils literal"><span class="pre">height</span></tt></dt>
+<dd>For images, the height of your image</dd>
+<dt><tt class="docutils literal"><span class="pre">size</span></tt></dt>
+<dd>The file size for your Asset</dd>
+<dt><tt class="docutils literal"><span class="pre">dateModified</span></tt></dt>
+<dd>The last time the file was modified</dd>
+<dt><tt class="docutils literal"><span class="pre">url</span></tt></dt>
+<dd>The URL to your Asset</dd>
+<dt><tt class="docutils literal"><span class="pre">thumbUrl</span></tt></dt>
+<dd>The URL to the thumbnail for your Asset</dd>
+<dt><tt class="docutils literal"><span class="pre">folder.name</span></tt></dt>
+<dd>The folder name your Asset is stored in</dd>
+<dt><tt class="docutils literal"><span class="pre">folder.fullpath</span></tt></dt>
+<dd>The full path to the folder the Asset is stored in</dd>
+<dt><tt class="docutils literal"><span class="pre">folder.source</span></tt></dt>
+<dd>The source of your Asset&#8217;s folder</dd>
+</dl>
+</div>
+</div>
+
+
+
+			
+		</div>
+	</div>
+</body>
+</html>

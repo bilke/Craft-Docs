@@ -6,7 +6,6 @@ Blocks has several APIs your plugin can use to interact with the system. The API
 .. toctree::
    :titlesonly:
 
-   accounts
    blockTypes
    config
    email

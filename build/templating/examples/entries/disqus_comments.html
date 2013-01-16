@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+	<meta charset="utf-8" />
+	<title>Integrating Disqus - Blocks Docs</title>
+	<link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+	<link rel="stylesheet" href="../../../_static/css/docs.css" type="text/css" />
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="content">
+			<h1>Blocks Docs</h1>
+
+			<nav class="nav">
+				<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Blocks Docs Home</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installing and Updating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../overview/index.html">System Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Templating</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plugins/index.html">Plugin Development</a></li>
+</ul>
+
+			</nav>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="content">
+			
+
+			
+  <div class="section" id="integrating-disqus">
+<h1>Integrating Disqus<a class="headerlink" href="#integrating-disqus" title="Permalink to this headline">¶</a></h1>
+<p>You can easily add comments to your Blocks entries by utilizing a third-party comment service such as Disqus.</p>
+<p>To do this, you will need to have an output for displaying a single entry - or a single block of content you want to allow comments on.  In this example, we&#8217;ll use a template called <tt class="docutils literal"><span class="pre">_entry.html</span></tt> in <tt class="docutils literal"><span class="pre">blocks/templates</span></tt>.</p>
+<p>You&#8217;ll want to sign up with Disqus and get your Universal Code on Disqus&#8217; site in Admin &gt; Settings &gt; Install. Disqus has certain configuration variables that you can use to ensure comments end up on the right post.  Look for:</p>
+<div class="highlight-html"><div class="highlight"><pre>/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+</pre></div>
+</div>
+<p>and add this line:</p>
+<div class="highlight-html"><div class="highlight"><pre>var disqus_identifier = &#39;blog-{{ entry.id }}&#39;;
+</pre></div>
+</div>
+<p>A final entry template including comments might look like so:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% extends &quot;inc/_base&quot; %}
+{% block title %}{{ entry.title }}{% endblock %}
+{% block blog %}
+<span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>{{ entry.title }}<span class="nt">&lt;/h1&gt;</span>
+{{ entry.body|raw }}
+<span class="nt">&lt;h1&gt;</span>{{ page.title }}<span class="nt">&lt;/h1&gt;</span>
+{{ page.static }}
+
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;disqus_thread&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+            <span class="cm">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */</span>
+            <span class="kd">var</span> <span class="nx">disqus_shortname</span> <span class="o">=</span> <span class="s1">&#39;disqus_forum_shortname&#39;</span><span class="p">;</span> <span class="c1">// required: replace example with your forum shortname</span>
+                        <span class="kd">var</span> <span class="nx">disqus_identifier</span> <span class="o">=</span> <span class="s1">&#39;blog-{{ entry.id }}&#39;</span><span class="p">;</span>
+
+
+
+            <span class="cm">/* * * DON&#39;T EDIT BELOW THIS LINE * * */</span>
+            <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">dsq</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">);</span> <span class="nx">dsq</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span><span class="p">;</span> <span class="nx">dsq</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+                <span class="nx">dsq</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">&#39;http://&#39;</span> <span class="o">+</span> <span class="nx">disqus_shortname</span> <span class="o">+</span> <span class="s1">&#39;.disqus.com/embed.js&#39;</span><span class="p">;</span>
+                <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;head&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">dsq</span><span class="p">);</span>
+            <span class="p">})();</span>
+        <span class="nt">&lt;/script&gt;</span>
+        <span class="nt">&lt;noscript&gt;</span>Please enable JavaScript to view the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://disqus.com/?ref_noscript&quot;</span><span class="nt">&gt;</span>comments powered by Disqus.<span class="nt">&lt;/a&gt;&lt;/noscript&gt;</span>
+        <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;http://disqus.com&quot;</span> <span class="na">class=</span><span class="s">&quot;dsq-brlink&quot;</span><span class="nt">&gt;</span>comments powered by <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;logo-disqus&quot;</span><span class="nt">&gt;</span>Disqus<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+
+{% endblock %}
+</pre></div>
+</div>
+</div>
+
+
+
+			
+		</div>
+	</div>
+</body>
+</html>

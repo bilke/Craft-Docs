@@ -22,19 +22,17 @@ A final entry template including comments might look like so:
 
 .. code-block:: html
 	
-	{% extends "inc/_base" %}
-	{% block title %}{{ entry.title }}{% endblock %}
+
 	{% block blog %}
 	<h1 class="title">{{ entry.title }}</h1>
 	{{ entry.body|raw }}
-	<h1>{{ page.title }}</h1>
-	{{ page.static }}
+
 
 	  <div id="disqus_thread"></div>
 	        <script type="text/javascript">
 	            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 	            var disqus_shortname = 'disqus_forum_shortname'; // required: replace example with your forum shortname
-				var disqus_identifier = 'blog-{{ entry.id }}';
+				var disqus_identifier = '{{ entry.section }}-{{ entry.id }}';
 
 
 

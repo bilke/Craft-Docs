@@ -46,19 +46,16 @@
 </pre></div>
 </div>
 <p>A final entry template including comments might look like so:</p>
-<div class="highlight-html"><div class="highlight"><pre>{% extends &quot;inc/_base&quot; %}
-{% block title %}{{ entry.title }}{% endblock %}
-{% block blog %}
+<div class="highlight-html"><div class="highlight"><pre>{% block blog %}
 <span class="nt">&lt;h1</span> <span class="na">class=</span><span class="s">&quot;title&quot;</span><span class="nt">&gt;</span>{{ entry.title }}<span class="nt">&lt;/h1&gt;</span>
 {{ entry.body|raw }}
-<span class="nt">&lt;h1&gt;</span>{{ page.title }}<span class="nt">&lt;/h1&gt;</span>
-{{ page.static }}
+
 
   <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;disqus_thread&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
         <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
             <span class="cm">/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */</span>
             <span class="kd">var</span> <span class="nx">disqus_shortname</span> <span class="o">=</span> <span class="s1">&#39;disqus_forum_shortname&#39;</span><span class="p">;</span> <span class="c1">// required: replace example with your forum shortname</span>
-                        <span class="kd">var</span> <span class="nx">disqus_identifier</span> <span class="o">=</span> <span class="s1">&#39;blog-{{ entry.id }}&#39;</span><span class="p">;</span>
+                        <span class="kd">var</span> <span class="nx">disqus_identifier</span> <span class="o">=</span> <span class="s1">&#39;{{ entry.section }}-{{ entry.id }}&#39;</span><span class="p">;</span>
 
 
 

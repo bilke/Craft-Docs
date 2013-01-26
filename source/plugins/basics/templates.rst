@@ -61,7 +61,7 @@ Extending the CP layout
 
 Most of the time you’ll want your plugin’s templates to look like the rest of the CP. To do that, they must extend the ``_layouts/cp`` layout.
 
-The ``_layouts/cp`` layout expects two variables to be set: ``title`` and ``content``. ``title`` is used to set the page’s ``<title>`` tag value, and ``content`` defines the HTML that should show up in the main #content div.
+The ``_layouts/cp`` layout expects two variables to be set: ``title`` and ``content``. ``title`` is used to set the page’s ``<title>`` and ``<h1>`` tag values, and ``content`` defines the HTML that should show up in the ``#main`` div.
 
 .. code-block:: html
 
@@ -73,35 +73,20 @@ The ``_layouts/cp`` layout expects two variables to be set: ``title`` and ``cont
        <p>Hello!</p>
    {% endset %}
 
-White it’s not required, you should also set a ``header`` variable, which defines what goes in the page’s ``<header>`` up top:
+If your plugin’s CP section has its own sub-navigation, you can define that by setting the ``tabs`` variable in your template:
 
 .. code-block:: html
 
-   {% extends "_layouts/cp" %}
+   {% set tabs = {
+       recent: { label: "Recent"|t, url: url('cocktailrecipes') },
+       new:    { label: "Add a New Recipe"|t, url('cocktailrecipes/new') %}
+   } %}
 
-   {% set title = "Cocktail Recipes"|t %}
-
-   {% set header %}
-       <h1>{{ title }}</h1>
-   {% endset %}
-
-   {% set content %}
-       <p>Hello!</p>
-   {% endset %}
-
-If you want to specify a “back” button in the ``<header>``, the ``header`` variable is the place to put that too:
+Tell the CP template which tab should be selected by setting the ``selectedTab`` variable:
 
 .. code-block:: html
 
-   {% set header %}
-       <h1>{{ title }}</h1>
-
-       <ul class="left">
-          <li><a class="backbtn" href="{{ url('cocktailrecipes') }}">
-              {{ "Cocktail Recipes"|t }}
-          </a></li>
-       </ul>
-   {% endset %}
+   {% set selectedTab = 'recent' %}
 
 Dynamic URL Routing
 -------------------

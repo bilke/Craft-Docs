@@ -88,6 +88,15 @@ Tell the CP template which tab should be selected by setting the ``selectedTab``
 
    {% set selectedTab = 'recent' %}
 
+You can also add breadcrumbs to your pages by setting the ``crumbs`` variable:
+
+.. code-block:: html
+
+   {% set crumbs = [
+       { label: "Cocktail Recipes"|t, url: url('cocktailrecipes') },
+       { label: recipe.groupName|t, url: url('cocktailrecipes/recipes/'~recipe.groupHandle) }
+   ] %}
+
 Dynamic URL Routing
 -------------------
 

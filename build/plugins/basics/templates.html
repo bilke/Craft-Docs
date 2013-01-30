@@ -121,6 +121,13 @@
 <div class="highlight-html"><div class="highlight"><pre>{% set selectedTab = &#39;recent&#39; %}
 </pre></div>
 </div>
+<p>You can also add breadcrumbs to your pages by setting the <tt class="docutils literal"><span class="pre">crumbs</span></tt> variable:</p>
+<div class="highlight-html"><div class="highlight"><pre>{% set crumbs = [
+    { label: &quot;Cocktail Recipes&quot;|t, url: url(&#39;cocktailrecipes&#39;) },
+    { label: recipe.groupName|t, url: url(&#39;cocktailrecipes/recipes/&#39;~recipe.groupHandle) }
+] %}
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="dynamic-url-routing">

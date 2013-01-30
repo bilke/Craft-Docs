@@ -49,13 +49,6 @@ With that set, your plugin will show up in the CP nav. Clicking on it will take 
 
 Your plugin’s CP section can have as many pages as you’d like. To link to other pages, use the ``{{ url() }}`` template function just like you would in your site’s templates (ex: ``href="{{ url('cocktailrecipes/all') }}``).
 
-Giving your plugin an icon
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you want to give your plugin a custom sidebar icon, simply place it in your plugin’s resources/ folder with the name “icon-16x16.png”. The next time you load the CP, Blocks will auto-detect it and display it next to your plugin’s name in the sidebar.
-
-You can also save a hi-res version for people with hi-res displays, with the name “icon-32x32.png”. (Note that Blocks won’t even look for the 32x32 version unless you’ve got the 16x16 icon in there.)
-
 Extending the CP layout
 ~~~~~~~~~~~~~~~~~~~~~~~
 

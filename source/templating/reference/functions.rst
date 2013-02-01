@@ -54,19 +54,19 @@ On top of the template functions that `Twig comes with <http://twig.sensiolabs.o
 
 .. _getheadnodes:
 
-``getHeadNodes``
+``getHeadHtml``
     Outputs all of the HTML nodes that have been queued up by the :ref:`includeCssFile <includecssfile>`, :ref:`includeCss <includecss>`, and :ref:`includeHiResCss <includehirescss>` tags.
 
     .. code-block:: html
 
         <head>
             <title>{{ siteName }}</title>
-            {{ getHeadNodes() }}
+            {{ getHeadHtml() }}
         </head>
 
 .. _getfootnodes:
 
-``getFootNodes``
+``getFootHtml``
     Outputs all of the HTML nodes that have been queued up by the :ref:`includeJsFile <includejsfile>` and :ref:`includeJs <includejs>` tags. It should be placed right before your ``</body>`` tag.
 
     .. code-block:: html
@@ -75,5 +75,5 @@ On top of the template functions that `Twig comes with <http://twig.sensiolabs.o
             <h1>{{ page.name }}</h1>
             {{ page.body }}
 
-            {{ getFootNodes() }}
+            {{ getFootHtml() }}
         </body>

@@ -108,7 +108,7 @@
 <p>If your plugin’s CP section has its own sub-navigation, you can define that by setting the <tt class="docutils literal"><span class="pre">tabs</span></tt> variable in your template:</p>
 <div class="highlight-html"><div class="highlight"><pre>{% set tabs = {
     recent: { label: &quot;Recent&quot;|t, url: url(&#39;cocktailrecipes&#39;) },
-    new:    { label: &quot;Add a New Recipe&quot;|t, url(&#39;cocktailrecipes/new&#39;) %}
+    new:    { label: &quot;Add a New Recipe&quot;|t, url: url(&#39;cocktailrecipes/new&#39;) %}
 } %}
 </pre></div>
 </div>

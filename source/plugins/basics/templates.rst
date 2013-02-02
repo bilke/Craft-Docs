@@ -72,7 +72,7 @@ If your plugin’s CP section has its own sub-navigation, you can define that by
 
    {% set tabs = {
        recent: { label: "Recent"|t, url: url('cocktailrecipes') },
-       new:    { label: "Add a New Recipe"|t, url('cocktailrecipes/new') %}
+       new:    { label: "Add a New Recipe"|t, url: url('cocktailrecipes/new') %}
    } %}
 
 Tell the CP template which tab should be selected by setting the ``selectedTab`` variable:

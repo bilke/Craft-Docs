@@ -1,4 +1,4 @@
-Blocks-Docs
+Blocks Docs
 ===========
 
 Building

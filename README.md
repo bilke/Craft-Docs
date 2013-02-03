@@ -1,8 +1,11 @@
 Blocks Docs
 ===========
 
-Building
---------
-1. Install Sphynx (http://sphinx-doc.org/).
-2. If on *nix, give `builddocs` execute permissions in the root of the repo.
-3. Run `builddocs` (*nix) or `builddocs.bat` (Windows).  Final output gets placed in the /builds directory.
+How to build the docs
+---------------------
+
+1. Install [Sphynx](http://sphinx-doc.org/)
+2. If on *nix, give Blocks-Docs/builddocs executable permissions
+3. Run `builddocs` (*nix) or `builddocs.bat` (Windows)
+
+The script will output the built docs in Blocks-Docs/build/.

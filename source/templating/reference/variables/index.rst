@@ -7,5 +7,6 @@ Template Variables
    globals
    dates
    blx.entries
+   blx.feeds
    blx.request
    blx.users

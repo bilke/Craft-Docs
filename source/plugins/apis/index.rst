@@ -10,6 +10,7 @@ Blocks has several APIs your plugin can use to interact with the system. The API
    config
    email
    entries
+   feeds
    globals
    pages
    path

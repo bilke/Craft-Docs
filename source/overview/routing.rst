@@ -9,7 +9,7 @@ When a request comes in, Blocks analyzes it to determine how to handle it. Here 
 
 #. **Is it an action request?**
 
-   A request is deemed an “action request” if the URI begins with “actions/” (a word that is customizable via ``$blocksConfig['actionTrigger']`` in blocks/config/blocks.php), or an “action” param exists either in the POST data or query string. Action requests get routed to a controller action, which are used to perform… *actions*.
+   A request is deemed an “action request” if the URI begins with “actions/” (a word that is customizable via ``$blocksConfig['actionTrigger']`` in blocks/config/blocks.php), or an “action” param exists either in the POST data or query string. Action requests get routed to a controller action, which are used to perform… *actions*. Controller actions are built into the system for core actions, but plugins can also contain Controllers that have their own custom actions.
 
 #. **Is it a page request?**
 

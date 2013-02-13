@@ -20,7 +20,7 @@ That will create a new migration file in your plugins’ migrations/ folder (and
    <?php
    namespace Blocks;
 
-   class m121019_144608_plugin_handle_migration_name extends DbMigration
+   class m121019_144608_plugin_handle_migration_name extends BaseMigration
    {
        public function safeUp()
        {

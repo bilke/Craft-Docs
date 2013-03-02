@@ -4,8 +4,7 @@ Blocks Docs
 How to build the docs
 ---------------------
 
-1. Install [Sphinx](http://sphinx-doc.org/)
-2. If on *nix, give Blocks-Docs/builddocs executable permissions
-3. Run `builddocs` (*nix) or `builddocs.bat` (Windows)
+To build the docs, you must install [Sphinx](http://sphinx-doc.org/), and then run the following commands from Terminal:
 
-The script will output the built docs in Blocks-Docs/build/.
+    cd path/to/Blocks-Docs/source
+    sphinx-build -b html -a . path/to/build

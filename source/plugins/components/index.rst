@@ -5,4 +5,4 @@ Adding New Components
    :titlesonly:
 
    widgets
-   blocktypes
+   fieldtypes

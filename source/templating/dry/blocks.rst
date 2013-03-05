@@ -1,9 +1,9 @@
-Template Blocks
+Template Craft
 ===============
 
-Template Blocks are a feature that bring Template Inheritance to Blocks.   Template Blocks allow you to build a base template with defined sections.  When building new templates, you can extend your base template, and over-ride only the parts that you need to.
+Template Craft are a feature that bring Template Inheritance to Craft.   Template Craft allow you to build a base template with defined sections.  When building new templates, you can extend your base template, and over-ride only the parts that you need to.
 
-You might have a base template in *blocks/templates*, called _layout.html, with this code:
+You might have a base template in *craft/templates*, called _layout.html, with this code:
 
 .. code-block:: html
 

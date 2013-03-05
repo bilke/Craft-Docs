@@ -1,19 +1,19 @@
-``blx.entries``
+``craft.entries``
 ===============
 
-You can access your site’s entries from your templates via ``blx.entries``.
+You can access your site’s entries from your templates via ``craft.entries``.
 
 
 Output Functions
 ----------------
 
-There are three ways you can get ``blx.entries`` to output data: ``find()``, ``first()``, and ``total()``.
+There are three ways you can get ``craft.entries`` to output data: ``find()``, ``first()``, and ``total()``.
 
 If you want to get an array of multiple entries that you can loop through, use ``find()``:
 
 .. code-block:: html
 
-    {% for entry in blx.entries.find() %}
+    {% for entry in craft.entries.find() %}
         <li>{{ entry.title }}</li>
     {% endfor %}
 
@@ -21,7 +21,7 @@ If you just want to get one entry, use ``first()``:
 
 .. code-block:: html
 
-    {% set entry = blx.entries.first() %}
+    {% set entry = craft.entries.first() %}
 
     {{ entry.title}}
 
@@ -29,29 +29,29 @@ If you want to get the total number of entries, use ``total()``:
 
 .. code-block:: html
 
-    Total entries: {{ blx.entries.total() }}
+    Total entries: {{ craft.entries.total() }}
 
 
 Tailoring the Results
 ---------------------
 
-Calling ``blx.entries.find()`` by itself is going to return the last 100 live entries in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to customize the results a bit.
+Calling ``craft.entries.find()`` by itself is going to return the last 100 live entries in your site. If that happens to be exactly what you needed, great! But most likely you’ll want to customize the results a bit.
 
-Blocks supports a number of parameters that should help you do just that.
+Craft supports a number of parameters that should help you do just that.
 
 
 Parameter Syntax
 ~~~~~~~~~~~~~~~~
 
-There are two ways you can add parameters to your ``blx.entries`` tag:
+There are two ways you can add parameters to your ``craft.entries`` tag:
 
 1. You can chain the parameters together as additional functions before reaching the output function::
 
-      blx.entries.section('blog').authorId(10).find()
+      craft.entries.section('blog').authorId(10).find()
 
 2. You can pass your parameters as an argument to the output functions::
 
-      blx.entries.find({ section: 'blog', authorId: 10 })
+      craft.entries.find({ section: 'blog', authorId: 10 })
 
 Both of these ways are perfectly valid, and each have their place. The former is more readable, but with the latter syntax, parameters can be defined once, and reused:
 
@@ -59,12 +59,12 @@ Both of these ways are perfectly valid, and each have their place. The former is
 
     {% set params = { section: 'blog', authorId: 10 } %}
 
-    Total entries: {{ blx.entries.total(params) }}
+    Total entries: {{ craft.entries.total(params) }}
 
     The last 5 entries:
 
     <ul>
-        {% for entry in blx.entries.limit(5).find(params) %}
+        {% for entry in craft.entries.limit(5).find(params) %}
             <li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
         {% endfor %}
     </ul>
@@ -77,7 +77,7 @@ That was also an example of how the two syntaxes can be mixed and matched. Notic
 Shared Parameters
 ~~~~~~~~~~~~~~~~~
 
-Each of the ``blx.entries`` output functions share several parameters that will help you find the entry(s) you’re looking for:
+Each of the ``craft.entries`` output functions share several parameters that will help you find the entry(s) you’re looking for:
 
 ``id``
     Only fetch the entry with the given ID.
@@ -153,15 +153,15 @@ Each of these parameters can be set to a single value or multiple values, and ca
 
 To pass in multiple values, you can either pass them as an array, comma-delimited string, or even as separate arguments if you’re using the chaining method::
 
-    blx.entries.id(1, 2, 3).find()
-    blx.entries.id('1,2,3').find()
-    blx.entries.find({ id: [1, 2, 3] })
-    blx.entries.find({ id: '1,2,3' })
+    craft.entries.id(1, 2, 3).find()
+    craft.entries.id('1,2,3').find()
+    craft.entries.find({ id: [1, 2, 3] })
+    craft.entries.find({ id: '1,2,3' })
 
 To exclude entries with a given value, you must pass in a string, prefixed with “``not``”::
 
-    blx.entries.id('not 1').find()
-    blx.entries.find({ id: 'not 1' })
+    craft.entries.id('not 1').find()
+    craft.entries.find({ id: 'not 1' })
 
 
 .. _entry-properties:
@@ -184,7 +184,7 @@ Once you’ve got your entry, there are a number of properties and functions you
     The entry’s author’s ID.
 
 ``author``
-    The entry’s author’s :doc:`user object <blx.users>`.
+    The entry’s author’s :doc:`user object <craft.users>`.
 
 ``language``
     The language the entry’s content was returned in.

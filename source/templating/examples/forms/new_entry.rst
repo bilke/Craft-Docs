@@ -15,7 +15,7 @@ You can create a new entry form for the front-end of your site using the followi
         <input id="title" type="text" name="title">
 
         <label for="body">Body</label>
-        <textarea id="body" name="blocks[body]"></textarea>
+        <textarea id="body" name="fields[body]"></textarea>
 
         <input type="submit" value="Publish">
     </form>

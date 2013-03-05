@@ -1,7 +1,7 @@
 Template Tags
 =============
 
-On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/doc/tags/index.html>`_, Blocks provides a few of its own.
+On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/doc/tags/index.html>`_, Craft provides a few of its own.
 
 ``redirect``
     Redirects the browser to the passed-in URL or site path.
@@ -18,7 +18,7 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 
     .. code-block:: html
 
-        {% set entry = blx.entries.id(entryId).find() %}
+        {% set entry = craft.entries.id(entryId).find() %}
 
         {% if not entry %}
             {% exit 404 %}
@@ -54,7 +54,7 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 
     .. code-block:: html
 
-        {% paginate blx.entries.section('blog').limit(10) as entries %}
+        {% paginate craft.entries.section('blog').limit(10) as entries %}
 
             {% for entry in entries %}
                 <article>

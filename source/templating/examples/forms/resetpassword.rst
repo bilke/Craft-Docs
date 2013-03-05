@@ -1,7 +1,7 @@
 Reset Password Form
 ===================
 
-When a user forgets their password, Blocks will send them an email with a URL to reset their password. That URL is defined by your ``'resetPasswordPath'`` config setting, which is “resetpassword” by default.
+When a user forgets their password, Craft will send them an email with a URL to reset their password. That URL is defined by your ``'resetPasswordPath'`` config setting, which is “resetpassword” by default.
 
 If you want your site to support password resetting, you need to create a template at the path specified by the '``resetPasswordPath'`` conifg setting. For example, /resetpassword.html or /resetpassword/index.html.
 

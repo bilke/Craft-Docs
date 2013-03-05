@@ -1,19 +1,19 @@
-``blx.users``
+``craft.users``
 ===============
 
-If you have the Users package installed, you can access your site’s users from your templates via ``blx.users``.
+If you have the Users package installed, you can access your site’s users from your templates via ``craft.users``.
 
 
 Output Functions
 ----------------
 
-There are three ways you can get ``blx.users`` to output data: ``find()``, ``first()``, and ``total()``.
+There are three ways you can get ``craft.users`` to output data: ``find()``, ``first()``, and ``total()``.
 
 If you want to get an array of multiple users that you can loop through, use ``find()``:
 
 .. code-block:: html
 
-    {% for accounts in blx.users.find() %}
+    {% for accounts in craft.users.find() %}
         <li>{{ account.username }}</li>
     {% endfor %}
 
@@ -21,7 +21,7 @@ If you just want to get one user, use ``first()``:
 
 .. code-block:: html
 
-    {% set account = blx.users.first() %}
+    {% set account = craft.users.first() %}
 
     {{ account.title}}
 
@@ -29,31 +29,33 @@ If you want to get the total number of users, use ``total()``:
 
 .. code-block:: html
 
-    Total users: {{ blx.users.total() }}
+    Total users: {{ craft.users.total() }}
 
-**Note:** You might have noticed that we’re setting the actual user variables to “``account``” rather than “``user``”. That’s because ``user`` is already a :doc:`global variable <globals>`, and assigning ``user`` to a new variable would overwrite that.
+.. container:: tip
+
+   **Note:** You might have noticed that we’re setting the actual user variables to “``account``” rather than “``user``”. That’s because ``user`` is already a :doc:`global variable <globals>`, and assigning ``user`` to a new variable would overwrite that.
 
 
 Tailoring the Results
 ---------------------
 
-Calling ``blx.users.find()`` by itself is going to return 100 users, ordered by username. If that happens to be exactly what you needed, great! But most likely you’ll want to customize the results a bit.
+Calling ``craft.users.find()`` by itself is going to return 100 users, ordered by username. If that happens to be exactly what you needed, great! But most likely you’ll want to customize the results a bit.
 
-Blocks supports a number of parameters that should help you do just that.
+Craft supports a number of parameters that should help you do just that.
 
 
 Parameter Syntax
 ~~~~~~~~~~~~~~~~
 
-There are two ways you can add parameters to your ``blx.users`` tag:
+There are two ways you can add parameters to your ``craft.users`` tag:
 
 1. You can chain the parameters together as additional functions before reaching the output function::
 
-      blx.users.group('authors').find()
+      craft.users.group('authors').find()
 
 2. You can pass your parameters as an argument to the output functions::
 
-      blx.users.find({ group: 'authors' })
+      craft.users.find({ group: 'authors' })
 
 Both of these ways are perfectly valid, and each have their place. The former is more readable, but with the latter syntax, parameters can be defined once, and reused:
 
@@ -61,12 +63,12 @@ Both of these ways are perfectly valid, and each have their place. The former is
 
     {% set params = { group: 'authors' } %}
 
-    Total authors: {{ blx.users.total(params) }}
+    Total authors: {{ craft.users.total(params) }}
 
     The last 5 authors:
 
     <ul>
-        {% for author in blx.users.order('dateCreated desc').limit(5).find(params) %}
+        {% for author in craft.users.order('dateCreated desc').limit(5).find(params) %}
             <li><a href="{{ url('authors/'~author.username) }}">{{ author }}</a></li>
         {% endfor %}
     </ul>
@@ -79,7 +81,7 @@ That was also an example of how the two syntaxes can be mixed and matched. Notic
 Shared Parameters
 ~~~~~~~~~~~~~~~~~
 
-Each of the ``blx.users`` output functions share several parameters that will help you find the user(s) you’re looking for:
+Each of the ``craft.users`` output functions share several parameters that will help you find the user(s) you’re looking for:
 
 ``id``
     Only fetch the user with the given ID.
@@ -134,15 +136,15 @@ Each of these parameters can be set to a single value or multiple values, and ca
 
 To pass in multiple values, you can either pass them as an array, comma-delimited string, or even as separate arguments if you’re using the chaining method::
 
-    blx.users.id(1, 2, 3).find()
-    blx.users.id('1,2,3').find()
-    blx.users.find({ id: [1, 2, 3] })
-    blx.users.find({ id: '1,2,3' })
+    craft.users.id(1, 2, 3).find()
+    craft.users.id('1,2,3').find()
+    craft.users.find({ id: [1, 2, 3] })
+    craft.users.find({ id: '1,2,3' })
 
 To exclude users with a given value, you must pass in a string, prefixed with “``not``”::
 
-    blx.users.id('not 1').find()
-    blx.users.find({ id: 'not 1' })
+    craft.users.id('not 1').find()
+    craft.users.find({ id: 'not 1' })
 
 
 User Properties

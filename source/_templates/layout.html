@@ -2,24 +2,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
 	<meta charset="utf-8" />
-	<title>{{ title|striptags }}{% if pagename != 'index' %} - Blocks Docs{% endif %}</title>
+	<title>{{ title|striptags }}{% if pagename != 'index' %} - Craft Docs{% endif %}</title>
+	<link rel="stylesheet" href="/resources/css/buildwithcraft.css" type="text/css">
 	<link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
 	<link rel="stylesheet" href="{{ pathto('_static/css/docs.css', 1) }}" type="text/css" />
 </head>
 
-<body>
-	<div class="sidebar">
-		<div class="content">
-			<h1>Blocks Docs</h1>
+<body id="docs">
+	<nav id="nav">
+		<ul class="centered">
+			<li><a id="nav-home" href="/" title="Craft Home"></a></li>
+			<li><a class="sel" href="/docs">Docs</a></li>
+			<li><a href="/releases">Releases</a></li>
+			<li><a href="https://plus.google.com/communities/106505340287442511226">Community</a></li>
+		</ul>
+	</nav>
 
+	<div id="container" class="centered">
+		<div class="sidebar">
 			<nav class="nav">
 				{{ toctree() }}
 			</nav>
 		</div>
-	</div>
 
-	<div class="main">
-		<div class="content">
+		<div class="main">
 			{% if parents %}
 				<ul class="crumbs">
 					{%- for parent in parents %}

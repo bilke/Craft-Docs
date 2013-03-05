@@ -1,27 +1,27 @@
 Templates
 =========
 
-In Blocks, all HTML rendering is done via :doc:`templates </templating/index>` – even for the Control Panel itself. There are no PHP-based view files.
+In Craft, all HTML rendering is done via :doc:`templates </templating/index>` – even for the Control Panel itself. There are no PHP-based view files.
 
-If your plugin needs its own templates, you can place them in a templates/ folder within your plugin’s folder (ex: blocks/plugins/cocktailrecipes/templates/).
+If your plugin needs its own templates, you can place them in a templates/ folder within your plugin’s folder (ex: craft/plugins/cocktailrecipes/templates/).
 
 .. _plugin-template-paths:
 
 Plugin Template Paths, Explained
 --------------------------------
 
-To manually render a template from your plugin’s PHP code, call ``blx()->templates->render('PluginHandle/path/to/template')`` (see :doc:`/plugins/apis/templates`).
+To manually render a template from your plugin’s PHP code, call ``craft()->templates->render('PluginHandle/path/to/template')`` (see :doc:`/plugins/apis/templates`).
 
 That path you pass to ``render()`` is your **plugin template path**. Plugin template paths are made up of two parts::
 
   [Lowercase plugin handle]/[Template path, relative to your plugin’s templates/ folder]
 
-So, if you were to call ``blx()->templates->render('cocktailrecipes/settings')``, for example, Blocks would check the following locations, in this order:
+So, if you were to call ``craft()->templates->render('cocktailrecipes/settings')``, for example, Craft would check the following locations, in this order:
 
-#. blocks/app/templates/cocktailrecipes/settings.html
-#. blocks/app/templates/cocktailrecipes/settings/index.html
-#. **blocks/plugins/cocktailrecipes/templates/settings.html**
-#. **blocks/plugins/cocktailrecipes/templates/settings/index.html**
+#. craft/app/templates/cocktailrecipes/settings.html
+#. craft/app/templates/cocktailrecipes/settings/index.html
+#. **craft/plugins/cocktailrecipes/templates/settings.html**
+#. **craft/plugins/cocktailrecipes/templates/settings/index.html**
 
 As you can see, the “templates/” folder segment is assumed, so there’s no need to include it when calling ``render()``.
 
@@ -33,7 +33,7 @@ If you want to give your plugin its own Control Panel section, add this to your 
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class CocktailRecipesPlugin extends BasePlugin
    {
@@ -95,12 +95,12 @@ Dynamic URL Routing
 
 By default, incoming requests are routed to a template with the same path as the request URI (possibly with “.html” or “/index.html” appended to it). Most of the time this works well, but it falls short for dynamic URLs, such as URLs where one of the segments is an ID or a slug. For example, you might want to route URLs that look like “admin/cocktailrecipes/123” to templates/_edit.html.
 
-You can accomplish this by registering **routes**. Blocks gives plugins a chance to register new CP routes via the registerCpRoutes hook. Simply add a new method to your plugin called ``hookRegisterCpRoutes()``:
+You can accomplish this by registering **routes**. Craft gives plugins a chance to register new CP routes via the registerCpRoutes hook. Simply add a new method to your plugin called ``hookRegisterCpRoutes()``:
 
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class CocktailRecipesPlugin extends BasePlugin
    {

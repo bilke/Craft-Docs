@@ -3,80 +3,68 @@ PathService
 
 PathService provides the following APIs for dealing with file system paths:
 
-``blx()->path->getAppPath()``
-	Returns the path to the blocks/app/ folder.
+``craft()->path->getAppPath()``
+	Returns the path to the craft/app/ folder.
 
-``blx()->path->getConfigPath()``
-	Returns the path to the blocks/config/ folder.
+``craft()->path->getConfigPath()``
+	Returns the path to the craft/config/ folder.
 
-``blx()->path->getPluginsPath()``
-	Returns the path to the blocks/plugins/ folder.
+``craft()->path->getPluginsPath()``
+	Returns the path to the craft/plugins/ folder.
 
-``blx()->path->getUploadsPath()``
-	Returns the path to the blocks/uploads/ folder.
+``craft()->path->getStoragePath()``
+	Returns the path to the craft/storage/ folder.
 
-``blx()->path->getRuntimePath()``
-	Returns the path to the blocks/runtime/ folder.
+``craft()->path->getRuntimePath()``
+	Returns the path to the craft/storage/runtime/ folder.
 
-``blx()->path->getTempPath()``
-	Creates the blocks/runtime/temp/ folder if it doesn't exist, and returns the path to it.
+``craft()->path->getLogPath()``
+	Returns the path to the craft/storage/runtime/logs/ folder.
 
-``blx()->path->getUserPhotosPath()``
-	Creates the blocks/uploads/userphotos/ folder if it doesn’t exist, and returns the path to it.
+``craft()->path->getTempPath()``
+	Returns the path to the craft/storage/runtime/temp/ folder.
 
-``blx()->path->getLogPath()``
-	Creates the blocks/runtime/logs/ folder if it doesn’t exist, and returns the path to it.
+``craft()->path->getUserPhotosPath()``
+	Returns the path to the craft/storage/userphotos/ folder.
 
-``blx()->path->getStatePath()``
-	Creates the blocks/runtime/state/ folder if it doesn’t exist, and returns the path to it.
+``craft()->path->getStatePath()``
+	Returns the path to the craft/storage/runtime/state/ folder.
 
-``blx()->path->getComponentsPath()``
-	Returns the path to the blocks/app/components/ folder.
+``craft()->path->getLibPath()``
+	Returns the path to the craft/app/lib/ folder.
 
-``blx()->path->getLibPath()``
-	Returns the path to the blocks/app/lib/ folder.
+``craft()->path->getResourcesPath()``
+	Returns the path to the craft/app/resources/ folder.
 
-``blx()->path->getResourcesPath()``
-	Returns the path to the blocks/app/resources/ folder.
+``craft()->path->getFrameworkPath()``
+	Returns the path to the craft/app/framework/ folder.
 
-``blx()->path->getFrameworkPath()``
-	Returns the path to the blocks/app/framework/ folder.
+``craft()->path->getMigrationsPath()``
+	Returns the path to the craft/app/migrations/ folder.
 
-``blx()->path->getMigrationsPath()``
-	Returns the path to the blocks/app/migrations/ folder.
+``craft()->path->getCpTranslationsPath()``
+	Returns the path to the craft/app/translations/ folder.
 
-``blx()->path->getCpTranslationsPath()``
-	Returns the path to the blocks/app/translations/ folder.
+``craft()->path->getSiteTranslationsPath()``
+	Returns the path to the craft/translations/ folder.
 
-``blx()->path->getSiteTranslationsPath()``
-	Returns the path to the blocks/translations/ folder.
-
-``blx()->path->getConsolePath()``
-	Returns the path to the blocks/app/console/ folder.
-
-``blx()->path->getCommandsPath()``
-	Returns the path to the blocks/app/console/commands/ folder.
-
-``blx()->path->getTemplatesPath()``
+``craft()->path->getTemplatesPath()``
 	Returns the active templates path.
 
-``blx()->path->setTemplatesPath($path)``
+``craft()->path->setTemplatesPath($path)``
 	Sets the active templates path.
 
-``blx()->path->getCpTemplatesPath()``
-	Returns the path to the blocks/app/templates/ folder.
+``craft()->path->getCpTemplatesPath()``
+	Returns the path to the craft/app/templates/ folder.
 
-``blx()->path->getSiteTemplatesPath()``
-	Returns the path to the blocks/templates/ folder.
+``craft()->path->getSiteTemplatesPath()``
+	Returns the path to the craft/templates/ folder.
 
-``blx()->path->getOfflineTemplatesPath()``
-	Returns the path to the offline templates folder.
+``craft()->path->getCompiledTemplatesPath()``
+	Returns the path to the compiled templates folder if it doesn’t exist, and.
 
-``blx()->path->getCompiledTemplatesPath()``
-	Creates the compiled templates folder if it doesn’t exist, and returns the path to it.
+``craft()->path->getSessionPath()``
+	Returns the path to the craft/storage/runtime/sessions/ folder if it.
 
-``blx()->path->getSessionPath()``
-	Creates the blocks/runtime/sessions/ folder if it doesn’t exist, and returns the path to it.
-
-``blx()->path->getCachePath()``
-	Creates the blocks/runtime/cache/ folder if it doesn’t exist, and returns the path to it.
+``craft()->path->getCachePath()``
+	Returns the path to the craft/storage/runtime/cache/ folder if it.

@@ -3,7 +3,7 @@ FeedsService
 
 FeedsService provides the following API for capturing RSS and Atom feeds:
 
-``blx()->feeds->getFeedItems($url, $limit, $offset)``
+``craft()->feeds->getFeedItems($url, $limit, $offset)``
 	Returns an array of items from a given feed URL. Optionally pass ``$limit`` and ``$offset`` to limit the number of items returned, and how many initial items to skip, respectively. Each item has the following keys:
 
 	* ``'authors'`` – an array of the item’s authors. Each element is a sub-array with the values ``'name'``, ``'url'``, and ``'email'``.

@@ -6,7 +6,7 @@ Template Variables
 
    globals
    dates
-   blx.entries
-   blx.feeds
-   blx.request
-   blx.users
+   craft.entries
+   craft.feeds
+   craft.request
+   craft.users

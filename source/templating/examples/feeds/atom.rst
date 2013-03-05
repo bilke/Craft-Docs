@@ -3,7 +3,7 @@ Atom 1.0 Feed
 
 The following template can be used to provide an Atom 1.0 feed on your site. It assumes that you have two :doc:`/overview/globals` set up: ‘feedAuthorName’ and ‘feedAuthorEmail’.
 
-**Tip:** If you save this in a template that ends with a ‘.atom’ file extension, Blocks will even serve it with an ``application/atom+xml`` MIME type.
+**Tip:** If you save this in a template that ends with a ‘.atom’ file extension, Craft will even serve it with an ``application/atom+xml`` MIME type.
 
 .. code-block:: html
 
@@ -12,15 +12,15 @@ The following template can be used to provide an Atom 1.0 feed on your site. It 
 
         <title>{{ siteName }}</title>
         <link href="{{ siteUrl }}" />
-        <link type="application/atom+xml" rel="self" href="{{ blx.request.url }}" />
+        <link type="application/atom+xml" rel="self" href="{{ craft.request.url }}" />
         <updated>{{ now.atom }}</updated>
-        <id>{{ blx.request.url }}</id>
+        <id>{{ craft.request.url }}</id>
         <author>
             <name>{{ globals.feedAuthorName }}</name>
             <email>{{ globals.feedAuthorEmail }}</email>
         </author>
 
-        {% for entry in blx.entries.find() %}
+        {% for entry in craft.entries.find() %}
             <entry>
                 <id>{{ entry.url }}</id>
                 <link type="text/html" rel="alternate" href="{{ entry.url }}" />

@@ -7,11 +7,11 @@ You can create a login form using the following code:
 
     <form method="post" action="" accept-charset="UTF-8">
         <input type="hidden" name="action" value="users/login">
-        <input type="hidden" name="redirect" value="{{ blx.session.returnUrl }}">
+        <input type="hidden" name="redirect" value="{{ craft.session.returnUrl }}">
 
         <h3><label for="loginName">Username or email</label></h3>
         <input id="loginName" type="text" name="loginName"
-            value="{{ blx.session.rememberedUsername }}">
+            value="{{ craft.session.rememberedUsername }}">
 
         <h3><label for="password">Password</label></h3>
         <input id="password" type="password" name="password">

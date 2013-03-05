@@ -1,12 +1,11 @@
 API Reference
 =============
 
-Blocks has several APIs your plugin can use to interact with the system. The APIs are provided by the system services:
+Craft has several APIs your plugin can use to interact with the system. The APIs are provided by the system services:
 
 .. toctree::
    :titlesonly:
 
-   blockTypes
    config
    email
    entries

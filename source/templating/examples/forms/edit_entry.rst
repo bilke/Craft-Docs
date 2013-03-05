@@ -5,7 +5,7 @@ You can create a form to edit existing entries on front-end of your site using t
 
 .. code-block:: html
 
-    {% set entry = blx.entries.id(1).first %}
+    {% set entry = craft.entries.id(1).first %}
 
     <form method="post" action="" accept-charset="UTF-8">
         <input type="hidden" name="action" value="entries/saveEntry">
@@ -18,7 +18,7 @@ You can create a form to edit existing entries on front-end of your site using t
         <input id="title" type="text" name="title" value="{{ entry.title }}">
 
         <label for="body">Body</label>
-        <textarea id="body" name="blocks[body]">{{ entry.body }}</textarea>
+        <textarea id="body" name="fields[body]">{{ entry.body }}</textarea>
 
         <input type="submit" value="Publish">
     </form>

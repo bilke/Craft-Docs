@@ -1,11 +1,11 @@
 Migrations
 ==========
 
-If your schema changes over the life of your plugin, you can write a **migration** to keep existing installations updated with the latest schema. Blocks automatically checks for new migrations whenever a plugin’s version number changes.
+If your schema changes over the life of your plugin, you can write a **migration** to keep existing installations updated with the latest schema. Craft automatically checks for new migrations whenever a plugin’s version number changes.
 
-Blocks comes with a handy shell script to get you started. To create a new migration, open up Terminal, and run the following commands::
+Craft comes with a handy shell script to get you started. To create a new migration, open up Terminal, and run the following commands::
 
-    cd /path/to/blocks/app/console
+    cd /path/to/craft/app/console
     chmod 777 yiic
     ./yiic migrate create MigrationDescription PluginHandle
 
@@ -18,7 +18,7 @@ That will create a new migration file in your plugins’ migrations/ folder (and
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class m121019_144608_plugin_handle_migration_name extends BaseMigration
    {

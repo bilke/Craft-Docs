@@ -1,9 +1,9 @@
 The Query Builder
 =================
 
-Currently Blocks only support MySQL, but there’s a good chance that we’ll add support for other database engines in the future, such as SQL Server and PostgreSQL. With that in mind, it’s important that we run all SQL queries through Blocks’ query builder.
+Currently Craft only support MySQL, but there’s a good chance that we’ll add support for other database engines in the future, such as SQL Server and PostgreSQL. With that in mind, it’s important that we run all SQL queries through Craft’s query builder.
 
-You can create a new query via ``blx()->db->createCommand()``, which returns a new DbCommand instance. DbCommand is based on Yii’s `CDbCommand <http://www.yiiframework.com/doc/api/1.1/CDbCommand>`_ class (See Yii’s `Query Builder <http://www.yiiframework.com/doc/guide/1.1/en/database.query-builder>`_  docs), with a few enhancements.
+You can create a new query via ``craft()->db->createCommand()``, which returns a new DbCommand instance. DbCommand is based on Yii’s `CDbCommand <http://www.yiiframework.com/doc/api/1.1/CDbCommand>`_ class (See Yii’s `Query Builder <http://www.yiiframework.com/doc/guide/1.1/en/database.query-builder>`_  docs), with a few enhancements.
 
 DbCommand Enhancements
 ----------------------

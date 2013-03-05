@@ -1,7 +1,7 @@
 Template Functions
 ==================
 
-On top of the template functions that `Twig comes with <http://twig.sensiolabs.org/doc/functions/index.html>`_, Blocks provides a few of its own:
+On top of the template functions that `Twig comes with <http://twig.sensiolabs.org/doc/functions/index.html>`_, Craft provides a few of its own:
 
 ``url``
     Returns a URL relative to your Site URL.

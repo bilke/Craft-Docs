@@ -1,14 +1,16 @@
-Blocks Docs Home
+Craft Docs Home
 ================
 
-Thanks for helping us test out Blocks! We’re extremely thrilled to be getting it into your hands, and we hope you’re excited too.
+Thanks for checking out Craft! We’re extremely thrilled to be getting it into your hands, and we hope you’re excited too.
 
 State of the Docs
 -----------------
 
-The documentation is by no means thorough at this point. Fleshing them out will be one of the primary focuses throughout the duration of the beta. Expect them to get better and better as time goes on.
+The documentation is by no means complete yet, and we’re constantly adding more to it.
 
-If you have any comments, suggestions, or find an error, please post on `Blocks Support <https://support.blockscms.com/index.php?pg=request&xCategory=1>`_, and we’ll look into it right away.
+If you have any comments, suggestions, or find an error, please `email us <mailto:support@buildwithcraft.com>`_, and we’ll look into it right away.
+
+The source of the docs is also up on `GitHub <https://github.com/pixelandtonic/Craft-Docs>`_. Feel free to fork them and submit changes via a pull request.
 
 Table of Contents
 -----------------

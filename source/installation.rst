@@ -4,38 +4,50 @@ Installing and Updating
 Requirements
 ------------
 
-Blocks requires the following:
+Craft requires the following:
 
-- PHP 5.3
-- MySQL 5.1
+- PHP 5.3+
+- MySQL 5.1+ with InnoDB
 
 
-Installing Blocks
+Installing Craft
 -----------------
 
-To install Blocks, follow these instructions:
+To install Craft, follow these instructions:
 
-1. Create a MySQL database and set the charset to ‘utf8’ and the collation to ‘utf8_unicode_ci’.
-2. Upload the entire contents of your Blocks/ folder to the web root of your server. Make sure your FTP client is set to upload files in ASCII format.
+1. Create a MySQL database.
+
+    .. container:: tip
+
+       We recommend you set set the default charset to “utf8” and collation to “utf8_unicode_ci”.
+
+2. Upload the entire contents of the Web/ folder to the web root of your server.
+
+    .. container:: tip
+
+       Make sure your FTP client is set to upload files in ASCII format.
+
 3. If you’re using Apache, rename the ‘htaccess’ file to ‘.htaccess’ and delete the ‘web.config’ file. If you’re using IIS, just delete the ‘htaccess’ file.
-4. Set the blocks/storage/ folders’ permissions to 777.
-5. Open up blocks/config/db.php and set the ``'server'``, ``'user'``, ``'password'``, and ``'database'`` config settings.
-6. Now that everything’s uploaded and configured, you should be able to point your browser at http://yourdomain.com/admin and see the Blocks installer.
+4. Set the craft/storage/ folders’ permissions to 777.
+5. Open up craft/config/db.php and set the ``'server'``, ``'user'``, ``'password'``, and ``'database'`` config settings.
+6. Now that everything’s uploaded and configured, you should be able to point your browser to http://yourdomain.com/admin and see the Craft installer.
 
 
-Updating Blocks
----------------
+One-click Updating
+------------------
 
-Admin users can update Blocks to the latest version from the Updates section of the CP, or you can update Blocks manually by downloading the latest version, and following these instructions:
+Craft’s CP has an “Updates” tab where you can check if a new update is available, and update Craft with one click. You also have the option of downloading the update, if you’d prefer to install it manually (see below).
 
-1. Rename the blocks/app/ folder to blocks/app-new/
-2. Upload blocks/app-new/ to your web server’s blocks/ folder
-3. Rename blocks/app/ to blocks/app-old/ on your web server
-4. Rename blocks/app-new/ to blocks/app/ on your web server
-5. Go to your Blocks CP in your browser. You will be prompted to proceed with a DB update. Click “Finish up”.
+For one-click updates to work, Craft needs to be able to write to the craft/app/ folder, either via user or group-level permissions. After Craft downloads an update patch, it will ensure it has write access to all of the files included in the patch. If it doesn’t, Craft will abort the update and present you with a list of files that it can’t write to.
 
-For automatic updates to work, at least two criteria must be satisfied:
 
-1. File ownership: All of your Blocks files must be owned by the user under which your web server executes. In other words, the owner of your Blocks files must match the user under which your web server executes. The web server user (named "apache", "web", "www", "nobody", or some such) is not necessarily the owner of your Blocks files. Typically, Blocks files are owned by the ftp user which uploaded the original files.
+Manually Updating
+-----------------
 
-2. File permissions: All of your Blocks files must be either owner writable by, or group writable by, the user under which your web server executes.  On shared hosts, Blocks files should specifically NOT be owned by the web server. If more than one user owns different files in the install (because of edits made by deleting and re-uploading of files via different accounts, for example), the file permissions need to be group writable (for example, 775 and 664 rather then the default 755 and 644). File permissions (in general) should be adjusted as appropriate for the server environment.
+Updating Craft manually is as simple as replacing your old craft/app/ folder with the new one. If you’re manually updating a live site, we recommend you follow these instructions to minimize the time your site is down:
+
+1. Rename the Web/craft/app/ folder in the release to “app-new”.
+2. Upload Web/craft/app-new/ to your server’s craft/ folder.
+3. Once app-new/ is done uploading, rename craft/app/ to craft/app-old/ on your server.
+4. Rename craft/app-new/ to craft/app/ on your server.
+5. Point your browser to your Craft CP. You will be prompted to proceed with a DB update. Go ahead and click “Finish up”.

@@ -4,9 +4,8 @@ System Overview
 .. toctree::
    :titlesonly:
 
-   blocks
+   fields
    sections
    entries
-   pages
    globals
    routing

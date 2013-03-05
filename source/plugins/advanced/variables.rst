@@ -1,7 +1,7 @@
 Template Variables
 ==================
 
-Blocks allows plugins to provide their own template variables, accessible from the ``{{ blx }}`` global variable (e.g. ``{{ blx.pluginName }}``).
+Craft allows plugins to provide their own template variables, accessible from the ``{{ blx }}`` global variable (e.g. ``{{ craft.pluginName }}``).
 
 To give your plugin a template variable, first create a new variables/ subfolder within your plugin’s folder. Then create a new file in that folder, named with this format::
 
@@ -14,20 +14,20 @@ Create a new class in that file, with the same name as the filename:
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class CocktailRecipesVariable
    {
        public function findIngredients($criteria)
        {
            $criteria = new CocktailRecipes_IngredientCriteria($criteria);
-           return blx()->cocktailRecipes->findIngredients($criteria);
+           return craft()->cocktailRecipes->findIngredients($criteria);
        }
 
        public function findIngredient($criteria)
        {
            $criteria = new CocktailRecipes_IngredientCriteria($criteria);
-           return blx()->cocktailRecipes->findIngredient($criteria);
+           return craft()->cocktailRecipes->findIngredient($criteria);
        }
    }
 

@@ -1,19 +1,9 @@
 Sections
 ========
 
-:doc:`Entries <entries>` in Blocks belong to **sections**. The feature set surrounding sections differs greatly depending on whether you have the Publish Pro package installed or not.
+:doc:`Entries <entries>` in Craft belong to **sections**.
 
-
-Without Publish Pro
--------------------
-
-If you don’t have Publish Pro installed, you only get one section, called “Blog”. It does not have any customizable properties; everything is hard-coded. The only thing you have control over is its :doc:`content blocks <blocks>`. To edit those, go to Settings > Blog.
-
-
-With Publish Pro
-----------------
-
-If you do have Publish Pro installed, you can manage your sections by going to Settings > Sections. From there you can edit existing sections and add new ones. Each section gets the following settings:
+You can manage your sections by going to Settings > Sections. From there you can edit existing sections and add new ones. Each section gets the following settings:
 
 * Name
 * Handle
@@ -24,4 +14,8 @@ If you do have Publish Pro installed, you can manage your sections by going to S
 
 The last two settings only show up if you have opted to give entries in the section their own URLs.
 
-Each section gets its own unique set of content blocks, which can be edited from the “Blocks” tab within a section’s settings.
+Each section also gets its own :ref:`field layout <fieldLayouts>`, which defines which fields will be available to its entries.
+
+.. container:: tip
+
+   **Note:** If you do not have Publish Pro installed, Craft is limited to only one section.

@@ -1,14 +1,14 @@
 Integrating Disqus
 ===============
 
-You can easily add comments to your Blocks entries by utilizing a third-party comment service such as Disqus.
+You can easily add comments to your Craft entries by utilizing a third-party comment service such as Disqus.
 
-To do this, you will need to have an output for displaying a single entry - or a single block of content you want to allow comments on.  In this example, we'll use a template called ``_entry.html`` in ``blocks/templates``.
+To do this, you will need to have an output for displaying a single entry you want to allow comments on.  In this example, we'll use a template located at craft/templates/_entry.html.
 
 You'll want to sign up with Disqus and get your Universal Code on Disqus' site in Admin > Settings > Install. Disqus has certain configuration variables that you can use to ensure comments end up on the right post.  Look for:
 
 .. code-block:: html
-	
+
 	/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 
 and add this line:
@@ -21,7 +21,7 @@ and add this line:
 A final entry template including comments might look like so:
 
 .. code-block:: html
-	
+
 
 	{% block blog %}
 	<h1 class="title">{{ entry.title }}</h1>
@@ -45,5 +45,5 @@ A final entry template including comments might look like so:
 	        </script>
 	        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        
+
 	{% endblock %}

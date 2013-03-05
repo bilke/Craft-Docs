@@ -1,7 +1,7 @@
 Plugin Development
 ==================
 
-You can extends Blocks’ built-in functionality by creating a plugin.
+You can extends Craft’s built-in functionality by creating a plugin.
 
 
 .. toctree::

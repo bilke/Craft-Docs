@@ -14,7 +14,7 @@ Create a new class in that file, with the same name as the filename:
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class CocktailRecipes_IngredientsService extends BaseApplicationComponent
    {
@@ -31,6 +31,6 @@ Create a new class in that file, with the same name as the filename:
 
 The specific functions that go in your services are entirely up to you.
 
-Instances of your services will be available to the entire system via ``blx()->pluginName_serviceName``. For example::
+Instances of your services will be available to the entire system via ``craft()->pluginName_serviceName``. For example::
 
-	blx()->cocktailRecipes_ingredients->saveIngredient($ingredient);
+	craft()->cocktailRecipes_ingredients->saveIngredient($ingredient);

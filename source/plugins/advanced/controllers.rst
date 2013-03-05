@@ -3,7 +3,7 @@ Controllers
 
 Generally speaking, controllers are the middlemen between the front end of the CP/website and your plugin’s :doc:`services <services>`. They contain **action methods** which handle individual tasks.
 
-A common pattern used throughout Blocks involves a controller action gathering post data, saving it on a :doc:`model <models>`, passing the model off to a :doc:`service <services>`, and then responding to the request appropriately depending on the service method’s response.
+A common pattern used throughout Craft involves a controller action gathering post data, saving it on a :doc:`model <models>`, passing the model off to a :doc:`service <services>`, and then responding to the request appropriately depending on the service method’s response.
 
 Action methods begin with the prefix “action”, followed by a description of what the method does (for example, ``actionSaveIngredient()``).
 
@@ -18,7 +18,7 @@ Create a new class in that file, with the same name as the filename:
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class CocktailRecipes_IngredientsController extends BaseController
    {
@@ -64,7 +64,7 @@ When you leave the ``action`` attribute blank, browsers will default to the curr
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class CocktailRecipes_IngredientsController extends BaseController
    {
@@ -76,14 +76,14 @@ When you leave the ``action`` attribute blank, browsers will default to the curr
 
            // ...
 
-           if (blx()->cocktailRecipes_ingredients->saveIngredient($ingredient))
+           if (craft()->cocktailRecipes_ingredients->saveIngredient($ingredient))
            {
-               blx()->user->setNotice(Blocks::t('Ingredient saved.'));
+               craft()->user->setNotice(Craft::t('Ingredient saved.'));
                $this->redirectToPostedUrl();
            }
            else
            {
-               blx()->user->setError(Blocks::t('Couldn’t save ingredient.'));
+               craft()->user->setError(Craft::t('Couldn’t save ingredient.'));
                $this->renderRequestedTemplate(array(
                    'ingredient' => $ingredient
                ));
@@ -96,7 +96,7 @@ When you leave the ``action`` attribute blank, browsers will default to the curr
 Posting to Controller Actions with JavaScript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Blocks provides a JavaScript function that makes it very easy to post to your controller actions as well:
+Craft provides a JavaScript function that makes it very easy to post to your controller actions as well:
 
 .. code-block:: js
 
@@ -104,7 +104,7 @@ Blocks provides a JavaScript function that makes it very easy to post to your co
        // ...
    };
 
-   Blocks.postActionRequest('cocktailRecipes/ingredients/saveIngredient', data, function(response) {
+   Craft.postActionRequest('cocktailRecipes/ingredients/saveIngredient', data, function(response) {
        // ...
    });
 
@@ -123,13 +123,15 @@ A similar ``actionUrl()`` function is available to your templates:
 
     <a href="{{ actionUrl('cocktailRecipes/ingredients/saveIngredient', { id: 10}) }}">
 
-And then there’s ``Blocks.getActionUrl()`` for Javascript:
+And then there’s ``Craft.getActionUrl()`` for Javascript:
 
 .. code-block:: js
 
-    var url = Blocks.getActionUrl('cocktailRecipes/ingredients/saveIngredient', { id: 10 });
+    var url = Craft.getActionUrl('cocktailRecipes/ingredients/saveIngredient', { id: 10 });
 
-**Note:** You’ll notice that action URLs begin with “actions/”. Don’t be tempted to skip these action URL functions and just type “actions/” yourself though, as that trigger segment is configurable.
+.. container:: tip
+
+   **Note:** You’ll notice that action URLs begin with “actions/”. Don’t be tempted to skip these action URL functions and just type “actions/” yourself though, as that trigger segment is configurable.
 
 
 Allowing Anonymous Access to Actions
@@ -140,7 +142,7 @@ By default, controller actions are only accessible to logged-in users. You can o
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class CocktailRecipes_IngredientsController extends BaseController
    {
@@ -154,7 +156,7 @@ Or if you only want to allow anonymous access to specific actions, you can set i
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class CocktailRecipes_IngredientsController extends BaseController
    {

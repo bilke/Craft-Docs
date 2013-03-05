@@ -1,7 +1,7 @@
-``blx.feeds``
+``craft.feeds``
 ===============
 
-You can capture RSS and Atom feeds using ``blx.feeds.getFeedItems()``. That function takes 3 parameters:
+You can capture RSS and Atom feeds using ``craft.feeds.getFeedItems()``. That function takes 3 parameters:
 
 * the URL to the feed (required)
 * a limit on how many items should be returned (optional, defaults to all items)
@@ -26,7 +26,7 @@ Each item will have the following properties:
 
     {% set feedUrl = "http://feeds.feedburner.com/blogandtonic" %}
     {% set limit = 10 %}
-    {% set items = blx.feeds.getFeedItems(feedUrl, limit) %}
+    {% set items = craft.feeds.getFeedItems(feedUrl, limit) %}
 
     {% for item in items %}
         <article>

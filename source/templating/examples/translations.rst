@@ -1,11 +1,11 @@
 Template Translations
 =====================
 
-While the Languages package will enable all of your site’s *content* to be translated, it won’t help you translate any text that’s hard-coded into your template files. Not to worry though, because Blocks templates are inherently translatable already.
+While the Languages package will enable all of your site’s *content* to be translated, it won’t help you translate any text that’s hard-coded into your template files. Not to worry though, because Craft templates are inherently translatable already.
 
 To make some text in your template translatable, all you need to do is run it through the :ref:`translate <t>` filter.
 
-For example, let’s say you had this in your homepage template (blocks/templates/index.html):
+For example, let’s say you had this in your homepage template (craft/templates/index.html):
 
 .. code-block:: html
 
@@ -29,7 +29,7 @@ Just like that, your heading is now ready to be translated.
 Defining Translations
 ---------------------
 
-To define your translations, first create a new folder in your blocks/ folder called ‘translations’. Within that, create a new PHP file named with the target language’s code. For instance, if you’re targeting Spanish-speaking visitors, your file would be ‘blocks/translations/es.php’.
+To define your translations, first create a new folder in your craft/ folder called ‘translations’. Within that, create a new PHP file named with the target language’s code. For instance, if you’re targeting Spanish-speaking visitors, your file would be ‘craft/translations/es.php’.
 
 That file should simply return an array whose keys are the messages in your site’s source language, and values are the translated messages. For example:
 

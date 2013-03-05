@@ -1,7 +1,7 @@
 Models
 ======
 
-Models are containers for data. Just about every time information is passed between :doc:`services <services>`, :doc:`controllers <controllers>`, and templates in Blocks, it’s passed via a model.
+Models are containers for data. Just about every time information is passed between :doc:`services <services>`, :doc:`controllers <controllers>`, and templates in Craft, it’s passed via a model.
 
 To create a model, first create a new models/ subfolder within your plugin’s folder. Then create a new file in that folder, named with this format::
 
@@ -14,7 +14,7 @@ Create a new class in that file, with the same name as the filename:
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class CocktailRecipes_IngredientModel extends BaseModel
    {

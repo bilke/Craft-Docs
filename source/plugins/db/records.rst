@@ -7,9 +7,11 @@ Active record models (or “records”) are like :doc:`models </plugins/advanced
 - Represent rows in the database
 - Find, alter, and delete rows
 
-**Note:** Records’ ability to modify the database means that they should never be used to transport data throughout the system. Their instances should be contained to :doc:`services </plugins/advanced/services>` only, so that services remain the one and only place where system state changes ever occur.
+.. container:: tip
 
-When a plugin is installed, Blocks will look for any records provided by the plugin, and automatically create the database tables for them.
+   **Note:** Records’ ability to modify the database means that they should never be used to transport data throughout the system. Their instances should be contained to :doc:`services </plugins/advanced/services>` only, so that services remain the one and only place where system state changes ever occur.
+
+When a plugin is installed, Craft will look for any records provided by the plugin, and automatically create the database tables for them.
 
 To create a record, first create a new records/ subfolder within your plugin’s folder. Then create a new file in that folder, named with this format::
 
@@ -22,7 +24,7 @@ Create a new class in that file, with the same name as the filename:
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
    class CocktailRecipes_IngredientRecord extends BaseRecord
    {
@@ -53,9 +55,9 @@ If your record should have any relationships with other tables, you can specify 
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
-   class CocktailRecipes_IngredientRecord extends BaseBlockType
+   class CocktailRecipes_IngredientRecord extends BaseFieldType
    {
        // ...
 
@@ -69,7 +71,7 @@ If your record should have any relationships with other tables, you can specify 
 
 ``defineRelations()`` works basically the same as `CActiveRecord <http://www.yiiframework.com/doc/api/1.1/CActiveRecord>`_’s `relations() <http://www.yiiframework.com/doc/api/1.1/CActiveRecord#relations-detail>`_ method (see `Relational Active Record <http://www.yiiframework.com/doc/guide/1.1/en/database.arr>`_ from the Yii docs), with two differences:
 
-- You don’t need to specify the namespace of the related record class in the second argument (defaults to the Blocks namespace)
+- You don’t need to specify the namespace of the related record class in the second argument (defaults to the Craft namespace)
 - You don’t need to specify the foreign key column name in BELONGS_TO relations (defaults to the relation name appended with “Id”)
 
 
@@ -81,9 +83,9 @@ If you want to define any indexes on your table, you can do it with the ``define
 .. code-block:: php
 
    <?php
-   namespace Blocks;
+   namespace Craft;
 
-   class CocktailRecipes_IngredientRecord extends BaseBlockType
+   class CocktailRecipes_IngredientRecord extends BaseFieldType
    {
        // ...
 

@@ -108,7 +108,7 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 
         {% includeJsFile "/resources/js/global.js" %}
 
-    Add “``first``” after the file URL if you want it to get included before other JS files:
+    Add “``first``” after the file URL if you want it to get included before other scripts:
 
     .. code-block:: html
 
@@ -128,7 +128,7 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 
         {% includeCss myCss %}
 
-    Add “``first``” after the CSS if you want it to get included before other CSS:
+    Add “``first``” after the CSS if you want it to get included before other styles:
 
     .. code-block:: html
 
@@ -148,7 +148,7 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 
         {% includeHiResCss myHiResCss %}
 
-    Add “``first``” after the CSS if you want it to get included before other CSS:
+    Add “``first``” after the CSS if you want it to get included before other styles:
 
     .. code-block:: html
 
@@ -168,8 +168,8 @@ On top of the template tags that `Twig comes with <http://twig.sensiolabs.org/do
 
         {% includeJs myJs %}
 
-    Add “``first``” after the JS if you want it to get included before other JS:
+    Add “``first``” after the JS if you want it to get included before other scripts:
 
     .. code-block:: html
 
-        {% includeCss myJs first %}
+        {% includeJs myJs first %}

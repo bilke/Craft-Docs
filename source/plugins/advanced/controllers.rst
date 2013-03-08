@@ -34,19 +34,24 @@ Create a new class in that file, with the same name as the filename:
    }
 
 
-Accessing your Controller Actions
----------------------------------
+How Controller Actions fit into Routing
+---------------------------------------
 
-There are multiple ways to access your controller actions. Each of them requires that you identify which controller/action you want to access, via an **action path**. In the context of plugins, action paths look like this::
+When a request comes in, the first thing Craft does after determining that it’s not a resource request is check if it’s a controller action request. **Action requests** will either have a URI which starts with “actions/” (a word that is customizable via the “actionTrigger” config setting in craft/config/general.php), or an “action” param in POST or the query string.
+
+If it is an action request, the next thing Craft will do is attempt to match the **action path** (whatever comes after “actions/” in the URL, or whatever the “action” param is set to) to an actual controller action. In the context of plugins, action paths look like this::
 
   [PluginHandle]/[ControllerName]/[ActionName]
 
 If your plugin class is “CocktailRecipesPlugin”, your controller class name is “CocktailRecipes_IngredientsController”, and your action method name is “actionSaveIngredient”, the action path would be “cocktailRecipes/ingredients/saveIngredient”.
 
+If Craft is able to match the action path to a controller action, that action method will be called. (If not, Craft responds with a 404.) From there, it’s up to the controller how to respond to the request. (See below for a couple examples of response functions.) However if the controller doesn’t call a response function, Craft will continue on with its request routing, as if nothing had just happened.
+
+
 Posting to Controller Actions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Most of the time, you’ll want to access controller actions via an HTML form over POST. To do this, we recommend that you leave your form’s ``action`` attribute blank, and specify your action via a hidden input named “action” instead:
+Most of the time, you’ll want to access controller actions via HTML forms over POST. To do this, we recommend that you leave your form’s ``action`` attribute blank, and specify your action via a hidden input named “action” instead:
 
 .. code-block:: html
 
@@ -59,7 +64,9 @@ Most of the time, you’ll want to access controller actions via an HTML form ov
        <input class="btn submit" type="submit" value="{{ 'Submit'|t }}">
    </form>
 
-When you leave the ``action`` attribute blank, browsers will default to the current request’s URL. Which is great because in the event that the controller encounters a problem performing its action, it can easily reload the same page, via ``$this->renderRequestedTemplate()``:
+When you leave your form’s ``action`` attribute blank, browsers will default to the current request’s URL. Which is great in the event that your controller needs to reload the previous page without a redirect. A common example of this is when the user’s input didn’t validate, and you want to pass the errors back to your template (ideally tucked away within a :doc:`model <models>`).
+
+You can queue variables up to be passed to the requested template by passing them to ``craft()->urlManager->setRouteVariables()``:
 
 .. code-block:: php
 
@@ -83,8 +90,12 @@ When you leave the ``action`` attribute blank, browsers will default to the curr
            }
            else
            {
+               // Perpare a flash error message for the user.
                craft()->user->setError(Craft::t('Couldn’t save ingredient.'));
-               $this->renderRequestedTemplate(array(
+
+               // Make the ingredient model available to the template as an 'ingredient' variable,
+               // since it contains the user's dumb input as well as the validation errors.
+               craft()->urlManager->setRouteVariables(array(
                    'ingredient' => $ingredient
                ));
            }
@@ -92,6 +103,7 @@ When you leave the ``action`` attribute blank, browsers will default to the curr
 
        // ...
    }
+
 
 Posting to Controller Actions with JavaScript
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -107,6 +119,7 @@ Craft provides a JavaScript function that makes it very easy to post to your con
    Craft.postActionRequest('cocktailRecipes/ingredients/saveIngredient', data, function(response) {
        // ...
    });
+
 
 Linking Directly to Controller Actions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

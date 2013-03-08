@@ -3,8 +3,8 @@ Global Variables
 
 Craft makes the following variables available to all templates:
 
-``blx``
-   Most of Craft’s template variables are tucked away in ``blx``:
+``craft``
+   Most of Craft’s template variables are tucked away in ``craft``:
 
 
    * :doc:`/templating/reference/variables/craft.entries` – used to access your site’s entries

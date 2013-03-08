@@ -5,7 +5,7 @@ Craft makes a few global variables available via the  ``HttpRequestVariable``.
 
 You can use these on any template.
 
-blx -- instance of craft/app/components/core/variables/BlxVariable.php
+craft -- instance of craft/app/variables/CraftVariable.php
 now -- a PHP DateTime instance for getting info about the current date/time
 siteName -- your site's name
 siteUrl -- your site's URL
@@ -13,8 +13,8 @@ globals -- container for any Global's you've created (e.g. globals.site_descript
 user -- the current user's UserModel instance, if someone's logged in.
 
 
-``blx``
-    instance of craft/app/components/core/variables/BlxVariable.php
+``craft``
+    instance of craft/app/variables/CraftVariable.php
 
 ``now``
     a PHP DateTime instance for getting info about the current date/time

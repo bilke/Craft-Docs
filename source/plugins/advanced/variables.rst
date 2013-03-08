@@ -1,7 +1,7 @@
 Template Variables
 ==================
 
-Craft allows plugins to provide their own template variables, accessible from the ``{{ blx }}`` global variable (e.g. ``{{ craft.pluginName }}``).
+Craft allows plugins to provide their own template variables, accessible from the ``{{ craft }}`` global variable (e.g. ``{{ craft.pluginName }}``).
 
 To give your plugin a template variable, first create a new variables/ subfolder within your plugin’s folder. Then create a new file in that folder, named with this format::
 

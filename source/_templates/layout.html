@@ -3,9 +3,10 @@
 <head>
 	<meta charset="utf-8" />
 	<title>{{ title|striptags }}{% if pagename != 'index' %} - Craft Docs{% endif %}</title>
-	<link rel="stylesheet" href="http://buildwithcraft.dev/resources/css/buildwithcraft.css" type="text/css">
+	<link rel="stylesheet" href="http://buildwithcraft.com/resources/css/buildwithcraft.css" type="text/css">
 	<link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
 	<link rel="stylesheet" href="{{ pathto('_static/css/docs.css', 1) }}" type="text/css" />
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0">
 </head>
 
 <body id="docs">
@@ -19,13 +20,13 @@
 	</nav>
 
 	<div id="container" class="centered">
-		<div class="sidebar">
+		<div id="sidebar">
 			<nav class="nav">
 				{{ toctree() }}
 			</nav>
 		</div>
 
-		<div class="main">
+		<div id="main" class="has-sidebar">
 			{% if parents %}
 				<ul class="crumbs">
 					{%- for parent in parents %}
@@ -43,6 +44,10 @@
 			{% endif %}
 		</div>
 	</div>
+
+<script type="text/javascript" src="{{ pathto('_static/lib/jquery-1.9.0.min.js', 1) }}"></script>
+<script type="text/javascript" src="{{ pathto('_static/lib/garnish-0.1.min.js', 1) }}"></script>
+<script type="text/javascript" src="{{ pathto('_static/js/docs.js', 1) }}"></script>
 
 <script type="text/javascript">
 

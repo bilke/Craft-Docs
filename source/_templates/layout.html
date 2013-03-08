@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<title>{{ title|striptags }}{% if pagename != 'index' %} - Craft Docs{% endif %}</title>
-	<link rel="stylesheet" href="/resources/css/buildwithcraft.css" type="text/css">
+	<link rel="stylesheet" href="http://buildwithcraft.dev/resources/css/buildwithcraft.css" type="text/css">
 	<link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
 	<link rel="stylesheet" href="{{ pathto('_static/css/docs.css', 1) }}" type="text/css" />
 </head>
@@ -11,9 +11,9 @@
 <body id="docs">
 	<nav id="nav">
 		<ul class="centered">
-			<li><a id="nav-home" href="/" title="Craft Home"></a></li>
-			<li><a class="sel" href="/docs">Docs</a></li>
-			<li><a href="/releases">Releases</a></li>
+			<li><a id="nav-home" href="http://buildwithcraft.com" title="Craft Home"></a></li>
+			<li><a class="sel" href="http://docs.buildwithcraft.com">Docs</a></li>
+			<li><a href="http://buildwithcraft.com/releases">Releases</a></li>
 			<li><a href="https://plus.google.com/communities/106505340287442511226">Community</a></li>
 		</ul>
 	</nav>
@@ -43,5 +43,19 @@
 			{% endif %}
 		</div>
 	</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-39036834-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 </body>
 </html>

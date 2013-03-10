@@ -26,6 +26,7 @@ Table of Contents
    :titlesonly:
 
    installation
+   licensing
    overview/index
    templating/index
    diving-in/index

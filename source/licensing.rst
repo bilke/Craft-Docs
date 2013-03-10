@@ -27,7 +27,7 @@ Single Domain Enforcement
 
 Each time Craft sends a request to our web service, our web service checks which domain it’s coming from. The first time it appears that Craft is being used on a public domain, the license is tiet to that domain. (This can happen as early as the same request where the license gets created.) On subsequent requests, the web service will ensure that Craft is still being accessed via the same domain.
 
-In the event that Craft is being accessed via a new public domain, our web service will tell Craft about that in its response, at which point Admin users will begin to see an alert at the top of the CP telling them that Craft isn’t licensed to be run on the current domain. If the current user is an admin, they will have the option to transfer the license to the current domain. (If the license is still in use on the original domain, then the original domain will start getting the same alert.)
+In the event that a Craft license is being used on a new public domain, our web service will tell Craft about that in its response, at which point Admin users will begin to see an alert at the top of the CP telling them that Craft isn’t licensed to be run on the current domain. If the current user is an admin, they will have the option to transfer the license to the current domain. (If the license is still in use on the original domain, then the original domain will start getting the same alert.)
 
 How do we determine Craft is running on a public domain?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -61,4 +61,4 @@ Alternatively, set up your ``_single.html`` template as above.  Also create your
 	{% extends "_single" %}
 	{% set page = about %}
 	
-And again, you have your single serving page.  In both of the above instances, visit your ``about.html``via ``example.com/about`` to see the end result.
+And again, you have your single serving page.  In both of the above instances, visit your ``about.html`` via ``example.com/about`` to see the end result.

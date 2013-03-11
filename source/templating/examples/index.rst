@@ -25,6 +25,7 @@ Entries
    :titlesonly:
 
    globals/pages
+   globals/segments
 
 
 Feeds

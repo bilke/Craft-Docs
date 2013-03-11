@@ -3,6 +3,8 @@ Includes
 
 Includes allow you to pull one template into another.  Include templates should be stored with your other templates.  One potential best practice here would be to group your includes into one folder inside your craft/templates folder.
 
+All variables in the parent template are automatically available to the included template. 
+
 To include a template stored in /craft/templates/inc you would use this code in your main template:
 
 .. code-block:: html

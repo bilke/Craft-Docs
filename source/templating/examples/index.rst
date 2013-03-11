@@ -58,3 +58,5 @@ Miscellaneous
    :titlesonly:
 
    translations
+   blocks
+   includes

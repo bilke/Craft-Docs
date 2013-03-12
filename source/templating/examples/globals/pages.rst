@@ -3,7 +3,7 @@ Setting up Single-Serve Pages
 
 Many Sites need to have "single serve pages" for serving information about the site, such as an 'about' page, Terms of Service, etc.
 
-You can do this in Craft using Globals.
+You can do this in Craft using Global Sets
 
 For example, let's say we want to create an "About this Site" page following these steps:
 
@@ -61,4 +61,4 @@ Alternatively, set up your ``_single.html`` template as above.  Also create your
 	{% extends "_single" %}
 	{% set page = about %}
 	
-And again, you have your single serving page.  In both of the above instances, visit your ``about.html``via ``example.com/about`` to see the end result.
+And again, you have your single serving page.  In both of the above instances, visit your ``about.html`` via ``example.com/about`` to see the end result.

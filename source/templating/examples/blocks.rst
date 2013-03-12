@@ -1,7 +1,7 @@
-Template Craft
+Template Blocks
 ===============
 
-Template Craft are a feature that bring Template Inheritance to Craft.   Template Craft allow you to build a base template with defined sections.  When building new templates, you can extend your base template, and over-ride only the parts that you need to.
+Template Blocks are a Twig feature that bring Template Inheritance to Craft.   Blocks allow you to build a base template with defined sections.  When building new templates, you can extend your base template, and over-ride only the parts that you need to.
 
 You might have a base template in *craft/templates*, called _layout.html, with this code:
 

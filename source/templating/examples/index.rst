@@ -10,17 +10,22 @@ Entries
    :titlesonly:
 
    entries/single
-   entries/list
+   entries/listing
+   entries/disqus_comments
+   entries/edit_links
+   entries/tags
+   enries/entries_with_assets
 
 
 ..
-	Pages
+	Globals
 	-----
 
 .. toctree::
    :titlesonly:
 
-   pages/entry
+   globals/pages
+   globals/segments
 
 
 Feeds
@@ -54,3 +59,5 @@ Miscellaneous
    :titlesonly:
 
    translations
+   blocks
+   includes

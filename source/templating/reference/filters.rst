@@ -30,6 +30,33 @@ On top of the template filters that `Twig comes with <http://twig.sensiolabs.org
 ``datetime``
     Formats a date according to the user’s preferred language.
 
+``intersect``
+    Returns an array containing only the values that are also in a passed-in array.
+
+    .. code-block:: html
+
+        {% set ownedIngredients = [
+            'vodka',
+            'gin',
+            'triple sec',
+            'tonic',
+            'grapefruit juice'
+        ] %}
+
+        {% set longIslandIcedTeaIngredients = [
+            'vodka',
+            'tequila',
+            'rum',
+            'gin',
+            'triple sec',
+            'sweet and sour mix',
+            'Coke'
+        ] %}
+
+        {% set ownedLongIslandIcedTeaIngredients =
+            ownedIngredients|intersect(longIslandIcedTeaIngredients)
+        %}
+
 
 ``without``
     Returns an array without the specified element(s).

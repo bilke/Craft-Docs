@@ -33,7 +33,7 @@ Create a new class in that file, with the same name as the filename:
            return 'cocktailrecipes_ingredients';
        }
 
-       public function defineAttributes()
+       protected function defineAttributes()
        {
            return array(
                'name' => AttributeType::String,

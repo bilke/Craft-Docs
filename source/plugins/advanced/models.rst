@@ -18,7 +18,7 @@ Create a new class in that file, with the same name as the filename:
 
    class CocktailRecipes_IngredientModel extends BaseModel
    {
-       public function defineAttributes()
+       protected function defineAttributes()
        {
            return array(
                'name' => AttributeType::String,

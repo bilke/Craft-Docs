@@ -1,4 +1,4 @@
-Outputting One Entry
+Outputting Entry Tags
 ===============
 
 You can display your entry's tags using the following code:

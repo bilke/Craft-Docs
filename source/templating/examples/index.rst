@@ -14,12 +14,11 @@ Entries
    entries/disqus_comments
    entries/edit_links
    entries/tags
-   enries/entries_with_assets
+   entries/entries_with_assets
 
 
-..
-	Globals
-	-----
+Globals
+-----
 
 .. toctree::
    :titlesonly:

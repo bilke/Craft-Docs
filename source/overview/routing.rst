@@ -43,7 +43,7 @@ Dynamic Template Routes
 
 There are times when you want an incoming request to route directly to a template, but you don’t want the URI to match the template path. A good example of this is dynamic URLs, such as a yearly archive template, where you want the year to be one of the segments in the URL (e.g. “blog/archive/2012”). It would be silly to create a new template for every year. Which is why Craft allows you to create **dynamic template routes**.
 
-To create a new route, go to Settings > Routes, and click the “New Route” button. A modal window will appear where you can define the route properties, of which there are two:
+To create a new route, go to Settings → Routes, and click the “New Route” button. A modal window will appear where you can define the route properties, of which there are two:
 
 * What should the URI look like?
 * Which template should get loaded?

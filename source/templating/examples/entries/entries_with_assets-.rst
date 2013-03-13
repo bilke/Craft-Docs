@@ -8,12 +8,12 @@ We'll use the simple example of including images from an local folder with an ar
 Setting up an Asset
 ---------------
 
-Go to ``Settings`` > ``Assets`` > and Click ``New Source``.   Enter the name of your Asset - for this example, we'll use "articles".  Choose "Local Folder" for "Type", then enter the File System Path and related URL and Save.
+Go to ``Settings`` → ``Assets`` → and Click ``New Source``.   Enter the name of your Asset - for this example, we'll use "articles".  Choose "Local Folder" for "Type", then enter the File System Path and related URL and Save.
 
 Setting up an Assets Block
 ---------------
 
-Now head to ``Settings`` > ``Sections`` > and click on the Section for which you wish to include your images.  For this example, we'll work with a section called "Articles".  Click on the Articles Section, then click on ``Craft``.
+Now head to ``Settings`` → ``Sections`` → and click on the Section for which you wish to include your images.  For this example, we'll work with a section called "Articles".  Click on the Articles Section, then click on ``Craft``.
 
 Now we want to click New Block and set up a new Link Block.  Choose the Name of your Block and a handle.
 

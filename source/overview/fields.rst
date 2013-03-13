@@ -3,7 +3,7 @@ Fields
 
 In Craft, all of your site’s content is entered into **fields**. Fields are created globally, and attached as needed to your :doc:`sections <sections>`, :doc:`globals <globals>`, users, and assets.
 
-To manage your site’s fields, go to Settings > Fields. You’ll notice that they are organized into **groups**. In Craft, field groups are purely an organizational tool; they pose no actual restrictions on the fields within them. Fields can even be moved between groups as desired.
+To manage your site’s fields, go to Settings → Fields. You’ll notice that they are organized into **groups**. In Craft, field groups are purely an organizational tool; they pose no actual restrictions on the fields within them. Fields can even be moved between groups as desired.
 
 Each field has a name, handle, optional instructions, a fieldtype, and possibly additional settings provided by the fieldtype. **Fieldtypes** define what kind of field it is. Craft comes with 8 fieldtypes built in: Checkboxes, Radio Buttons, Dropdown, Multi-select, Number, Plain Text, Rich Text, and Links. (Plugins can add additional fieldtypes as well.)
 

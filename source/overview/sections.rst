@@ -3,7 +3,7 @@ Sections
 
 :doc:`Entries <entries>` in Craft belong to **sections**.
 
-You can manage your sections by going to Settings > Sections. From there you can edit existing sections and add new ones. Each section gets the following settings:
+You can manage your sections by going to Settings → Sections. From there you can edit existing sections and add new ones. Each section gets the following settings:
 
 * Name
 * Handle

@@ -5,7 +5,7 @@ Globals
 
 Globals are defined as **sets**. Each set has its own Name, Handle, and a :ref:`Field Layout <fieldLayouts>` that defines which fields belong to the set.
 
-You can create globals in Settings > Globals. Once you have created a global set, a new “Globals” tab will appear in your CP. Each global set will get its own sidebar nav item on that page.
+You can create globals in Settings → Globals. Once you have created a global set, a new “Globals” tab will appear in your CP. Each global set will get its own sidebar nav item on that page.
 
 If you’ve set up any globals, a new “Globals” tab will appear in your CP. You will see a list of each of your global sets listed in the sidebar, and clicking on one will bring up all of that set’s fields.
 

@@ -19,14 +19,14 @@ Craft makes the following variables available to all templates:
       Today is {{ now.format('M j, Y') }}.
 
 ``siteName``
-   The name of your site, as defined in Settings > General.
+   The name of your site, as defined in Settings → General.
 
    .. code-block:: html
 
       <h1>{{ siteName }}</h1>
 
 ``siteUrl``
-   The URL of your site, as defined in Settings > General.
+   The URL of your site, as defined in Settings → General.
 
    .. code-block:: html
 

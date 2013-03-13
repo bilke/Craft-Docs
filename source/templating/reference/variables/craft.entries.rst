@@ -45,11 +45,11 @@ Parameter Syntax
 
 There are two ways you can add parameters to your ``craft.entries`` tag:
 
-1. You can chain the parameters together as additional functions before reaching the output function::
+#. You can chain the parameters together as additional functions before reaching the output function::
 
       craft.entries.section('blog').authorId(10).find()
 
-2. You can pass your parameters as an argument to the output functions::
+#. You can pass your parameters as an argument to the output functions::
 
       craft.entries.find({ section: 'blog', authorId: 10 })
 

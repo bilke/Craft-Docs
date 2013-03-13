@@ -49,11 +49,11 @@ Parameter Syntax
 
 There are two ways you can add parameters to your ``craft.users`` tag:
 
-1. You can chain the parameters together as additional functions before reaching the output function::
+#. You can chain the parameters together as additional functions before reaching the output function::
 
       craft.users.group('authors').find()
 
-2. You can pass your parameters as an argument to the output functions::
+#. You can pass your parameters as an argument to the output functions::
 
       craft.users.find({ group: 'authors' })
 

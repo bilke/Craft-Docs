@@ -50,6 +50,7 @@ Forms
    forms/login
    forms/forgotpassword
    forms/resetpassword
+   forms/profile
 
 
 Miscellaneous

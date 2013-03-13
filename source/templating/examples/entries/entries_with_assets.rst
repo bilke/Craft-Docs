@@ -81,7 +81,7 @@ Open up the template that your Articles section is set to use. Then, wherever yo
 .. code-block:: html
 
    	{% for image in entry.articleImages %}
-		<img src="{{ image.url }}" height="{{ image.height }}" width="{{ image.width }}" alt="{{ entry.title }}" />
+	    <img src="{{ image.url }}" height="{{ image.height }}" width="{{ image.width }}" alt="{{ entry.title }}">
 	{% endfor %}
 
 If rather than outputting the originally uploaded images, you’d prefer that they conform to a certain size, create a new Asset Transform in Settings → Assets → Image Transforms, and modify your template code like so:
@@ -89,7 +89,7 @@ If rather than outputting the originally uploaded images, you’d prefer that th
 .. code-block:: html
 
    	{% for image in entry.articleImages %}
-		<img src="{{ image.getUrl('transformHandle') }}" height="{{ image.getHeight('transformHandle') }}" width="{{ image.getWidth('transformHandle') }}" alt="{{ entry.title }}" />
+	    <img src="{{ image.getUrl('transformHandle') }}" height="{{ image.getHeight('transformHandle') }}" width="{{ image.getWidth('transformHandle') }}" alt="{{ entry.title }}">
 	{% endfor %}
 
 

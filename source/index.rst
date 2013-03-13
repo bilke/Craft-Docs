@@ -28,6 +28,7 @@ Table of Contents
    installation
    licensing
    overview/index
+   packages/index
    templating/index
    diving-in/index
    plugins/index

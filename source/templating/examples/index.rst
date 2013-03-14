@@ -61,3 +61,4 @@ Miscellaneous
    translations
    blocks
    includes
+   front_end_cp_nav

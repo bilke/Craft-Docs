@@ -48,11 +48,11 @@ To create a new route, go to Settings → Routes, and click the “New Route” 
 * What should the URI look like?
 * Which template should get loaded?
 
-The first setting comes with a few “tokens”. When you click on one, it will get inserted into the URI setting. Those tokens represent sub-patterns that the URI must match. For example, the “year” token represent four consecutive digits.
+The first setting comes with a few “tokens”. When you click on one, it will get inserted into the URI setting. Those tokens represent sub-patterns that the URI must match. For example, the “year” token represents four consecutive digits.
 
 Going with our example earlier, you wanted to match URIs that look like “blog/archive/2012”, you would type “blog/archive/” into the URI field, and then click the “year” token. Then enter the path to the template you want to load for matched URIs, and click the “Save” button.
 
-Now when you point your browser to http://domain.com/blog/archive/2012, it will match your new route, and its template will be returned. In that template, whatever matched the “year” token even be available to it, as a ``year`` variable, so you can easily pass it off to ``craft.entries``:
+Now when you point your browser to http://example.com/blog/archive/2012, it will match your new route, and its template will be returned. In that template, whatever matched the “year” token even be available to it, as a ``year`` variable, so you can easily pass it off to ``craft.entries``:
 
 .. code-block:: html
 

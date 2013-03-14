@@ -40,6 +40,6 @@ There’s one problem though. All of your URLs will still be pointing to http://
 
 .. code-block:: php
 
-	define('SITE_URL', 'http://example.com/nl/');
+	define('CRAFT_SITE_URL', 'http://example.com/nl/');
 
 With that in place, any URLs that are generated using the ``url()`` :doc:`template function </templating/reference/functions>` will begin with “http://example.com/nl/” rather than “http://example.com/”. Easy enough!

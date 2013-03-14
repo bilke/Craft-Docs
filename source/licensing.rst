@@ -44,4 +44,4 @@ Our web service checks the following when determining if a domain is public. If 
 Package Enforcement
 -------------------
 
-Each call to Craft’s web service is also accompanied by a list of the currently-installed packages. We compare that list to our records and determine if any of them are not supposed to be running on the current Craft license. A list of any unlicensed-yet-installed packages is included in the response, and Craft will begin displaying alerts in the CP about it. If the current user is an Admin, the alert is accompanied by a link to Settings > Packages, where the unlicensed package may either be purchased or uninstalled.
+Each call to Craft’s web service is also accompanied by a list of the currently-installed packages. We compare that list to our records and determine if any of them are not supposed to be running on the current Craft license. A list of any unlicensed-yet-installed packages is included in the response, and Craft will begin displaying alerts in the CP about it. If the current user is an Admin, the alert is accompanied by a link to Settings → Packages, where the unlicensed package may either be purchased or uninstalled.

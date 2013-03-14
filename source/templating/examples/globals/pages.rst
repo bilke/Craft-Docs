@@ -1,7 +1,7 @@
 Setting up Single-Serve Pages
 ===============
 
-Many Sites need to have “single serve” for serving information about the site, such as an “about” page, Terms of Service, etc.
+Many Sites need to have “single serve pages” for serving information about the site, such as an “about” page, Terms of Service, etc.
 
 You can do this in Craft using Global Sets
 
@@ -25,7 +25,7 @@ Enter this code into it:
 
 	{{ about.body }}
 
-and save your template.  Now visit your template in the browser at example.com/about.html.  You should see your Body content.
+and save your template.  Now visit your template in the browser at http://example.com/about.  You should see your Body content.
 
 The above is wonderful for serving a set single serve page.  But let's say that you have several such pages and you wish to utilize one main template for it. There are two approaches here: Includes and Extends
 

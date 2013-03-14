@@ -7,7 +7,7 @@ We’ve put quite a bit of thought into both the terms of Craft licensing and ho
 The Terms
 ---------
 
-Each Craft license may be used on one public domain, and unlimited non-public domains. Subdomains are included, so a single Craft license will cover both example.com and subdomain.example.com.
+Each Craft license may be used on one public domain, and unlimited non-public domains. Subdomains are included, so a single Craft license will cover both http://example.com and http://subdomain.example.com.
 
 When you buy a package in Craft, that package gets associated with the license Craft is currently using.
 

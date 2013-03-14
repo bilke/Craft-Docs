@@ -1,7 +1,7 @@
 Publish Pro
 ===========
 
-Publish Pro transforms Craft from a simple blogging tool into a “real” CMS. Its features include:
+Publish Pro transforms Craft from a simple blogging tool into a “real” CMS. It's features include:
 
 * Multiple content sections
 * Entry drafts and versioning

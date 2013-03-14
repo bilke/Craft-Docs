@@ -25,13 +25,14 @@ html, body, #sidebar { height: 100%; }
 }
 #container:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
 
-#sidebar { position: absolute; left: 0; padding-top: 25px; width: 250px; overflow: auto; border-right: 1px solid #eee; font-size: 13px; }
-#sidebar .nav { padding: 0 30px; overflow: hidden; }
-#sidebar .nav.fixed { position: fixed; top: 0; width: 190px; }
+#sidebar { position: absolute; width: 250px; overflow: auto; border-right: 1px solid #eee; font-size: 13px; }
+#sidebar .nav { padding: 25px 30px; overflow: hidden; }
 #sidebar .nav a { display: block; padding: 4px 0; color: #555; text-decoration: none; }
 #sidebar .nav a:hover { color: #5295ff; }
 #sidebar .nav a.current { margin: 0 -30px 0 -250px; padding: 4px 30px 4px 250px; background: #555; color: #fff; cursor: default; }
 #sidebar ul ul { margin-left: 15px; }
+
+#sidebar.fixed { position: fixed; top: 0; height: 100%; }
 
 #main { position: relative; padding: 25px 50px; }
 #main.has-sidebar { margin-left: 250px; }

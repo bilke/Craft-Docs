@@ -3,6 +3,7 @@
 
 var Docs = Garnish.Base.extend({
 
+	$container: null,
 	$main: null,
 	$sidebar: null,
 	$sidebarNav: null,
@@ -17,9 +18,12 @@ var Docs = Garnish.Base.extend({
 	init: function()
 	{
 		// Find all the key elements
+		this.$container = $('#container');
 		this.$main = $('#main');
 		this.$sidebar = $('#sidebar');
 		this.$sidebarNav = this.$sidebar.children('nav');
+
+		this.$container.css('min-height', this.$sidebarNav.outerHeight());
 
 		this.addListener(Garnish.$win, 'resize', 'onWindowResize');
 		this.onWindowResize();
@@ -124,22 +128,22 @@ var Docs = Garnish.Base.extend({
 	{
 		if (this.showingSidebar && this.$sidebarNav.length)
 		{
-			if (this.fixedSidebarNav)
+			/*if (this.fixedSidebarNav)
 			{
 				this.onWindowScroll._$offsetTarget = this.$sidebarNavPlaceholder;
 			}
 			else
 			{
 				this.onWindowScroll._$offsetTarget = this.$sidebarNav;
-			}
+			}*/
 
-			if (this.onWindowScroll._scrollTop > this.onWindowScroll._$offsetTarget.offset().top)
+			if (this.onWindowScroll._scrollTop > this.$container.offset().top)
 			{
 				this.makeSidebarNavFixed();
 
 				// Make sure that the nav doesn't bleed into the page footer
-				this.onWindowScroll._maxNavHeight = this.$main.offset().top + this.$main.outerHeight() - Garnish.$win.scrollTop();
-				this.$sidebarNav.css('max-height', this.onWindowScroll._maxNavHeight);
+				//this.onWindowScroll._maxNavHeight = this.$container.offset().top + this.$container.outerHeight() - Garnish.$win.scrollTop();
+				//this.$sidebarNav.css('max-height', this.onWindowScroll._maxNavHeight);
 			}
 			else
 			{
@@ -158,7 +162,7 @@ var Docs = Garnish.Base.extend({
 			}
 
 			this.$sidebarNavPlaceholder.insertBefore(this.$sidebarNav);
-			this.$sidebarNav.addClass('fixed');
+			this.$sidebar.addClass('fixed');
 			this.fixedSidebarNav = true;
 		}
 	},
@@ -168,7 +172,7 @@ var Docs = Garnish.Base.extend({
 		if (this.fixedSidebarNav)
 		{
 			this.$sidebarNavPlaceholder.remove();
-			this.$sidebarNav.removeClass('fixed');
+			this.$sidebar.removeClass('fixed');
 			this.fixedSidebarNav = false;
 		}
 	}

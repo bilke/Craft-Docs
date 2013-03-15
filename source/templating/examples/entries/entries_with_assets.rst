@@ -20,9 +20,9 @@ In Craft, all of your site’s assets live in **asset sources**. You can create 
 
    **Note:** You can also set up Amazon S3 sources with the :doc:`/packages/cloud` package.
 
-To create a new asset source, go to Settings → Assets and click the “New Source” button. Give your source a name and a handle, enter its path on the file system, and the URL to that folder.
+To create a new asset source, go to Settings → Assets and click the “New Source” button. Give your source a name, enter its path on the file system, and the URL to that folder.
 
-For this tutorial, we’re going to call our source “Article Images”, with the handle of ‘articleImages’. It will live in an images/articles/ folder within our server’s web root, so our Path gets set to “./images/articles/” (a path that’s relative from our index.php file), and its URL gets set to “/images/articles/” (a root-relative URL).
+For this tutorial, we’re going to call our source “Article Images”. It will live in an images/articles/ folder within our server’s web root, so our Path gets set to “./images/articles/” (a path that’s relative from our index.php file), and its URL gets set to “/images/articles/” (a root-relative URL).
 
 Click “Save”, and you’re done.
 

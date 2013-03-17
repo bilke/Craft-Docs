@@ -23,19 +23,31 @@ Create a new class in that file, with the same name as the filename:
            return Craft::t('Ingredient List');
        }
 
-       public function getInputHtml()
+       public function getInputHtml($name, $value)
        {
-           return craft()->templates->render('cocktailrecipes/ingredientlist/input');
+           return craft()->templates->render('cocktailrecipes/ingredientlist/input', array(
+               'name'  => $name,
+               'value' => $value
+           ));
        }
    }
 
 That ``getName()`` method should look familiar – your primary plugin class has the same method. Difference is, this time it’s returning the name of your fieldtype, rather than the name of your entire plugin.
 
-``getInputHtml()`` does just what it says: it returns your fieldtype’s input HTML. We recommend that you store the actual HTML in a template, and load it via ``craft()->templates->render()``.
+``getInputHtml()`` does just what it says: it returns your fieldtype’s input HTML. It accepts two arguments: ``$name`` and ``$value``. ``$name`` is the name you should assign your HTML input’s ``name=`` attribute, and ``$value`` is the field’s current value (either from the DB, or the POST data if there was a validation error).
+
+You’ll notice that ``getInputHtml()`` is simply passing those two arguments along to a template. We recommend you do the same, so you can keep all of your plugin’s HTML views together in one place.
+
+Here’s an example input template for a textarea fieldtype:
+
+.. code-block:: html
+
+    <textarea name="{{ name }}">{{ value }}</textarea>
 
 .. container:: tip
 
-   **Note:** To make sense of that template path, see :ref:`plugin-template-paths`.
+   **Note:** To make sense of that “cocktailrecipes/ingredientlist/input” template path, see :ref:`plugin-template-paths`.
+
 
 Giving your Fieldtype Some Settings
 ------------------------------------
@@ -83,18 +95,6 @@ Next you need to add a ``getSettingsHtml()`` method which returns the HTML for d
 .. container:: tip
 
    **Note:** To make sense of that template path, see :ref:`plugin-template-paths`.
-
-For a plugin, the first string that you pass into render should be in the format ``{lowercase plugin handle}/{relative path to your template from your plugin’s template folder}``.
-
-The above example will first try to resolve to:
-
-``plugins/cocktailrecipes/templates/ingredientlist/settings.html``
-
-If that does not exist, it will look for:
-
-``plugins/cocktailrecipes/templates/ingredientlist/settings/index.html``
-
-Note that the ``templates`` folder segment is assumed as is not needed when calling render.
 
 If you need to do any processing on your settings’ post data before they’re saved to the database, you can do it with the ``prepSettings()`` method:
 

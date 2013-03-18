@@ -165,6 +165,29 @@ If you need to do any processing on your input’s post data before it’s saved
        }
    }
 
+
+Modifying your Fieldtype’s Stored Data for Use
+----------------------------------------------
+
+If you need to do any processing or your fieldtype’s stored data before it can be used by the templates and ``getInputHtml()``, you can do it with the ``prepValue()`` function.
+
+If your fieldtype is storing data in a different database table, ``prepValue()`` is where you fetch it.
+
+.. code-block:: php
+
+    class CocktailRecipes_IngredientListFieldType extends BaseFieldType
+    {
+        // ...
+
+        protected function prepValue($value)
+        {
+            // Modify $value here...
+
+            return $value;
+        }
+    }
+
+
 Events
 ------
 

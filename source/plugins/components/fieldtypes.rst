@@ -102,7 +102,7 @@ Next you need to add a ``getSettingsHtml()`` method which returns the HTML for d
 
    **Note:** To make sense of that template path, see :ref:`plugin-template-paths`.
 
-If you need to do any processing on your settings’ post data before they’re saved to the database, you can do it with the ``prepSettings()`` method:
+If you need to do any processing on your settings’ post data before they’re saved to the database’s `content` table, you can do it with the ``prepSettings()`` method:
 
 .. code-block:: php
 
@@ -121,10 +121,11 @@ If you need to do any processing on your settings’ post data before they’re 
        }
    }
 
+
 Customizing the Database Column Type
 ------------------------------------
 
-When someone creates a new field using your fieldtype, your fieldtype can define what type of database column gets created within the content table. By default, BaseFieldType sets the column to VARCHAR(255), but you can override that with ``defineContentAttribute()``:
+When someone creates a new field using your fieldtype, your fieldtype can choose what type of column it gets within the `content` database table. By default, BaseFieldType sets the column to ``VARCHAR(255)``, but you can override that with ``defineContentAttribute()``:
 
 .. code-block:: php
 
@@ -137,11 +138,12 @@ When someone creates a new field using your fieldtype, your fieldtype can define
 
        public function defineContentAttribute()
        {
-           return AttributeType::Mixed;
+           return AttributeType::Number;
        }
    }
 
-You may also set ``defineContentAttribute()`` to return ``false`` if your fieldtype doesn’t need its own column in the content table. This might be the case if your fieldtype stores its content in its own database table, for instance.
+If your fieldtype is storing data in its own table, and doesn’t have any use for a column within the main `content` table, you may also set ``defineContentAttribute()`` to return ``false``.
+
 
 Modifying your Input’s Post Data
 --------------------------------

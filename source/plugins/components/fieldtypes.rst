@@ -49,6 +49,12 @@ Here’s an example input template for a textarea fieldtype:
    **Note:** To make sense of that “cocktailrecipes/ingredientlist/input” template path, see :ref:`plugin-template-paths`.
 
 
+Accessing Contextual Data
+-------------------------
+
+Usually when your fieldtype’s functions are called, it’s done within the context of a particular field and a particular element (user, entry, asset, or global set). You can access the field’s info via ``$this->model``, which will be a FieldModel instance. And you can access the element’s info via ``$this->element``, which will be an instance of a subclass of BaseElementModel.
+
+
 Giving your Fieldtype Some Settings
 ------------------------------------
 

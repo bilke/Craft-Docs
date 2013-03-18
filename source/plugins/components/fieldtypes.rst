@@ -177,6 +177,9 @@ If your fieldtype is storing data in a different database table, ``prepValue()``
 
 .. code-block:: php
 
+    <?php
+    namespace Craft;
+
     class CocktailRecipes_IngredientListFieldType extends BaseFieldType
     {
         // ...

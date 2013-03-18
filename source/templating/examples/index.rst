@@ -13,7 +13,6 @@ Entries
    entries/listing
    entries/disqus_comments
    entries/edit_links
-   entries/tags
    entries/entries_with_assets
 
 

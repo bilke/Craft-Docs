@@ -9,10 +9,11 @@ You can create a form to edit existing entries on front-end of your site using t
 
     <form method="post" action="" accept-charset="UTF-8">
         <input type="hidden" name="action" value="entries/saveEntry">
-        <input type="hidden" name="redirect" value="viewentry/{entryId}">
+        <input type="hidden" name="redirect" value="viewentry/{{ entry.id }}">
         <input type="hidden" name="entryId" value="{{ entry.id }}">
-        <input type="hidden" name="sectionId" value="10">
-        <input type="hidden" name="enabled" value="1">
+        <input type="hidden" name="sectionId" value="{{ entry.sectionId }}">
+        <input type="hidden" name="enabled" value="{{ entry.enabled }}">
+        <input type="hidden" name="slug" value="{{ entry.slug }}">
 
         <label for="title">Title</label>
         <input id="title" type="text" name="title" value="{{ entry.title }}">

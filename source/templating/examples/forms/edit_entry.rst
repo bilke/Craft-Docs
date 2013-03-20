@@ -13,7 +13,6 @@ You can create a form to edit existing entries on front-end of your site using t
         <input type="hidden" name="entryId" value="{{ entry.id }}">
         <input type="hidden" name="sectionId" value="{{ entry.sectionId }}">
         <input type="hidden" name="enabled" value="{{ entry.enabled }}">
-        <input type="hidden" name="slug" value="{{ entry.slug }}">
 
         <label for="title">Title</label>
         <input id="title" type="text" name="title" value="{{ entry.title }}">

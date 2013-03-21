@@ -30,7 +30,7 @@ To install Craft, follow these instructions:
 #. Upload the contents of the public/ folder into the web root of your server.
 
 #. If you’re using Apache, rename the ‘htaccess’ file to ‘.htaccess’ and delete the ‘web.config’ file. If you’re using IIS, just delete the ‘htaccess’ file.
-#. Set the craft/storage/ folders’ permissions to 777.
+#. Set the craft/storage/ folders’ permissions to 777 and the craft/config/ folders’ permissions to 666.
 #. Open up craft/config/db.php and set the ``'server'``, ``'user'``, ``'password'``, and ``'database'`` config settings.
 #. Now that everything’s uploaded and configured, you should be able to point your browser to http://yourdomain.com/admin and see the Craft installer.
 

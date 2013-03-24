@@ -5,7 +5,7 @@ If your schema changes over the life of your plugin, you can write a **migration
 
 Craft comes with a handy shell script to get you started. To create a new migration, open up Terminal, and run the following commands::
 
-    cd /path/to/craft/app/console
+    cd /path/to/craft/app/etc/console
     chmod 777 yiic
     ./yiic migrate create MigrationDescription PluginHandle
 

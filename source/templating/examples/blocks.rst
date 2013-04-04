@@ -9,7 +9,7 @@ You might have a base template in *craft/templates*, called _layout.html, with t
 
     <html>
     <head>
-    {% block title %}<title>{% endblock %}
+    {% block title %}<title>My Site</title>{% endblock %}
     </head>
     <body>
     {% block para %}<p>My New Site!</p>{% endblock %}

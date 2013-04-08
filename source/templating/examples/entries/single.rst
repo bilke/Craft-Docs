@@ -8,13 +8,13 @@ That variable will give you access to all of that entry’s info, such as ``entr
 
 .. code-block:: html
 
-    <html>
-    <head>
-    	<title>{{ entry.title }}</title>
-    </head>
-    <body>
-    	<h1>{{ entry.title }}</h2>
-    	<p class="author">By {{ entry.author }}</p>
-    	{{ entry.body }}
-    </body>
-    </html>
+	<html>
+	<head>
+		<title>{{ entry.title }}</title>
+	</head>
+	<body>
+		<h1>{{ entry.title }}</h2>
+		<p class="author">By {{ entry.author }}</p>
+		{{ entry.body }}
+	</body>
+	</html>

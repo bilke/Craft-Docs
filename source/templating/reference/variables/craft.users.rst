@@ -120,13 +120,13 @@ Parameters Exclusive to ``find()``
 The following parameters will only make a difference when calling the ``find()`` output function:
 
 ``order``
-    The order the users should be returned in. Possible values include ``'username'``, ``'firstName'``, ``'lastName'``, ``'email'``, ``'language'``, ``'status'``, and ``'lastLoginDate'``. If you want the users to be sorted in descending order, add “``desc``” after the property name (ex: ``'lastLoginDate desc'``). The default value is ``'username'``.
+    The order the users should be returned in. Possible values include ``'username'``, ``'firstName'``, ``'lastName'``, ``'email'``, ``'preferredLocale'``, ``'status'``, and ``'lastLoginDate'``. If you want the users to be sorted in descending order, add “``desc``” after the property name (ex: ``'lastLoginDate desc'``). The default value is ``'username'``.
 
 ``limit``
     Limits the results to *X* users.
 
 ``indexBy``
-    Indexes the results by a given property. Possible values include ``'username'``, ``'firstName'``, ``'lastName'``, ``'email'``, ``'language'``, ``'status'``, and ``'lastLoginDate'``.
+    Indexes the results by a given property. Possible values include ``'username'``, ``'firstName'``, ``'lastName'``, ``'email'``, ``'preferredLocale'``, ``'status'``, and ``'lastLoginDate'``.
 
 
 Parameter Value Syntax
@@ -170,8 +170,8 @@ Once you’ve got your user, there are a number of properties and functions you 
 ``email``
     The user’s email address.
 
-``language``
-    The user’s preferred language.
+``preferredLocale``
+    The user’s preferred locale.
 
 ``admin``
     Whether the user is an admin.

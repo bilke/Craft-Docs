@@ -37,6 +37,9 @@ You can create new instances of your model just like any other PHP class:
 
 .. code-block:: php
 
+   <?php
+   namespace Craft;
+
    $ingredient = new CocktailRecipes_IngredientModel();
    $ingredient->name = "Tonic Water";
    $ingredient->type = "mixer";
@@ -45,11 +48,17 @@ In the event that you already have an array of key/value pairs that maps to a mo
 
 .. code-block:: php
 
+   <?php
+   namespace Craft;
+
    $ingredient = CocktailRecipes_IngredientModel::populateModel($data);
 
 There’s also a corresponding ``populateModels()`` static method if you have an array of arrays of key/value pairs:
 
 .. code-block:: php
+
+   <?php
+   namespace Craft;
 
    $ingredients = CocktailRecipes_IngredientModel::populateModels($data);
 
@@ -62,6 +71,9 @@ Validation
 After filling up your model instance with values, validating it is quite simple:
 
 .. code-block:: php
+
+   <?php
+   namespace Craft;
 
    if ($ingredient->validate())
    {

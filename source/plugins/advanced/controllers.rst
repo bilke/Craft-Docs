@@ -128,6 +128,9 @@ If you have a reason to link directly to a controller action, opposed to posting
 
 .. code-block:: php
 
+   <?php
+   namespace Craft;
+
     $url = UrlHelper::getActionUrl('cocktailRecipes/ingredients/deleteIngredient', array('id' => 10));
 
 A similar ``actionUrl()`` function is available to your templates:

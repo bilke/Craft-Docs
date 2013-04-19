@@ -7,6 +7,9 @@ If your string has a dynamic portion to it, such as “Ingredients in a {cocktai
 
 .. code-block:: php
 
+   <?php
+   namespace Craft;
+
    $str = Craft::t('Ingredients in a {cocktail}', array(
        'cocktail' => $cocktail->name
    ));

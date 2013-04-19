@@ -67,6 +67,9 @@ Next you need to add a ``getSettingsHtml()`` method which returns the HTML for d
 
 .. code-block:: php
 
+   <?php
+   namespace Craft;
+
    class CocktailRecipes_RecentCocktailsWidget extends BaseFieldType
    {
        // ...

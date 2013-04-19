@@ -14,18 +14,18 @@ The following template can be used to provide a RSS 2.0 feed on your site. It as
         <channel>
             <title>{{ siteName }}</title>
             <link>{{ siteUrl }}</link>
-            <atom:link href="http://functionn.github.com/rss.xml" rel="self" type="application/rss+xml" />
+            <atom:link href="{{ craft.request.url }}" rel="self" type="application/rss+xml" />
             <description>{{ globals.siteDescription }}</description>
             <language>en-us</language>
             <pubDate>{{ now.rss }}</pubDate>
             <lastBuildDate>{{ now.rss }}</lastBuildDate>
 
-            {% for entry in craft.entries %}
+            {% for entry in craft.entries.find() %}
                 <item>
                     <title>{{ entry.title }}</title>
                     <link>{{ entry.url }}</link>
                     <pubDate>{{ entry.postDate.rss }}</pubDate>
-                    <author>{{ entry.author.fullName }}</author>
+                    <author>{{ entry.author }}</author>
                     <guid>{{ entry.url }}</guid>
                     <description><![CDATA[
                         {{ entry.body }}

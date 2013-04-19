@@ -9,6 +9,17 @@ Craft requires the following:
 - PHP 5.3+
 - MySQL 5.1+ with InnoDB
 
+PHP Extensions:
+
+- `Reflection Extension <http://php.net/manual/en/class.reflectionextension.php>`_
+- `PCRE Extension <http://php.net/manual/en/book.pcre.php>`_
+- `SPL Extension <http://php.net/manual/en/book.spl.php>`_
+- `PDO Extension <http://php.net/manual/en/book.pdo.php>`_
+- `PDO MySQL Extension <http://php.net/manual/en/ref.pdo-mysql.php>`_
+- `Mcrypt Extension <http://php.net/manual/en/book.mcrypt.php>`_
+- `GD Extension with FreeType Support <http://php.net/manual/en/book.image.php>`_
+- `OpenSSL Extension <http://php.net/manual/en/book.openssl.php>`_
+- `DOM Extension <http://php.net/manual/en/book.dom.php>`_ (Optional) Used by the FeedService to parse RSS feeds.
 
 Installing Craft
 -----------------
@@ -29,8 +40,19 @@ To install Craft, follow these instructions:
 
 #. Upload the contents of the public/ folder into the web root of your server.
 
+
+
 #. If you’re using Apache, rename the ‘htaccess’ file to ‘.htaccess’ and delete the ‘web.config’ file. If you’re using IIS, just delete the ‘htaccess’ file.
-#. Set the craft/storage/ folders’ permissions to 777 and the craft/config/ folders’ permissions to 666.
+#. Set the craft/storage/ folders’ permissions to 777.
+
+   To determine the proper permissions for the craft/config/ folder, you'll need to look at the relationship between the user that Apache/PHP is running as and the user who actually owns the craft/config folder.
+
+   Here are some recommended permissions depending on that relationship:
+
+   * If they are the same user, use 744.
+   * If they're in the same group, then use 774.
+   * Otherwise, use 777.﻿
+
 #. Open up craft/config/db.php and set the ``'server'``, ``'user'``, ``'password'``, and ``'database'`` config settings.
 #. Now that everything’s uploaded and configured, you should be able to point your browser to http://yourdomain.com/admin and see the Craft installer.
 

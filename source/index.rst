@@ -16,13 +16,6 @@ Table of Contents
 -----------------
 
 .. toctree::
-   :maxdepth: 1
-   :titlesonly:
-   :hidden:
-
-   index
-
-.. toctree::
    :titlesonly:
 
    installation

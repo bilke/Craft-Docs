@@ -25,6 +25,10 @@
 	<div id="container" class="centered">
 		<div id="sidebar">
 			<nav class="nav">
+				{% set homeClass = 'current' if pagename == 'index' else '' %}
+				<ul class="{{ homeClass }}">
+					<li class="toctree-l1 {{ homeClass }}"><a class="{{ homeClass }} reference internal" href="">Craft Docs Home</a></li>
+				</ul>
 				{{ toctree() }}
 			</nav>
 		</div>

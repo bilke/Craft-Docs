@@ -1,5 +1,5 @@
 Control Panel Navigation on the Front End
-=====================
+=========================================
 
 In order to ease management of your site, you may wish to include CP Navigation on the front-end.  This is easy using Twig.
 

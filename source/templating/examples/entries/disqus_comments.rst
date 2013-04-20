@@ -1,5 +1,5 @@
 Integrating Disqus
-===============
+==================
 
 You can easily add comments to your Craft entries by utilizing a third-party comment service such as Disqus.
 

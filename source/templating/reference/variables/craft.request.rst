@@ -1,5 +1,5 @@
 ``craft.request``
-===============
+=================
 
 You can access information about the current HTTP request via ``craft.request``.
 

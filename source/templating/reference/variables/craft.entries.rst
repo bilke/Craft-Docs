@@ -1,5 +1,5 @@
 ``craft.entries``
-===============
+=================
 
 You can access your site’s entries from your templates via ``craft.entries``.
 

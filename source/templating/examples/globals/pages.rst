@@ -1,5 +1,5 @@
 Setting up Single-Serve Pages
-===============
+=============================
 
 Many Sites need to have “single serve pages” for serving information about the site, such as an “about” page, Terms of Service, etc.
 

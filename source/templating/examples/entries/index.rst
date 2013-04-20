@@ -1,5 +1,5 @@
 Outputting Entries: Examples
-==================
+============================
 
 .. toctree::
    :titlesonly:
@@ -9,4 +9,4 @@ Outputting Entries: Examples
    edit_links
    disqus_comments
    entries_with_assets
-  
+

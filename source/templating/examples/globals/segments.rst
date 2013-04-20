@@ -1,7 +1,7 @@
 Segment Variables
-================
+=================
 
-Segment variables allow you to grab data from your URI to use in your templates.  
+Segment variables allow you to grab data from your URI to use in your templates.
 
 There are a variety of approaches to accessing your segment variables.
 

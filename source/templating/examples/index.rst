@@ -17,7 +17,7 @@ Entries
 
 
 Globals
------
+-------
 
 .. toctree::
    :titlesonly:

@@ -51,7 +51,7 @@ dl dd { margin-left: 30px; }
 
 p, pre, dd { margin-top: 1em; margin-bottom: 1em; }
 
-ul.simple,
+.section ul,
 .toctree-wrapper ul { padding-left: 40px; list-style-type: square; }
 ol { padding-left: 40px; list-style-type: decimal; }
 

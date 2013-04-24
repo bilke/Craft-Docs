@@ -21,6 +21,7 @@ Table of Contents
    installation
    licensing
    overview/index
+   components/index
    packages/index
    templating/index
    diving-in/index

@@ -30,7 +30,7 @@ To install Craft, follow these instructions:
 
     .. container:: tip
 
-       We recommend you set set the default charset to “utf8” and collation to “utf8_unicode_ci”.
+       We recommend you set the default charset to “utf8” and collation to “utf8_unicode_ci”.
 
 #. Upload the craft/ folder to the folder above the web root on your server.
 

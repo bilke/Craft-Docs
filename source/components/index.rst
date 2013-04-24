@@ -1,4 +1,4 @@
-Build-in Components
+Built-in Components
 ===================
 
 .. toctree::

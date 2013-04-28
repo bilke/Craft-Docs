@@ -1,9 +1,11 @@
 Sections
 ========
 
-:doc:`Entries <entries>` in Craft belong to **sections**.
+Each section stores a new channel of :ref:`entries <entries>`, with its own set of fields tailored to the needs of the content, and its own URL format.
 
-You can manage your sections by going to Settings → Sections. From there you can edit existing sections and add new ones. Each section gets the following settings:
+Craft Core allows you to have one section. It's already created for you by default (“Blog”), but you can customize that if you'd like (perhaps you’d prefer “News” instead), or delete it altogether. If the site also has a need for a “Case Studies” section, for example, you would need to buy :ref:`/packages/publishpro` to lift the one-section restriction.
+
+You can manage your sections by going to Settings → Sections. Each section gets the following settings:
 
 * Name
 * Handle
@@ -15,7 +17,3 @@ You can manage your sections by going to Settings → Sections. From there you c
 The last two settings only show up if you have opted to give entries in the section their own URLs.
 
 Each section also gets its own :ref:`field layout <fieldLayouts>`, which defines which fields will be available to its entries.
-
-.. container:: tip
-
-   **Note:** If you do not have Publish Pro installed, Craft is limited to only one section.

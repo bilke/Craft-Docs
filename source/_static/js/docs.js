@@ -11,6 +11,7 @@ var Docs = Garnish.Base.extend({
 	$altSidebar: null,
 	$altSidebarNavBtn: null,
 	$altSidebarNavMenu: null,
+	$chatbarContainer: null,
 
 	showingSidebar: true,
 	fixedSidebarNav: false,
@@ -22,6 +23,7 @@ var Docs = Garnish.Base.extend({
 		this.$main = $('#main');
 		this.$sidebar = $('#sidebar');
 		this.$sidebarNav = this.$sidebar.children('nav');
+		this.$chatbarContainer = $('#chatbar-container');
 
 		this.$container.css('min-height', this.$sidebarNav.outerHeight());
 
@@ -30,6 +32,8 @@ var Docs = Garnish.Base.extend({
 
 		this.addListener(Garnish.$win, 'scroll', 'onWindowScroll');
 		this.onWindowScroll();
+
+		this.$chatbarContainer.load('http://buildwithcraft.com/chatbar');
 	},
 
 	/**

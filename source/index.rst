@@ -6,6 +6,8 @@ Thanks for checking out Craft! We’re extremely thrilled to be getting it into 
 State of the Docs
 -----------------
 
+This branch is undergoing major revisions.
+
 The documentation is by no means complete yet, and we’re constantly adding more to it.
 
 If you have any comments, suggestions, or find an error, please `email us <mailto:support@buildwithcraft.com>`_, and we’ll look into it right away.

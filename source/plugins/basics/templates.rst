@@ -72,7 +72,7 @@ If your plugin’s CP section has its own sub-navigation, you can define that by
 
    {% set tabs = {
        recent: { label: "Recent"|t, url: url('cocktailrecipes') },
-       new:    { label: "Add a New Recipe"|t, url: url('cocktailrecipes/new') %}
+       new:    { label: "Add a New Recipe"|t, url: url('cocktailrecipes/new') }
    } %}
 
 Tell the CP template which tab should be selected by setting the ``selectedTab`` variable:
@@ -116,4 +116,4 @@ You can accomplish this by registering **routes**. Craft gives plugins a chance 
 
 As you can see, the method returns an array of routes. The keys are regular expressions that the request URI will be matched against, and the values are template paths to be loaded when a successful match occurs.
 
-If your regular expression includes any named subpatterns, e.g. ``(?P<recipeId>\d+)``, their match values will become available to the template as variables of the same name. So in this example, if the URI was “admin/cocktailrecipes/123”, the cocktailrecipes/_edit template would get loaded, and a ``{{ recipeId }}`` variable would be availade to it, with the value “123”.
+If your regular expression includes any named subpatterns, e.g. ``(?P<recipeId>\d+)``, their match values will become available to the template as variables of the same name. So in this example, if the URI was “admin/cocktailrecipes/123”, the cocktailrecipes/_edit template would get loaded, and a ``{{ recipeId }}`` variable would be available to it, with the value “123”.

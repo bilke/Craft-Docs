@@ -44,7 +44,7 @@ Create a new class in that file, with the same name as the filename:
 
 ``getTableName()`` returns the name of the database table the model is associated with (sans table prefix). By convention, tables created by plugins should be prefixed with the plugin name and an underscore.
 
-``defineAttributes()`` returns an array of attributse which map back to columns in the database table.
+``defineAttributes()`` returns an array of attributes which map back to columns in the database table.
 
 
 Defining Relations

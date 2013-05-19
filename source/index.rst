@@ -20,11 +20,8 @@ Table of Contents
 .. toctree::
    :titlesonly:
 
-   installation
-   licensing
-   overview/index
-   components/index
-   packages/index
-   templating/index
-   diving-in/index
-   plugins/index
+   introduction
+   getting-started
+   diving-in
+   advanced-topics
+   reference

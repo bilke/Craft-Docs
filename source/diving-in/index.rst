@@ -4,6 +4,7 @@ Diving In
 .. toctree::
    :titlesonly:
 
+   fields/index
    section
    field-links
    field-tables

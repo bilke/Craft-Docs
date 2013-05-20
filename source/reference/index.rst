@@ -4,8 +4,8 @@ Reference
 .. toctree::
    :titlesonly:
 
+   reference/index
    templating/index
-   templating
    config-variables
    tags
    global-variables

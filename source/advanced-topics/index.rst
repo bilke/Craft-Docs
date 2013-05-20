@@ -7,5 +7,5 @@ Advanced Topics
    securing
    optimizing
    internationalization
-   moving-craft
-   environment-configs
+   multiple-servers/index
+   

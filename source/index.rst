@@ -18,10 +18,11 @@ Table of Contents
 -----------------
 
 .. toctree::
-   :titlesonly:
+   :maxdepth: 1
 
-   introduction
-   getting-started
-   diving-in
-   advanced-topics
-   reference
+
+   introduction/index
+   getting-started/index
+   diving-in/index
+   advanced-topics/index
+   reference/index

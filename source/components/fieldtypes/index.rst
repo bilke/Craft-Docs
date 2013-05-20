@@ -1,7 +1,0 @@
-Fieldtypes
-==========
-
-.. toctree::
-   :titlesonly:
-
-   richtext

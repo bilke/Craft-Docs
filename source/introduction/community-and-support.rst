@@ -12,6 +12,7 @@ We are committed to:
 * Ensuring that Craft maintains superb quality and that bugs are handled quickly
 * Being part of the community, taking the time to talk to you, listen to you, and have fun together
 * Communicating with openness and transparency
+* Celebrating your successes with you
 
 
 

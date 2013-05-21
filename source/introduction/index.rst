@@ -14,3 +14,4 @@ Welcome to Craft - what you need to know.
    secure-payments
    system-overview
    packages/index
+   overview/index

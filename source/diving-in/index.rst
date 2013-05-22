@@ -6,9 +6,6 @@ Diving In
 
    fields/index
    sections
-   field-links
-   field-tables
-   field-redactor
    globals
    email
    assets-and-cloud

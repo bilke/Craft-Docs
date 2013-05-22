@@ -15,6 +15,6 @@ Fields
    number
    plain-text
    radio-buttons
-   redactor
+   rich-text
    table
    users

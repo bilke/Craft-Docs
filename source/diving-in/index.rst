@@ -9,6 +9,7 @@ Read more about...
    :titlesonly:
 
    fields/index
+   dashboard/index
    sections
    globals
    email

@@ -1,26 +1,10 @@
-Sections
+Template Basics
 ====================
 
-A section is a way to store content in Craft.  Setting up a section is easy:
+In Craft, all HTML rendering is done via **templates** (even for the Control Panel itself). There are no PHP-based view files.
 
-* Log in to your Craft dashboard
-* Click Settings
-* Click Sections
-* Click New Section (nb: Craft Core permits only one section! *Publish Pro*  is required to create more than one section)
+Templates are files that live within your craft/templates/ folder. The structure of your templates is completely up to you – you can put templates at the root of that folder, or you can nest them in subdirectories. It all depends on your site’s needs.
 
-From here you will need to fill out a form with the details for your new section.
+Craft uses `Twig <http://twig.sensiolabs.org/>`_ to parse your templates. For a primer on Twig’s templating syntax, read through their `Twig for Template Designers <http://twig.sensiolabs.org/doc/templates.html>`_ documentation.
 
-There are four required settings:
-
-* Name: What your section will be called in the CP
-* Handle: How you'll refer to this section in your templates
-* "Title" Label: What do you want the entries "Title" field to be labelled?  This is a required field for all entries.
-* Entry URL Format: What the entry URLs should look like. {slug} is required, but it can also include any entry properties, e.g. {postDate.year}.  This can be set per locale.
-
-There are two optional settings:
-
-* Locales: Which locales should this section be enabled for? (requires the Localize package)
-* Entry Template: The teplate to use when an entry's URL is requested
-
-By default your section will not include any fields.  You can click the "Field Layout" tab to set up what fields will show up on your entry form.  On the Field Layout page, drag your fields from the Default box to your tab.  You may also drag the entire group to a tab to bring over all of your fields.
 

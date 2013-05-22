@@ -1,26 +1,19 @@
-Sections
+Globals
 ====================
 
-A section is a way to store content in Craft.  Setting up a section is easy:
+**Globals** in Craft are basically single-use :doc:`fields <fields>`. They’re useful for storing things like your site’s copyright info, metadata, etc..
 
-* Log in to your Craft dashboard
-* Click Settings
-* Click Sections
-* Click New Section (nb: Craft Core permits only one section! *Publish Pro*  is required to create more than one section)
+Globals are defined as **sets**. Each set has its own Name, Handle, and a :ref:`Field Layout <fieldLayouts>` that defines which fields belong to the set.
 
-From here you will need to fill out a form with the details for your new section.
+You can create globals in Settings → Globals. Once you have created a global set, a new “Globals” tab will appear in your CP. Each global set will get its own sidebar nav item on that page.
 
-There are four required settings:
+If you’ve set up any globals, a new “Globals” tab will appear in your CP. You will see a list of each of your global sets listed in the sidebar, and clicking on one will bring up all of that set’s fields.
 
-* Name: What your section will be called in the CP
-* Handle: How you'll refer to this section in your templates
-* "Title" Label: What do you want the entries "Title" field to be labelled?  This is a required field for all entries.
-* Entry URL Format: What the entry URLs should look like. {slug} is required, but it can also include any entry properties, e.g. {postDate.year}.  This can be set per locale.
+Global sets are available to each of your templates, via their handles.
 
-There are two optional settings:
+So for instance, if you have a global set with the handle “homepage”, and that set has a field within it called “intro”, you can output that Intro field’s value in your templates like so:
 
-* Locales: Which locales should this section be enabled for? (requires the Localize package)
-* Entry Template: The teplate to use when an entry's URL is requested
+.. code-block:: html
 
-By default your section will not include any fields.  You can click the "Field Layout" tab to set up what fields will show up on your entry form.  On the Field Layout page, drag your fields from the Default box to your tab.  You may also drag the entire group to a tab to bring over all of your fields.
+    {{ homepage.intro }}
 

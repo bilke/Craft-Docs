@@ -8,4 +8,4 @@ Advanced Topics
    optimizing
    internationalization
    multiple-servers/index
-   
+   updating-in-depth

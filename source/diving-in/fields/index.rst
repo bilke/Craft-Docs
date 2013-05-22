@@ -5,9 +5,27 @@ In Craft, all of your site’s content is entered into **fields**. Fields are cr
 
 To manage your site’s fields, go to Settings → Fields. You’ll notice that they are organized into **groups**. In Craft, field groups are purely an organizational tool; they pose no actual restrictions on the fields within them. Fields can even be moved between groups as desired.
 
-Each field has a name, handle, optional instructions, a fieldtype, and possibly additional settings provided by the fieldtype. **Fieldtypes** define what kind of field it is. Craft comes with 8 fieldtypes built in: Checkboxes, Radio Buttons, Dropdown, Multi-select, Number, Plain Text, Rich Text, and Links. (Plugins can add additional fieldtypes as well.)
+Each field has a name, handle, optional instructions, a fieldtype, and possibly additional settings provided by the fieldtype. **Fieldtypes** define what kind of field it is. Craft comes with 14 fieldtypes built in:
 
-Most of the built-in fieldtypes should be self-evident, with the exception of Links. The Links fieldtype allows you to form relationships between the various elements in your system. This is *not* limited to entries: you can link users to assets, globals to entries, etc.. This can be a great tool for building navigation, choosing featured content, and more.
+.. toctree::
+   :titlesonly:
+
+   checkboxes
+   color
+   date
+   dropdown
+   entries
+   table
+   links
+   multiselect
+   number
+   plain-text
+   radio-buttons
+   rich-text
+   table
+   users
+
+Plugins can add additional fieldtypes as well.
 
 
 .. _fieldLayouts:

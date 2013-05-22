@@ -5,7 +5,7 @@ Diving In
    :titlesonly:
 
    fields/index
-   section
+   sections
    field-links
    field-tables
    field-redactor

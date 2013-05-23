@@ -34,7 +34,7 @@ Let’s get Craft up and running.
 
 .. container:: tip
 
-    If you are limited to one database, don’t worry!  You can still install Craft.  Just make sure the ``tablePrefix`` setting is set to a unique value that nothing else in your database is using.  It defaults to ``craft``.
+  If you are limited to one database, don’t worry!  You can still install Craft.  Just make sure the ``tablePrefix`` setting is set to a unique value that nothing else in your database is using.  It defaults to ``craft``.
 
 6.  Save your db.php file.
 
@@ -42,9 +42,9 @@ Let’s get Craft up and running.
 
     Upload the contents of the Craft/public into the web root of your server.  In the previous example, it would be ``/users/bob/public_html``.
 
-    .. container:: tip
+.. container:: tip
 
-       Make sure your FTP client is set to upload files in ASCII format.
+  Make sure your FTP client is set to upload files in ASCII format.
 
 8.  If you’re using Apache, rename the ‘htaccess’ file to ‘.htaccess’ and delete the ‘web.config’ file in the directory you just uploaded the Craft/public folder contents to.If you’re using IIS, just delete the ‘htaccess’ file.
 
@@ -58,15 +58,19 @@ Let’s get Craft up and running.
     * If they're in the same group, then use 774.
     * Otherwise, use 777.﻿
 
-    .. container:: tip
+.. container:: tip
 
-    In IIS, make sure the account your site’s AppPool is running as has write permissions to this folder.
+ In IIS, make sure the account your site’s AppPool is running as has write permissions to this folder.
 
 10. Now that everything’s uploaded and configured, you should be able to point your browser to ``http://yourdomain.com/admin`` and see the Craft installer.
 
-    .. container:: tip
+.. container:: tip
 
-    *Note:* If /admin is giving you a 404, your server might not be configured to redirect would-be 404’s to index.php correctly. Try going to /index.php/admin or /index.php?p=admin instead.
+  **Note:** If /admin is giving you a 404, your server might not be configured to redirect would-be 404’s to index.php correctly. Try going to /index.php/admin or /index.php?p=admin instead.
+
+.. container:: tip
+
+  For more detailed environment / platform specific setup instructions, refer to the :ref:`install guides <installGuides>`.
 
 The Installer
 -------------

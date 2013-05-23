@@ -1,4 +1,4 @@
 Updates
-====================
+=======
 
-Including the Update Dashboard Widget allows you to get notification of Craft updates right on your Dashboard.
+The Update Widget allows you to get notified when a new Craft update is available right from your dashboard.

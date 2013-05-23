@@ -1,4 +1,8 @@
 Get Help
-====================
+========
 
-The Get Help Dashboard Widget allows you to send a support request to Pixel & Tonic directly from the Craft home-page.  This form will include your Admin email address, a location for a description of your issue, the Craft version and build, and optionally (as a checkbox) error logs and a database backup.  Including this information allows us to expedite your support ticket and get you targeted help.
+The Get Help Widget allows you to open a support ticket with `Pixel & Tonic <http://pixelandtonic.com>`_ directly from your dashboard.
+
+Simply fill in your email and a description of the problem you’re experiencing.  Your Craft version, build and the :ref:`packages <packages>` you have installed are sent along with the ticket.
+
+You can optionally choose to send in your Craft log files as well as a database backup.  Including this information allows us to help debug your issue and resolve your ticket faster.

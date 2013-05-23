@@ -3,12 +3,13 @@
 Diving In
 =========
 
-So you're ready to jump in and see what Craft has to offer? 
+So you're ready to jump in and see what Craft has to offer?  You’ve come to the right place.
 
 Read more about...
 
 .. toctree::
    :titlesonly:
+   :maxdepth: 1
 
    dashboard/index
    fields/index

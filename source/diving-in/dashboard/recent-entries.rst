@@ -1,4 +1,6 @@
 Recent Entries
-====================
+==============
 
-The Recent Entries Dashboard Widget gives you click links to the edit form for your most recent entries.  You can choose from which Section entries are shown; and  you can configure the number of entries shown in this widget.
+The Recent Entries Widget lets you view recent entry activity on your site including who posted them and when.
+
+Under the Recent Entries settings, you can choose from which Section(s) entries are shown as well as choose to limit the number of entries to display in the Widget.

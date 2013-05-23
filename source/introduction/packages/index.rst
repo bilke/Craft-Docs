@@ -1,3 +1,5 @@
+.. _packages:
+
 Extended Feature Packages
 =========================
 

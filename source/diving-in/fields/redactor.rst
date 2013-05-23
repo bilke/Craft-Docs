@@ -1,4 +1,0 @@
-Redactor
-====================
-
-Field: Redactor

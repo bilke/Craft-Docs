@@ -1,14 +1,16 @@
 Diving In
 ===============
 
+So you're ready to jump in and see what Craft has to offer? 
+
+Read more about...
+
 .. toctree::
    :titlesonly:
 
    fields/index
-   section
-   field-links
-   field-tables
-   field-redactor
+   dashboard/index
+   sections
    globals
    email
    assets-and-cloud
@@ -19,3 +21,5 @@ Diving In
    twig-primer
    urls
    dashboard-widgets
+   routing
+   entries

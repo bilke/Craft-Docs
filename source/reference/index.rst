@@ -6,7 +6,7 @@ Reference
 
    reference/index
    templating/index
-   config-variables
+   config-vars
    tags
    global-variables
    the-craft-variable

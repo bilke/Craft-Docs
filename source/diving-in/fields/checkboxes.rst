@@ -17,7 +17,7 @@ Entry Page
 
 Your checkbox fieldtype will appear on your entry form with the options you created in the order you set them.  The below shows how a Featured checkbox would appear on the entry form:
 
-.. image:: images/checkbox-publish.png
+.. image:: images/checkbox-entry.png
 
 Template
 --------

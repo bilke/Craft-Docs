@@ -10,6 +10,7 @@ Each field has a name, handle, optional instructions, a fieldtype, and possibly 
 .. toctree::
    :titlesonly:
 
+   assets
    checkboxes
    color
    date
@@ -59,6 +60,7 @@ Craft Core includes many fieldtypes
 .. toctree::
    :titlesonly:
 
+   assets
    checkboxes
    color
    date

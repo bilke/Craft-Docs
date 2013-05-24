@@ -1,5 +1,5 @@
 Rich Text
-====================
+=========
 
 The Rich Text fieldtype provides WYSIWYG fields, powered by `Redactor <http://imperavi.com/redactor/>`_.
 

@@ -1,5 +1,5 @@
 Fields
-===============
+======
 
 In Craft, all of your siteâ€™s content is entered into **fields**. Fields are created globally, and attached as needed to your :doc:`sections <sections>`, :doc:`globals <globals>`, users, and assets.
 
@@ -51,7 +51,7 @@ Your field values are accessible just like any other property on the things youâ
 
     {{ entry.description }}
 
-Craft Core includes many field types
+Craft Core includes many fieldtypes
 -----------------------------------
 
 .. toctree::

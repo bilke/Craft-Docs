@@ -3,7 +3,7 @@ Update
 
 .. |update| image:: images/updates.png
    :alt: Update Widget
-   :width: 275
+   :width: 400px
    :scale: 100%
    :align: middle
 

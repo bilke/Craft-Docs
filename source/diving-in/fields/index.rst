@@ -10,6 +10,7 @@ Each field has a name, handle, optional instructions, a fieldtype, and possibly 
 .. toctree::
    :titlesonly:
 
+   assets
    checkboxes
    color
    date
@@ -35,6 +36,8 @@ Field Layouts
 
 Everything that can have fields in Craft does so via **field layouts**. Field layout pages are sprinkled throughout the Settings section of the CP. For example, sections’ field layouts can be edited from the “Field Layout” tab of a section’s settings.
 
+.. image:: images/fieldlayout.png
+
 Some field layouts allow you to customize the tabs that hold the fields; some don’t. You can tell if a given field layout’s tabs are customizable by the presence of a “New Tab” button between the top and bottom portions of the page. Layouts that have editable tabs will also let you drag entire field groups into the workspace, as a starting point for a new tab.
 
 .. container:: tip
@@ -57,6 +60,7 @@ Craft Core includes many fieldtypes
 .. toctree::
    :titlesonly:
 
+   assets
    checkboxes
    color
    date

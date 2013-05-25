@@ -54,11 +54,8 @@ Here is the definitive list:
 actionTrigger
 -------------
 
-+--------------+-------------------------+
-|**Values:**   |  Any string             |
-+--------------+-------------------------+
-|**Default:**  |  ``'action'``           |
-+--------------+-------------------------+
+:**Values**: ``Any string``
+:**Default**: ``'action'``
 
 The string to use in the URL to tell Craft that this is an action request and trigger a controller’s action.
 
@@ -71,11 +68,8 @@ For example, ``http://yourdomain.com/actions``.
 activateAccountPath
 -------------------
 
-+--------------+-------------------------+
-|**Values:**   |  Any string             |
-+--------------+-------------------------+
-|**Default:**  |  ``'activate'``         |
-+--------------+-------------------------+
+:**Values**: ``Any string``
+:**Default**: ``'activate'``
 
 The path Craft will use when activating a user’s account.
 
@@ -88,11 +82,8 @@ For example, ``http://yourdomain.com/admin/activate``.
 activateFailurePath
 -------------------
 
-+--------------+-------------------------+
-|**Values:**   |  Any string             |
-+--------------+-------------------------+
-|**Default:**  |  empty                  |
-+--------------+-------------------------+
+:**Values**: ``Any string``
+:**Default**: ``empty``
 
 If this is set, Craft will redirect the user here if user account activation was not successful.  Otherwise, an exception is thrown.
 
@@ -103,11 +94,8 @@ If this is set, Craft will redirect the user here if user account activation was
 activateSuccessPath
 -------------------
 
-+--------------+-------------------------+
-|**Values:**   |  Any string             |
-+--------------+-------------------------+
-|**Default:**  |  empty                  |
-+--------------+-------------------------+
+:**Values**: ``Any string``
+:**Default**: ``empty``
 
 If this is set, Craft will redirect the user here upon successful user account activation. Otherwise, they will be redirected to the login page.
 
@@ -118,16 +106,8 @@ If this is set, Craft will redirect the user here upon successful user account a
 allowedFileExtensions
 ---------------------
 
-+--------------+----------------------------------------------------------+
-|**Values:**   |  A comma separated list of file extensions               |
-+--------------+----------------------------------------------------------+
-|**Default:**  |  7z, aiff, asf, avi, bmp, csv, doc, docx, fla, flv,      |
-|              |  gif, gz, gzip, htm, html, jpeg, jpg, mid, mov, mp3,     |
-|              |  mp4, m4a, m4v, mpc, mpeg, mpg, ods, odt, ogg, pdf,      |
-|              |  png, pt, pptx, pxd, qt, ram, rar, rm, rmi, rmvb, rtf,   |
-|              |  sdc, sitd, swf, sxc, sxw, tar, tgz, tif, tiff, txt,     |
-|              |  vsd, wav, wma, wmv, xls, xlsx, zip                      |
-+--------------+----------------------------------------------------------+
+:**Values**: ``A comma separated list of file extensions``
+:**Default**: ``7z, aiff, asf, avi, bmp, csv, doc, docx, fla, flv, gif, gz, gzip, htm, html, jpeg, jpg, mid, mov, mp3, mp4, m4a, m4v, mpc, mpeg, mpg, ods, odt, ogg, pdf, png, pt, pptx, pxd, qt, ram, rar, rm, rmi, rmvb, rtf, sdc, sitd, swf, sxc, sxw, tar, tgz, tif, tiff, txt, vsd, wav, wma, wmv, xls, xlsx, zip``
 
 A list of file extensions that Craft will allow during file uploading.
 
@@ -138,11 +118,8 @@ A list of file extensions that Craft will allow during file uploading.
 backupDbOnUpdate
 ----------------
 
-+--------------+----------------------------+
-|**Values:**   |  ``true`` or ``false``     |
-+--------------+----------------------------+
-|**Default:**  |  ``true``                  |
-+--------------+----------------------------+
+:**Values**: ``true or false``
+:**Default**: ``true``
 
 If set to true, Craft will backup the database before making any schema changes when doing an update.
 
@@ -153,11 +130,8 @@ If set to true, Craft will backup the database before making any schema changes 
 cacheDuration
 -------------
 
-+--------------+------------------------------------------------------------------+
-|**Values:**   |  See http://www.php.net/manual/en/dateinterval.construct.php     |
-+--------------+------------------------------------------------------------------+
-|**Default:**  |  ``'P1D'`` (1 day)                                               |
-+--------------+------------------------------------------------------------------+
+:**Values**: ``See http://www.php.net/manual/en/dateinterval.construct.php``
+:**Default**: ``'P1D' (1 day)``
 
 The length of time to cache items in craft/storage/runtime.
 
@@ -170,11 +144,8 @@ Set to '0' to cache items indefinitely.
 cooldownDuration
 ----------------
 
-+--------------+------------------------------------------------------------------+
-|**Values:**   |  See http://www.php.net/manual/en/dateinterval.construct.php     |
-+--------------+------------------------------------------------------------------+
-|**Default:**  |  ``'PT5M'`` (5 minutes)                                          |
-+--------------+------------------------------------------------------------------+
+:**Values**: ``See http://www.php.net/manual/en/dateinterval.construct.php``
+:**Default**: ``'PT5M' (5 minutes)``
 
 The amount of time a user must wait before logging in after their account is locked.
 
@@ -187,11 +158,8 @@ Set to ``'0'`` to prevent users from ever being able to log back in without an a
 cpTrigger
 ---------
 
-+--------------+-------------------------+
-|**Values:**   |  Any string             |
-+--------------+-------------------------+
-|**Default:**  |  ``'admin'``            |
-+--------------+-------------------------+
+:**Values**: ``Any string``
+:**Default**: ``'admin'``
 
 The string to use in the URL to tell Craft that this is a control panel request.
 
@@ -208,11 +176,8 @@ For example, ``http://yourdomain.com/admin``.
 customAsciiCharMappings
 -----------------------
 
-+--------------+-----------------------------------+
-|**Values:**   |  An array of ASCII characters     |
-+--------------+-----------------------------------+
-|**Default:**  |  Empty array                      |
-+--------------+-----------------------------------+
+:**Values**: ``An array of ASCII characters``
+:**Default**: ``Empty array``
 
 Provides a way to add custom ASCII character mappings.
 
@@ -225,11 +190,8 @@ This array is merged into the default mapping array in ``StringHelper::getAsciiC
 defaultFolderPermissions
 ------------------------
 
-+--------------+--------------------------------+
-|**Values:**   |  Valid numeric permissions     |
-+--------------+--------------------------------+
-|**Default:**  |  ``0755``                      |
-+--------------+--------------------------------+
+:**Values**: ``Valid numeric permissions``
+:**Default**: ``0755``
 
 The default permissions Craft will use when creating a folder on the file system.
 
@@ -240,11 +202,8 @@ The default permissions Craft will use when creating a folder on the file system
 devMode
 -------
 
-+--------------+-------------------------+
-|**Values:**   |  ``true`` or ``false``  |
-+--------------+-------------------------+
-|**Default:**  |  ``false``              |
-+--------------+-------------------------+
+:**Values**: ``true or false``
+:**Default**: ``false``
 
 Determines whether the system is in development mode or not.  If the system is in development mode, several things happen:
 
@@ -266,11 +225,8 @@ Determines whether the system is in development mode or not.  If the system is i
 invalidLoginWindowDuration
 --------------------------
 
-+--------------+------------------------------------------------------------------+
-|**Values:**   |  See http://www.php.net/manual/en/dateinterval.construct.php     |
-+--------------+------------------------------------------------------------------+
-|**Default:**  |  ``'PT1H'``                                                      |
-+--------------+------------------------------------------------------------------+
+:**Values**: ``See http://www.php.net/manual/en/dateinterval.construct.php``
+:**Default**: ``'PT1H'``
 
 The amount of time to track invalid login attempts for a user.
 
@@ -283,11 +239,8 @@ If someone tries to log in too many times within this window, their account will
 loginPath
 ---------
 
-+--------------+-------------------------+
-|**Values:**   |  Any string             |
-+--------------+-------------------------+
-|**Default:**  |  ``'login'``            |
-+--------------+-------------------------+
+:**Values**: ``Any string``
+:**Default**: ``'login'``
 
 The path to redirect to when accessing a page that requires a user to be logged in and they currently are not.
 
@@ -300,11 +253,8 @@ For example, ``http://yourdomain.com/admin/login``.
 logoutPath
 ----------
 
-+--------------+-------------------------+
-|**Values:**   |  Any string             |
-+--------------+-------------------------+
-|**Default:**  |  ``'logout'``           |
-+--------------+-------------------------+
+:**Values**: ``Any string``
+:**Default**: ``'logout'``
 
 The path to tell Craft to trigger a user logout for the current session.
 
@@ -317,11 +267,8 @@ For example, ``http://yourdomain.com/admin/logout``.
 maxInvalidLogins
 ----------------
 
-+--------------+-----------------------+
-|**Values:**   |  Any integer value    |
-+--------------+-----------------------+
-|**Default:**  |  5                    |
-+--------------+-----------------------+
+:**Values**: ``Any integer value``
+:**Default**: ``5``
 
 The number of invalid login attempts within the ':ref:`invalidLoginWindowDuration <invalidLoginWindowDuration>`' before the account gets locked.
 
@@ -332,11 +279,8 @@ The number of invalid login attempts within the ':ref:`invalidLoginWindowDuratio
 omitScriptNameInUrls
 --------------------
 
-+--------------+----------------------------------------+
-|**Values:**   |  ``true``, ``false`` or ``'auto'``     |
-+--------------+----------------------------------------+
-|**Default:**  |  ``'auto'``                            |
-+--------------+----------------------------------------+
+:**Values**: ``true, false or 'auto'``
+:**Default**: ``'auto'``
 
 Whether generated URLs should omit 'index.php', e.g. ``http://yourdomain.com/path`` as opposed to showing it, e.g. ``http://yourdomain.com/index.php/path``.
 
@@ -359,11 +303,10 @@ If you know for sure your environment supports this feature, you can set this to
 overridePhpSessionLocation
 --------------------------
 
-+--------------+----------------------------------------+
-|**Values:**   |  ``true``, ``false`` or ``'auto'``     |
-+--------------+----------------------------------------+
-|**Default:**  |  ``'auto'``                            |
-+--------------+----------------------------------------+
+
+:**Values**: ``true, false or 'auto'``
+:**Default**: ``'auto'``
+
 
 If set to ``'auto'``, Craft will attempt to detect if PHP is set to save sessions to a distributed cache location (i.e. memcache).
 
@@ -376,11 +319,8 @@ Set to true if you want Craft to save PHP session data under it’s storage fold
 pageTrigger
 -----------
 
-+--------------+-------------------------+
-|**Values:**   |  Any string             |
-+--------------+-------------------------+
-|**Default:**  |  ``'action'``           |
-+--------------+-------------------------+
+:**Values**: ``Any string``
+:**Default**: ``'action'``
 
 The string to use in the URL that precedes the page number in paginated requests.
 
@@ -393,11 +333,8 @@ For example, ``http://yourdomain.com/archive?p=1``.
 phpMaxMemoryLimit
 -----------------
 
-+--------------+---------------------------------------------------+
-|**Values:**   |  The max amount of memory in Mb Craft can use.    |
-+--------------+---------------------------------------------------+
-|**Default:**  |  ``'256M'``                                       |
-+--------------+---------------------------------------------------+
+:**Values**: ``The max amount of memory in Mb Craft can use.``
+:**Default**: ``'256M'``
 
 The maximum amount of memory Craft will try to reserve during memory intensive operations such as zipping, unzipping and updating.
 
@@ -408,11 +345,8 @@ The maximum amount of memory Craft will try to reserve during memory intensive o
 phpPass-iterationCount
 ----------------------
 
-+--------------+------------------------------------------------------------------+
-|**Values:**   |  Integer between 4 and 31                                        |
-+--------------+------------------------------------------------------------------+
-|**Default:**  |  8                                                               |
-+--------------+------------------------------------------------------------------+
+:**Values**: ``Integer between 4 and 31``
+:**Default**: ``8``
 
 Controls the number of iterations for key stretching when encrypting a string.
 
@@ -427,11 +361,8 @@ This setting should be kept between 4 and 31.
 rememberUsernameDuration
 ------------------------
 
-+--------------+------------------------------------------------------------------+
-|**Values:**   |  See http://www.php.net/manual/en/dateinterval.construct.php     |
-+--------------+------------------------------------------------------------------+
-|**Default:**  |  ``'P1Y'`` (1 year)                                              |
-+--------------+------------------------------------------------------------------+
+:**Values**: ``See http://www.php.net/manual/en/dateinterval.construct.php``
+:**Default**: ``'P1Y' (1 year)``
 
 The amount of time Craft will remember a username and pre-populate it on the login page.
 
@@ -444,11 +375,8 @@ Set to ``'0'`` to disable this feature altogether.
 rememberUserSessionDuration
 -----------------------------
 
-+--------------+------------------------------------------------------------------+
-|**Values:**   |  See http://www.php.net/manual/en/dateinterval.construct.php     |
-+--------------+------------------------------------------------------------------+
-|**Default:**  |  ``'P2W'`` (2 weeks)                                             |
-+--------------+------------------------------------------------------------------+
+:**Values**: ``See http://www.php.net/manual/en/dateinterval.construct.php``
+:**Default**: ``'P2W' (2 weeks)``
 
 The amount of time a user stays logged if “Remember Me” is checked on the login page.
 
@@ -461,11 +389,8 @@ Set to ``'0'`` to disable the “Remember Me” feature altogether.
 requireMatchingUserAgentForSession
 ----------------------------------
 
-+--------------+----------------------------+
-|**Values:**   |  ``true`` or ``false``     |
-+--------------+----------------------------+
-|**Default:**  |  ``'true'``                |
-+--------------+----------------------------+
+:**Values**: ``true or false``
+:**Default**: ``'true'``
 
 If set to ``true``, when renewing or restoring session from cookie, the current user agent string must exactly match the user agent string saved in the cookie.
 
@@ -476,11 +401,8 @@ If set to ``true``, when renewing or restoring session from cookie, the current 
 requireUserAgentAndIpForSession
 -------------------------------
 
-+--------------+----------------------------+
-|**Values:**   |  ``true`` or ``false``     |
-+--------------+----------------------------+
-|**Default:**  |  ``true``                  |
-+--------------+----------------------------+
+:**Values**: ``true or false``
+:**Default**: ``true``
 
 If set to ``true``, when renewing or restoring session from cookie, the current request must present a user agent string and IP address.
 
@@ -491,11 +413,8 @@ If set to ``true``, when renewing or restoring session from cookie, the current 
 resourceTrigger
 ---------------
 
-+--------------+-------------------------+
-|**Values:**   |  Any string             |
-+--------------+-------------------------+
-|**Default:**  |  ``'resources'``        |
-+--------------+-------------------------+
+:**Values**: ``Any string``
+:**Default**: ``'resources'``
 
 The string to use in the URL to tell Craft that this is a resource request.
 
@@ -508,11 +427,8 @@ For example, ``http://yourdomain.com/resources``.
 restoreDbOnUpdateFailure
 ------------------------
 
-+--------------+----------------------------+
-|**Values:**   |  ``true`` or ``false``     |
-+--------------+----------------------------+
-|**Default:**  |  ``true``                  |
-+--------------+----------------------------+
+:**Values**: ``true or false``
+:**Default**: ``true``
 
 If set to ``true`` and ':ref:`backupDbOnUpdate <backupDbOnUpdate>`' is ``true``, Craft will restore the last database backup in the event that an update with a migration failed.
 
@@ -523,11 +439,8 @@ If set to ``true`` and ':ref:`backupDbOnUpdate <backupDbOnUpdate>`' is ``true``,
 searchIgnoreWords
 -----------------
 
-+--------------+----------------------------------------------------+
-|**Values:**   |  An array of words to ignore during searching.     |
-+--------------+----------------------------------------------------+
-|**Default:**  |  'the', 'and'                                      |
-+--------------+----------------------------------------------------+
+:**Values**: ``An array of words to ignore during searching.``
+:**Default**: ``'the', 'and'``
 
 An array of words to ignore during searching.
 
@@ -538,11 +451,8 @@ An array of words to ignore during searching.
 setPasswordPath
 ---------------
 
-+--------------+-------------------------+
-|**Values:**   |  Any string             |
-+--------------+-------------------------+
-|**Default:**  |  ``'setpassword'``      |
-+--------------+-------------------------+
+:**Values**: ``Any string``
+:**Default**: ``'setpassword'``
 
 The path Craft will use to set users' passwords.
 
@@ -555,11 +465,8 @@ For example, ``http://yourdomain.com/admin/setpassword``.
 siteRoutesSource
 ----------------
 
-+--------------+-----------------------------+
-|**Values:**   |  ``'db'`` or ``'file'``     |
-+--------------+-----------------------------+
-|**Default:**  |  ``'db'``                   |
-+--------------+-----------------------------+
+:**Values**: ``'db' or 'file'``
+:**Default**: ``'db'``
 
 Tells Craft where to look for possible site routes.
 
@@ -572,11 +479,8 @@ If set to ``file``, Craft will look for routes in ``craft/config/routes.php``, o
 testToEmailAddress
 ------------------
 
-+--------------+-----------------------+
-|**Values:**   |  An email address     |
-+--------------+-----------------------+
-|**Default:**  |  empty                |
-+--------------+-----------------------+
+:**Values**: ``An email address``
+:**Default**: ``empty``
 
 If this is set, then any emails sent through the ``EmailService`` will go to this address instead of ``EmailModel->toEmail``.
 
@@ -587,11 +491,8 @@ If this is set, then any emails sent through the ``EmailService`` will go to thi
 translationDebugOutput
 ------------------------
 
-+--------------+----------------------------+
-|**Values:**   |  ``true`` or ``false``     |
-+--------------+----------------------------+
-|**Default:**  |  ``false``                 |
-+--------------+----------------------------+
+:**Values**: ``true or false``
+:**Default**: ``false``
 
 Controls whether to add the '@' symbol around translated strings to help find strings that haven’t been translated, yet.
 
@@ -602,11 +503,8 @@ Controls whether to add the '@' symbol around translated strings to help find st
 useCompressedJs
 ---------------
 
-+--------------+-----------------------------+
-|**Values:**   |  ``true`` or ``false``      |
-+--------------+-----------------------------+
-|**Default:**  |  ``true``                   |
-+--------------+-----------------------------+
+:**Values**: ``true or false``
+:**Default**: ``true``
 
 Controls whether to use the minified and merged JavaScript in the ``craft/app/resources/js/compressed`` folder or the uncompressed files in the ``craft/app/resources/js`` folder.
 
@@ -617,11 +515,8 @@ Controls whether to use the minified and merged JavaScript in the ``craft/app/re
 usePathInfo
 -----------
 
-+--------------+------------------------------------------------+
-|**Values:**   |  ``true``, ``false`` or ``'auto'``             |
-+--------------+------------------------------------------------+
-|**Default:**  |  ``'auto'``                                    |
-+--------------+------------------------------------------------+
+:**Values**: ``true, false or 'auto'``
+:**Default**: ``'auto'``
 
 Whether generated URLs should be formatted using PATH_INFO, e.g. ``http://yourdomain.com/index.php/path/``, as opposed to using the query string, e.g. ``http://yourdomain.com/index.php?p=path``.
 
@@ -636,11 +531,8 @@ If you know for sure your environment supports this feature, you can set this to
 userSessionDuration
 -------------------
 
-+--------------+------------------------------------------------------------------+
-|**Values:**   |  See http://www.php.net/manual/en/dateinterval.construct.php     |
-+--------------+------------------------------------------------------------------+
-|**Default:**  |  ``false``                                                       |
-+--------------+------------------------------------------------------------------+
+:**Values**: ``See http://www.php.net/manual/en/dateinterval.construct.php``
+:**Default**: ``false``
 
 The amount of time a user stays logged in.
 
@@ -653,11 +545,8 @@ If set to ``'0'``, the session will expire when the browser is closed.
 useXSendFile
 ------------
 
-+--------------+----------------------------+
-|**Values:**   |  ``true`` or ``false``     |
-+--------------+----------------------------+
-|**Default:**  |  ``false``                 |
-+--------------+----------------------------+
+:**Values**: ``true or false``
+:**Default**: ``false``
 
 If you have Apache’s mod_xsendfile installed and configured, set this to ``true`` and Craft will use xSendFile to send files to the browser.
 
@@ -668,11 +557,8 @@ If you have Apache’s mod_xsendfile installed and configured, set this to ``tru
 verificationCodeDuration
 ------------------------
 
-+--------------+------------------------------------------------------------------+
-|**Values:**   |  See http://www.php.net/manual/en/dateinterval.construct.php     |
-+--------------+------------------------------------------------------------------+
-|**Default:**  |  ``'P1D'`` (1 day)                                               |
-+--------------+------------------------------------------------------------------+
+:**Values**: ``See http://www.php.net/manual/en/dateinterval.construct.php``
+:**Default**: ``'P1D' (1 day)``
 
 The amount of time a newly generated verification code will last before expiring.
 
@@ -685,11 +571,8 @@ Used in such things as account creation and password resetting.
 writableFilePermissions
 -----------------------
 
-+--------------+--------------------------------+
-|**Values:**   |  Valid numeric permissions     |
-+--------------+--------------------------------+
-|**Default:**  |  ``0777``                      |
-+--------------+--------------------------------+
+:**Values**: ``Valid numeric permissions``
+:**Default**: ``0777``
 
 The permissions Craft will use when creating a file to ensure that it is writable.
 
@@ -700,11 +583,8 @@ The permissions Craft will use when creating a file to ensure that it is writabl
 writableFolderPermissions
 -------------------------
 
-+--------------+--------------------------------+
-|**Values:**   |  Valid numeric permissions     |
-+--------------+--------------------------------+
-|**Default:**  |  ``0777``                      |
-+--------------+--------------------------------+
+:**Values**: ``Valid numeric permissions``
+:**Default**: ``0777``
 
 The permissions Craft will use when creating a folder to ensure that it is writable.
 

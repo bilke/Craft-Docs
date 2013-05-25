@@ -85,3 +85,5 @@ dt:hover > a.headerlink { visibility: visible; }
 	#main { margin-left: 0; padding: 25px 10px; }
 	#sidebar { display: none; }
 }
+
+td { vertical-align: middle ; padding: 5px; }

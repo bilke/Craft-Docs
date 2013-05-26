@@ -1,5 +1,7 @@
+.. _globals:
+
 Globals
-====================
+=======
 
 **Globals** in Craft are basically single-use :doc:`fields <fields>`. They’re useful for storing things like your site’s copyright info, metadata, etc..
 

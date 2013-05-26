@@ -1,5 +1,5 @@
-Sections
-====================
+Settings → Sections
+===================
 
 Each section stores a new channel of :doc:`entries <entries>`, with its own set of fields tailored to the needs of the content, and its own URL format.
 

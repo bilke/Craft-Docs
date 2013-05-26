@@ -12,6 +12,7 @@ Read more about...
    :maxdepth: 1
 
    dashboard/index
+   settings/index
    fields/index
    sections
    globals

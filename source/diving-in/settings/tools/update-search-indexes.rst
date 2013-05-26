@@ -1,0 +1,3 @@
+Settings → Update Search Indexes
+================================
+

@@ -1,5 +1,5 @@
-Email Settings
-====================
+Settings → Email
+================
 
 Craft needs some basic email information for its outgoing emails.  You can set this up in Settings > Email.  There are 2 basic settings:
 

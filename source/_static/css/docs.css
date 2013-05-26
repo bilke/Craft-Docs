@@ -87,3 +87,7 @@ dt:hover > a.headerlink { visibility: visible; }
 }
 
 td { vertical-align: middle ; padding: 5px; }
+
+.settings-table { width: 100%; }
+.settings-table td { vertical-align: top; padding: 0px; width: 33%; }
+.settings-table ul { padding-left: 23px; }

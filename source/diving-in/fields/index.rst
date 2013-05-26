@@ -1,9 +1,12 @@
 Fields
 ======
 
-In Craft, all of your site’s content is entered into **fields**. Fields are created globally, and attached as needed to your :doc:`sections <sections>`, :doc:`globals <globals>`, users, and assets.
+In Craft, all of your site’s content is entered into **Fields**.  They are the building blocks of your website.
 
-To manage your site’s fields, go to Settings → Fields. You’ll notice that they are organized into **groups**. In Craft, field groups are purely an organizational tool; they pose no actual restrictions on the fields within them. Fields can even be moved between groups as desired.
+Fields are created globally, and attached as needed to your :ref:`Sections <sections>`, :ref:`Globals <globals>`, :ref:`Users <users>`, and :ref:`Assets <assets>`.
+
+You manage your site’s Fields under ``Settings → Fields``.  You’ll notice that they are organized into groups called **Field Groups**. In Craft, Field Groups are purely an organizational tool; they pose no actual restrictions on the fields within them. Fields can even be moved between groups as desired.
+
 
 Each field has a name, handle, optional instructions, a fieldtype, and possibly additional settings provided by the fieldtype. **Fieldtypes** define what kind of field it is. Craft comes with 14 fieldtypes built in:
 

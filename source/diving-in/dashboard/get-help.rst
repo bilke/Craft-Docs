@@ -1,5 +1,5 @@
-Get Help
-========
+Get Help Widget
+===============
 
 .. |gethelp| image:: ../../_static/images/diving-in/dashboard/gethelp.png
    :alt: Get Help Widget

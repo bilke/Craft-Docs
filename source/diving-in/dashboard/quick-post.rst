@@ -1,5 +1,5 @@
-Quick Post
-==========
+Quick Post Widget
+=================
 
 .. |quickpost1| image:: ../../_static/images/diving-in/dashboard/quickpost-1.png
    :alt: Quick Post Widget
@@ -21,6 +21,18 @@ Quick Post
 |              | You can choose which Section to post to and which fields show up on the dashboard from the Widget’s setting page. |              |
 +--------------+-------------------------------------------------------------------------------------------------------------------+--------------+
 
+--------
 
+Settings
+--------
 
+.. |settings| image:: ../../_static/images/diving-in/dashboard/quickpost-settings.png
+   :alt: Quick Post Widget Settings
+   :width: 250px
+   :scale: 100%
 
++----------------+------------------------------------------------------------------------------------+
+| |settings|     | **Section**: The Section you want to post new entries to                           |
+|                |                                                                                    |
+|                | **Fields**: The Fields from the selected Section you want to display on the Widget |
++----------------+------------------------------------------------------------------------------------+

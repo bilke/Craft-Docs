@@ -31,6 +31,6 @@ Craft includes five widgets with a fresh installation.
 
    quick-post
    recent-entries
-   feed
+   feeds
    update
    get-help

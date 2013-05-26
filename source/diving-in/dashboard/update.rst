@@ -1,5 +1,5 @@
-Update
-=======
+Update Widget
+=============
 
 .. |update| image:: ../../_static/images/diving-in/dashboard/updates.png
    :alt: Update Widget

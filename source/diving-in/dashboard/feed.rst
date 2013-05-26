@@ -1,7 +1,7 @@
 Feed
 ====
 
-.. |feed| image:: images/feed.png
+.. |feed| image:: ../../_static/images/diving-in/dashboard/feed.png
    :alt: Feed Widget
    :width: 350px
    :scale: 100%

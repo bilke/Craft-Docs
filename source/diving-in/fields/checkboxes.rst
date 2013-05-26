@@ -6,7 +6,7 @@ The Checkboxes fieldtype allows you to create a grouping of checkboxes to includ
 Settings
 --------
 
-.. image:: images/checkbox.png
+.. image:: ../../_static/images/diving-in/fields/checkbox.png
 
 You can set an Option Label, a Value, and check if that option is the default value.
 
@@ -17,7 +17,7 @@ Entry Page
 
 Your checkbox fieldtype will appear on your entry form with the options you created in the order you set them.  The below shows how a Featured checkbox would appear on the entry form:
 
-.. image:: images/checkbox-entry.png
+.. image:: ../../_static/images/diving-in/fields/checkbox-entry.png
 
 Template
 --------

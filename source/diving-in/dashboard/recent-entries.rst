@@ -1,7 +1,7 @@
 Recent Entries
 ==============
 
-.. |recententries| image:: images/entries.png
+.. |recententries| image:: ../../_static/images/diving-in/dashboard/entries.png
    :alt: Recent Entries Widget
    :width: 350px
    :scale: 100%

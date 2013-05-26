@@ -5,7 +5,7 @@ The Settings page is where all of Craft’s site administration happens.
 
 Accordingly, only admins are allowed to access it.
 
-.. image:: images/settings.png
+.. image:: ../../_static/images/settings/settings.png
    :alt: Settings Page
    :scale: 100%
    :width: 100%

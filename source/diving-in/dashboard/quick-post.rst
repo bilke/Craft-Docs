@@ -1,13 +1,13 @@
 Quick Post
 ==========
 
-.. |quickpost1| image:: images/quickpost-1.png
+.. |quickpost1| image:: ../../_static/images/diving-in/dashboard/quickpost-1.png
    :alt: Quick Post Widget
    :width: 228px
    :scale: 100%
    :align: middle
 
-.. |quickpost2| image:: images/quickpost-2.png
+.. |quickpost2| image:: ../../_static/images/diving-in/dashboard/quickpost-2.png
    :alt: Quick Post Widget
    :width: 265px
    :scale: 100%

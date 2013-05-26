@@ -3,7 +3,7 @@ Dashboard
 
 Craft’s dashboard provides a central place to interact with your site.
 
-.. image:: images/dashboard.png
+.. image:: ../../_static/images/diving-in/dashboard/dashboard.png
     :width: 90%
     :scale: 100%
     :align: center
@@ -15,7 +15,7 @@ They allow you to do things such as post new entries, view recently posted entri
 
 
 
-.. |settings| image:: images/dashboard-settings.png
+.. |settings| image:: ../../_static/images/diving-in/dashboard/dashboard-settings.png
     :width: 180px
     :scale: 100%
     :alt: Dashboard Settings Icon

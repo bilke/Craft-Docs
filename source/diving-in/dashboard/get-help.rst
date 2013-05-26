@@ -1,7 +1,7 @@
 Get Help
 ========
 
-.. |gethelp| image:: images/gethelp.png
+.. |gethelp| image:: ../../_static/images/diving-in/dashboard/gethelp.png
    :alt: Get Help Widget
    :width: 300
    :scale: 100%

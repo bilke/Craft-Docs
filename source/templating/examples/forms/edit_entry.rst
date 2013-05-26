@@ -11,6 +11,7 @@ You can create a form to edit existing entries on front-end of your site using t
         <input type="hidden" name="action" value="entries/saveEntry">
         <input type="hidden" name="redirect" value="viewentry/{{ entry.id }}">
         <input type="hidden" name="entryId" value="{{ entry.id }}">
+        <input type="hidden" name="sectionId" value="{{ entry.sectionId }}">
         <input type="hidden" name="enabled" value="{{ entry.enabled }}">
 
         <label for="title">Title</label>

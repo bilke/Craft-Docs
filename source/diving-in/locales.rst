@@ -12,10 +12,25 @@ If your site caters to people in more than one language or region, you can use t
 Here’s a breakdown of what you’ll get:
 
 * A new “Locales” page in :doc:`settings/content/locales`, where you can choose which locales your site targets, and prioritize them.
+
+ [BRAD - SCREENSHOT OF Locales page]
+
 * :doc:`fields/index` get a new “This field is translatable” checkbox setting that defines whether the field’s value should be set on a per-locale basis, or globally.
+
+ [BRAD - SCREENSHOT OF Field is Translatable checkbox setting]
+
 * :doc:`settings/content/sections` get a new “Locales” setting that defines which locales each section should be available in.
+
+ [BRAD - SCREENSHOT OF screesnot of new locales setting]
+
 * Sections’ URL Format settings become a table where each section locale gets its own URL Format value.
-* Entries, Global Sets, and email message modals (if :doc:`rebrand` is installed) get Locale-switching dropdown menus beside their page/modal headings, for choosing which locale’s content is currently being edited.
+
+ [BRAD - SCREENSHOT OF Locale table]
+
+* Entries, Global Sets, and email message modals [1]_  get Locale-switching dropdown menus beside their page/modal headings, for choosing which locale’s content is currently being edited.
+
+ [BRAD - SCREENSHOT OF Locale switching dropdown]
+
 * Each locale gets its own user permission, so you can choose which users/groups can edit which locales.
 
 

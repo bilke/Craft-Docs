@@ -57,7 +57,7 @@ There’s one problem though. All of your URLs will still be pointing to http://
 
 	define('CRAFT_SITE_URL', 'http://example.com/nl/');
 
-With that in place, any URLs that are generated using the ``url()`` :doc:`template function </templating/reference/functions>` will begin with “http://example.com/nl/” rather than “http://example.com/”. Easy enough!
+With that in place, any URLs that are generated using the ``url()`` :doc:`template function </reference/templating/reference/functions>` will begin with “http://example.com/nl/” rather than “http://example.com/”. Easy enough!
 
 .. [1] Requires Rebrand package
 .. [2] Requires Publish Pro package

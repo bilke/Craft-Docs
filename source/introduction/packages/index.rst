@@ -20,7 +20,7 @@ Clicking the “Buy” button will open a modal window where you can purchase th
 
 .. container:: tip
 
-	**Don’t worry!** Purchasing packages from within the app has been made secure, even if you’re not accessing Craft over a secure connection. See :doc:`secure_payments` for more details.
+	**Don’t worry!** Purchasing packages from within the app has been made secure, even if you’re not accessing Craft over a secure connection. See :doc:`Secure Payments </introduction/secure-payments>` for more details.
 
 We have intentionally made the packages fit right into the core app experience, so using package-added features is indistinguishable from the core features.
 

@@ -6,7 +6,7 @@ On top of the template filters that `Twig comes with <http://twig.sensiolabs.org
 .. _t:
 
 ``translate`` or ``t``
-    If the user’s preferred language doesn’t match your site’s language, Craft will look for a translation file for the user’s preferred language, and see if it contains a translation for the preceding string. (See :doc:`/templating/examples/translations`)
+    If the user’s preferred language doesn’t match your site’s language, Craft will look for a translation file for the user’s preferred language, and see if it contains a translation for the preceding string. (See :doc:`translations`)
 
     If your text contains dynamic variables, add tokens to the string where they should go, and pass an object to the ``t`` filter that contains their values:
 

@@ -3,7 +3,7 @@
 Globals
 =======
 
-**Globals** in Craft are basically single-use :doc:`fields <fields>`. They’re useful for storing things like your site’s copyright info, metadata, etc..
+**Globals** in Craft are basically single-use :doc:`fields <fields/index>`. They’re useful for storing things like your site’s copyright info, metadata, etc..
 
 Globals are defined as **sets**. Each set has its own Name, Handle, and a :ref:`Field Layout <fieldLayouts>` that defines which fields belong to the set.
 

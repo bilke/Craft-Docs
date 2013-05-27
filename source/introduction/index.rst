@@ -6,6 +6,7 @@ Welcome to Craft - what you need to know.
 .. toctree::
 	:titlesonly:
 	:maxdepth: 1
+
    
    community-and-support
    what-is-craft

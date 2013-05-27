@@ -20,7 +20,7 @@ Read more about...
    assets-and-cloud
    users
    user-groups
-   locals
+   locales
    template-basics
    twig-primer
    urls

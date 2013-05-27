@@ -1,7 +1,7 @@
 Entries
 ====================
 
-Entries belong to :doc:`sections <sections>`. They contain the following properties:
+Entries belong to :doc:`sections <settings/content/sections>`. They contain the following properties:
 
 * Title
 * Slug (if the section is set to give entries their own URLs)
@@ -11,7 +11,9 @@ Entries belong to :doc:`sections <sections>`. They contain the following propert
 * Tags
 * Status
 
-Entries also get whatever :doc:`fields/index` were selected by their section’s :ref:`field layout <fieldLayouts>`.
+
+
+Entries also get whatever :doc:`fields <fields/index>` were selected by their section’s :ref:`field layout <fieldLayouts>`.
 
 To create a new entry, go to Entries, and click the “New Entry” button. If you only have one section, that will immediately take you to the entry edit page. Otherwise you’ll get a drop-down menu where you can choose which section you’d like to create a new entry in.
 

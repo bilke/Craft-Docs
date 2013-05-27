@@ -7,9 +7,9 @@
 |icon| Settings → Sections
 ==========================
 
-Each section stores a new channel of :doc:`entries <entries>`, with its own set of fields tailored to the needs of the content, and its own URL format.
+Each section stores a new channel of :doc:`entries </diving-in/entries>`, with its own set of fields tailored to the needs of the content, and its own URL format.
 
-Craft Core allows you to have one section. It's already created for you by default (“Blog”), but you can customize that if you'd like (perhaps you’d prefer “News” instead), or delete it altogether. If the site also has a need for a “Case Studies” section, for example, you would need to buy :doc:`/packages/publishpro` to lift the one-section restriction.
+Craft Core allows you to have one section. It's already created for you by default (“Blog”), but you can customize that if you'd like (perhaps you’d prefer “News” instead), or delete it altogether. If the site also has a need for a “Case Studies” section, for example, you would need to buy :doc:`/introduction/packages/publishpro` to lift the one-section restriction.
 
 .. image:: ../../_static/images/settings/section.png
 

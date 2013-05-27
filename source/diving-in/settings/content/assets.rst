@@ -112,8 +112,8 @@ You can create pre-defined Image Transforms for your Assets.
 
 If only a **Height** or a **Width** is given, the other value will be scaled appropriately.
 
-Fields
-------
+Field Layout
+-------------
 
 Assets also get their own :ref:`field layout <fieldLayouts>`, which defines the custom fields that will be available for all Assets.
 

@@ -7,7 +7,7 @@
 |icon| Settings → Email
 =======================
 
-Craft needs some basic email information for its outgoing emails.
+The Settings → Email page is where you tell Craft some basic email settings it requires for sending outgoing emails.
 
 .. image:: ../../../_static/images/diving-in/settings/email-settings.png
    :alt: Email Settings

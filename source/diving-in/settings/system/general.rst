@@ -7,7 +7,7 @@
 |icon| Settings → General
 =========================
 
-The Settings → General page is where you can administer some basic, site-wide settings.
+The Settings → General page is where you can administer some site-wide settings.
 
 .. image:: ../../../_static/images/diving-in/settings/general.png
    :alt: General Settings Fields

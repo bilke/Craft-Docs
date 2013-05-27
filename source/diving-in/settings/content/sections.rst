@@ -7,6 +7,8 @@
 |icon| Settings → Sections
 ==========================
 
+The Settings → Sections page is where you administer the Section(s) your site is using.
+
 Each section defines the structure of the :doc:`/diving-in/entries <entries>` that belong to it, with its own set of fields tailored to the needs of the content, and its own URL format.
 
 .. image:: ../../../_static/images/diving-in/settings/section.png

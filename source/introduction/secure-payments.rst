@@ -1,4 +1,4 @@
-Secure Payments
+Secure Payments: Purchasing Packages
 ===================
 
 We’ve ensured that purchasing packages within Craft is as secure as possible, even if you’re accessing Craft over a non-secure connection.

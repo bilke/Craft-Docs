@@ -11,13 +11,13 @@ Entries belong to :doc:`sections <sections>`. They contain the following propert
 * Tags
 * Status
 
-Entries also get whatever :doc:`fields <fields>` were selected by their section’s :ref:`field layout <fieldLayouts>`.
+Entries also get whatever :doc:`fields/index` were selected by their section’s :ref:`field layout <fieldLayouts>`.
 
 To create a new entry, go to Entries, and click the “New Entry” button. If you only have one section, that will immediately take you to the entry edit page. Otherwise you’ll get a drop-down menu where you can choose which section you’d like to create a new entry in.
 
 If an entry’s section is set to give entries their own URLs, you will be able to access it directly by pointing your browser to the entry’s URL. You can determine that URL by looking at the section’s Entry URL Format setting, and replacing “``{slug}``” with the entry’s slug. (Craft also provides a handy link to your entry from the Entries index.)
 
-When a request comes in that matches an entry’s URL, that entry’s section’s template gets loaded up, and an ``entry`` variable is made available to it. That variable will give you access to all of the entry’s info, such as ``entry.title``, ``entry.someFieldHandle``, etc.. (See :doc:`/templating/reference/variables/craft.entries`)
+When a request comes in that matches an entry’s URL, that entry’s section’s template gets loaded up, and an ``entry`` variable is made available to it. That variable will give you access to all of the entry’s info, such as ``entry.title``, ``entry.someFieldHandle``, etc.. (See :doc:`/reference/templating/reference/variables/craft.entries`)
 
 
 Entry Statuses

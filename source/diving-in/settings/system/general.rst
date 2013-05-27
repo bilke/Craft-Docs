@@ -7,7 +7,7 @@
 |icon| Settings → General
 =========================
 
-The General Settings page is where all of the settings go that didn‘t fit into any other settings group.
+The General Settings page is where you can administer some basic, site-wide settings.
 
 .. image:: ../../../_static/images/diving-in/settings/general.png
    :alt: General Settings Fields
@@ -30,7 +30,7 @@ Site URL
 Timezone
     Your site’s primary timezone.  This is used to display correct times across timezones.
 
-Logo [*]_
+Logo [1]_
     If you have the Rebrand package installed, you can upload a logo for your site here that will be displayed on the Control Panel’s login page.
 
-.. [*] Requires Rebrand package
+.. [1] Requires Rebrand package

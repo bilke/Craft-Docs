@@ -16,6 +16,9 @@ The Settings → General page is where you can administer some basic, site-wide 
 
 --------
 
+Settings
+--------
+
 System Status
     Turns your Craft system ``On`` and ``Off``.
 

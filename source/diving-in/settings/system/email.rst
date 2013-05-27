@@ -14,6 +14,8 @@ Craft needs some basic email information for its outgoing emails.
    :width: 80%
    :scale: 100%
 
+--------
+
 Settings
 --------
 
@@ -30,6 +32,8 @@ Protocol
     The protocol to use when sending an email.
 
     Craft uses PHPMail as the default, however, you can choose from Sendmail, SMTP, POP or Gmail for sending emails.
+
+--------
 
 Messages [1]_
 -------------

@@ -11,7 +11,7 @@ Each section defines the structure of the :doc:`entries <entries>` that belong t
 
 .. image:: ../../../_static/images/diving-in/settings/section.png
    :alt: Sections
-   :width: 75%
+   :width: 65%
    :scale: 100%
 
 Without any packages, Craft allows you to have one section.

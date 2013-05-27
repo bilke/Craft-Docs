@@ -11,6 +11,8 @@ The Settings → Users page requires the Users package be installed.
 
 It is the central place to manage User Groups and permissions for your site, to assign custom Fields to your Users and to edit site-wide settings that affect all Users.
 
+--------
+
 User Groups
 -----------
 
@@ -29,7 +31,7 @@ When you’re ready to create a new User Group, click the “New Group” button
    :scale: 100%
 
 +--------------+------------------------------------------------------------------------------------------------------+
-| |usergroups| | You’ll need to provide a few bits of information for a new User Group                                |
+| |usergroups| | You’ll need to provide a few bits of information for a new User Group.                                |
 |              |                                                                                                      |
 |              | Name                                                                                                 |
 |              |     The name of the User Group                                                                       |
@@ -43,6 +45,8 @@ When you’re ready to create a new User Group, click the “New Group” button
 |              |     Some permissions are nested and won’t reveal themselves until the parent is checked.             |
 +--------------+------------------------------------------------------------------------------------------------------+
 
+--------
+
 Fields
 ------
 
@@ -52,6 +56,8 @@ Under the Fields tab, you can assign any custom Fields to your Users.  These wil
    :alt: User Field Settings
    :width: 80%
    :scale: 100%
+
+--------
 
 Settings
 --------

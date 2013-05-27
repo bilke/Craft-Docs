@@ -13,5 +13,3 @@ The Settings → Routes page is where you can go to create and manage custom Rou
    :alt: Routes Management
    :width: 90%
    :scale: 100%
-
---------

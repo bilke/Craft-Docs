@@ -5,15 +5,15 @@ If your site caters to people in more than one language or region, you can use t
 
 * Entry translations
 * Globals translations
-* Email message translations (when paired with :doc:`rebrand`)
-* Section-locale targeting (when paired with :doc:`publishpro`)
+* Email message translations [1]_
+* Section-locale targeting [2]_
 * Locale user permissions
 
 Here’s a breakdown of what you’ll get:
 
-* A new “Locales” page in Settings, where you can choose which locales your site targets, and prioritize them.
-* :doc:`/overview/fields` get a new “This field is translatable” checkbox setting that defines whether the field’s value should be set on a per-locale basis, or globally.
-* :doc:`/overview/sections` get a new “Locales” setting that defines which locales each section should be available in.
+* A new “Locales” page in :doc:`settings/content/locales`, where you can choose which locales your site targets, and prioritize them.
+* :doc:`fields/index` get a new “This field is translatable” checkbox setting that defines whether the field’s value should be set on a per-locale basis, or globally.
+* :doc:`settings/content/sections` get a new “Locales” setting that defines which locales each section should be available in.
 * Sections’ URL Format settings become a table where each section locale gets its own URL Format value.
 * Entries, Global Sets, and email message modals (if :doc:`rebrand` is installed) get Locale-switching dropdown menus beside their page/modal headings, for choosing which locale’s content is currently being edited.
 * Each locale gets its own user permission, so you can choose which users/groups can edit which locales.
@@ -43,3 +43,6 @@ There’s one problem though. All of your URLs will still be pointing to http://
 	define('CRAFT_SITE_URL', 'http://example.com/nl/');
 
 With that in place, any URLs that are generated using the ``url()`` :doc:`template function </templating/reference/functions>` will begin with “http://example.com/nl/” rather than “http://example.com/”. Easy enough!
+
+.. [1] Requires Rebrand package
+.. [2] Requires Publish Pro package

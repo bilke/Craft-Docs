@@ -1,4 +1,4 @@
-.. |icon| image:: ../../../_static/images/settings/email.png
+.. |icon| image:: ../../../_static/images/diving-in/settings/icons/email.png
    :alt: Email Settings Icon
    :width: 50px
    :scale: 100%

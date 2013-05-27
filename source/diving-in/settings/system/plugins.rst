@@ -1,4 +1,4 @@
-.. |icon| image:: ../../../_static/images/settings/plugins.png
+.. |icon| image:: ../../../_static/images/diving-in/settings/icons/plugins.png
    :alt: Plugin Settings Icon
    :width: 50px
    :scale: 100%

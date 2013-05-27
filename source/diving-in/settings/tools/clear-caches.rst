@@ -1,4 +1,4 @@
-.. |icon| image:: ../../../_static/images/settings/clearcache.png
+.. |icon| image:: ../../../_static/images/diving-in/settings/icons/clearcache.png
    :alt: Clear Cache Settings Icon
    :width: 50px
    :scale: 100%

@@ -1,4 +1,4 @@
-.. |icon| image:: ../../../_static/images/settings/fields.png
+.. |icon| image:: ../../../_static/images/diving-in/settings/icons/fields.png
    :alt: Field Settings Icon
    :width: 50px
    :scale: 100%

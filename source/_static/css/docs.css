@@ -93,3 +93,5 @@ td { vertical-align: middle ; padding: 5px; }
 .settings-table ul { padding-left: 23px; }
 
 .align-middle { vertical-align: middle; }
+
+sup { vertical-align: super; }

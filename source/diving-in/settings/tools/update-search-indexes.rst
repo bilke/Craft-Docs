@@ -1,4 +1,4 @@
-.. |icon| image:: ../../../_static/images/settings/updatesearch.png
+.. |icon| image:: ../../../_static/images/diving-in/settings/icons/updatesearch.png
    :alt: Update Search Index Settings Icon
    :width: 50px
    :scale: 100%

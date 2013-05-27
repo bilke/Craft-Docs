@@ -1,4 +1,4 @@
-.. |icon| image:: ../../../_static/images/settings/locales.png
+.. |icon| image:: ../../../_static/images/diving-in/settings/icons/locales.png
    :alt: General Settings Icon
    :width: 50px
    :scale: 100%

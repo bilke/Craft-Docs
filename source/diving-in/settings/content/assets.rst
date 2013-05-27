@@ -1,4 +1,4 @@
-.. |icon| image:: ../../../_static/images/settings/assets.png
+.. |icon| image:: ../../../_static/images/diving-in/settings/icons/assets.png
    :alt: Asset Settings Icon
    :width: 50px
    :scale: 100%

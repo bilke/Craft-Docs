@@ -1,4 +1,4 @@
-.. |icon| image:: ../../../_static/images/settings/backupdatabase.png
+.. |icon| image:: ../../../_static/images/diving-in/settings/icons/backupdatabase.png
    :alt: Backup Database Settings Icon
    :width: 50px
    :scale: 100%

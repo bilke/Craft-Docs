@@ -1,4 +1,4 @@
-.. |icon| image:: ../../../_static/images/settings/sections.png
+.. |icon| image:: ../../../_static/images/diving-in/settings/icons.png
    :alt: Section Settings Icon
    :width: 50px
    :scale: 100%

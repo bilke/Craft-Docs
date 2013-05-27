@@ -4,10 +4,10 @@
    :scale: 100%
    :align: middle
 
-|icon| Settings → Users
-=======================
+|icon| Settings → Users [1]_
+============================
 
-The Users Settings page requires the Users package be installed.
+The Settings → Users page requires the Users package be installed.
 
 It is the central place to manage User Groups and permissions for your site, to assign custom Fields to your Users and to edit site-wide settings that affect all Users.
 
@@ -29,7 +29,7 @@ When you’re ready to create a new User Group, click the “New Group” button
    :scale: 100%
 
 +--------------+------------------------------------------------------------------------------------------------------+
-| |usergroups| | When creating a new User Group, you will need to supply a few bits of information.                   |
+| |usergroups| | You’ll need to provide a few bits of information for a new User Group                                |
 |              |                                                                                                      |
 |              | Name                                                                                                 |
 |              |     The name of the User Group                                                                       |
@@ -68,3 +68,5 @@ Allow public registration?
 
 Default User Group
     The User Group that newly created accounts will be placed in by default.
+
+.. [1] Requires Users package to be installed

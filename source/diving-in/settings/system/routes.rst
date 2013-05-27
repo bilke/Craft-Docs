@@ -7,7 +7,7 @@
 |icon| Settings → Routes
 ========================
 
-The Routes page is where you can go to create and manage custom Routes (link to Routes explanation) for your site.
+The Settings → Routes page is where you can go to create and manage custom Routes (link to Routes explanation) for your site.
 
 .. image:: ../../../_static/images/diving-in/settings/routes.png
    :alt: Routes Management

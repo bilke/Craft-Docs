@@ -23,6 +23,8 @@ When a request comes in that matches an entry’s URL, that entry’s section’
 Entry Statuses
 --------------
 
+[BRAD - SCREENSHOT OF entries/blog/entry_id settings]
+
 By default, ``craft.entries`` will only return live entries. For an entry to be considered live, it must pass the following conditions:
 
 * It must be enabled
@@ -32,19 +34,27 @@ By default, ``craft.entries`` will only return live entries. For an entry to be 
 You can customize all three of those settings from the entry’s Settings tab. Note that without any tinkering, new entries **will** be saved as live.
 
 
-Entry Drafts (Publish Pro only)
+Entry Drafts [1]_
 -------------------------------
 
 Once an entry has been published, you can continue working on it in private by creating a new **draft**. To do so, simply click the “Save as Draft” button next to the “Save” button at the bottom of the entry’s edit form. A new draft will get saved based on the current state of the entry’s edit form.
 
+[BRAD - SCREENSHOT OF save draft button]
+
 You can switch between working on the “current” version of your entry and its drafts by clicking on the revision menu button at the top-right of the entry edit page.
 
+[BRAD - SCREENSHOT OF Draft drop-down next to entry title]
+
 To publish your draft, click the “Publish Draft” button beside the “Save Draft” button at the bottom of the edit form.
+
+[BRAD - SCREENSHOT OF publish draft button]
 
 Note that all of an entry’s settings – not just its content – are part of the draft. So if you change an entry’s Post Date from within a draft, that change won’t take effect until the draft has been published.
 
 
-Entry Versions (Publish Pro only)
+Entry Versions [1]_
 ---------------------------------
 
 Each time an entry is saved, a new version gets created. You can view past versions by clicking on the revision menu button at the top-right of the entry edit page. You can’t *edit* past versions, however.
+
+.. [1] Require Publish Pro Package

@@ -1,5 +1,5 @@
 Multi Selects
-=============
+=======
 
 The multiselect fieldtype allows you to create a multiselect input.
 

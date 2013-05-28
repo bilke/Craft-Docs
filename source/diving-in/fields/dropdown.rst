@@ -1,5 +1,5 @@
 Dropdowns
-=========
+=======
 
 The dropdown fieldtype allows you to create a dropdown selector for your entry page.
 

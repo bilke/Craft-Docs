@@ -1,5 +1,6 @@
 Color
-=====
+=======
+
 
 The color fieldtype is a simple fieldtype that, when included, will give you a color chooser in your entry form.  In the template, this outputs as ``#ffffff``.  Use this anywhere that you need content-specific color settings.
 

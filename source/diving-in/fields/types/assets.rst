@@ -25,10 +25,19 @@ Settings
 Entry Page
 ----------
 
+Assets from the Edit Entry page allows you to see which Assets are currently associated with this entry.
+
 .. image:: ../../../_static/images/diving-in/fields/assets-entry.png
-   :alt: Assets
+   :alt: Assets Entry Page
    :scale: 100%
-   :width: 250px
+   :width: 100%
+
+You can also add new Assets to the current entry.
+
+.. image:: ../../../_static/images/diving-in/fields/assets-entry-add.png
+   :alt: Assets Add Entry Page
+   :scale: 100%
+   :width: 100%
 
 
 Template

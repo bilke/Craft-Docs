@@ -10,3 +10,11 @@ Entry Page
 
 
 .. image:: ../../_static/images/diving-in/fields/color-entry.png
+
+Template
+----------
+
+.. code-block:: html
+
+	{{ entry.fieldHandle }}
+	

@@ -7,10 +7,11 @@ Fields are created globally, and attached as needed to your :doc:`Sections </div
 
 You manage your site’s Fields under ``Settings → Fields``.  You’ll notice that they are organized into groups called **Field Groups**. In Craft, Field Groups are purely an organizational tool; they pose no actual restrictions on the fields within them. Fields can even be moved between groups as desired.
 
-Each field has a name, handle, optional instructions, a fieldtype, and possibly additional settings provided by the fieldtype. **Fieldtypes** define what kind of field it is. Craft comes with 14 fieldtypes built in:
+Each field has a name, handle, optional instructions, a fieldtype, and possibly additional settings provided by the Field Type. **Field Types** define what kind of field it is. Craft comes with many Field Types built in:
 
 .. toctree::
    :titlesonly:
+   :hidden:
 
    types/assets
    types/checkboxes
@@ -26,6 +27,15 @@ Each field has a name, handle, optional instructions, a fieldtype, and possibly 
    types/rich-text
    types/table
    types/users
+
+.. rst-class:: fieldtype-table
++----------------------------------------+-------------------------------------------+---------------------------------------+
+| * :doc:`Assets <types/assets>`         | * :doc:`Entries <types/entries>`          | * :doc:`Rich Text <types/assets>`     |
+| * :doc:`Checkboxes <types/checkboxes>` | * :doc:`Multi-select <types/multiselect>` | * :doc:`Table <types/assets>`         |
+| * :doc:`Color <types/color>`           | * :doc:`Number <types/number>`            | * :doc:`Users <types/assets>`         |
+| * :doc:`Date <types/date>`             | * :doc:`Plain Text <types/plain-text>`    |                                       |
+| * :doc:`Dropdown <types/dropdown>`     | * :doc:`Radio Buttons <types/assets>`     |                                       |
++----------------------------------------+-------------------------------------------+---------------------------------------+
 
 Plugins can add additional Field Types as well.
 

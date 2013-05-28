@@ -92,6 +92,10 @@ td { vertical-align: middle ; padding: 5px; }
 .settings-table td { vertical-align: top; padding: 0px; width: 33%; }
 .settings-table ul { padding-left: 23px; }
 
+.fieldtype-table { width: 100%; }
+.fieldtype-table td { vertical-align: top; padding: 0px; width: 33%; }
+.fieldtype-table ul { padding-left: 23px; }
+
 .align-middle { vertical-align: middle; }
 
 sup { vertical-align: super; }

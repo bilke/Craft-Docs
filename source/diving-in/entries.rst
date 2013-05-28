@@ -1,5 +1,5 @@
 Entries
-====================
+=======
 
 Entries belong to :doc:`sections <settings/content/sections>`. They contain the following properties:
 

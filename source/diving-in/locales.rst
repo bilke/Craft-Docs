@@ -1,5 +1,5 @@
 Localize
-====================
+========
 
 If your site caters to people in more than one language or region, you can use the Localize package to handle content translations and region targeting. Its features include:
 
@@ -61,3 +61,4 @@ With that in place, any URLs that are generated using the ``url()`` :doc:`templa
 
 .. [1] Requires Rebrand package
 .. [2] Requires Publish Pro package
+

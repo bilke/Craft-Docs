@@ -1,5 +1,5 @@
 How Requests Get Routed
-====================
+=======================
 
 When a request comes in, Craft analyzes it to determine how to handle it. Here is an outline of what that entails:
 
@@ -63,3 +63,4 @@ Now when you point your browser to http://example.com/blog/archive/2012, it will
     {% endfor %}
 
 With that code in place, ``craft.entries`` will only return entries whose Post Dates are set on/after Jan 1 of the specified year, and before Jan 1 of the following year.
+

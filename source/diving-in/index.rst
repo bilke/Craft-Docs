@@ -1,5 +1,3 @@
-.. _divingIn:
-
 Diving In
 =========
 

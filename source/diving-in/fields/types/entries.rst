@@ -23,6 +23,8 @@ Entry Page
 Template
 ----------
 
+In the below code, ``blogEntries`` refers to the field handle for an entries field type.
+
 .. code-block:: html
 
     	{% for entry in craft.entries.find() %}

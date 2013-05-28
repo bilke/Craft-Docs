@@ -1,5 +1,5 @@
 Radio Buttons
-=============
+=======
 
 The Radio Buttons Field Type allows you to create a grouping of Radio Buttons to include on your publish form.
 

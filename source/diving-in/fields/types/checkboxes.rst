@@ -1,5 +1,5 @@
 Checkboxes
-==========
+=======
 
 The Checkboxes Field Type allows you to create a grouping of checkboxes to include on your entry form.
 

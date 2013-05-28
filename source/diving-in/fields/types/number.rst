@@ -1,5 +1,5 @@
 Number
-======
+=======
 
 The Number Field Type adds a field for entering a number.
 

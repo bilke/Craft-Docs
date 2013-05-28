@@ -1,5 +1,5 @@
 Plain Text
-==========
+=======
 
 The Plain Text Field Type allows you to create a simple textarea for storing content.
 

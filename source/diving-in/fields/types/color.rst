@@ -15,6 +15,8 @@ Settings
 
 This Field Type has no settings.
 
+--------
+
 Entry Page
 ----------
 
@@ -28,8 +30,10 @@ Entry Page
 |         | can select the desired color you want for this field. |
 +---------+-------------------------------------------------------+
 
+--------
+
 Template
-----------
+--------
 
 .. code-block:: html
 

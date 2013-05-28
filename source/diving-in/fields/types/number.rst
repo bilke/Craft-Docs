@@ -7,6 +7,7 @@ The field allows you to set the minimum and maximum values, and how many decimal
 
 The user’s current locale is taken into account when displaying the numeric values in the correct format.
 
+--------
 
 Settings
 --------
@@ -21,13 +22,17 @@ Max Value
 Decimal Points
     The max number of decimal points to output in the template
 
+--------
+
 Entry Page
 --------
 
 [BRAD - SCREENSHOT OF Number field on entry page]
 
+--------
+
 Template
 --------
 
 .. code-block:: html
-    {{ entry.fieldHandle}}
+    {{ entry.fieldHandle }}

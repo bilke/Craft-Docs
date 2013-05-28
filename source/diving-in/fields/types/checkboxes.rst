@@ -26,6 +26,8 @@ Settings
 
 You can drag and drop your checkbox items to control the order they are presented in on the Entry page as well as delete them entirely with the controls in the far right column.
 
+--------
+
 Entry Page
 ----------
 
@@ -35,6 +37,8 @@ Your Checkbox Field Type will appear on your entry form with the options you cre
    :alt: Checkbox Entry
    :scale: 100%
    :width: 50%
+
+--------
 
 Template
 --------

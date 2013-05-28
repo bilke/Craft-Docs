@@ -3,8 +3,10 @@ Rich Text
 
 The Rich Text Field Type provides WYSIWYG fields, powered by `Redactor <http://imperavi.com/redactor/>`_.
 
-Field Settings
---------------
+--------
+
+Settings
+--------
 
 Rich Text fields have the following settings:
 
@@ -75,3 +77,13 @@ Rich Text fields have three functions for outputting data based on the page brea
                 {% endif %}
             </article>
         {% endfor %}
+
+--------
+
+Entry Page
+----------
+
+--------
+
+Template
+--------

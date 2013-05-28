@@ -10,6 +10,17 @@ The Table Field Type allows you to create a dynamic form to add content to a pre
 
 And you may set default values for the row to be populated with when entering content.
 
+--------
+
+Settings
+--------
+
+--------
+
+Entry Page
+----------
+
+--------
 
 Template
 ----------

@@ -22,6 +22,8 @@ Settings
 |            |    Limit the number of selectable Assets                                                             |
 +------------+------------------------------------------------------------------------------------------------------+
 
+--------
+
 Entry Page
 ----------
 
@@ -39,6 +41,7 @@ You can also add new Assets to the current entry.
    :scale: 100%
    :width: 100%
 
+--------
 
 Template
 ----------

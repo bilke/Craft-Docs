@@ -5,6 +5,8 @@ Need to relate one entry to another? How about relating multiple entries?  Enter
 
 [BRAD - SCREENSHOT OF Entries fieldtype settings]
 
+--------
+
 Settings
 --------
 
@@ -14,14 +16,17 @@ Sources
 Limit
     Limit the number of selectable entries
 
+--------
+
 Entry Page
 ----------
 
 [BRAD - SCREENSHOT of Entries relationship on Entry form and modal]
 
+--------
 
 Template
-----------
+--------
 
 In the below code, ``blogEntries`` refers to the field handle for an entries field type.
 

@@ -3,6 +3,8 @@ Multi-selects
 
 Need multiple options that can have any combination selected?  The Multi-select Field Type is for you!
 
+--------
+
 Settings
 --------
 
@@ -22,6 +24,8 @@ You can drag and drop your checkbox items to control the row order presented whe
 
 [BRAD - SCREENSHOT of the re-order and delete icons - reused image]
 
+--------
+
 Entry Page
 ----------
 
@@ -29,8 +33,8 @@ Your multi-select field appears on your entry form with the options you created 
 
 [BRAD - SCREENSHOT update for Checkbox output on entry form] 
 
-
+--------
 
 Template
-----------
+--------
 

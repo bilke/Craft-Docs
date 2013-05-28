@@ -1,6 +1,26 @@
 Users
-=====
+=======
 
-The Users fieldtype allows you select related Users from your entry form. Including this fieldtype allows you to select multiple users, and search through the Users to find the ones you wish to select.
+Need to relate your content to a user? How about relating multiple users?  Enter the users field type.
 
-Options for the Users fieldtype include how many entries may be selected.
+[BRAD - SCREENSHOT OF Entries fieldtype settings]
+
+Settings
+--------
+
+Sources
+    What section(s) are related entries located in?
+
+Limit
+    Limit the number of selectable entries
+
+Entry Page
+----------
+
+[BRAD - SCREENSHOT of Entries relationship on Entry form and modal]
+
+
+Template
+----------
+
+

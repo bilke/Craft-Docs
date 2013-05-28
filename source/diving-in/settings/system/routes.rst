@@ -11,5 +11,5 @@ The Settings → Routes page is where you can go to create and manage custom :do
 
 .. image:: ../../../_static/images/diving-in/settings/routes.png
    :alt: Routes Management
-   :width: 90%
+   :width: 100%
    :scale: 100%

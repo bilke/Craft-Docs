@@ -13,7 +13,7 @@ You can add new locales that your site’s content will be targeting from here.
 
 .. image:: ../../../_static/images/diving-in/settings/locales.png
    :alt: Locales
-   :width: 85%
+   :width: 100%
    :scale: 100%
 
 .. [1] Requires Localization package

@@ -78,7 +78,7 @@ The Installer
 If you see this in your browser, you've done everything right so far.
 
 .. image:: ../../_static/images/getting-started/install1.png
-    :width: 90%
+    :width: 100%
     :scale: 100%
     :align: center
     :alt: Craft Install Splash Page
@@ -86,7 +86,7 @@ If you see this in your browser, you've done everything right so far.
 Now, let’s create the first administrator account.  Be sure to pick a strong password!
 
 .. image:: ../../_static/images/getting-started/install2.png
-    :width: 90%
+    :width: 100%
     :scale: 100%
     :align: center
     :alt: Craft Install User Creation Page
@@ -98,7 +98,7 @@ If you have installed Craft into a subdirectory (i.e. ``http://domain.com/craft`
 Click the “Finish up” button and let the installer do it’s thing.
 
 .. image:: ../../_static/images/getting-started/install3.png
-    :width: 90%
+    :width: 100%
     :scale: 100%
     :align: center
     :alt: Craft Install Site Creation Page
@@ -108,7 +108,7 @@ Seconds later, you should have a working Craft install!
 Click “Go to Craft” and you’ll get taken straight to the dashboard.
 
 .. image:: ../../_static/images/getting-started/install4.png
-    :width: 90%
+    :width: 100%
     :scale: 100%
     :align: center
     :alt: Craft Install Success Page
@@ -117,7 +117,7 @@ Welcome to Craft!
 -----------------
 
 .. image:: ../../_static/images/getting-started/install5.png
-    :width: 90%
+    :width: 100%
     :scale: 100%
     :align: center
     :alt: Craft Dashboard
@@ -130,7 +130,7 @@ Craft’s CP has an “Updates” tab where you can check if a new update is ava
 You also have the option of downloading the update, if you’d prefer to install it :ref:`manually <manuallyUpdating>`.
 
 .. image:: ../../_static/images/getting-started/auto-update.png
-    :width: 90%
+    :width: 100%
     :scale: 100%
     :align: center
     :alt: Auto-update

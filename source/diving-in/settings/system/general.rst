@@ -11,7 +11,7 @@ The Settings → General page is where you can administer some site-wide setting
 
 .. image:: ../../../_static/images/diving-in/settings/general.png
    :alt: General Settings Fields
-   :width: 80%
+   :width: 100%
    :scale: 100%
 
 --------

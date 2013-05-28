@@ -1,28 +1,34 @@
 Assets
-==========
+======
 
 The Assets Field Type allows you to store and reference media content in Craft.  Assets can be used to store PDFs, images, movies, sound files, and other media types.
-
-.. image:: ../../_static/images/diving-in/fields/assets-settings.png
-   :alt: Assets Settings
-   :scale: 100%
-   :width: 75%
 
 --------
 
 Settings
 --------
 
-Sources
-    What sources would you choose assets from?  You can set up new Asset Sources in :doc:`Settings → Assets </diving-in/settings/content/assets>`
+.. |settings| image:: ../../../_static/images/diving-in/fields/assets-settings.png
+   :alt: Assets Settings
+   :scale: 100%
+   :width: 250px
 
-Limit
-    Limit the number of selectable assets
++------------+------------------------------------------------------------------------------------------------------+
+| |settings| | Sources                                                                                              |
+|            |    What sources will you choose Assets from?                                                         |
+|            |    You can set up new Asset Sources in :doc:`Settings → Assets </diving-in/settings/content/assets>` |
+|            |                                                                                                      |
+|            | Limit                                                                                                |
+|            |    Limit the number of selectable Assets                                                             |
++------------+------------------------------------------------------------------------------------------------------+
 
 Entry Page
 ----------
 
-[BRAD - SCREENSHOT of Assets on Entry form]
+.. image:: ../../../_static/images/diving-in/fields/assets-entry.png
+   :alt: Assets
+   :scale: 100%
+   :width: 250px
 
 
 Template

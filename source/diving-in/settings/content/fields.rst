@@ -11,7 +11,7 @@ The Settings → Fields page is where you administer the building blocks of your
 
 .. image:: ../../../_static/images/diving-in/settings/fields.png
    :alt: General Settings Fields
-   :width: 95%
+   :width: 100%
    :scale: 100%
 
 Field Groups

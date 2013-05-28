@@ -4,7 +4,7 @@ Dashboard
 Craft’s dashboard provides a central place to interact with your site.
 
 .. image:: ../../_static/images/diving-in/dashboard/dashboard.png
-    :width: 90%
+    :width: 100%
     :scale: 100%
     :align: center
     :alt: Craft’s Dashboard

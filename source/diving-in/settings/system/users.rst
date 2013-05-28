@@ -54,7 +54,7 @@ Under the Fields tab, you can assign any custom Fields to your Users.  These wil
 
 .. image:: ../../../_static/images/diving-in/settings/users-fields.png
    :alt: User Field Settings
-   :width: 80%
+   :width: 100%
    :scale: 100%
 
 --------

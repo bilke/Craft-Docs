@@ -11,7 +11,7 @@ The Settings → Email page is where you tell Craft some basic email settings it
 
 .. image:: ../../../_static/images/diving-in/settings/email-settings.png
    :alt: Email Settings
-   :width: 80%
+   :width: 100%
    :scale: 100%
 
 --------
@@ -42,14 +42,14 @@ If you have the Rebrand package installed, you can customize the default email t
 
 .. image:: ../../../_static/images/diving-in/settings/email-messages.png
    :alt: Email Messages Settings
-   :width: 80%
+   :width: 100%
    :scale: 100%
 
 In addition to that, if you have the Localization package installed, you will get an addition locales dropdown menu where you can customize these messages on a per locale basis. [2]_
 
 .. image:: ../../../_static/images/diving-in/settings/email-messages-edit.png
    :alt: Email Messages Settings
-   :width: 80%
+   :width: 100%
    :scale: 100%
 
 .. [1] Requires Rebrand package

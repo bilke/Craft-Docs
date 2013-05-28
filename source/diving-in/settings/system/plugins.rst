@@ -17,5 +17,5 @@ Disabling a plugin leaves the plugin’s data in the database, but just disables
 
 .. image:: ../../../_static/images/diving-in/settings/plugins.png
    :alt: Plugin Settings
-   :width: 80%
+   :width: 100%
    :scale: 100%

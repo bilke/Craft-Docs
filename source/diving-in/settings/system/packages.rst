@@ -17,5 +17,5 @@ The Settings → Packages page is where you can go to manage Packages for your s
 
 .. image:: ../../../_static/images/diving-in/settings/packages.png
    :alt: Package Management
-   :width: 90%
+   :width: 100%
    :scale: 100%

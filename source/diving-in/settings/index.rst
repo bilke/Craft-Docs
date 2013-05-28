@@ -10,8 +10,6 @@ Accordingly, only admins are allowed to access it.
    :scale: 100%
    :width: 100%
 
-``This works, but you lose the "TOC Navigation" that toctree provides.``
-
 .. rst-class:: settings-table
 +-----------------------------------------+---------------------------------------+---------------------------------------------------------------+
 | **System**                              | **Content**                           | **Tools**                                                     |
@@ -25,15 +23,9 @@ Accordingly, only admins are allowed to access it.
 |                                         |                                       |                                                               |
 +-----------------------------------------+---------------------------------------+---------------------------------------------------------------+
 
---------
-
-``toctree apparently doesn't work inside of tables.  Giving up on trying to get these to align left to right.``
-
-System
-------
-
 .. toctree::
    :titlesonly:
+   :hidden:
 
    General <system/general>
    Packages <system/packages>
@@ -41,25 +33,11 @@ System
    Users <system/users>
    Email <system/email>
    Plugins <system/plugins>
-
-Content
--------
-
-.. toctree::
-   :titlesonly:
-
    Fields <content/fields>
    Sections <content/sections>
    Assets <content/assets>
    Globals <content/globals>
    Locales <content/locales>
-
-Tools
------
-
-.. toctree::
-   :titlesonly:
-
    Update Asset Indexes <tools/update-asset-indexes>
    Clear Caches <tools/clear-caches>
    Backup Database <tools/backup-database>

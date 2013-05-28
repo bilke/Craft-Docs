@@ -1,5 +1,5 @@
 Template Basics
-====================
+===============
 
 In Craft, all HTML rendering is done via **templates** (even for the Control Panel itself). There are no PHP-based view files.
 

@@ -27,26 +27,33 @@ Settings
 Entry Page
 ----------
 
-From the Entry page, you are give one or two field, depending on whether you checked ”Show time?” under the Field Type’s settings.
-
-.. image:: ../../../_static/images/diving-in/fields/date-entry1.png
+.. |entry1| image:: ../../../_static/images/diving-in/fields/date-entry1.png
    :alt: Date Entry
    :scale: 100%
-   :width: 35%
+   :width: 230px
 
-When you click in the date input, you’re given a calendar to choose a date from.
++----------+--------------------------------------------------------------------------------+
+| |entry1| | From the Entry page, you are give one or two field,                            |
+|          | depending on whether you checked ”Show time?” under the Field Type’s settings. |
++----------+--------------------------------------------------------------------------------+
 
-.. image:: ../../../_static/images/diving-in/fields/date-entry2.png
+.. |entry2| image:: ../../../_static/images/diving-in/fields/date-entry2.png
    :alt: Date Entry
    :scale: 100%
-   :width: 32%
+   :width: 230px
 
-When you click in the time input, you’re given a time picker to choose a time from.
++----------------------------------------------------------------------------------+----------+
+| When you click in the date input, you’re given a calendar to choose a date from. | |entry2| |
++----------------------------------------------------------------------------------+----------+
 
-.. image:: ../../../_static/images/diving-in/fields/date-entry3.png
+.. |entry3| image:: ../../../_static/images/diving-in/fields/date-entry3.png
    :alt: Time Entry
    :scale: 100%
-   :width: 16%
+   :width: 115px
+
++----------+-------------------------------------------------------------------------------------+
+| |entry3| | When you click in the time input, you’re given a time picker to choose a time from. |
++----------+-------------------------------------------------------------------------------------+
 
 You can also manually type in the date and/or time for either of the fields.
 

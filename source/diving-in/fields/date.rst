@@ -14,3 +14,9 @@ Template
 .. code-block:: html 
 
     {{ entry.date }}
+
+Need to format your date?  See :doc:`date variable formatting </reference/templating/reference/variables/dates>` 
+
+.. code-block:: html
+
+    {{ entry.date.format('F j, Y') }}

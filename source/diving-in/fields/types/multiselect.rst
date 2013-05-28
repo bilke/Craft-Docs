@@ -1,7 +1,7 @@
 Multi-selects
-=======
+=============
 
-Need multiple options that can have any combination selected?  The multi-select field type is for you!
+Need multiple options that can have any combination selected?  The Multi-select Field Type is for you!
 
 Settings
 --------

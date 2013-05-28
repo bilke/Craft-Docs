@@ -12,23 +12,22 @@ Each field has a name, handle, optional instructions, a fieldtype, and possibly 
 .. toctree::
    :titlesonly:
 
-   assets
-   checkboxes
-   color
-   date
-   dropdown
-   entries
-   table
-   links
-   multiselect
-   number
-   plain-text
-   radio-buttons
-   rich-text
-   table
-   users
+   types/assets
+   types/checkboxes
+   types/color
+   types/date
+   types/dropdown
+   types/entries
+   types/links
+   types/multiselect
+   types/number
+   types/plain-text
+   types/radio-buttons
+   types/rich-text
+   types/table
+   types/users
 
-Plugins can add additional fieldtypes as well.
+Plugins can add additional Field Types as well.
 
 .. _fieldSettings:
 

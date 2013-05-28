@@ -1,7 +1,7 @@
 Checkboxes
 ==========
 
-The Checkboxes fieldtype allows you to create a grouping of checkboxes to include on your entry form.
+The Checkboxes Field Type allows you to create a grouping of checkboxes to include on your entry form.
 
 Settings
 --------
@@ -26,7 +26,7 @@ You can drag and drop your checkbox items to control the row order presented whe
 Entry Page
 ----------
 
-Your checkbox fieldtype will appear on your entry form with the options you created in the order you set them.  The below shows how a Featured checkbox would appear on the entry form:
+Your Checkbox Field Type will appear on your entry form with the options you created in the order you set them.  The below shows how a Featured checkbox would appear on the entry form:
 
 [BRAD - SCREENSHOT update for Checkbox output on entry form] 
 

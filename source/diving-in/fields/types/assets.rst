@@ -1,9 +1,12 @@
 Assets
 ==========
 
-The Assets fieldtype allows you to store and reference media content in Craft.  Assets can be used to store PDFs, images, movies, sound files, and other media types.
+The Assets Field Type allows you to store and reference media content in Craft.  Assets can be used to store PDFs, images, movies, sound files, and other media types.
 
-[BRAD - SCREENSHOT  for Assets settings]
+.. image:: ../../_static/images/diving-in/fields/assets-settings.png
+   :alt: Assets Settings
+   :scale: 100%
+   :width: 75%
 
 --------
 

@@ -1,7 +1,7 @@
 Number
 ======
 
-The number fieldtype adds a field for entering a number.
+The Number Field Type adds a field for entering a number.
 
 The field allows you to set the minimum and maximum values, and how many decimal points will be output in templates.
 

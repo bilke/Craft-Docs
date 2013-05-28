@@ -1,7 +1,7 @@
-Multi Selects
+Multi-selects
 =============
 
-The multiselect fieldtype allows you to create a multiselect input.
+The Multi-select Field Type allows you to create a multiselect input.
 
 You can set an Option Label, a Value, and check if that option is the default value.
 

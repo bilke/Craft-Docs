@@ -1,7 +1,7 @@
 Plain Text
 ==========
 
-The plain text fieldtype allows you to create a simple textarea for storing content.
+The Plain Text Field Type allows you to create a simple textarea for storing content.
 
 You can optionally set “Hint Text” that will be shown if the field doesn’t have a value on the entry page.
 

@@ -1,7 +1,7 @@
 Dropdowns
 =========
 
-The dropdown fieldtype allows you to create a dropdown selector for your entry page.
+The Dropdown Field Type allows you to create a dropdown selector for your entry page.
 
 [BRAD - SCREENSHOT OF Dropdown field settings]
 

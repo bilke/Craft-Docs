@@ -3,10 +3,9 @@ Fields
 
 In Craft, all of your site’s content is entered into **Fields**.  They are the building blocks of your website.
 
-Fields are created globally, and attached as needed to your :ref:`Sections <sections>`, :ref:`Globals <globals>`, :ref:`Users <users>`, and :ref:`Assets <assets>`.
+Fields are created globally, and attached as needed to your :doc:`Sections </diving-in/sections>`, :doc:`Globals </diving-in/globals>`, :doc:`Users </diving-in/users>`, and :doc:`Assets </diving-in/assets>`.
 
 You manage your site’s Fields under ``Settings → Fields``.  You’ll notice that they are organized into groups called **Field Groups**. In Craft, Field Groups are purely an organizational tool; they pose no actual restrictions on the fields within them. Fields can even be moved between groups as desired.
-
 
 Each field has a name, handle, optional instructions, a fieldtype, and possibly additional settings provided by the fieldtype. **Fieldtypes** define what kind of field it is. Craft comes with 14 fieldtypes built in:
 
@@ -31,6 +30,33 @@ Each field has a name, handle, optional instructions, a fieldtype, and possibly 
 
 Plugins can add additional fieldtypes as well.
 
+.. _fieldSettings:
+
+Field Settings
+--------------
+
+All fields have the following settings in common:
+
+.. |commonfieldsettings| image:: ../../_static/images/diving-in/fields/commonfieldsettings.png
+   :alt: Common Field Settings
+   :scale: 100%
+   :width: 300px
+
++-----------------------+---------------------------------------------------------------------------+
+| |commonfieldsettings| | Group                                                                     |
+|                       |    The name of the Field Group this field belongs to                      |
+|                       |                                                                           |
+|                       | Handle                                                                    |
+|                       |    How you’ll refer to this field in your templates                       |
+|                       |                                                                           |
+|                       | Instructions                                                              |
+|                       |    Helper text that you can enter to help guide the author of the entry   |
+|                       |                                                                           |
+|                       | This field is translatable [1]_                                           |
+|                       |    Check this if you want the contents of this field to be translatable   |
++-----------------------+---------------------------------------------------------------------------+
+
+The rest of the settings are Field Type specific (link to Field Types) and will vary depending on the Field Type you have selected.
 
 .. _fieldLayouts:
 
@@ -40,6 +66,9 @@ Field Layouts
 Everything that can have fields in Craft does so via **field layouts**. Field layout pages are sprinkled throughout the Settings section of the CP. For example, sections’ field layouts can be edited from the “Field Layout” tab of a section’s settings.
 
 .. image:: ../../_static/images/diving-in/fields/fieldlayout.png
+   :alt: Field Layout
+   :scale: 100%
+   :width: 100%
 
 Some field layouts allow you to customize the tabs that hold the fields; some don’t. You can tell if a given field layout’s tabs are customizable by the presence of a “New Tab” button between the top and bottom portions of the page. Layouts that have editable tabs will also let you drag entire field groups into the workspace, as a starting point for a new tab.
 
@@ -57,24 +86,4 @@ Your field values are accessible just like any other property on the things you�
 
     {{ entry.description }}
 
-Craft Core includes many fieldtypes
------------------------------------
-
-.. toctree::
-   :titlesonly:
-
-   assets
-   checkboxes
-   color
-   date
-   dropdown
-   entries
-   table
-   links
-   multiselect
-   number
-   plain-text
-   radio-buttons
-   rich-text
-   table
-   users
+.. [1] Requires Localization package

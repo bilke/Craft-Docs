@@ -3,7 +3,7 @@ Number
 
 Need to store a number with your content?  Choose the Number field type!
 
-The field allows you to set the minimum and maximum values, and how many decimal points will be output in templates.
+This Field Type allows you to set the minimum and maximum values, and how many decimal points will be output in templates.
 
 The user’s current locale is taken into account when displaying the numeric values in the correct format.
 
@@ -11,23 +11,36 @@ The user’s current locale is taken into account when displaying the numeric va
 
 Settings
 --------
-[BRAD - SCREENSHOT OF Number field type settings]
 
-Min Value
-    Set the lowest number that may be entered
+.. |settings| image:: ../../../_static/images/diving-in/fields/number-settings.png
+   :alt: Number Settings
+   :scale: 100%
+   :width: 150px
 
-Max Value
-    Set the highest number that may be entered
-
-Decimal Points
-    The max number of decimal points to output in the template
++------------+------------------------------------------------------------------------------------------------------+
+| |settings| | Min Value                                                                                            |
+|            |    Set the lowest number that may be entered on the Entry form                                       |
+|            |                                                                                                      |
+|            | Max Value                                                                                            |
+|            |    Set the highest number that may be entered on the Entry form                                      |
+|            |                                                                                                      |
+|            | Decimal Points                                                                                       |
+|            |    The max number of decimal points to output in the template                                        |
++------------+------------------------------------------------------------------------------------------------------+
 
 --------
 
 Entry Page
---------
+----------
 
-[BRAD - SCREENSHOT OF Number field on entry page]
+It’s a text field.
+
+You can enter a number.
+
+.. image:: ../../../_static/images/diving-in/fields/number-entry.png
+   :alt: Number Entry
+   :scale: 100%
+   :width: 18%
 
 --------
 

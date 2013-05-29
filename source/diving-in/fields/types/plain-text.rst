@@ -44,3 +44,7 @@ On the Entry page, you get a simple text field for use.
 
 Template
 --------
+
+.. code-block:: html
+
+    {{ entry.fieldHandle }}

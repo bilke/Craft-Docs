@@ -33,7 +33,7 @@ Settings
 Entry Page
 ----------
 
-On the Entry page, you get a a simple text field for use.
+On the Entry page, you get a simple text field for use.
 
 .. image:: ../../../_static/images/diving-in/fields/plaintext-entry.png
    :alt: Plain Text Entry

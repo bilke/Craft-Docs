@@ -1,44 +1,67 @@
 Rich Text
 =======
 
-The Rich Text Field Type provides WYSIWYG fields, powered by `Redactor <http://imperavi.com/redactor/>`_.
+The Rich Text Field Type provides for WYSIWYG fields, powered by `Redactor <http://imperavi.com/redactor/>`_.
 
 --------
 
 Settings
 --------
 
-Rich Text fields have the following settings:
+.. |settings| image:: ../../../_static/images/diving-in/fields/richtext-settings.png
+   :alt: Rich Text Settings
+   :scale: 100%
+   :width: 350px
 
-Config
-    Choose a custom config file to customize Redactor.
++------------+------------------------------------------------------------------------------------------------------------------+
+| |settings| | Config                                                                                                           |
+|            |    Choose a config file for Redactor to use                                                                      |
+|            |                                                                                                                  |
+|            | Clean up HTML?                                                                                                   |
+|            |    Instruct Craft to cleanup the submitted HTML on save                                                          |
+|            |                                                                                                                  |
+|            |    The cleanup routine involves removing all ``<span>`` tags, empty tags, and most ``style`` attributes on save. |
++------------+------------------------------------------------------------------------------------------------------------------+
 
-    Redactor configs are .json files in craft/config/redactor/, containing Javascript objects defining any of Redactor’s `available settings <http://imperavi.com/redactor/docs/settings/>`_. Their contents get passed directly into the ``redactor()`` jQuery plugin, so you can paste the examples in there verbatim.
+Redactor configs are .json files in craft/config/redactor/, containing Javascript objects defining any of Redactor’s `available settings <http://imperavi.com/redactor/docs/settings/>`_.
 
-    Craft comes with two Redactor configs by default:
+Their contents get passed directly into the ``redactor()`` jQuery plugin, so you can paste the examples in there verbatim.
 
-    * Simple.json
+Craft comes with two Redactor configs by default:
 
-      .. code-block:: js
+* ``Simple.json``
 
-          {
-              buttons: ['bold', 'italic']
-          }
+  .. code-block:: js
 
-    * Standard.json
+      {
+          buttons: ['bold', 'italic']
+      }
 
-      .. code-block:: js
+* ``Standard.json``
 
-          {
-              buttons: ['html','|','formatting','|','bold','italic','|','unorderedlist','orderedlist','|','link','image','video'],
-              plugins: ['fullscreen', 'pagebreak']
-          }
+  .. code-block:: js
 
-Clean up HTML?
-    Instruct Craft to cleanup the submitted HTML on save.
+      {
+          buttons: ['html','|','formatting','|','bold','italic','|','unorderedlist','orderedlist','|','link','image','video'],
+          plugins: ['fullscreen', 'pagebreak']
+      }
 
-    The cleanup routine involves removing all ``<span>`` tags, empty tags, and most ``style`` attributes.
+--------
 
+Entry Page
+----------
+
+On the Entry page, you get a full-featured WYSIWYG ready for use.
+
+.. image:: ../../../_static/images/diving-in/fields/richtext-entry.png
+   :alt: Rich Text Entry
+   :scale: 100%
+   :width: 100%
+
+--------
+
+Template
+--------
 
 Working with Page Breaks
 ------------------------
@@ -77,13 +100,3 @@ Rich Text fields have three functions for outputting data based on the page brea
                 {% endif %}
             </article>
         {% endfor %}
-
---------
-
-Entry Page
-----------
-
---------
-
-Template
---------

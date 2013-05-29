@@ -29,13 +29,13 @@ Each field has a name, handle, optional instructions, a fieldtype, and possibly 
    types/users
 
 .. rst-class:: fieldtype-table
-+----------------------------------------+-------------------------------------------+---------------------------------------+
-| * :doc:`Assets <types/assets>`         | * :doc:`Entries <types/entries>`          | * :doc:`Rich Text <types/assets>`     |
-| * :doc:`Checkboxes <types/checkboxes>` | * :doc:`Multi-select <types/multiselect>` | * :doc:`Table <types/assets>`         |
-| * :doc:`Color <types/color>`           | * :doc:`Number <types/number>`            | * :doc:`Users <types/assets>`         |
-| * :doc:`Date <types/date>`             | * :doc:`Plain Text <types/plain-text>`    |                                       |
-| * :doc:`Dropdown <types/dropdown>`     | * :doc:`Radio Buttons <types/assets>`     |                                       |
-+----------------------------------------+-------------------------------------------+---------------------------------------+
++----------------------------------------+----------------------------------------------+---------------------------------------+
+| * :doc:`Assets <types/assets>`         | * :doc:`Entries <types/entries>`             | * :doc:`Rich Text <types/rich-text>`  |
+| * :doc:`Checkboxes <types/checkboxes>` | * :doc:`Multi-select <types/multiselect>`    | * :doc:`Table <types/table>`          |
+| * :doc:`Color <types/color>`           | * :doc:`Number <types/number>`               | * :doc:`Users <types/users>`          |
+| * :doc:`Date <types/date>`             | * :doc:`Plain Text <types/plain-text>`       |                                       |
+| * :doc:`Dropdown <types/dropdown>`     | * :doc:`Radio Buttons <types/radio-buttons>` |                                       |
++----------------------------------------+----------------------------------------------+---------------------------------------+
 
 Plugins can add additional Field Types as well.
 

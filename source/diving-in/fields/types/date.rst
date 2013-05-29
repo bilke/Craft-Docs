@@ -33,7 +33,7 @@ Entry Page
    :width: 230px
 
 +----------+--------------------------------------------------------------------------------+
-| |entry1| | From the Entry page, you are give one or two field,                            |
+| |entry1| | From the Entry page, you are given one or two fields,                            |
 |          | depending on whether you checked ”Show time?” under the Field Type’s settings. |
 +----------+--------------------------------------------------------------------------------+
 

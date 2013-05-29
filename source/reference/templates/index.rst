@@ -1,5 +1,5 @@
-Templating
-==========
+Templates
+====================
 
 In Craft, all HTML rendering is done via **templates** (even for the Control Panel itself). There are no PHP-based view files.
 
@@ -11,5 +11,7 @@ Craft uses `Twig <http://twig.sensiolabs.org/>`_ to parse your templates. For a 
 .. toctree::
    :titlesonly:
 
-   
-   reference/index
+   variables/index
+   filters
+   functions
+   tags

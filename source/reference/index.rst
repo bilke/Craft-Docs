@@ -5,7 +5,7 @@ Reference
    :titlesonly:
 
    reference/index
-   templating/index
+   templates/index
    config-vars
    tags
    global-variables

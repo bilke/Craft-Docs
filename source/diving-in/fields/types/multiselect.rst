@@ -1,37 +1,44 @@
-Multi-selects
-=============
+Multi-select
+============
 
-Need multiple options that can have any combination selected?  The Multi-select Field Type is for you!
+Have a hard time choosing things?
+
+Don’t worry… you can select them all with the Multi-select Field Type.
 
 --------
 
 Settings
 --------
 
-[BRAD - SCREENSHOT update Multiselect Settings]
+.. |settings| image:: ../../../_static/images/diving-in/fields/multiselect-settings.png
+   :alt: Multi-select Settings
+   :scale: 100%
+   :width: 375px
 
++------------+------------------------------------------------------------------------------------------------------+
+| |settings| | Option Label                                                                                         |
+|            |    The friendly display label for your Multi-select option                                           |
+|            |                                                                                                      |
+|            | Value                                                                                                |
+|            |    The value that gets submitted when creating or editing an Entry                                   |
+|            |                                                                                                      |
+|            | Default                                                                                              |
+|            |    Is this option selected by default when creating a new Entry?                                     |
++------------+------------------------------------------------------------------------------------------------------+
 
-Option Label
-    The friendly label for your multi-select option
-
-Value
-    The value= when selecting this field
-
-Default
-    Select this option by default when loading the entry form?
-
-You can drag and drop your checkbox items to control the row order presented when modifying content.
-
-[BRAD - SCREENSHOT of the re-order and delete icons - reused image]
+You can drag and drop your checkbox items to control the order they are presented in on the Entry page as well as delete them entirely with the controls in the far right column.
 
 --------
 
 Entry Page
 ----------
 
-Your multi-select field appears on your entry form with the options you created in the order you set them.  The below shows  a multi-select on the entry form:
+Your multi-select field appears on your entry form with the options you created in the order you set them.
 
-[BRAD - SCREENSHOT update for Checkbox output on entry form] 
+.. image:: ../../../_static/images/diving-in/fields/multiselect-entry.png
+   :alt: Multi-select Entry
+   :scale: 100%
+   :width: 40%
 
 --------
 
